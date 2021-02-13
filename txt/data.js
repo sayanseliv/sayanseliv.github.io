@@ -294,13 +294,13 @@ dataRightEN = [
     h3: "03.2020 - 06.2020",
   },
   {
-    span: "Hillel IT School - фронт-энд базовый",
+    span: "Hillel IT School - Front-end Basic",
   },
   {
     h3: "06.2020 - 11.2020",
   },
   {
-    span: "Hillel IT School - фронт-энд продвинутый",
+    span: "Hillel IT School - Front-end PRO",
   },
   {
     h1: "experience",

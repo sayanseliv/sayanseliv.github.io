@@ -73,7 +73,7 @@ dataRightUA = [
     h3: "06.2020 - 11.2020",
   },
   {
-    span: "Hillel IT School - фронт-энд просу́нутий",
+    span: "Hillel IT School - фронт-энд просунутий",
   },
   {
     h1: "досвід роботи",

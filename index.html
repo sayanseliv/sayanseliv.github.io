@@ -4,76 +4,211 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="./img/favicon/favicon.ico" />
+    <link rel="stylesheet" href="style/styles.css" />
     <script
-      src="https://kit.fontawesome.com/156b851759.js"
-      crossorigin="anonymous"
+      src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"
+      data-auto-a11y="true"
     ></script>
-    <link rel="shortcut icon" type="image/png" href="./images/favicon.ico"/>
-    <link rel="stylesheet" href="./styles/style.css" />
-    <title>Document</title>
+    <title>CV_little</title>
   </head>
   <body>
     <div class="wrapper">
-      <section class="header">
-        <div class="photo">
-          <div class="frame">
-            <img src="./images/image.jpg" alt="MyPhoto" />
+      <article class="wrapper_l_col">
+        <section class="wrapper_l_col_frame">
+          <div class="wrapper_l_col_img">
+            <img src="./img/images/cv_photo.jpg" alt="my photo" />
           </div>
-        </div>
-        <div class="header_name_select">
-          <div class="wrap_name">
-            <div class="name">eugen lang</div>
-            <div class="targets">"Per aspera ad astra"</div>
+        </section>
+        <section>
+          <div class="wrapper_l_col_age">
+            <h1>Lang Eugen</h1>
+            <div class="age"></div>
           </div>
-          <div class="wrap_select">
-            <select id="languages" name="select">
-              <option value="-1" selected>language</option>
-              <option value="ua">ua</option>
-              <option value="en">en</option>
-              <!-- <option value="de">de</option> -->
-              <option value="ru">ru</option>
-            </select>
-          </div>
-        </div>
-      </section>
-      <div class="wrap_col">
-        <div class="col_left"></div>
-        <div class="col_right"></div>
-      </div>
-      
-      <section class="footer">
-        <div class="wrap_icons">
-          <a href="https://www.linkedin.com/in/eugen-lang-18475b143/">
-            <i class="fab fa-linkedin fa-2x"></i
-          ></a>
-          <a href="https://www.facebook.com/evgeniy.lang.7/">
-            <i class="fab fa-facebook fa-2x"></i>
-          </a>
-          <a href="https://github.com/sayanseliv/Aufgaben"
-            ><i class="fab fa-github fa-2x"></i
-          ></a>
-        </div>
-        <div class="contacts">
-          Contacts:
+          <span id="prof">Front end developer</span>
+
+          <hr />
+          <h3>profile</h3>
+          <span>I graduated from Front end courses(Basic & PRO).</span>
+          <h3>target</h3>
+          <span
+            >Looking for a job as front-end developer and which will improve my
+            front-end skills.</span
+          >
+        </section>
+        <section class="wrapper_l_col_circle_diagramms">
+          <div class="circle circle_one"><span>Communicative</span></div>
+          <div class="circle circle_two"><span>Punctuality</span></div>
+          <div class="circle circle_three"><span>Creativity</span></div>
+          <div class="circle circle_four"><span>Organized</span></div>
+          <div class="circle circle_five"><span>Adaptivity</span></div>
+          <div class="circle circle_six"><span>Diligence</span></div>
+        </section>
+        <hr />
+        <address class="wrapper_l_col_contacts">
+          <h3>contacts:</h3>
+          <span>Phone:</span>
+          <a href="tel:+380932760060">+380932760060 </a>
+          <span>Email:</span>
           <a href="mailto:sayanseliv@gmail.com">sayanseliv@gmail.com</a>
-          <a href="tel:+380932760060 ">+380932760060 </a>
-        </div>
-        <div class="certifications">
-          <div id="wrap_certificate">
-            <div id="doc"></div>
+          <span>Adress:</span>
+          <a href="https://goo.gl/maps/xtU1AjRwtRyCtqc37">Odessa </a>
+        </address>
+      </article>
+      <article class="wrapper_r_col">
+        <div class="wrapper_r_col_info">
+          <h1>WORK EXPERIENCE</h1>
+          <section class="wrapper_r_col_info_wrap">
+            <div class="wrapper_r_col_info_year">
+              <div class="arrow"><h2>2015 - present</h2></div>
+            </div>
+            <div class="wrapper_r_col_info_intelligence">
+              <span class="prof_name">Technical seller</span>
+              <span class="prof_about">Epicentr K, Odesa</span>
+            </div>
+          </section>
+          <section class="wrapper_r_col_info_wrap">
+            <div class="wrapper_r_col_info_year">
+              <div class="arrow"><h2>2009 - 2014</h2></div>
+            </div>
+            <div class="wrapper_r_col_info_intelligence">
+              <span class="prof_name">Section manager</span>
+              <span class="prof_about">Epicentr K, Odesa</span>
+              <span
+                >Responsibility for staff, training of staff, task-shifting,
+                work-planning, the execution of a sales plan, working with
+                indicators of the section.</span
+              >
+            </div>
+          </section>
+          <section class="wrapper_r_col_info_wrap">
+            <div class="wrapper_r_col_info_year">
+              <div class="arrow"><h2>2008 - 2009</h2></div>
+            </div>
+            <div class="wrapper_r_col_info_intelligence">
+              <span class="prof_name">Bookmaker-cashier,</span>
+              <span class="prof_about"
+                >Bookmaker’s office “Marathon”, Odesa</span
+              >
+              <span
+                >Knowledge of the cash discipline, customer service, work with
+                money.</span
+              >
+            </div>
+          </section>
+          <hr />
+          <div class="wrapper_r_col_info">
+            <h1>Education</h1>
+            <section class="wrapper_r_col_info_wrap">
+              <div class="wrapper_r_col_info_year">
+                <div class="arrow"><h2>2002 - 2006</h2></div>
+              </div>
+              <div class="wrapper_r_col_info_intelligence">
+                <span class="prof_name">Bachelor Degree of Biology</span>
+                <span class="prof_about"
+                  >Odesa I.I. Mechnikov National University</span
+                >
+                <span> Department of Biochemistry</span>
+              </div>
+            </section>
+            <section class="wrapper_r_col_info_wrap">
+              <div class="wrapper_r_col_info_year">
+                <div class="arrow"><h2>2006 - 2007</h2></div>
+              </div>
+              <div class="wrapper_r_col_info_intelligence">
+                <span class="prof_name">Specialist’s degree of Biology</span>
+                <span class="prof_about"
+                  >Odesa I.I. Mechnikov National University</span
+                >
+                <span> Department of Biochemistry</span>
+              </div>
+            </section>
+            <section class="wrapper_r_col_info_wrap">
+              <div class="wrapper_r_col_info_year">
+                <div class="arrow"><h2>03.2020 - 06.2020</h2></div>
+              </div>
+              <div class="wrapper_r_col_info_intelligence">
+                <span class="prof_name">Front-end</span>
+                <span class="prof_about">Hillel IT School </span>
+                <span> Front-end Basic</span>
+              </div>
+            </section>
+            <section class="wrapper_r_col_info_wrap">
+              <div class="wrapper_r_col_info_year">
+                <div class="arrow"><h2>06.2020 - 11.2020</h2></div>
+              </div>
+              <div class="wrapper_r_col_info_intelligence">
+                <span class="prof_name">Front-end</span>
+                <span class="prof_about">Hillel IT School </span>
+                <span> Front-end PRO</span>
+              </div>
+            </section>
           </div>
-          <div id="wrap_certificatePRO">
-            <div id="docPRO"></div>
-          </div>
-          <a id="open" href="#wrap_certificate">Certificate basic</a>
-          <a id="openPRO" href="#wrap_certificatePRO">Certificate PRO</a>
+          <hr />
+          <h1>SOFTWARE SKILLS</h1>
+          <section class="wrapper_r_col_skills">
+            <i class="fab fa-html5 fa-2x play"></i><span>HTML</span>
+            <i class="fab fa-css3-alt fa-2x play"></i><span>CSS</span>
+            <i class="fab fa-sass fa-2x play"></i><span>SCSS</span>
+            <i class="fab fa-js fa-2x play"></i><span>JS</span>
+            <i class="fab fa-bootstrap fa-2x play"></i><span>Bootstrap</span>
+            <i class="fab fa-vuejs fa-2x play"></i><span>VUE/VUEX</span>
+            <i class="fab fa-react fa-2x play"></i><span>React/Redux</span>
+            <i class="fab fa-node fa-2x play"></i><span>NODE</span>
+            <i class="fab fa-npm fa-2x play" style></i><span>NPM</span>
+            <i class="fab fa-github fa-2x play"></i><span>Github</span>
+          </section>
+          <hr />
+          <h1>What I like</h1>
+          <section class="wrapper_r_col_hobby">
+            <div class="hobbies">
+              <img src="./img/images/gym.png" alt="GYM" />
+              <span>Gym</span>
+            </div>
+            <div class="hobbies">
+              <img src="./img/images/lindy.png" alt="LINDY_HOP" />
+              <span>Lindy hop</span>
+            </div>
+            <div class="hobbies">
+              <img src="./img/images/education.png" alt="SELF_EDUCATION" />
+              <span>Self-study</span>
+            </div>
+            <div class="hobbies">
+              <img src="./img/images/music.png" alt="GYM" />
+              <span>Music</span>
+            </div>
+          </section>
+          <hr />
+          <h1>links</h1>
+          <section class="wrapper_r_col_links">
+            <a
+              href="https://www.linkedin.com/in/eugen-lang-18475b143/"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin fa-2x linksStyle"></i>Linkedin</a
+            >
+            <a href="https://www.facebook.com/evgeniy.lang.7/" target="_blank">
+              <i class="fab fa-facebook fa-2x linksStyle"></i>Facebook
+            </a>
+            <a href="https://github.com/sayanseliv/Aufgaben" target="_blank"
+              ><i class="fab fa-github fa-2x linksStyle"></i>Github</a
+            >
+          </section>
+          <hr>
+          <h1>Certificate</h1>
+          <section class="wrapper_r_col_certificate">
+            <a class="open" href="#basic_en.png">
+              Certificate basic
+            </a>
+            <a href="#" class="show" style="background-image:url(./img/certifications/basic_en.png)"></a>
+            <a class="open" href="#pro_en.png">
+              Certificate PRO
+            </a>
+            <a href="#" class="show" style="background-image:url(./img/certifications/pro_en.png)"></a>
+          </section>
         </div>
-      </section>
-
-      <div class="hi"></div>
+      </article>
     </div>
-
-    <script type="text/javascript" src="./txt/data.js"></script>
-    <script src="./JS/index.js"></script>
+    <script src="./JS/main.js"></script>
   </body>
 </html>

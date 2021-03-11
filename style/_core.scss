@@ -1,0 +1,15 @@
+@mixin move-icons($transition, $transform, $transform2) {
+    transition: $transition;
+    transform: $transform;
+    &:hover{
+      transform: $transform2;
+    }
+  }
+  
+  @mixin rotate {
+    @include move-icons(
+      $transition: all ease 0.5s,
+      $transform: rotateX(-30deg),
+      $transform2: rotateX(-30deg) translateY(-5px)
+    );
+  }

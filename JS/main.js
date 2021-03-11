@@ -1,12 +1,15 @@
 const left = document.querySelector(".wrapper_l_col");
 const right = document.querySelector(".wrapper_r_col");
-const age = document.querySelector(".age")
+const age = document.querySelector(".age");
 
-age.innerHTML = Math.floor((new Date() - new Date('03-27-1985')) / 1000 / 60 / 60 / 24 / 365.25);
+age.innerHTML = Math.floor(
+  (new Date() - new Date("03-27-1985")) / 1000 / 60 / 60 / 24 / 365.25
+);
 changeAnimation(left, right);
+const transparent = "transparent";
+const colorWhite = "white";
 
 function changeAnimation(a, b) {
-  
   if (!a || !b) {
     return;
   }
@@ -25,27 +28,27 @@ function changeAnimation(a, b) {
 }
 
 function animationLeft(el) {
-  if (window.innerWidth < 768) return
+  if (window.innerWidth < 768) return;
   el.animate(
     [
       // keyframes
       {
-        borderTopColor: "white",
-        borderRightColor: "transparent",
-        borderBottomColor: "transparent",
-        borderLeftColor: "transparent",
+        borderTopColor: colorWhite,
+        borderRightColor: transparent,
+        borderBottomColor: transparent,
+        borderLeftColor: transparent,
       },
       {
-        borderTopColor: "transparent",
-        borderLeftColor: "white",
-        borderBottomColor: "transparent",
-        borderRightColor: "transparent",
+        borderTopColor: transparent,
+        borderLeftColor: colorWhite,
+        borderBottomColor: transparent,
+        borderRightColor: transparent,
       },
       {
-        borderTopColor: "transparent",
-        borderRightColor: "transparent",
-        borderBottomColor: "white",
-        borderLeftColor: "transparent",
+        borderTopColor: transparent,
+        borderRightColor: transparent,
+        borderBottomColor: colorWhite,
+        borderLeftColor: transparent,
       },
     ],
     {
@@ -58,27 +61,27 @@ function animationLeft(el) {
 }
 
 function animationRight(el) {
-  if (window.innerWidth < 768) return
+  if (window.innerWidth < 768) return;
   el.animate(
     [
       // keyframes
       {
-        borderTopColor: "transparent",
-        borderRightColor: "transparent",
-        borderBottomColor: "white",
-        borderLeftColor: "transparent",
+        borderTopColor: transparent,
+        borderRightColor: transparent,
+        borderBottomColor: colorWhite,
+        borderLeftColor: transparent,
       },
       {
-        borderTopColor: "transparent",
-        borderBottomColor: "transparent",
-        borderLeftColor: "transparent",
-        borderRightColor: "white",
+        borderTopColor: transparent,
+        borderBottomColor: transparent,
+        borderLeftColor: transparent,
+        borderRightColor: colorWhite,
       },
       {
-        borderBottomColor: "transparent",
-        borderTopColor: "white",
-        borderRightColor: "transparent",
-        borderLeftColor: "transparent",
+        borderBottomColor: transparent,
+        borderTopColor: colorWhite,
+        borderRightColor: transparent,
+        borderLeftColor: transparent,
       },
     ],
     {

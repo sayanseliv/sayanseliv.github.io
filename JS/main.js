@@ -2,7 +2,7 @@ const left = document.querySelector(".wrapper_l_col");
 const right = document.querySelector(".wrapper_r_col");
 const age = document.querySelector(".age")
 
-age.innerHTML = Math.floor((new Date() - new Date(1985,27,03)) / 1000 / 60 / 60 / 24 / 365.25);
+age.innerHTML = Math.floor((new Date() - new Date(1985,03,27)) / 1000 / 60 / 60 / 24 / 365.25);
 changeAnimation(left, right);
 
 function changeAnimation(a, b) {

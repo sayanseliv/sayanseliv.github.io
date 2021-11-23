@@ -17,7 +17,24 @@
     <title>CV_little</title>
   </head>
   <body>
-    <div class="wrapper">
+    <header class="container">
+      <nav class="nav nav-group">
+        <ul class="nav-group__list">
+          <li class="nav__item"><a href="#">Projects</a></li>
+          <li class="nav__item"><a href="#">Animations</a></li>
+          <li class="nav__item"><a href="#">Features</a></li>
+        </ul>
+      </nav>
+      <select name="languages" id="languages">
+        <option selected disabled>languages</option>
+        <option value="eng">	ENG</option>
+        <option value="ua">UA</option>
+        <option value="ru">RU</option>
+        <option value="it">IT</option>
+        <option value="de">DE</option>
+      </select>
+    </header>
+    <main class="wrapper">
       <article class="wrapper_l_col">
         <section class="wrapper_l_col_frame">
           <div class="wrapper_l_col_img">
@@ -27,7 +44,7 @@
         <section>
           <div class="wrapper_l_col_age">
             <h1>Lang Eugen</h1>
-            <div class="age"></div>
+            <div class="age pink"></div>
           </div>
           <span id="prof">Front end developer</span>
 
@@ -65,7 +82,16 @@
           <h1>WORK EXPERIENCE</h1>
           <section class="wrapper_r_col_info_wrap">
             <div class="wrapper_r_col_info_year">
-              <div class="arrow"><h2>2015 - present</h2></div>
+              <div class="arrow"><h2>2021 - present</h2></div>
+            </div>
+            <div class="wrapper_r_col_info_intelligence">
+              <span class="prof_name">Web Software Developer</span>
+              <span class="prof_about">Zelh, Odesa</span>
+            </div>
+          </section>
+          <section class="wrapper_r_col_info_wrap">
+            <div class="wrapper_r_col_info_year">
+              <div class="arrow"><h2>2015 - 2021</h2></div>
             </div>
             <div class="wrapper_r_col_info_intelligence">
               <span class="prof_name">Technical seller</span>
@@ -156,7 +182,6 @@
                 <span class="prof_name">Advanced JavaScript / React</span>
                 <span class="prof_about">Beetroot Academy </span>
                 <span> Front-end Advance</span>
-                
               </div>
             </section>
           </div>
@@ -177,19 +202,19 @@
           <hr />
           <h1>What I like</h1>
           <section class="wrapper_r_col_hobby">
-            <div class="hobbies">
+            <div class="hobbies pink">
               <img src="./img/images/gym.png" alt="GYM" />
               <span>Gym</span>
             </div>
-            <div class="hobbies">
+            <div class="hobbies pink">
               <img src="./img/images/lindy.png" alt="LINDY_HOP" />
               <span>Lindy hop</span>
             </div>
-            <div class="hobbies">
+            <div class="hobbies pink">
               <img src="./img/images/education.png" alt="SELF_EDUCATION" />
               <span>Self-study</span>
             </div>
-            <div class="hobbies">
+            <div class="hobbies pink">
               <img src="./img/images/music.png" alt="GYM" />
               <span>Music</span>
             </div>
@@ -225,10 +250,16 @@
               class="show"
               style="background-image: url(./img/certifications/pro_en.png)"
             ></a>
+            <a class="open" href="#Lang_Eugen.png"> Certificate Advance </a>
+            <a
+              href="#"
+              class="show"
+              style="background-image: url(./img/certifications/Lang_Eugen.png)"
+            ></a>
           </section>
         </div>
       </article>
-    </div>
+    </main>
     <script src="./JS/main.js"></script>
   </body>
 </html>

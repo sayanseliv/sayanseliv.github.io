@@ -57,10 +57,12 @@ table {
   --light-blue: #0083da;
   --button-pink: rgb(250, 42, 111);
   --css3: #0277bd;
+  --jira: #2684ff;
+  --aws: #f90;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--black-body);
   color: var(--white);
 }
@@ -382,6 +384,14 @@ header {
   color: var(--white);
 }
 
+.fa-jira {
+  color: var(--jira);
+}
+
+.fa-aws {
+  color: var(--aws);
+}
+
 .arrow {
   position: relative;
   background-color: var(--dark-blue);
@@ -398,7 +408,7 @@ header {
 }
 
 .arrow:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 100%;
   top: -3%;
@@ -495,6 +505,10 @@ header {
 
 .pink {
   background-color: var(--button-pink);
+}
+
+#languages {
+  font-size: large;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

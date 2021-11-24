@@ -8,7 +8,7 @@
   <link rel="shortcut icon" type="image/png" href="./img/favicon/favicon.ico" />
   <link rel="stylesheet" href="style/styles.css" />
   <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-a11y="true"></script>
-  <title>CV_little</title>
+  <title>CV_title</title>
 </head>
 
 <body>
@@ -20,13 +20,13 @@
         <li class="nav__item"><a href="#">Features</a></li>
       </ul>
     </nav>
-    <select name="languages" id="languages" size="1">
+    <select name="languages" id="languages" size="1" onchange="location = this.value;">
       <option selected disabled>Languages</option>
-      <option value="eng">🇬🇧</option>
-      <option value="ua">🇺🇦</option>
-      <option value="ru">🇷🇺</option>
-      <option value="it">🇮🇹</option>
-      <option value="de">🇩🇪</option>
+      <option value="">🇬🇧</option>
+      <option value="localizations/ua.html">🇺🇦</option>
+      <option value="localizations/rus.html">🇷🇺</option>
+      <option value="localizations/it.html">🇮🇹</option>
+      <option value="localizations/de.html">🇩🇪</option>
     </select>
   </header>
   <main class="wrapper">
@@ -48,7 +48,7 @@
         <span>Looking for a job as front-end developer and which will improve my
           front-end skills.</span>
         <h3>profile</h3>
-        <span>I graduated from Front end courses(Basic & PRO).</span>
+        <span>I graduated from Front end courses (Basic, PRO & Advance).</span>
       </section>
 
       <section class="wrapper_l_col_circle_diagramms">

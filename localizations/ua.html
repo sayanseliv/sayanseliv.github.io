@@ -21,7 +21,7 @@
                 <li class="nav__item"><a href="#">Фішки</a></li>
             </ul>
         </nav>
-        <select name="languages" id="languages" size="1" onchange="location = this.value;">
+        <select name="languages" id="languages" size="1" onchange="if (this.value) window.location.href=this.value">
             <option selected disabled>Мови</option>
             <option value="https://sayanseliv.github.io">🇬🇧</option>
             <option value="">🇺🇦</option>

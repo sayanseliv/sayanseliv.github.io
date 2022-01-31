@@ -9,32 +9,34 @@
   <link rel="shortcut icon" type="image/png" href="./img/favicon/favicon.ico" />
   <link rel="stylesheet" href="style/styles.css" />
   <script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-a11y="true"></script>
-  <title>CV_title</title>
+  <title>CV Lang Eugen</title>
 </head>
 
 <body>
   <header class="container">
-    <nav class="nav nav-group">
+    <nav class="nav-group">
       <ul class="nav-group__list">
-        <li class="nav__item"><a href="#">Projects</a></li>
-        <li class="nav__item"><a href="#">Animations</a></li>
-        <li class="nav__item"><a href="#">Features</a></li>
+        <li title="To projects" class="nav-group__item"><a href="#">Projects</a></li>
+        <li title="To animations" class="nav-group__item"><a href="#">Animations</a></li>
+        <li title="To features" class="nav-group__item"><a href="#">Features</a></li>
       </ul>
+
+      <select title="Choose language" name="languages" id="languages" size="1"
+        onchange="if (this.value) location.href=this.value">
+        <option selected disabled>Languages</option>
+        <option value="">🇬🇧</option>
+        <option value="localizations/ua.html">🇺🇦</option>
+        <option value="localizations/rus.html">🇷🇺</option>
+        <option value="localizations/it.html">🇮🇹</option>
+        <option value="localizations/de.html">🇩🇪</option>
+      </select>
     </nav>
-    <select name="languages" id="languages" size="1" onchange="if (this.value) location.href=this.value">
-      <option selected disabled>Languages</option>
-      <option value="">🇬🇧</option>
-      <option value="localizations/ua.html">🇺🇦</option>
-      <option value="localizations/rus.html">🇷🇺</option>
-      <option value="localizations/it.html">🇮🇹</option>
-      <option value="localizations/de.html">🇩🇪</option>
-    </select>
   </header>
   <main class="wrapper">
     <article class="wrapper_l_col">
       <section class="wrapper_l_col_frame">
         <div class="wrapper_l_col_img">
-          <img src="./img/images/cv_photo.jpg" alt="my photo" />
+          <img title="My photo" src="./img/images/cv_photo.jpg" alt="my photo" />
         </div>
       </section>
       <section>

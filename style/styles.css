@@ -131,14 +131,25 @@ header {
   z-index: 25;
 }
 
-.nav__item a {
+.nav-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.nav-group__item a {
   display: block;
   text-align: center;
   padding: 1.2em 16px;
   text-decoration: none;
 }
 
-.nav__item a:hover {
+.nav-group__item a:hover {
   background-color: var(--black);
 }
 
@@ -508,6 +519,7 @@ header {
 }
 
 #languages {
+  margin-left: auto;
   font-size: large;
 }
 

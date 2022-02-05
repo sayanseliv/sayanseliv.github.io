@@ -81,7 +81,7 @@ header {
 	flex-direction: row;
 	width: 100%;
 	&__item {
-		& a {
+		& > a {
 			display: block;
 			text-align: center;
 			padding: 1.2em 16px;
@@ -123,14 +123,14 @@ header {
 			align-items: center;
 		}
 		& > div,
-		span {
+		> span {
 			flex: 1 1 auto;
 			margin: 10px 0;
 		}
 		&_img {
 			text-align: center;
 			margin-bottom: 10%;
-			& img {
+			& > img {
 				height: 200px;
 				border-radius: 100px;
 			}

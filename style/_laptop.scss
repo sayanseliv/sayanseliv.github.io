@@ -1,22 +1,22 @@
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  span {
-    font-size: small;
-  }
-  hr {
-    margin: 10px;
-  }
-  .wrapper_r_col {
-    &_info_year {
-      min-width: 11em;
-    }
-    &_skills {
-      grid-template-columns: repeat(3, 0.3fr 1fr);
-      grid-gap: 0.5vw;
-    }
-    &_hobby {
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: repeat(2,minmax(130.25px, 1fr));
-      grid-gap: 1em;
-    }
-  }
+	span {
+		font-size: small;
+	}
+	hr {
+		margin: 10px 0;
+	}
+	.wrapper_r_col {
+		&_info_year {
+			min-width: 11em;
+		}
+		&_skills {
+			grid-template-columns: repeat(3, 0.3fr 1fr);
+			grid-gap: 0.5vw;
+		}
+		&_hobby {
+			grid-template-rows: 1fr 1fr;
+			grid-template-columns: repeat(2, minmax(130.25px, 1fr));
+			grid-gap: 1em;
+		}
+	}
 }

@@ -131,6 +131,7 @@ header {
 			text-align: center;
 			margin-bottom: 10%;
 			& > img {
+				object-fit: cover;
 				height: 200px;
 				border-radius: 100px;
 			}

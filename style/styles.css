@@ -97,6 +97,11 @@ a,
   color: var(--white);
 }
 
+.prof_about_link {
+  line-height: 2em;
+  text-decoration: none;
+}
+
 li {
   float: left;
 }
@@ -230,6 +235,7 @@ header {
 }
 
 .wrapper_l_col_circle_diagramms {
+  padding-top: 20px;
   display: -ms-grid;
   display: grid;
   width: 100%;
@@ -300,6 +306,7 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .wrapper_r_col_skills {

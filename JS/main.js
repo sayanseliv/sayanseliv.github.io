@@ -1,105 +1,124 @@
-const left = document.querySelector(".wrapper_l_col");
-const right = document.querySelector(".wrapper_r_col");
-const age = document.querySelector(".age");
-const trans = "transparent";
-const white = "white";
+const left = document.querySelector('.wrapper_l_col');
+const right = document.querySelector('.wrapper_r_col');
+const age = document.querySelector('.age');
+const trans = 'transparent';
+const white = 'white';
 age.innerHTML =
-  ((new Date().getTime() - new Date(1985, 03, 27)) /
-    (24 * 3600 * 365.25 * 1000)) |
-  0;
+	((new Date().getTime() - new Date(1985, 03, 27)) /
+		(24 * 3600 * 365.25 * 1000)) |
+	0;
 changeAnimation(left, right);
 
 function changeAnimation(a, b) {
-  if (!a || !b) {
-    return;
-  }
-  let isPlay = true;
-  setTimeout(function tick() {
-    if (isPlay === true) {
-      animationLeft(a);
-      isPlay = false;
-      setTimeout(tick, 3000);
-    } else {
-      animationRight(b);
-      isPlay = true;
-      setTimeout(tick, 3000);
-    }
-  }, 1000);
+	if (!a || !b) {
+		return;
+	}
+	let isPlay = true;
+	setTimeout(function tick() {
+		if (isPlay === true) {
+			animationLeft(a);
+			isPlay = false;
+			setTimeout(tick, 3000);
+		} else {
+			animationRight(b);
+			isPlay = true;
+			setTimeout(tick, 3000);
+		}
+	}, 1000);
 }
 
 function animationLeft(el) {
-  if (window.innerWidth < 768) return;
-  el.animate(
-    [
-      // keyframes
-      {
-        borderTopColor: white,
-        borderRightColor: trans,
-        borderBottomColor: trans,
-        borderLeftColor: trans,
-      },
-      {
-        borderTopColor: trans,
-        borderLeftColor: white,
-        borderBottomColor: trans,
-        borderRightColor: trans,
-      },
-      {
-        borderTopColor: trans,
-        borderRightColor: trans,
-        borderBottomColor: white,
-        borderLeftColor: trans,
-      },
-    ],
-    {
-      // timing options
-      duration: 3000,
-      iterations: 1,
-      easing: "cubic-bezier(0.12, 0, 0.39, 0)",
-    }
-  );
+	if (window.innerWidth < 768) return;
+	el.animate(
+		[
+			// keyframes
+			{
+				borderTopColor: white,
+				borderRightColor: trans,
+				borderBottomColor: trans,
+				borderLeftColor: trans,
+			},
+			{
+				borderTopColor: trans,
+				borderLeftColor: white,
+				borderBottomColor: trans,
+				borderRightColor: trans,
+			},
+			{
+				borderTopColor: trans,
+				borderRightColor: trans,
+				borderBottomColor: white,
+				borderLeftColor: trans,
+			},
+		],
+		{
+			// timing options
+			duration: 3000,
+			iterations: 1,
+			easing: 'cubic-bezier(0.12, 0, 0.39, 0)',
+		}
+	);
 }
 
 function animationRight(el) {
-  if (window.innerWidth < 768) return;
-  el.animate(
-    [
-      // keyframes
-      {
-        borderTopColor: trans,
-        borderRightColor: trans,
-        borderBottomColor: white,
-        borderLeftColor: trans,
-      },
-      {
-        borderTopColor: trans,
-        borderBottomColor: trans,
-        borderLeftColor: trans,
-        borderRightColor: white,
-      },
-      {
-        borderBottomColor: trans,
-        borderTopColor: white,
-        borderRightColor: trans,
-        borderLeftColor: trans,
-      },
-    ],
-    {
-      // timing options
-      duration: 3000,
-      iterations: 1,
-      easing: "linear",
-    }
-  );
+	if (window.innerWidth < 768) return;
+	el.animate(
+		[
+			// keyframes
+			{
+				borderTopColor: trans,
+				borderRightColor: trans,
+				borderBottomColor: white,
+				borderLeftColor: trans,
+			},
+			{
+				borderTopColor: trans,
+				borderBottomColor: trans,
+				borderLeftColor: trans,
+				borderRightColor: white,
+			},
+			{
+				borderBottomColor: trans,
+				borderTopColor: white,
+				borderRightColor: trans,
+				borderLeftColor: trans,
+			},
+		],
+		{
+			// timing options
+			duration: 3000,
+			iterations: 1,
+			easing: 'linear',
+		}
+	);
 }
 
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
-  let currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.querySelector("header").style.top = "0";
-  } else {
-    document.querySelector("header").style.top = "-5em";
-  }
-  prevScrollpos = currentScrollPos;
+	let currentScrollPos = window.pageYOffset;
+	if (prevScrollpos > currentScrollPos) {
+		document.querySelector('header').style.top = '0';
+	} else {
+		document.querySelector('header').style.top = '-5em';
+	}
+	prevScrollpos = currentScrollPos;
 };
+var f = document.title;
+var u = window.location.pathname.replace(/.*gh-pages-no-extension\//, '');
+var au = document.querySelector("a[href='" + u + "']");
+var af = document.querySelector("a[href='" + f + "']");
+au.className += ' tu';
+af.className += ' tf';
+au.parentNode.previousElementSibling.className += ' a';
+af.parentNode.nextElementSibling.className += ' a';
+var p = window.location.protocol;
+var m = document.getElementById('message');
+if (p == 'http:') {
+	m.className += ' warn';
+	m.innerHTML =
+		'<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> INSECURE CONNECTION';
+}
+if (p == 'https:') {
+	m.className += ' ok';
+	m.innerHTML = '<i class="fa fa-lock" aria-hidden="true"></i> HTTPS';
+}

@@ -483,7 +483,7 @@ header {
           justify-content: space-evenly;
   margin: 0 10px;
   border-radius: 20px;
-  font-size: large;
+  font-size: medium;
 }
 
 .hobbies:hover {
@@ -609,6 +609,9 @@ header {
     -ms-grid-columns: (minmax(130.25px, 1fr))[2];
         grid-template-columns: repeat(2, minmax(130.25px, 1fr));
     grid-gap: 1em;
+  }
+  .hobbies {
+    font-size: small;
   }
   .prof_about {
     margin: 1em 0;
@@ -760,6 +763,9 @@ header {
   }
   .arrow:before {
     display: none;
+  }
+  .hobbies {
+    font-size: small;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -47,8 +47,8 @@ table {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("fonts/icomoon.eot?6shyaz");
-  src: url("fonts/icomoon.eot?6shyaz#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?6shyaz") format("truetype"), url("fonts/icomoon.woff?6shyaz") format("woff"), url("fonts/icomoon.svg?6shyaz#icomoon") format("svg");
+  src: url("fonts/icomoon.eot");
+  src: url("fonts/icomoon.eot") format("embedded-opentype"), url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.svg") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;

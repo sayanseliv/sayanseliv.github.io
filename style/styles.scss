@@ -1,5 +1,6 @@
 @import './reset';
 @import './core';
+@import '../img/icomoon/style.css';
 
 :root {
 	--black-body: #161313;
@@ -12,7 +13,6 @@
 	--dark-blue: rgb(60, 63, 99);
 	--light-blue: #0083da;
 	--button-pink: rgb(250, 42, 111);
-	--css3: #0277bd;
 	--jira: #2684ff;
 	--aws: #f90;
 }
@@ -196,6 +196,9 @@ header {
 		&_links {
 			display: flex;
 			justify-content: space-between;
+			& > a {
+				text-decoration: none;
+			}
 		}
 		&_certificate {
 			display: flex;
@@ -213,44 +216,24 @@ header {
 	border-radius: 25px;
 }
 .play {
+	font-size: 32px;
 	@include rotate;
 }
-.fa-bootstrap {
-	color: #673ab7;
-}
-.fa-vuejs {
-	color: #81c784;
-}
-.fa-html5 {
+
+.icon-html-five {
 	color: #e65100;
 }
-.fa-css3-alt {
-	color: var(--css3);
-}
-.fa-react {
-	color: #61dbfb;
-}
-.fa-sass {
-	color: #f06292;
-}
-.fa-node {
-	color: #388e3c;
-}
-.fa-js {
-	color: #f0db4f;
-}
-.fa-npm {
-	color: #d50000;
-}
+
 .fa-github {
 	color: var(--white);
 }
-.fa-jira {
+.icon-jira {
 	color: var(--jira);
 }
-.fa-aws {
+.icon-amazonaws {
 	color: var(--aws);
 }
+
 .arrow {
 	position: relative;
 	background-color: var(--dark-blue);
@@ -325,6 +308,7 @@ header {
 	}
 }
 .linksStyle {
+	font-size: 32px;
 	margin-right: 10px;
 	color: #0277bd;
 }

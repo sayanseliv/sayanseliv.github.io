@@ -1,3 +1,4 @@
+@import url(/Users/eugen/Desktop/Projects/sayanseliv.github.io/img/icomoon/style.css);
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
@@ -56,7 +57,6 @@ table {
   --dark-blue: rgb(60, 63, 99);
   --light-blue: #0083da;
   --button-pink: rgb(250, 42, 111);
-  --css3: #0277bd;
   --jira: #2684ff;
   --aws: #f90;
 }
@@ -338,6 +338,10 @@ header {
           justify-content: space-between;
 }
 
+.wrapper_r_col_links > a {
+  text-decoration: none;
+}
+
 .wrapper_r_col_certificate {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -358,6 +362,7 @@ header {
 }
 
 .play {
+  font-size: 32px;
   -webkit-transition: all ease 0.5s;
   transition: all ease 0.5s;
   -webkit-transform: rotateX(-30deg);
@@ -369,51 +374,19 @@ header {
           transform: rotateX(-30deg) translateY(-5px);
 }
 
-.fa-bootstrap {
-  color: #673ab7;
-}
-
-.fa-vuejs {
-  color: #81c784;
-}
-
-.fa-html5 {
+.icon-html-five {
   color: #e65100;
-}
-
-.fa-css3-alt {
-  color: var(--css3);
-}
-
-.fa-react {
-  color: #61dbfb;
-}
-
-.fa-sass {
-  color: #f06292;
-}
-
-.fa-node {
-  color: #388e3c;
-}
-
-.fa-js {
-  color: #f0db4f;
-}
-
-.fa-npm {
-  color: #d50000;
 }
 
 .fa-github {
   color: var(--white);
 }
 
-.fa-jira {
+.icon-jira {
   color: var(--jira);
 }
 
-.fa-aws {
+.icon-amazonaws {
   color: var(--aws);
 }
 
@@ -509,6 +482,7 @@ header {
 }
 
 .linksStyle {
+  font-size: 32px;
   margin-right: 10px;
   color: #0277bd;
 }

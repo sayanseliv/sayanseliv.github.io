@@ -136,6 +136,11 @@ header {
   z-index: 25;
 }
 
+.title {
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
 .nav-group {
   display: -webkit-box;
   display: -ms-flexbox;

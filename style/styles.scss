@@ -29,6 +29,7 @@ h1 {
 	margin: 10px 0;
 	text-transform: uppercase;
 }
+
 h3 {
 	margin: 10px 0;
 	text-transform: uppercase;
@@ -78,6 +79,10 @@ header {
 	background: var(--black);
 	width: 100%;
 	z-index: 25;
+}
+.title {
+	margin: 10px 0;
+	text-transform: uppercase;
 }
 
 .nav-group {

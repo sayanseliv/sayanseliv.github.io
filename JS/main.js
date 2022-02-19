@@ -105,10 +105,16 @@ window.onscroll = function () {
 		if (innerWidth <= 410) {
 			hamburger.style.display = 'block';
 			menu.style.display = 'block';
+		} else {
+			hamburger.style.display = 'none';
+			menu.style.display = 'none';
 		}
 	} else {
 		header.style.top = '-5em';
 		if (innerWidth <= 410) {
+			hamburger.style.display = 'none';
+			menu.style.display = 'none';
+		} else {
 			hamburger.style.display = 'none';
 			menu.style.display = 'none';
 		}

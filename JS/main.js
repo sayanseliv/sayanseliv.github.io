@@ -95,6 +95,15 @@ function animationRight(el) {
 		}
 	);
 }
+const resize = ({ target }) => {
+	if (target.innerWidth > 410) {
+		hamburger.style.display = 'none';
+		menu.style.display = 'none';
+	} else {
+		hamburger.style.display = 'block';
+		menu.style.display = 'block';
+	}
+};
 
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
@@ -105,19 +114,14 @@ window.onscroll = function () {
 		if (innerWidth <= 410) {
 			hamburger.style.display = 'block';
 			menu.style.display = 'block';
-		} else {
-			hamburger.style.display = 'none';
-			menu.style.display = 'none';
 		}
 	} else {
 		header.style.top = '-5em';
 		if (innerWidth <= 410) {
 			hamburger.style.display = 'none';
 			menu.style.display = 'none';
-		} else {
-			hamburger.style.display = 'none';
-			menu.style.display = 'none';
 		}
 	}
 	prevScrollpos = currentScrollPos;
 };
+window.addEventListener('resize', resize, true);

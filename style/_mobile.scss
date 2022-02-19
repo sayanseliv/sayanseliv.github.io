@@ -39,6 +39,14 @@
 				& > a {
 					display: block;
 					text-align: left;
+					padding: 10px;
+				}
+			}
+			&_certificate {
+				display: flex;
+				flex-direction: column;
+				& > a {
+					padding-bottom: 8px;
 				}
 			}
 		}

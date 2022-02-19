@@ -34,7 +34,23 @@
 				grid-template-columns: minmax(130.25px, 1fr);
 				grid-gap: 1em;
 			}
+			&_links {
+				display: block;
+				& > a {
+					display: block;
+					text-align: left;
+				}
+			}
 		}
+	}
+	.nav-group__list {
+		display: none;
+	}
+	.hamburger-menu {
+		display: block;
+	}
+	.linksStyle {
+		margin-right: 5px;
 	}
 	.prof_about {
 		margin: 1em 0;

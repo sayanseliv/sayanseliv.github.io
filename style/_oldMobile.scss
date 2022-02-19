@@ -45,6 +45,13 @@
 				grid-template-columns: minmax(130.25px, 1fr);
 				grid-gap: 1em;
 			}
+			&_links {
+				display: block;
+				& > a {
+					display: block;
+					text-align: left;
+				}
+			}
 		}
 	}
 	.circle {
@@ -56,6 +63,12 @@
 		& > span {
 			font-size: small;
 		}
+	}
+	.nav-group__list {
+		display: none;
+	}
+	.hamburger-menu {
+		display: block;
 	}
 	.prof_name {
 		padding-top: 10px;

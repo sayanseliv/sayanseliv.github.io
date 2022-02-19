@@ -71,12 +71,22 @@
 <body>
   <header class="container">
     <nav class="nav-group">
+      <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+          <span></span>
+        </label>
+        <ul class="menu__box">
+          <li><a class="menu__item" href="#">Projects</a></li>
+          <li><a class="menu__item" href="#">Animations</a></li>
+          <li><a class="menu__item" href="#">Features</a></li>
+        </ul>
+      </div>
       <ul class="nav-group__list">
         <li title="To projects" class="nav-group__item"><a href="#">Projects</a></li>
         <li title="To animations" class="nav-group__item"><a href="#">Animations</a></li>
         <li title="To features" class="nav-group__item"><a href="#">Features</a></li>
       </ul>
-
       <select title="Choose language" name="languages" id="languages" size="1"
         onchange="if (this.value) location.href=this.value">
         <option selected disabled>Languages</option>
@@ -264,13 +274,13 @@
         <h2 class="title">links</h2>
         <nav class="wrapper_r_col_links">
           <a href="https://www.linkedin.com/in/eugen-lang-18475b143/" target="_blank">
-            <span class="icon-linkedin linksStyle"></span>Linkedin</a>
+            <span class="icon-linkedin linksStyle"></span> <span>Linkedin</span> </a>
           <a href="https://www.facebook.com/Evgeniy.Lang.Sayan/" target="_blank">
             <span class="icon-facebook2 linksStyle"></span>
-            Facebook
+            <span>Facebook</span>
           </a>
           <a href="https://github.com/sayanseliv/Aufgaben" target="_blank"><span
-              class="icon-github linksStyle"></span>Github</a>
+              class="icon-github linksStyle"></span><span>Github</span></a>
         </nav>
         <hr />
         <h2 class="title">Certificate</h2>
@@ -285,7 +295,7 @@
       </div>
     </article>
   </main>
-  <script src="./JS/main.js"></script>
+  <script src="/JS/main.js"></script>
 </body>
 
 </html>

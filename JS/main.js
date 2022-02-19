@@ -1,6 +1,9 @@
 const left = document.querySelector('.wrapper_l_col');
 const right = document.querySelector('.wrapper_r_col');
 const age = document.querySelector('.age');
+const hamburger = document.querySelector('.hamburger-menu');
+const header = document.querySelector('header');
+const menu = document.querySelector('.menu__box');
 const trans = 'transparent';
 const white = 'white';
 age.innerHTML =
@@ -95,11 +98,20 @@ function animationRight(el) {
 
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
+	let innerWidth = window.innerWidth;
 	let currentScrollPos = window.pageYOffset;
 	if (prevScrollpos > currentScrollPos) {
-		document.querySelector('header').style.top = '0';
+		header.style.top = '0';
+		if (innerWidth <= 410) {
+			hamburger.style.display = 'block';
+			menu.style.display = 'block';
+		}
 	} else {
-		document.querySelector('header').style.top = '-5em';
+		header.style.top = '-5em';
+		if (innerWidth <= 410) {
+			hamburger.style.display = 'none';
+			menu.style.display = 'none';
+		}
 	}
 	prevScrollpos = currentScrollPos;
 };

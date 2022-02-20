@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://sayanseliv.github.io/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sayanseliv.github.io/localizations/de" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sayanseliv.github.io/localizations/uk" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sayanseliv.github.io/localizations/ru" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://sayanseliv.github.io/localizations/it" />
+    <lastmod>2022-02-20</lastmod>
+  </url>
+  <url>
+    <loc>https://sayanseliv.github.io/localizations/uk</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sayanseliv.github.io/localizations/de" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sayanseliv.github.io/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sayanseliv.github.io/localizations/ru" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://sayanseliv.github.io/localizations/it" />
+    <lastmod>2022-02-20</lastmod>
+  </url>
+  <url>
+    <loc>https://sayanseliv.github.io/localizations/ru</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sayanseliv.github.io/localizations/de" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sayanseliv.github.io/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sayanseliv.github.io/localizations/uk" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://sayanseliv.github.io/localizations/it" />
+    <lastmod>2022-02-20</lastmod>
+  </url>
+  <url>
+    <loc>https://sayanseliv.github.io/localizations/it</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://sayanseliv.github.io/localizations/de" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sayanseliv.github.io/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sayanseliv.github.io/localizations/uk" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sayanseliv.github.io/localizations/ru" />
+    <lastmod>2022-02-20</lastmod>
+  </url>
+  <url>
+    <loc>https://sayanseliv.github.io/localizations/de</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://sayanseliv.github.io/localizations/it.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://sayanseliv.github.io/" />
+    <xhtml:link rel="alternate" hreflang="uk" href="https://sayanseliv.github.io/localizations/uk.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://sayanseliv.github.io/localizations/ru.html" />
+    <lastmod>2022-02-20</lastmod>
+  </url>
+</urlset>

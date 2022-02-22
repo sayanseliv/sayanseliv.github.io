@@ -179,7 +179,7 @@ hr {
 
 span {
   font-size: medium;
-  color: var(grey-span);
+  color: var(--grey-span);
   line-height: 2em;
 }
 

@@ -1,0 +1,215 @@
+/* VARIABLES */
+:root {
+	/* color */
+	color-scheme: only light;
+	--white: #fff;
+	--black: #000;
+	--success: #14cf31;
+	--brand-25: #f5f8ff;
+	--brand-50: #eff4ff;
+	--brand-100: #d1e0ff;
+	--brand-200: #b2ccff;
+	--brand-300: #84adff;
+	--brand-400: #528bff;
+	--brand-500: #2970ff;
+	--brand-600: #155eef;
+	--brand-700-main: #1033ff;
+	--brand-800: #00359e;
+	--brand-900: #026;
+	--brand-20025: rgba(178, 204, 255, 0.25);
+	--error: #ff3f32;
+	--Gray-25: #fcfcfd;
+	--Gray-50: #f9fafb;
+	--Gray-100: #f2f4f7;
+	--Gray-200: #eaecf0;
+	--Gray-300: #d0d5dd;
+	--Gray-400: #98a2b3;
+	--Gray-500: #667085;
+	--Gray-600: #475467;
+	--Gray-700: #344054;
+	--Gray-800: #1d2939;
+	--Gray-900: #101828;
+	/* font-weight */
+	--fw-bold: 700;
+	--fw-semibold: 600;
+	--fw-medium: 500;
+	--fw-regular: 400;
+	/* font-style */
+	--fs-2xl: 88px;
+	--fs-2xl: 73px;
+	--fs-xl: 61px;
+	--fs-lg: 51px;
+	--fs-md: 42px;
+	--fs-sm: 35px;
+	--fs-xs: 29px;
+	--fs-2xs: 24px;
+	--fs-xl: 20px;
+	--fs-text-lg: 17px;
+	--fs-md: 14px;
+	--fs-s: 12px;
+	/* line-height */
+	--lh-3xl: 96.8px;
+	--lh-2xl: 87.6px;
+	--lh-xl: 73.2px;
+	--lh-lg: 61.2px;
+	--lh-reg-md: 58.8px;
+	--lh-md: 50.4px;
+	--lh-sm: 49px;
+	--lh-semi-sm: 42px;
+	--lh-reg-xs: 40.6px;
+	--lh-xs: 34.8px;
+	--lh-2xs: 28.8px;
+	--lh-reg-xl: 28px;
+	--lh-xl: 24px;
+	--lh-reg-lg: 23.8px;
+	--lh-text-lg: 20.4px;
+	--lh-reg-md: 19.6px;
+	--lh-md: 16.8px;
+	--lh-s: 14.4px;
+	--lh-normal: normal;
+	/* letter-spacing */
+	--ls-normal: normal;
+	--ls-3xl: -1.76px;
+	--ls-2xl: -1.46px;
+	--ls-xl: -1.22px;
+	--ls-lg: -1.02px;
+	--ls-md: -0.84px;
+}
+body,
+button,
+input {
+	font-family: 'Nunito Sans 10pt', sans-serif;
+	color: var(--black);
+	font-size: var(--fs-text-lg);
+	font-weight: var(--fw-regular);
+	line-height: var(--lh-reg-lg);
+}
+.overflow-hidden {
+	overflow: hidden;
+}
+.container-1440 {
+	max-width: 1440px;
+	padding: 0 70px;
+	margin: 0 auto;
+	@include media(1024px) {
+		padding: 0 32px;
+	}
+	@include media(768px) {
+		padding: 0 24px;
+	}
+	@include media(640px) {
+		padding: 0 16px;
+	}
+}
+/* COOKIE */
+.cookie-logistics {
+	display: flex;
+	column-gap: 12px;
+	align-items: center;
+}
+.cookieControl__Bar--bottom-full,
+.cookieControl__Modal-enter-active,
+.cookieControl__Modal-leave-active {
+	transition: opacity 0s !important;
+}
+.cookie__symbol {
+	margin: 0 !important;
+	flex-shrink: 0;
+}
+.cookieControl__Bar {
+	border-radius: 12px;
+	border: 1px solid var(--Gray-300, #d0d5dd);
+	background: rgba(255, 255, 255, 0.87) !important;
+	backdrop-filter: blur(20px);
+}
+.cookie__text {
+	color: var(--Gray-800);
+	margin: 0 !important;
+	font-size: 14px !important;
+	line-height: 19.6px;
+}
+.cookieControl__Bar--bottom-full {
+	font-family: 'Nunito Sans 10pt', sans-serif !important;
+	bottom: 40px !important;
+	left: 50% !important;
+	width: 100%;
+	max-width: 763px;
+	transform: translateX(-50%);
+	color: var(--Gray-800) !important;
+}
+
+.cookieControl__BarContainer {
+	padding: 16px !important;
+	align-items: center !important;
+}
+
+.cookieControl__Bar button:nth-child(3) {
+	display: none !important;
+}
+
+.cookieControl__BarButtons button {
+	margin-left: 8px !important;
+}
+.cookieControl button {
+	padding: 0 !important;
+	border: 1px solid var(--black) !important;
+	border-radius: 100px;
+	font-weight: 600;
+	font-size: 14px !important;
+	line-height: 14px !important;
+	height: 32px !important;
+	width: 99px !important;
+}
+.cookieControl__BarButtons {
+	flex-direction: row-reverse !important;
+}
+.cookieControl__Bar button:nth-child(1) {
+	&:hover {
+		color: var(--white) !important;
+		background-color: var(--black) !important;
+		border: 1px solid var(--black) !important;
+	}
+}
+.cookieControl__Bar button {
+	border: 1px solid var(--brand-700-main) !important;
+	color: var(--white) !important;
+	background: var(--brand-700-main) !important;
+}
+.cookieControl__BarButtons button + button {
+	background: transparent !important;
+	border: 1px solid var(--black) !important;
+	color: var(--black) !important;
+	&:hover {
+		color: var(--white) !important;
+		background-color: var(--black) !important;
+	}
+}
+@media (max-width: 768px) {
+	.cookieControl__BarButtons {
+		margin-top: 0 !important;
+	}
+	.cookieControl__BarButtons button + button {
+		margin: 0 !important;
+	}
+	.cookieControl__BarButtons button {
+		width: 114.5px !important;
+		height: 35px !important;
+	}
+
+	.cookieControl__BarContainer {
+		flex-direction: row !important;
+		flex-wrap: wrap;
+		justify-content: center !important;
+		align-items: center !important;
+		padding: 16px 24px !important;
+		gap: 16px !important;
+	}
+
+	.cookieControl__Bar--bottom-full {
+		bottom: 16px !important;
+		max-width: calc(100% - 32px);
+	}
+	.cookie__symbol {
+		margin: auto !important;
+	}
+}

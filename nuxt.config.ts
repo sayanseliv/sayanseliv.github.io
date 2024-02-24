@@ -2,6 +2,7 @@
 const BASE_URL = 'https://sayanseliv.github.io/';
 export default defineNuxtConfig({
 	devtools: { enabled: true },
+	ssr: false,
 	components: [
 		{
 			path: '~/components',

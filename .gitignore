@@ -2,7 +2,6 @@
 node_modules/
 .output/
 .nuxt
-dist
 # Yarn
 yarn-error.log
 .yarn-integrity

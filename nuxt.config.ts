@@ -93,6 +93,12 @@ export default defineNuxtConfig({
 				// },
 			],
 			link: [
+				{ rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+				{ rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+				{
+					rel: 'stylesheet',
+					href: 'https://fonts.googleapis.com/css2?family=Barlow&family=Roboto:wght@400;500;700&display=swap',
+				},
 				{ rel: 'canonical', href: BASE_URL + '/' },
 				{
 					rel: 'icon',

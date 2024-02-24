@@ -2,33 +2,18 @@
 :root {
 	/* color */
 	color-scheme: only light;
-	--white: #fff;
-	--black: #000;
-	--success: #14cf31;
-	--brand-25: #f5f8ff;
-	--brand-50: #eff4ff;
-	--brand-100: #d1e0ff;
-	--brand-200: #b2ccff;
-	--brand-300: #84adff;
-	--brand-400: #528bff;
-	--brand-500: #2970ff;
-	--brand-600: #155eef;
-	--brand-700-main: #1033ff;
-	--brand-800: #00359e;
-	--brand-900: #026;
-	--brand-20025: rgba(178, 204, 255, 0.25);
-	--error: #ff3f32;
-	--Gray-25: #fcfcfd;
-	--Gray-50: #f9fafb;
-	--Gray-100: #f2f4f7;
-	--Gray-200: #eaecf0;
-	--Gray-300: #d0d5dd;
-	--Gray-400: #98a2b3;
-	--Gray-500: #667085;
-	--Gray-600: #475467;
-	--Gray-700: #344054;
-	--Gray-800: #1d2939;
-	--Gray-900: #101828;
+	--black-body: #161313;
+	--black: #151515;
+	--white: white;
+	--grey-hr: rgba(253, 253, 253, 0.5);
+	--grey-span: rgba(253, 253, 253, 0.7);
+	--dark-grey: #333;
+	--grey-blue: rgb(47, 49, 77);
+	--dark-blue: rgb(60, 63, 99);
+	--light-blue: #0083da;
+	--button-pink: rgb(250, 42, 111);
+	--jira: #2684ff;
+	--aws: #f90;
 	/* font-weight */
 	--fw-bold: 700;
 	--fw-semibold: 600;
@@ -47,42 +32,16 @@
 	--fs-text-lg: 17px;
 	--fs-md: 14px;
 	--fs-s: 12px;
-	/* line-height */
-	--lh-3xl: 96.8px;
-	--lh-2xl: 87.6px;
-	--lh-xl: 73.2px;
-	--lh-lg: 61.2px;
-	--lh-reg-md: 58.8px;
-	--lh-md: 50.4px;
-	--lh-sm: 49px;
-	--lh-semi-sm: 42px;
-	--lh-reg-xs: 40.6px;
-	--lh-xs: 34.8px;
-	--lh-2xs: 28.8px;
-	--lh-reg-xl: 28px;
-	--lh-xl: 24px;
-	--lh-reg-lg: 23.8px;
-	--lh-text-lg: 20.4px;
-	--lh-reg-md: 19.6px;
-	--lh-md: 16.8px;
-	--lh-s: 14.4px;
-	--lh-normal: normal;
-	/* letter-spacing */
-	--ls-normal: normal;
-	--ls-3xl: -1.76px;
-	--ls-2xl: -1.46px;
-	--ls-xl: -1.22px;
-	--ls-lg: -1.02px;
-	--ls-md: -0.84px;
 }
+
 body,
 button,
 input {
-	font-family: 'Nunito Sans 10pt', sans-serif;
-	color: var(--black);
+	font-family: 'Roboto', sans-serif;
+	background-color: var(--black-body);
+	color: var(--white);
 	font-size: var(--fs-text-lg);
 	font-weight: var(--fw-regular);
-	line-height: var(--lh-reg-lg);
 }
 .overflow-hidden {
 	overflow: hidden;

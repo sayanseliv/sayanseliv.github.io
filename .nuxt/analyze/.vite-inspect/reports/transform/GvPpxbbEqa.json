@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/Users/eugen/Desktop/Projects/sayanseliv.github.io/components/UI/Header.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n\t<header class=\"header\">\n\t\t<nav class=\"nav-group\">\n\t\t\t<div class=\"hamburger-menu\">\n\t\t\t\t<input id=\"menu__toggle\" type=\"checkbox\" />\n\t\t\t\t<label class=\"menu__btn\" for=\"menu__toggle\">\n\t\t\t\t\t<span></span>\n\t\t\t\t</label>\n\t\t\t\t<ul class=\"menu__box\">\n\t\t\t\t\t<li><a class=\"menu__item\" href=\"#\">Projects</a></li>\n\t\t\t\t\t<li><a class=\"menu__item\" href=\"#\">Animations</a></li>\n\t\t\t\t\t<li><a class=\"menu__item\" href=\"#\">Features</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<ul class=\"nav-group__list\">\n\t\t\t\t<li title=\"To projects\" class=\"nav-group__item\"><a href=\"#\">Projects</a></li>\n\t\t\t\t<li title=\"To animations\" class=\"nav-group__item\"><a href=\"#\">Animations</a></li>\n\t\t\t\t<li title=\"To features\" class=\"nav-group__item\"><a href=\"#\">Features</a></li>\n\t\t\t</ul>\n\t\t\t<select\n\t\t\t\ttitle=\"Choose language\"\n\t\t\t\tname=\"languages\"\n\t\t\t\tid=\"languages\"\n\t\t\t\tsize=\"1\"\n\t\t\t\tonchange=\"if (this.value) location.href=this.value\">\n\t\t\t\t<option selected disabled>Languages</option>\n\t\t\t\t<option value=\"\">🇬🇧</option>\n\t\t\t\t<option value=\"localizations/uk\">🇺🇦</option>\n\t\t\t\t<option value=\"localizations/ru\">🇷🇺</option>\n\t\t\t\t<option value=\"localizations/it\">🇮🇹</option>\n\t\t\t\t<option value=\"localizations/de\">🇩🇪</option>\n\t\t\t</select>\n\t\t</nav>\n\t</header>\n</template>\n\n<script>\nexport default {\n\tname: 'Header',\n};\n</script>\n\n<style></style>\n",
+      "start": 1708817605953,
+      "end": 1708817606112,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708817606112,
+      "end": 1708817606112,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708817606112,
+      "end": 1708817606112,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708817606112,
+      "end": 1708817606112,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1708817606112,
+      "end": 1708817606112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708817606112,
+      "end": 1708817606112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708817606112,
+      "end": 1708817606112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708817606112,
+      "end": 1708817606112,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "\nconst _sfc_main = {\n\tname: 'Header',\n};\n\nimport { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"header\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"nav\", { class: \"nav-group\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"hamburger-menu\" }, [\n    /*#__PURE__*/_createElementVNode(\"input\", {\n      id: \"menu__toggle\",\n      type: \"checkbox\"\n    }),\n    /*#__PURE__*/_createElementVNode(\"label\", {\n      class: \"menu__btn\",\n      for: \"menu__toggle\"\n    }, [\n      /*#__PURE__*/_createElementVNode(\"span\")\n    ]),\n    /*#__PURE__*/_createElementVNode(\"ul\", { class: \"menu__box\" }, [\n      /*#__PURE__*/_createElementVNode(\"li\", null, [\n        /*#__PURE__*/_createElementVNode(\"a\", {\n          class: \"menu__item\",\n          href: \"#\"\n        }, \"Projects\")\n      ]),\n      /*#__PURE__*/_createElementVNode(\"li\", null, [\n        /*#__PURE__*/_createElementVNode(\"a\", {\n          class: \"menu__item\",\n          href: \"#\"\n        }, \"Animations\")\n      ]),\n      /*#__PURE__*/_createElementVNode(\"li\", null, [\n        /*#__PURE__*/_createElementVNode(\"a\", {\n          class: \"menu__item\",\n          href: \"#\"\n        }, \"Features\")\n      ])\n    ])\n  ]),\n  /*#__PURE__*/_createElementVNode(\"ul\", { class: \"nav-group__list\" }, [\n    /*#__PURE__*/_createElementVNode(\"li\", {\n      title: \"To projects\",\n      class: \"nav-group__item\"\n    }, [\n      /*#__PURE__*/_createElementVNode(\"a\", { href: \"#\" }, \"Projects\")\n    ]),\n    /*#__PURE__*/_createElementVNode(\"li\", {\n      title: \"To animations\",\n      class: \"nav-group__item\"\n    }, [\n      /*#__PURE__*/_createElementVNode(\"a\", { href: \"#\" }, \"Animations\")\n    ]),\n    /*#__PURE__*/_createElementVNode(\"li\", {\n      title: \"To features\",\n      class: \"nav-group__item\"\n    }, [\n      /*#__PURE__*/_createElementVNode(\"a\", { href: \"#\" }, \"Features\")\n    ])\n  ]),\n  /*#__PURE__*/_createElementVNode(\"select\", {\n    title: \"Choose language\",\n    name: \"languages\",\n    id: \"languages\",\n    size: \"1\",\n    onchange: \"if (this.value) location.href=this.value\"\n  }, [\n    /*#__PURE__*/_createElementVNode(\"option\", {\n      selected: \"\",\n      disabled: \"\"\n    }, \"Languages\"),\n    /*#__PURE__*/_createElementVNode(\"option\", { value: \"\" }, \"🇬🇧\"),\n    /*#__PURE__*/_createElementVNode(\"option\", { value: \"localizations/uk\" }, \"🇺🇦\"),\n    /*#__PURE__*/_createElementVNode(\"option\", { value: \"localizations/ru\" }, \"🇷🇺\"),\n    /*#__PURE__*/_createElementVNode(\"option\", { value: \"localizations/it\" }, \"🇮🇹\"),\n    /*#__PURE__*/_createElementVNode(\"option\", { value: \"localizations/de\" }, \"🇩🇪\")\n  ])\n], -1)\nconst _hoisted_3 = [\n  _hoisted_2\n]\n\nfunction _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {\n  return (_openBlock(), _createElementBlock(\"header\", _hoisted_1, _hoisted_3))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1708817606112,
+      "end": 1708817606114,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708817606115,
+      "end": 1708817606115,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708817606115,
+      "end": 1708817606116,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708817606116,
+      "end": 1708817606116,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708817606116,
+      "end": 1708817606116,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1708817606116,
+      "end": 1708817606116,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1708817606116,
+      "end": 1708817606116,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708817606116,
+      "end": 1708817606116,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708817606116,
+      "end": 1708817606116,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708817606116,
+      "end": 1708817606116,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708817606116,
+      "end": 1708817606116,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "resolvedId": "/Users/eugen/Desktop/Projects/sayanseliv.github.io/components/UI/Header.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n\t<header class=\"header\">\n\t\t<nav class=\"nav-group\">\n\t\t\t<div class=\"hamburger-menu\">\n\t\t\t\t<input id=\"menu__toggle\" type=\"checkbox\" />\n\t\t\t\t<label class=\"menu__btn\" for=\"menu__toggle\">\n\t\t\t\t\t<span></span>\n\t\t\t\t</label>\n\t\t\t\t<ul class=\"menu__box\">\n\t\t\t\t\t<li><a class=\"menu__item\" href=\"#\">Projects</a></li>\n\t\t\t\t\t<li><a class=\"menu__item\" href=\"#\">Animations</a></li>\n\t\t\t\t\t<li><a class=\"menu__item\" href=\"#\">Features</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<ul class=\"nav-group__list\">\n\t\t\t\t<li title=\"To projects\" class=\"nav-group__item\"><a href=\"#\">Projects</a></li>\n\t\t\t\t<li title=\"To animations\" class=\"nav-group__item\"><a href=\"#\">Animations</a></li>\n\t\t\t\t<li title=\"To features\" class=\"nav-group__item\"><a href=\"#\">Features</a></li>\n\t\t\t</ul>\n\t\t\t<select\n\t\t\t\ttitle=\"Choose language\"\n\t\t\t\tname=\"languages\"\n\t\t\t\tid=\"languages\"\n\t\t\t\tsize=\"1\"\n\t\t\t\tonchange=\"if (this.value) location.href=this.value\">\n\t\t\t\t<option selected disabled>Languages</option>\n\t\t\t\t<option value=\"\">🇬🇧</option>\n\t\t\t\t<option value=\"localizations/uk\">🇺🇦</option>\n\t\t\t\t<option value=\"localizations/ru\">🇷🇺</option>\n\t\t\t\t<option value=\"localizations/it\">🇮🇹</option>\n\t\t\t\t<option value=\"localizations/de\">🇩🇪</option>\n\t\t\t</select>\n\t\t</nav>\n\t</header>\n</template>\n\n<script>\nexport default {\n\tname: 'Header',\n};\n</script>\n\n<style></style>\n",
+      "start": 1708817607786,
+      "end": 1708817607803,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708817607803,
+      "end": 1708817607803,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1708817607803,
+      "end": 1708817607803,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708817607803,
+      "end": 1708817607803,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1708817607803,
+      "end": 1708817607803,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1708817607803,
+      "end": 1708817607803,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1708817607803,
+      "end": 1708817607803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1708817607803,
+      "end": 1708817607803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1708817607803,
+      "end": 1708817607803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1708817607803,
+      "end": 1708817607803,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "\nconst _sfc_main = {\n\tname: 'Header',\n};\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<header${_ssrRenderAttrs(_mergeProps({ class: \"header\" }, _attrs))}><nav class=\"nav-group\"><div class=\"hamburger-menu\"><input id=\"menu__toggle\" type=\"checkbox\"><label class=\"menu__btn\" for=\"menu__toggle\"><span></span></label><ul class=\"menu__box\"><li><a class=\"menu__item\" href=\"#\">Projects</a></li><li><a class=\"menu__item\" href=\"#\">Animations</a></li><li><a class=\"menu__item\" href=\"#\">Features</a></li></ul></div><ul class=\"nav-group__list\"><li title=\"To projects\" class=\"nav-group__item\"><a href=\"#\">Projects</a></li><li title=\"To animations\" class=\"nav-group__item\"><a href=\"#\">Animations</a></li><li title=\"To features\" class=\"nav-group__item\"><a href=\"#\">Features</a></li></ul><select title=\"Choose language\" name=\"languages\" id=\"languages\" size=\"1\" onchange=\"if (this.value) location.href=this.value\"><option selected disabled>Languages</option><option value=\"\">🇬🇧</option><option value=\"localizations/uk\">🇺🇦</option><option value=\"localizations/ru\">🇷🇺</option><option value=\"localizations/it\">🇮🇹</option><option value=\"localizations/de\">🇩🇪</option></select></nav></header>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/UI/Header.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1708817607803,
+      "end": 1708817607806,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/Users/eugen/Desktop/Projects/sayanseliv.github.io/components/UI/Header.vue",
+        "names": [],
+        "sources": [
+          "/Users/eugen/Desktop/Projects/sayanseliv.github.io/components/UI/Header.vue"
+        ],
+        "sourcesContent": [
+          "<template>\n\t<header class=\"header\">\n\t\t<nav class=\"nav-group\">\n\t\t\t<div class=\"hamburger-menu\">\n\t\t\t\t<input id=\"menu__toggle\" type=\"checkbox\" />\n\t\t\t\t<label class=\"menu__btn\" for=\"menu__toggle\">\n\t\t\t\t\t<span></span>\n\t\t\t\t</label>\n\t\t\t\t<ul class=\"menu__box\">\n\t\t\t\t\t<li><a class=\"menu__item\" href=\"#\">Projects</a></li>\n\t\t\t\t\t<li><a class=\"menu__item\" href=\"#\">Animations</a></li>\n\t\t\t\t\t<li><a class=\"menu__item\" href=\"#\">Features</a></li>\n\t\t\t\t</ul>\n\t\t\t</div>\n\t\t\t<ul class=\"nav-group__list\">\n\t\t\t\t<li title=\"To projects\" class=\"nav-group__item\"><a href=\"#\">Projects</a></li>\n\t\t\t\t<li title=\"To animations\" class=\"nav-group__item\"><a href=\"#\">Animations</a></li>\n\t\t\t\t<li title=\"To features\" class=\"nav-group__item\"><a href=\"#\">Features</a></li>\n\t\t\t</ul>\n\t\t\t<select\n\t\t\t\ttitle=\"Choose language\"\n\t\t\t\tname=\"languages\"\n\t\t\t\tid=\"languages\"\n\t\t\t\tsize=\"1\"\n\t\t\t\tonchange=\"if (this.value) location.href=this.value\">\n\t\t\t\t<option selected disabled>Languages</option>\n\t\t\t\t<option value=\"\">🇬🇧</option>\n\t\t\t\t<option value=\"localizations/uk\">🇺🇦</option>\n\t\t\t\t<option value=\"localizations/ru\">🇷🇺</option>\n\t\t\t\t<option value=\"localizations/it\">🇮🇹</option>\n\t\t\t\t<option value=\"localizations/de\">🇩🇪</option>\n\t\t\t</select>\n\t\t</nav>\n\t</header>\n</template>\n\n<script>\nexport default {\n\tname: 'Header',\n};\n</script>\n\n<style></style>\n"
+        ],
+        "mappings": ";AAqCA,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;CACd,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC;;;;;;EAvCD,gBAAA,gBAAA,cACS,KAAK,EAAC,QAAQ,IADvB"
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1708817607806,
+      "end": 1708817607806,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708817607806,
+      "end": 1708817607806,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708817607806,
+      "end": 1708817607806,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708817607806,
+      "end": 1708817607806,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1708817607806,
+      "end": 1708817607806,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1708817607806,
+      "end": 1708817607806,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1708817607806,
+      "end": 1708817607806,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1708817607806,
+      "end": 1708817607806,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "result": "const _sfc_main = {\n  name: \"Header\"\n};\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<header${_ssrRenderAttrs(_mergeProps({ class: \"header\" }, _attrs))}><nav class=\"nav-group\"><div class=\"hamburger-menu\"><input id=\"menu__toggle\" type=\"checkbox\"><label class=\"menu__btn\" for=\"menu__toggle\"><span></span></label><ul class=\"menu__box\"><li><a class=\"menu__item\" href=\"#\">Projects</a></li><li><a class=\"menu__item\" href=\"#\">Animations</a></li><li><a class=\"menu__item\" href=\"#\">Features</a></li></ul></div><ul class=\"nav-group__list\"><li title=\"To projects\" class=\"nav-group__item\"><a href=\"#\">Projects</a></li><li title=\"To animations\" class=\"nav-group__item\"><a href=\"#\">Animations</a></li><li title=\"To features\" class=\"nav-group__item\"><a href=\"#\">Features</a></li></ul><select title=\"Choose language\" name=\"languages\" id=\"languages\" size=\"1\" onchange=\"if (this.value) location.href=this.value\"><option selected disabled>Languages</option><option value=\"\">🇬🇧</option><option value=\"localizations/uk\">🇺🇦</option><option value=\"localizations/ru\">🇷🇺</option><option value=\"localizations/it\">🇮🇹</option><option value=\"localizations/de\">🇩🇪</option></select></nav></header>`);\n}\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/UI/Header.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nimport _export_sfc from \"\\0plugin-vue:export-helper\";\nexport default /* @__PURE__ */ _export_sfc(_sfc_main, [[\"ssrRender\", _sfc_ssrRender]]);\n",
+      "start": 1708817607806,
+      "end": 1708817607811,
+      "order": "normal",
+      "sourcemaps": "{\n  \"version\": 3,\n  \"sources\": [\"/Users/eugen/Desktop/Projects/sayanseliv.github.io/components/UI/Header.vue\"],\n  \"sourcesContent\": [\"\\nconst _sfc_main = {\\n\\tname: 'Header',\\n};\\n\\nimport { mergeProps as _mergeProps } from \\\"vue\\\"\\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \\\"vue/server-renderer\\\"\\n\\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\\n  _push(`<header${_ssrRenderAttrs(_mergeProps({ class: \\\"header\\\" }, _attrs))}><nav class=\\\"nav-group\\\"><div class=\\\"hamburger-menu\\\"><input id=\\\"menu__toggle\\\" type=\\\"checkbox\\\"><label class=\\\"menu__btn\\\" for=\\\"menu__toggle\\\"><span></span></label><ul class=\\\"menu__box\\\"><li><a class=\\\"menu__item\\\" href=\\\"#\\\">Projects</a></li><li><a class=\\\"menu__item\\\" href=\\\"#\\\">Animations</a></li><li><a class=\\\"menu__item\\\" href=\\\"#\\\">Features</a></li></ul></div><ul class=\\\"nav-group__list\\\"><li title=\\\"To projects\\\" class=\\\"nav-group__item\\\"><a href=\\\"#\\\">Projects</a></li><li title=\\\"To animations\\\" class=\\\"nav-group__item\\\"><a href=\\\"#\\\">Animations</a></li><li title=\\\"To features\\\" class=\\\"nav-group__item\\\"><a href=\\\"#\\\">Features</a></li></ul><select title=\\\"Choose language\\\" name=\\\"languages\\\" id=\\\"languages\\\" size=\\\"1\\\" onchange=\\\"if (this.value) location.href=this.value\\\"><option selected disabled>Languages</option><option value=\\\"\\\">🇬🇧</option><option value=\\\"localizations/uk\\\">🇺🇦</option><option value=\\\"localizations/ru\\\">🇷🇺</option><option value=\\\"localizations/it\\\">🇮🇹</option><option value=\\\"localizations/de\\\">🇩🇪</option></select></nav></header>`)\\n}\\n\\n\\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\\nconst _sfc_setup = _sfc_main.setup\\n_sfc_main.setup = (props, ctx) => {\\n  const ssrContext = __vite_useSSRContext()\\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\\\"components/UI/Header.vue\\\")\\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\\n}\\nimport _export_sfc from '\\u0000plugin-vue:export-helper'\\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])\"],\n  \"mappings\": \"AACA,MAAM,YAAY;AAAA,EACjB,MAAM;AACP;AAEA,SAAS,cAAc,mBAAmB;AAC1C,SAAS,kBAAkB,uBAAuB;AAElD,SAAS,eAAe,MAAM,OAAO,SAAS,QAAQ,QAAQ,QAAQ,OAAO,UAAU;AACrF,QAAM,UAAU,gBAAgB,YAAY,EAAE,OAAO,SAAS,GAAG,MAAM,CAAC,CAAC,kgCAAkgC;AAC7kC;AAGA,SAAS,iBAAiB,4BAA4B;AACtD,MAAM,aAAa,UAAU;AAC7B,UAAU,QAAQ,CAAC,OAAO,QAAQ;AAChC,QAAM,aAAa,qBAAqB;AACvC,GAAC,WAAW,YAAY,WAAW,UAAU,oBAAI,IAAI,IAAI,IAAI,0BAA0B;AACxF,SAAO,aAAa,WAAW,OAAO,GAAG,IAAI;AAC/C;AACA,OAAO,iBAAiB;AACxB,eAA4B,4BAAY,WAAW,CAAC,CAAC,aAAY,cAAc,CAAC,CAAC;\",\n  \"names\": []\n}\n"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1708817607811,
+      "end": 1708817607811,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1708817607811,
+      "end": 1708817607811,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1708817607811,
+      "end": 1708817607811,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1708817607811,
+      "end": 1708817607811,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1708817607811,
+      "end": 1708817607811,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1708817607811,
+      "end": 1708817607811,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1708817607811,
+      "end": 1708817607811,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708817607811,
+      "end": 1708817607811,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1708817607811,
+      "end": 1708817607811,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708817607811,
+      "end": 1708817607812,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1708817607811,
+      "end": 1708817607812,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708817607812,
+      "end": 1708817607812,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1708817607812,
+      "end": 1708817607812,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708817607812,
+      "end": 1708817607812,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1708817607812,
+      "end": 1708817607812,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1708817607812,
+      "end": 1708817607812,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1708817607812,
+      "end": 1708817607812,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1708817607812,
+      "end": 1708817607812,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1708817607812,
+      "end": 1708817607812,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708817607812,
+      "end": 1708817607813,
+      "order": "normal"
+    }
+  ]
+}

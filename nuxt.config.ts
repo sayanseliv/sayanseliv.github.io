@@ -2,14 +2,13 @@
 const BASE_URL = 'https://sayanseliv.github.io/';
 export default defineNuxtConfig({
 	devtools: { enabled: true },
-	ssr: false,
 	components: [
 		{
 			path: '~/components',
 			pathPrefix: false,
 		},
 	],
-	nitro: { compressPublicAssets: true },
+	// nitro: { compressPublicAssets: true },
 	vite: {
 		css: {
 			preprocessorOptions: {
@@ -18,9 +17,9 @@ export default defineNuxtConfig({
 				},
 			},
 		},
-		build: {
-			cssCodeSplit: false,
-		},
+		// build: {
+		// 	cssCodeSplit: false,
+		// },
 	},
 	app: {
 		head: {

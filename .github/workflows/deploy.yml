@@ -16,7 +16,7 @@ jobs:
             - name: Set up Node.js
               uses: actions/setup-node@v2
               with:
-                  node-version: '20' # Замените на вашу версию Node.js
+                  node-version: '16' # Замените на вашу версию Node.js
                   cache: 'yarn'
 
             - name: Install dependencies and build

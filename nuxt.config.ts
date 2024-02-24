@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 			pathPrefix: false,
 		},
 	],
-	// nitro: { compressPublicAssets: true },
+	nitro: { compressPublicAssets: true },
 	vite: {
 		css: {
 			preprocessorOptions: {
@@ -17,9 +17,9 @@ export default defineNuxtConfig({
 				},
 			},
 		},
-		// build: {
-		// 	cssCodeSplit: false,
-		// },
+		build: {
+			cssCodeSplit: false,
+		},
 	},
 	app: {
 		head: {

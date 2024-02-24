@@ -1,8 +1,11 @@
-node_modules
-*.log*
-.nuxt
-.nitro
-.cache
-.output
-.env
-dist
+# Dependency directories
+node_modules/
+.output/
+
+# Yarn
+yarn-error.log
+.yarn-integrity
+
+# OS generated files
+.DS_Store
+Thumbs.db

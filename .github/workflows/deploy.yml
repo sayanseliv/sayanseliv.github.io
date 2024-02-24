@@ -1,0 +1,31 @@
+name: Deploy to GitHub Pages
+
+on:
+    push:
+        branches:
+            - main # Замените на вашу основную ветку
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: '20' # Замените на вашу версию Node.js
+                  cache: 'yarn'
+
+            - name: Install dependencies and build
+              run: |
+                  yarn install
+                  yarn generate
+
+            - name: Deploy to GitHub Pages
+              uses: JamesIves/github-pages-deploy-action@4
+              with:
+                  branch: main # Замените на вашу основную ветку
+                  folder: .output/public # Замените на вашу папку с сгенерированными файлами

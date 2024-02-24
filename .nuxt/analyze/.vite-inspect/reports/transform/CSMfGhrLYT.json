@@ -1,0 +1,17 @@
+{
+  "resolvedId": "virtual:nuxt:/Users/eugen/Desktop/Projects/sayanseliv.github.io/.nuxt/css.mjs",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "",
+      "start": 1708788526003,
+      "end": 1708788526003
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1708788526003,
+      "end": 1708788526003,
+      "order": "normal"
+    }
+  ]
+}

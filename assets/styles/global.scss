@@ -10,11 +10,12 @@
 	--dark-grey: #333;
 	--grey-blue: rgb(47, 49, 77);
 	--dark-blue: rgb(60, 63, 99);
-	--light-blue: #0083da;
+	--light-blue: #48abed;
 	--button-pink: rgb(250, 42, 111);
 	--jira: #2684ff;
 	--violet: rgb(183, 36, 183);
 	--aws: #f90;
+	--bg-color: #303030;
 	/* font-weight */
 	--fw-bold: 700;
 	--fw-semibold: 600;
@@ -43,7 +44,6 @@ input {
 	font-family: 'Roboto', sans-serif;
 	background-color: var(--black-body);
 	color: var(--white);
-	font-size: var(--fs-text-lg);
 	font-weight: var(--fw-regular);
 }
 .overflow-hidden {

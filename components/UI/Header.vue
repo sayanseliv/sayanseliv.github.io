@@ -12,7 +12,7 @@ export default {
 <style scoped lang="scss">
 .header {
 	height: 3rem;
-	background-color: var(--grey-blue);
+	background-color: var(--bg-color);
 }
 .header__nav {
 	height: inherit;

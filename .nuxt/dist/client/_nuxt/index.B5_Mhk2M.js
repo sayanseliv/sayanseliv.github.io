@@ -1,1 +1,0 @@
-import{_ as e,v as n,t,x as o}from"./entry.8P-pvYp1.js";const s={name:"mainPage"},a=o("h1",null,"Eugen",-1),c=[a];function r(_,i,d,l,p,m){return t(),n("main",null,c)}const f=e(s,[["render",r]]);export{f as default};

@@ -3,70 +3,70 @@
   "transforms": [
     {
       "name": "vite:load-fallback",
-      "result": "<template>\n\t<main><h1>Eugen</h1></main>\n</template>\n\n<script>\nexport default {\n\tname: 'mainPage',\n};\n</script>\n\n<style></style>\n",
-      "start": 1708817607529,
-      "end": 1708817607592,
+      "result": "<template>\n\t<main class=\"main-home\">\n\t\t<div class=\"container-1440 home__container\">\n\t\t\t<aside class=\"aside\">\n\t\t\t\t<figure class=\"aside__avatar\">\n\t\t\t\t\t<img src=\"/cv_photo.jpeg\" alt=\"Lang Eugen avatar\" class=\"aside__image\" />\n\t\t\t\t\t<figcaption class=\"aside__figcaption\">\n\t\t\t\t\t\tLang Eugen\n\t\t\t\t\t\t<p class=\"aside__position\">Front-end developer</p>\n\t\t\t\t\t</figcaption>\n\t\t\t\t</figure>\n\t\t\t</aside>\n\t\t\t<section><h1>Lang Eugen</h1></section>\n\t\t</div>\n\t</main>\n</template>\n\n<script>\nexport default {\n\tname: 'mainPage',\n};\n</script>\n\n<style lang=\"scss\" scoped>\n.home__container {\n\tdisplay: flex;\n\tpadding-block: 4rem;\n}\n.aside {\n\theight: calc(100svh - 11rem);\n\tpadding: 2rem 3rem;\n\tbackground-color: var(--grey-blue);\n\tborder-radius: var(--border-radius);\n\tborder: 0.0625rem solid var(--grey-hr);\n}\n.aside__avatar {\n\twidth: 100%;\n\theight: 100%;\n\tmax-width: 8rem;\n\tmax-height: 8rem;\n}\n.aside__image {\n\twidth: 100%;\n\theight: 100%;\n\tobject-fit: cover;\n\tborder-radius: 50%;\n}\n</style>\n",
+      "start": 1708822889262,
+      "end": 1708822889357,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708817607592,
-      "end": 1708817607592,
+      "start": 1708822889357,
+      "end": 1708822889357,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1708817607592,
-      "end": 1708817607592,
+      "start": 1708822889357,
+      "end": 1708822889357,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708817607592,
-      "end": 1708817607592,
+      "start": 1708822889357,
+      "end": 1708822889357,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1708817607592,
-      "end": 1708817607592,
+      "start": 1708822889357,
+      "end": 1708822889357,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1708817607592,
-      "end": 1708817607592,
+      "start": 1708822889357,
+      "end": 1708822889357,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1708817607592,
-      "end": 1708817607592,
+      "start": 1708822889357,
+      "end": 1708822889357,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1708817607592,
-      "end": 1708817607592,
+      "start": 1708822889357,
+      "end": 1708822889357,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1708817607592,
-      "end": 1708817607592,
+      "start": 1708822889358,
+      "end": 1708822889358,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1708817607592,
-      "end": 1708817607592,
+      "start": 1708822889358,
+      "end": 1708822889358,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "result": "\nconst _sfc_main = {\n\tname: 'mainPage',\n};\n\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<main${_ssrRenderAttrs(_attrs)}><h1>Eugen</h1></main>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
-      "start": 1708817607592,
-      "end": 1708817607593,
+      "result": "\nconst _sfc_main = {\n\tname: 'mainPage',\n};\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\nimport _imports_0 from '/cv_photo.jpeg'\n\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<main${\n    _ssrRenderAttrs(_mergeProps({ class: \"main-home\" }, _attrs))\n  } data-v-16b77d6e><div class=\"container-1440 home__container\" data-v-16b77d6e><aside class=\"aside\" data-v-16b77d6e><figure class=\"aside__avatar\" data-v-16b77d6e><img${\n    _ssrRenderAttr(\"src\", _imports_0)\n  } alt=\"Lang Eugen avatar\" class=\"aside__image\" data-v-16b77d6e><figcaption class=\"aside__figcaption\" data-v-16b77d6e> Lang Eugen <p class=\"aside__position\" data-v-16b77d6e>Front-end developer</p></figcaption></figure></aside><section data-v-16b77d6e><h1 data-v-16b77d6e>Lang Eugen</h1></section></div></main>`)\n}\n\nimport \"/Users/eugen/Desktop/Projects/sayanseliv.github.io/pages/index.vue?vue&type=style&index=0&scoped=16b77d6e&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-16b77d6e\"]])",
+      "start": 1708822889358,
+      "end": 1708822889360,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -76,148 +76,148 @@
           "/Users/eugen/Desktop/Projects/sayanseliv.github.io/pages/index.vue"
         ],
         "sourcesContent": [
-          "<template>\n\t<main><h1>Eugen</h1></main>\n</template>\n\n<script>\nexport default {\n\tname: 'mainPage',\n};\n</script>\n\n<style></style>\n"
+          "<template>\n\t<main class=\"main-home\">\n\t\t<div class=\"container-1440 home__container\">\n\t\t\t<aside class=\"aside\">\n\t\t\t\t<figure class=\"aside__avatar\">\n\t\t\t\t\t<img src=\"/cv_photo.jpeg\" alt=\"Lang Eugen avatar\" class=\"aside__image\" />\n\t\t\t\t\t<figcaption class=\"aside__figcaption\">\n\t\t\t\t\t\tLang Eugen\n\t\t\t\t\t\t<p class=\"aside__position\">Front-end developer</p>\n\t\t\t\t\t</figcaption>\n\t\t\t\t</figure>\n\t\t\t</aside>\n\t\t\t<section><h1>Lang Eugen</h1></section>\n\t\t</div>\n\t</main>\n</template>\n\n<script>\nexport default {\n\tname: 'mainPage',\n};\n</script>\n\n<style lang=\"scss\" scoped>\n.home__container {\n\tdisplay: flex;\n\tpadding-block: 4rem;\n}\n.aside {\n\theight: calc(100svh - 11rem);\n\tpadding: 2rem 3rem;\n\tbackground-color: var(--grey-blue);\n\tborder-radius: var(--border-radius);\n\tborder: 0.0625rem solid var(--grey-hr);\n}\n.aside__avatar {\n\twidth: 100%;\n\theight: 100%;\n\tmax-width: 8rem;\n\tmax-height: 8rem;\n}\n.aside__image {\n\twidth: 100%;\n\theight: 100%;\n\tobject-fit: cover;\n\tborder-radius: 50%;\n}\n</style>\n"
         ],
-        "mappings": ";AAKA,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;CACd,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC;;;;;EAPD,cAAA,gBAAA"
+        "mappings": ";AAkBA,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,EAAE;CACd,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC;;;;OAfS,UAAoB;;;;EAL9B;IAAA,gBAAA,cACO,KAAK,EAAC,WAAW,IADxB;;IAAA,eAKU,KAAoB,EAApB,UAAoB"
       }
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889360,
+      "end": 1708822889360,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889360,
+      "end": 1708822889360,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889360,
+      "end": 1708822889360,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889360,
+      "end": 1708822889360,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889360,
+      "end": 1708822889360,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889360,
+      "end": 1708822889360,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889360,
+      "end": 1708822889361,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1708817607593,
-      "end": 1708817607593,
+      "start": 1708822889361,
+      "end": 1708822889361,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1708817607593,
-      "end": 1708817607594,
+      "start": 1708822889361,
+      "end": 1708822889363,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1708817607593,
-      "end": 1708817607594,
+      "start": 1708822889361,
+      "end": 1708822889363,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708817607594,
-      "end": 1708817607594,
+      "start": 1708822889363,
+      "end": 1708822889363,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1708817607594,
-      "end": 1708817607594,
+      "start": 1708822889363,
+      "end": 1708822889363,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
       "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
-      "start": 1708817607594,
-      "end": 1708817607594,
+      "start": 1708822889363,
+      "end": 1708822889366,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -231,8 +231,8 @@
     {
       "name": "nuxt:pages-macros-transform",
       "result": "\nconst __nuxt_page_meta = null\nexport default __nuxt_page_meta\n",
-      "start": 1708817607594,
-      "end": 1708817607594,
+      "start": 1708822889363,
+      "end": 1708822889366,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -245,32 +245,32 @@
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1708817607594,
-      "end": 1708817607594,
+      "start": 1708822889367,
+      "end": 1708822889367,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1708817607594,
-      "end": 1708817607594,
+      "start": 1708822889368,
+      "end": 1708822889368,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1708817607594,
-      "end": 1708817607594,
+      "start": 1708822889368,
+      "end": 1708822889368,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1708817607594,
-      "end": 1708817607594,
+      "start": 1708822889368,
+      "end": 1708822889368,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1708817607594,
-      "end": 1708817607594,
+      "start": 1708822889368,
+      "end": 1708822889368,
       "order": "normal"
     }
   ]

@@ -1,5 +1,0 @@
-const global = ":root{color-scheme:only light;--black-body:#161313;--black:#151515;--white:#fff;--grey-hr:hsla(0,0%,99%,.5);--grey-span:hsla(0,0%,99%,.7);--dark-grey:#333;--grey-blue:#2f314d;--dark-blue:#3c3f63;--light-blue:#0083da;--button-pink:#fa2a6f;--jira:#2684ff;--violet:#b724b7;--aws:#f90;--fw-bold:700;--fw-semibold:600;--fw-medium:500;--fw-regular:400;--fs-2xl:88px;--fs-2xl:73px;--fs-xl:61px;--fs-lg:51px;--fs-md:42px;--fs-sm:35px;--fs-xs:29px;--fs-2xs:24px;--fs-xl:20px;--fs-text-lg:17px;--fs-md:14px;--fs-s:12px}body,button,input{background-color:var(--black-body);color:var(--white);font-family:Roboto,sans-serif;font-size:var(--fs-text-lg);font-weight:var(--fw-regular)}.overflow-hidden{overflow:hidden}.container-1440{margin:0 auto;max-width:1440px;padding:0 70px}@media only screen and (max-width:1024px){.container-1440{padding:0 32px}}@media only screen and (max-width:768px){.container-1440{padding:0 24px}}@media only screen and (max-width:640px){.container-1440{padding:0 16px}}";
-export {
-  global as default
-};
-//# sourceMappingURL=entry-styles-2.mjs-Bm2crien.js.map

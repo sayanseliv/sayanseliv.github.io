@@ -15,27 +15,21 @@
 	--jira: #2684ff;
 	--violet: rgb(183, 36, 183);
 	--aws: #f90;
+	--tc-secondary: #8c8c8e;
 	--bg-color: #303030;
+	--bg-secondary-color: #20202a;
 	/* font-weight */
 	--fw-bold: 700;
 	--fw-semibold: 600;
 	--fw-medium: 500;
 	--fw-regular: 400;
 	/* font-style */
-	--fs-2xl: 88px;
-	--fs-2xl: 73px;
-	--fs-xl: 61px;
-	--fs-lg: 51px;
-	--fs-md: 42px;
-	--fs-sm: 35px;
-	--fs-xs: 29px;
-	--fs-2xs: 24px;
-	--fs-xl: 20px;
-	--fs-text-lg: 17px;
-	--fs-md: 14px;
-	--fs-s: 12px;
+	--fs-primary: 1rem;
+	--fs-caption: 0.7rem;
 	// radius
 	--border-radius: 5px;
+	// insent
+	--insent-sm: 0.3rem;
 }
 
 body,

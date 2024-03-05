@@ -22,6 +22,24 @@
 					<span>{{ age }}</span>
 				</li>
 			</ul>
+			<div>
+				<CircleProgress
+					:show-percent="true"
+					:percent="50"
+					:size="50"
+					:borderBgWidth="5"
+					:borderWidth="5"
+					fill-color="#48abed"
+					emptyColor="#191923" />
+				<CircleProgress
+					:show-percent="true"
+					:percent="70"
+					:size="50"
+					:borderBgWidth="5"
+					:borderWidth="5"
+					fill-color="#48abed"
+					emptyColor="#191923" />
+			</div>
 		</section>
 	</aside>
 </template>
@@ -61,7 +79,7 @@ export default {
 	width: 18.125rem;
 	height: calc(100svh - 11rem);
 	padding: 13.05rem 0.9375rem 2rem;
-	background-color: var(--bg-color);
+	background-color: var(--bg-secondary-color);
 	border-radius: var(--border-radius);
 }
 .aside__avatar {

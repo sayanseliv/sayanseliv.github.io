@@ -8,7 +8,9 @@
 			<template v-if="$slots.content">
 				<slot name="content" :percent="currentPercent" />
 			</template>
-			<template v-else>{{ currentPercent }}%</template>
+			<template v-else>
+				<span :style="{ color: contentColor }">{{ currentPercent }}%</span>
+			</template>
 		</div>
 	</div>
 </template>
@@ -35,6 +37,7 @@ export default {
 			type: String,
 			default: '#288feb',
 		},
+		contentColor: { type: String, default: '#cacace' },
 		emptyColor: {
 			type: String,
 			default: '#dddddd',
@@ -181,11 +184,9 @@ export default {
 <style lang="scss" scoped>
 .vue-circle-progress {
 	position: relative;
-
 	.svg-wrapper {
 		transform: rotate(-90deg);
 	}
-
 	.current-percent {
 		position: absolute;
 		top: 50%;

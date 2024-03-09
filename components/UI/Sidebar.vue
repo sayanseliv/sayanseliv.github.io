@@ -22,23 +22,51 @@
 					<span>{{ age }}</span>
 				</li>
 			</ul>
-			<div>
-				<CircleProgress
-					:show-percent="true"
-					:percent="50"
-					:size="50"
-					:borderBgWidth="5"
-					:borderWidth="5"
-					fill-color="#48abed"
-					emptyColor="#191923" />
-				<CircleProgress
-					:show-percent="true"
-					:percent="70"
-					:size="50"
-					:borderBgWidth="5"
-					:borderWidth="5"
-					fill-color="#48abed"
-					emptyColor="#191923" />
+			<div class="aside__languages">
+				<div>
+					<CircleProgress
+						:show-percent="true"
+						:percent="100"
+						:size="60"
+						:borderBgWidth="5"
+						:borderWidth="5"
+						fill-color="#48abed"
+						emptyColor="#191923" />
+					<span class="aside__language">Ukranian</span>
+				</div>
+				<div>
+					<CircleProgress
+						:show-percent="true"
+						:percent="55"
+						:size="60"
+						:borderBgWidth="5"
+						:borderWidth="5"
+						fill-color="#48abed"
+						emptyColor="#191923" />
+					<span class="aside__language">English</span>
+				</div>
+				<div>
+					<CircleProgress
+						:show-percent="true"
+						:percent="45"
+						:size="60"
+						:borderBgWidth="5"
+						:borderWidth="5"
+						fill-color="#48abed"
+						emptyColor="#191923" />
+					<span class="aside__language">German</span>
+				</div>
+				<div>
+					<CircleProgress
+						:show-percent="true"
+						:percent="39"
+						:size="60"
+						:borderBgWidth="5"
+						:borderWidth="5"
+						fill-color="#48abed"
+						emptyColor="#191923" />
+					<span class="aside__language">Italian</span>
+				</div>
 			</div>
 		</section>
 	</aside>
@@ -123,9 +151,22 @@ export default {
 	}
 	& > h6 {
 		font-size: var(--fs-caption);
+		font-weight: var(--fw-medium);
 	}
 	& > span {
 		color: var(--tc-secondary);
 	}
+}
+.aside__languages {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-block: 0.9375rem;
+	gap: 1rem 2rem;
+	text-align: center;
+}
+.aside__language {
+	padding-top: var(--insent-sm);
+	font-size: var(--fs-caption);
 }
 </style>

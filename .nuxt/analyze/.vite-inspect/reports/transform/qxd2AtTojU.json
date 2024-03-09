@@ -4,206 +4,206 @@
     {
       "name": "virtual",
       "result": "export const appHead = {\"meta\":[{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1.0, user-scalable=yes\"},{\"charset\":\"utf-8\"},{\"http-equiv\":\"content-type\",\"content\":\"text/html; charset=utf-8\"},{\"http-equiv\":\"X-UA-Compatible\",\"content\":\"IE=edge\"},{\"name\":\"robots\",\"content\":\"index, follow\"},{\"name\":\"author\",\"content\":\"Lang Eugen\"},{\"name\":\"format-detection\",\"content\":\"telephone=no\"},{\"name\":\"msapplication-TileColor\",\"content\":\"#da532c\"},{\"name\":\"msapplication-config\",\"content\":\"/browserconfig.xml\"},{\"name\":\"theme-color\",\"content\":\"#ffffff\"},{\"key\":\"description\",\"name\":\"description\",\"content\":\"Welcome to the digital showcase of Lang Eugen, a passionate front-end developer specializing in Vue.js, Nuxt.js, React Native, and WordPress. Explore innovative web and mobile solutions. Crafted with creativity and expertise in Vue, Nuxt, React Native, and WordPress development.\"},{\"key\":\"twitter-card\",\"name\":\"twitter:card\",\"content\":\"summary_large_image\"},{\"key\":\"twitter-image\",\"name\":\"twitter:image\",\"content\":\"https://sayanseliv.github.io//cv_photo.jpeg\"},{\"key\":\"twitter:description\",\"name\":\"twitter:description\",\"content\":\"Welcome to the digital showcase of Lang Eugen, a passionate front-end developer specializing in Vue.js, Nuxt.js, React Native, and WordPress. Explore innovative web and mobile solutions. Crafted with creativity and expertise in Vue, Nuxt, React Native, and WordPress development.\"},{\"key\":\"og:site-name\",\"property\":\"og:site_name\",\"content\":\"Lang Eugen - Front-End\"},{\"key\":\"og-url\",\"property\":\"og:url\",\"content\":\"https://sayanseliv.github.io/\"},{\"key\":\"og-type\",\"property\":\"og:type\",\"content\":\"website\"},{\"key\":\"og-title\",\"property\":\"og:title\",\"content\":\"Lang Eugen - Front-End Developer | Vue, Nuxt, React Native, WordPress\"},{\"key\":\"og-desc\",\"property\":\"og:description\",\"content\":\"Welcome to the digital showcase of Lang Eugen, a passionate front-end developer specializing in Vue.js, Nuxt.js, React Native, and WordPress. Explore innovative web and mobile solutions. Crafted with creativity and expertise in Vue, Nuxt, React Native, and WordPress development.\"},{\"key\":\"og-image\",\"property\":\"og:image\",\"content\":\"https://sayanseliv.github.io//cv_photo.jpeg\"},{\"key\":\"og-image-width\",\"property\":\"og:image:width\",\"content\":\"200\"},{\"key\":\"og-image-height\",\"property\":\"og:image:height\",\"content\":\"200\"}],\"link\":[{\"rel\":\"preconnect\",\"href\":\"https://fonts.googleapis.com\"},{\"rel\":\"preconnect\",\"href\":\"https://fonts.gstatic.com\",\"crossorigin\":\"\"},{\"rel\":\"stylesheet\",\"href\":\"https://fonts.googleapis.com/css2?family=Barlow&family=Roboto:wght@400;500;700&display=swap\"},{\"rel\":\"canonical\",\"href\":\"https://sayanseliv.github.io//\"},{\"rel\":\"icon\",\"type\":\"image/x-icon\",\"href\":\"/favicon.ico\"},{\"rel\":\"apple-touch-icon\",\"sizes\":\"180x180\",\"type\":\"image/x-icon\",\"href\":\"/apple-touch-icon.png\"},{\"rel\":\"icon\",\"type\":\"image/png\",\"sizes\":\"32x32\",\"href\":\"/favicon-32x32.png\"},{\"rel\":\"icon\",\"type\":\"image/png\",\"sizes\":\"16x16\",\"href\":\"/favicon-16x16.png\"},{\"rel\":\"manifest\",\"href\":\"/site.webmanifest\"},{\"rel\":\"mask-icon\",\"href\":\"/safari-pinned-tab.svg\",\"color\":\"#5bbad5\"}],\"style\":[],\"script\":[],\"noscript\":[],\"htmlAttrs\":{\"lang\":\"en\"},\"title\":\"Lang Eugen - Front-End Developer | Vue, Nuxt, React Native, WordPress\",\"viewport\":\"width=device-width, initial-scale=1.0, user-scalable=yes\"}\n\nexport const appBaseURL = \"/\"\n\nexport const appBuildAssetsDir = \"/_nuxt/\"\n\nexport const appCdnURL = \"\"\n\nexport const appLayoutTransition = false\n\nexport const appPageTransition = false\n\nexport const appViewTransition = false\n\nexport const appKeepalive = false\n\nexport const appRootId = \"__nuxt\"\n\nexport const appRootTag = \"div\"\n\nexport const renderJsonPayloads = true\n\nexport const componentIslands = false\n\nexport const payloadExtraction = true\n\nexport const cookieStore = false\n\nexport const appManifest = true\n\nexport const remoteComponentIslands = false\n\nexport const selectiveClient = false\n\nexport const devPagesDir = null\n\nexport const devRootDir = null\n\nexport const nuxtLinkDefaults = {\"componentName\":\"NuxtLink\"}\n\nexport const asyncDataDefaults = {\"deep\":true}\n\nexport const fetchDefaults = {}\n\nexport const vueAppRootContainer = '#__nuxt'\n\nexport const viewTransition = false",
-      "start": 1709670573108,
-      "end": 1709670573108,
+      "start": 1710006183115,
+      "end": 1710006183115,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1709670573109,
-      "end": 1709670573109,
+      "start": 1710006183116,
+      "end": 1710006183116,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1709670573109,
-      "end": 1709670573109,
+      "start": 1710006183116,
+      "end": 1710006183116,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1709670573110,
-      "end": 1709670573110,
+      "start": 1710006183116,
+      "end": 1710006183116,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1709670573110,
-      "end": 1709670573110,
+      "start": 1710006183116,
+      "end": 1710006183116,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1709670573111,
-      "end": 1709670573111,
+      "start": 1710006183117,
+      "end": 1710006183117,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1709670573111,
-      "end": 1709670573111,
+      "start": 1710006183117,
+      "end": 1710006183117,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1709670573112,
-      "end": 1709670573112,
+      "start": 1710006183117,
+      "end": 1710006183117,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1709670573112,
-      "end": 1709670573112,
+      "start": 1710006183117,
+      "end": 1710006183117,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1709670573112,
-      "end": 1709670573112,
+      "start": 1710006183117,
+      "end": 1710006183117,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1709670573112,
-      "end": 1709670573112,
+      "start": 1710006183117,
+      "end": 1710006183117,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1709670573113,
-      "end": 1709670573113,
+      "start": 1710006183118,
+      "end": 1710006183118,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1709670573113,
-      "end": 1709670573113,
+      "start": 1710006183118,
+      "end": 1710006183118,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1709670573113,
-      "end": 1709670573113,
+      "start": 1710006183118,
+      "end": 1710006183118,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1709670573114,
-      "end": 1709670573114,
+      "start": 1710006183119,
+      "end": 1710006183119,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1709670573114,
-      "end": 1709670573114,
+      "start": 1710006183120,
+      "end": 1710006183120,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1709670573114,
-      "end": 1709670573114,
+      "start": 1710006183120,
+      "end": 1710006183120,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1709670573114,
-      "end": 1709670573114,
+      "start": 1710006183120,
+      "end": 1710006183120,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1709670573114,
-      "end": 1709670573114,
+      "start": 1710006183121,
+      "end": 1710006183121,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1709670573114,
-      "end": 1709670573114,
+      "start": 1710006183121,
+      "end": 1710006183121,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1709670573114,
-      "end": 1709670573114,
+      "start": 1710006183121,
+      "end": 1710006183121,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1709670573114,
-      "end": 1709670573114,
+      "start": 1710006183121,
+      "end": 1710006183121,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1709670573114,
-      "end": 1709670573114,
+      "start": 1710006183121,
+      "end": 1710006183121,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1709670573115,
-      "end": 1709670573115,
+      "start": 1710006183121,
+      "end": 1710006183121,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1709670573115,
-      "end": 1709670573115,
+      "start": 1710006183123,
+      "end": 1710006183123,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1709670573116,
-      "end": 1709670573126,
+      "start": 1710006183124,
+      "end": 1710006183137,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1709670573126,
-      "end": 1709670573127,
+      "start": 1710006183137,
+      "end": 1710006183137,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1709670573127,
-      "end": 1709670573127,
+      "start": 1710006183138,
+      "end": 1710006183138,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1709670573127,
-      "end": 1709670573127,
+      "start": 1710006183138,
+      "end": 1710006183138,
       "order": "post"
     },
     {
       "name": "nuxt:route-injection-plugin",
-      "start": 1709670573127,
-      "end": 1709670573127,
+      "start": 1710006183138,
+      "end": 1710006183138,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1709670573128,
-      "end": 1709670573128,
+      "start": 1710006183138,
+      "end": 1710006183138,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1709670573128,
-      "end": 1709670573128,
+      "start": 1710006183138,
+      "end": 1710006183139,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1709670573128,
-      "end": 1709670573130,
+      "start": 1710006183139,
+      "end": 1710006183140,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1709670573130,
-      "end": 1709670573130,
+      "start": 1710006183140,
+      "end": 1710006183140,
       "order": "normal"
     }
   ]

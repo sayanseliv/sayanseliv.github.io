@@ -3,6 +3,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     'CircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
     'Header': typeof import("../components/UI/Header.vue")['default']
+    'ProgressBar': typeof import("../components/UI/ProgressBar.vue")['default']
     'Sidebar': typeof import("../components/UI/Sidebar.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -26,6 +27,7 @@ declare module 'vue' {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyCircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
     'LazyHeader': typeof import("../components/UI/Header.vue")['default']
+    'LazyProgressBar': typeof import("../components/UI/ProgressBar.vue")['default']
     'LazySidebar': typeof import("../components/UI/Sidebar.vue")['default']
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'LazyNuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -52,6 +54,7 @@ declare module 'vue' {
 
 export const CircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
 export const Header: typeof import("../components/UI/Header.vue")['default']
+export const ProgressBar: typeof import("../components/UI/ProgressBar.vue")['default']
 export const Sidebar: typeof import("../components/UI/Sidebar.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -75,6 +78,7 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyCircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
 export const LazyHeader: typeof import("../components/UI/Header.vue")['default']
+export const LazyProgressBar: typeof import("../components/UI/ProgressBar.vue")['default']
 export const LazySidebar: typeof import("../components/UI/Sidebar.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const LazyNuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']

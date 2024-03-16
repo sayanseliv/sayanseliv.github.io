@@ -41,7 +41,7 @@ export default {
 	position: relative;
 	display: flex;
 	column-gap: 2rem;
-	padding-block: 4rem;
+	padding-block: 1rem;
 }
 .home__content {
 	width: 100%;

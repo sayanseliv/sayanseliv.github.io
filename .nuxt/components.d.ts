@@ -2,6 +2,7 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'CircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
+    'DialogModal': typeof import("../components/UI/DialogModal.vue")['default']
     'Header': typeof import("../components/UI/Header.vue")['default']
     'ProgressBar': typeof import("../components/UI/ProgressBar.vue")['default']
     'Sidebar': typeof import("../components/UI/Sidebar.vue")['default']
@@ -26,6 +27,7 @@ declare module 'vue' {
     'Html': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyCircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
+    'LazyDialogModal': typeof import("../components/UI/DialogModal.vue")['default']
     'LazyHeader': typeof import("../components/UI/Header.vue")['default']
     'LazyProgressBar': typeof import("../components/UI/ProgressBar.vue")['default']
     'LazySidebar': typeof import("../components/UI/Sidebar.vue")['default']
@@ -53,6 +55,7 @@ declare module 'vue' {
 }
 
 export const CircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
+export const DialogModal: typeof import("../components/UI/DialogModal.vue")['default']
 export const Header: typeof import("../components/UI/Header.vue")['default']
 export const ProgressBar: typeof import("../components/UI/ProgressBar.vue")['default']
 export const Sidebar: typeof import("../components/UI/Sidebar.vue")['default']
@@ -77,6 +80,7 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyCircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
+export const LazyDialogModal: typeof import("../components/UI/DialogModal.vue")['default']
 export const LazyHeader: typeof import("../components/UI/Header.vue")['default']
 export const LazyProgressBar: typeof import("../components/UI/ProgressBar.vue")['default']
 export const LazySidebar: typeof import("../components/UI/Sidebar.vue")['default']

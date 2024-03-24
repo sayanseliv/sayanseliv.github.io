@@ -77,6 +77,23 @@
 				<ProgressBar label="Nuxt" :targetProgress="100" />
 				<ProgressBar label="React Native" :targetProgress="100" />
 			</div>
+			<ul class="aside__technologies">
+				<li>Bootstrap, Vuetify</li>
+				<li>Sass, SCSS</li>
+				<li>Webpack, Vite</li>
+				<li>GIT knowledge</li>
+				<li>Android Studio, Xcode</li>
+			</ul>
+			<div class="aside__certificates">
+				<h6>Certificates:</h6>
+				<div class="aside__btns">
+					<button @click="showCertificate('basic.png')" class="aside__btn">Basic</button>
+					<button @click="showCertificate('pro.png')" class="aside__btn">Pro</button>
+					<button @click="showCertificate('advance.jpg')" class="aside__btn">
+						Advance
+					</button>
+				</div>
+			</div>
 		</section>
 		<nav class="aside__footer">
 			<ul>
@@ -149,6 +166,13 @@
 				</li>
 			</ul>
 		</nav>
+		<DialogModal v-model="isShowCertificate" animation="fade">
+			<template v-slot="{ onClose }">
+				<figure @click="onClose" class="aside__document-wrapper">
+					<img class="aside__document" :src="'/certificates/' + docPath" />
+				</figure>
+			</template>
+		</DialogModal>
 	</aside>
 </template>
 
@@ -158,6 +182,8 @@ export default {
 	data() {
 		return {
 			birthDate: '1985-03-27',
+			isShowCertificate: false,
+			docPath: null,
 		};
 	},
 	computed: {
@@ -176,6 +202,12 @@ export default {
 			}
 
 			return age;
+		},
+	},
+	methods: {
+		showCertificate(docName) {
+			this.isShowCertificate = true;
+			this.docPath = docName;
 		},
 	},
 };
@@ -258,6 +290,88 @@ export default {
 .aside__language {
 	padding-top: var(--insent-sm);
 	font-size: var(--fs-caption);
+}
+.aside__skills {
+	padding-block: 0.9375rem;
+	border-bottom: 1px solid var(--tc-secondary);
+}
+.aside__technologies {
+	padding-block: 0.9375rem;
+	color: var(--tc-secondary);
+	border-bottom: 1px solid var(--tc-secondary);
+	& > li {
+		margin-block: 0.2rem;
+		&::before {
+			content: '\2713';
+			color: var(--light-blue);
+			padding-right: 5px;
+		}
+	}
+}
+.aside__certificates {
+	padding-block: 0.9375rem;
+	& > h6 {
+		font-size: var(--fs-primary);
+		font-weight: var(--fw-medium);
+	}
+}
+.aside__document-wrapper {
+	margin: 5rem;
+	height: calc(100svh - 10rem);
+	width: calc(100vw - 10rem);
+}
+.aside__document {
+	width: 100%;
+	height: 100%;
+}
+.aside__btns {
+	margin-top: 0.9375rem;
+	display: flex;
+	justify-content: space-around;
+}
+.aside__btn {
+	display: flex;
+	height: 2rem;
+	padding-inline: 0.5rem;
+	align-items: center;
+	position: relative;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	outline: none;
+	color: var(--white);
+	&::after,
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 20%;
+		height: 20%;
+		border: 0.001rem solid;
+		transition: all 0.6s ease;
+		border-radius: 2px;
+	}
+	&::after {
+		bottom: 0;
+		right: 0;
+		border-top-color: transparent;
+		border-left-color: transparent;
+		border-bottom-color: var(--light-blue);
+		border-right-color: var(--light-blue);
+	}
+	&::before {
+		top: 0;
+		left: 0;
+		border-bottom-color: transparent;
+		border-right-color: transparent;
+		border-top-color: var(--light-blue);
+		border-left-color: var(--light-blue);
+	}
+	&:hover:after,
+	&:hover:before {
+		width: 100%;
+		height: 100%;
+	}
 }
 .aside__footer {
 	& > ul {

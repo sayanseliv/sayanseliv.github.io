@@ -1,105 +1,18 @@
 {
-  "_nuxt-link.Bwrw2d4u.js": {
-    "resourceType": "script",
-    "module": true,
+  "@vite/client": {
     "prefetch": true,
-    "preload": true,
-    "file": "nuxt-link.Bwrw2d4u.js",
-    "imports": [
-      "node_modules/nuxt/dist/app/entry.js"
-    ]
-  },
-  "_vue.f36acd1f.BVTLbsP0.js": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "vue.f36acd1f.BVTLbsP0.js",
-    "imports": [
-      "node_modules/nuxt/dist/app/entry.js"
-    ]
-  },
-  "layouts/default.vue": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "default.ePWs8MJo.js",
-    "src": "layouts/default.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "node_modules/nuxt/dist/app/entry.js"
-    ]
-  },
-  "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "error-404.B6syBdAe.js",
-    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_nuxt-link.Bwrw2d4u.js",
-      "_vue.f36acd1f.BVTLbsP0.js",
-      "node_modules/nuxt/dist/app/entry.js"
-    ]
-  },
-  "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "error-500.Cziy_mCx.js",
-    "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "_vue.f36acd1f.BVTLbsP0.js",
-      "node_modules/nuxt/dist/app/entry.js"
-    ]
-  },
-  "node_modules/nuxt/dist/app/entry.js": {
-    "resourceType": "script",
-    "module": true,
-    "prefetch": true,
-    "preload": true,
-    "file": "entry.DJRIs7cm.js",
-    "src": "node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
-    "dynamicImports": [
-      "layouts/default.vue",
-      "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
-      "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
-    ],
-    "css": [
-      "style.nHlJlA_b.css"
-    ],
-    "_globalCSS": true
+    "file": "@vite/client",
+    "css": [],
+    "module": true,
+    "resourceType": "script"
   },
-  "style.nHlJlA_b.css": {
-    "file": "style.nHlJlA_b.css",
-    "resourceType": "style",
-    "prefetch": true,
-    "preload": true
-  },
-  "pages/index.vue": {
+  "/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/nuxt/dist/app/entry.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "index.B9f_7MNp.js",
-    "src": "pages/index.vue",
-    "isDynamicEntry": true,
-    "imports": [
-      "node_modules/nuxt/dist/app/entry.js",
-      "_nuxt-link.Bwrw2d4u.js"
-    ]
-  },
-  "style.css": {
-    "resourceType": "style",
-    "prefetch": true,
-    "preload": true,
-    "file": "style.nHlJlA_b.css",
-    "src": "style.css"
+    "isEntry": true,
+    "file": "/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/nuxt/dist/app/entry.js"
   }
 }

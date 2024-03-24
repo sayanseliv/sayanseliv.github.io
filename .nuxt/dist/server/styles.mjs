@@ -13,8 +13,8 @@ export default {
   "components/UI/DialogModal.vue": () => import('./_nuxt/DialogModal-styles.B545MYn6.mjs').then(interopDefault),
   "components/UI/ProgressBar.vue": () => import('./_nuxt/ProgressBar-styles.BCpUxteU.mjs').then(interopDefault),
   "components/UI/CircleProgress.vue": () => import('./_nuxt/CircleProgress-styles.CmeT373A.mjs').then(interopDefault),
-  "components/UI/ProgressBar.vue?vue&type=style&index=0&scoped=c83b2a8c&lang.css": () => import('./_nuxt/ProgressBar-styles.BCpUxteU.mjs').then(interopDefault),
   "components/UI/Sidebar.vue?vue&type=style&index=0&scoped=3d5e3d52&lang.scss": () => import('./_nuxt/Sidebar-styles.BPTQI3gZ.mjs').then(interopDefault),
+  "components/UI/ProgressBar.vue?vue&type=style&index=0&scoped=c83b2a8c&lang.css": () => import('./_nuxt/ProgressBar-styles.BCpUxteU.mjs').then(interopDefault),
   "components/UI/CircleProgress.vue?vue&type=style&index=0&scoped=1a47094b&lang.scss": () => import('./_nuxt/CircleProgress-styles.CmeT373A.mjs').then(interopDefault),
   "components/UI/DialogModal.vue?vue&type=style&index=0&scoped=5916d2d0&lang.scss": () => import('./_nuxt/DialogModal-styles.B545MYn6.mjs').then(interopDefault)
 }

@@ -348,8 +348,9 @@ export default {
 		width: 20%;
 		height: 20%;
 		border: 0.001rem solid;
-		transition: all 0.6s ease;
 		border-radius: 2px;
+		transition: width 0.6s ease, height 0.6s ease, background-color 0.6s ease 0.3s;
+		z-index: -1;
 	}
 	&::after {
 		bottom: 0;
@@ -367,10 +368,11 @@ export default {
 		border-top-color: var(--light-blue);
 		border-left-color: var(--light-blue);
 	}
-	&:hover:after,
-	&:hover:before {
+	&:hover::after,
+	&:hover::before {
 		width: 100%;
 		height: 100%;
+		background-color: var(--light-blue);
 	}
 }
 .aside__footer {

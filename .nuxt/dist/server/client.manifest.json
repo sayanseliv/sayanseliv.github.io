@@ -1,20 +1,20 @@
 {
-  "_nuxt-link.BYkqee5Z.js": {
+  "_nuxt-link.BfHQDaX2.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "nuxt-link.BYkqee5Z.js",
+    "file": "nuxt-link.BfHQDaX2.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_vue.f36acd1f.COEc_kRN.js": {
+  "_vue.f36acd1f.DspYh2F_.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "vue.f36acd1f.COEc_kRN.js",
+    "file": "vue.f36acd1f.DspYh2F_.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -24,12 +24,12 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "error-404.5gGUN7Ot.js",
+    "file": "error-404.CfBBvk9b.js",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_nuxt-link.BYkqee5Z.js",
-      "_vue.f36acd1f.COEc_kRN.js",
+      "_nuxt-link.BfHQDaX2.js",
+      "_vue.f36acd1f.DspYh2F_.js",
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
@@ -38,11 +38,11 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "error-500.CeIVLu9y.js",
+    "file": "error-500.DzYrhpJq.js",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vue.f36acd1f.COEc_kRN.js",
+      "_vue.f36acd1f.DspYh2F_.js",
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
@@ -51,7 +51,7 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "entry.DPb9qVTf.js",
+    "file": "entry.DM3YOTbr.js",
     "src": "node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
     "dynamicImports": [
@@ -59,12 +59,12 @@
       "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
     "css": [
-      "style.D8pB0ed4.css"
+      "style.DI3o7dOS.css"
     ],
     "_globalCSS": true
   },
-  "style.D8pB0ed4.css": {
-    "file": "style.D8pB0ed4.css",
+  "style.DI3o7dOS.css": {
+    "file": "style.DI3o7dOS.css",
     "resourceType": "style",
     "prefetch": true,
     "preload": true
@@ -74,19 +74,19 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "index.DNywDQp_.js",
+    "file": "index.D2E5g6wl.js",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_nuxt-link.BYkqee5Z.js"
+      "_nuxt-link.BfHQDaX2.js"
     ]
   },
   "style.css": {
     "resourceType": "style",
     "prefetch": true,
     "preload": true,
-    "file": "style.D8pB0ed4.css",
+    "file": "style.DI3o7dOS.css",
     "src": "style.css"
   }
 }

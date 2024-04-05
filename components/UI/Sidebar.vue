@@ -1,7 +1,7 @@
 <template>
 	<aside class="aside">
 		<figure class="aside__avatar">
-			<img src="/cv_photo.jpeg" alt="Lang Eugen avatar" class="aside__image" />
+			<img src="/images/thinking.webp" alt="Lang Eugen avatar" class="aside__image" />
 			<figcaption class="aside__figcaption">
 				Lang Eugen
 				<p class="aside__position">Front-end developer</p>
@@ -316,13 +316,18 @@ export default {
 	}
 }
 .aside__document-wrapper {
-	margin: 5rem;
-	height: calc(100svh - 10rem);
-	width: calc(100vw - 10rem);
+	margin: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100svh;
 }
 .aside__document {
-	width: 100%;
-	height: 100%;
+	max-width: 100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+	margin: 0 auto;
 }
 .aside__btns {
 	margin-top: 0.9375rem;

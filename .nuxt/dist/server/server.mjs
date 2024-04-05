@@ -534,7 +534,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: __nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect,
-    component: () => import("./_nuxt/index-DoOGv-Q6.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-Do700ak5.js").then((m) => m.default || m)
   }
 ];
 const _wrapIf = (component, props, slots) => {

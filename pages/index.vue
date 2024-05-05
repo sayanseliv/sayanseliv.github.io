@@ -24,77 +24,125 @@
 				<section class="content__technologies">
 					<h2 class="technologies__title">Technologies</h2>
 					<div class="technologies__grid">
-						<div>
+						<div class="technologies__item">
 							<h6>HTML5</h6>
 							<p>
 								HTML5 serves as the foundation for structuring and presenting
 								content on the web, offering enhanced semantics, multimedia support,
 								and interactive elements.
 							</p>
+							<NuxtLink
+								to="https://en.wikipedia.org/wiki/HTML5"
+								external
+								target="_blank">
+								Learn more
+							</NuxtLink>
 						</div>
-						<div>
+						<div class="technologies__item">
 							<h6>CSS3</h6>
 							<p>
 								CSS3 plays a crucial role in styling and designing web pages,
 								providing advanced layout options, animations, and responsive design
 								capabilities for improved user interfaces.
 							</p>
+							<NuxtLink
+								to="https://en.wikipedia.org/wiki/CSS"
+								external
+								target="_blank">
+								Learn more
+							</NuxtLink>
 						</div>
-						<div>
+						<div class="technologies__item">
 							<h6>JavaScript</h6>
 							<p>
 								JavaScript is essential for adding dynamic functionality to web
 								applications, enabling DOM manipulation, event handling, and
 								asynchronous communication with servers.
 							</p>
+							<NuxtLink
+								to="https://en.wikipedia.org/wiki/JavaScript"
+								external
+								target="_blank">
+								Learn more
+							</NuxtLink>
 						</div>
-						<div>
+						<div class="technologies__item">
 							<h6>Nuxt 3</h6>
 							<p>
 								Nuxt 3 is a powerful framework built on Vue.js, used for creating
 								modern and high-performance server-side rendered (SSR) and static
 								websites with streamlined development workflows.
 							</p>
+							<NuxtLink to="https://nuxt.com" external target="_blank">
+								Learn more
+							</NuxtLink>
 						</div>
-						<div>
+						<div class="technologies__item">
 							<h6>Vuetify 3</h6>
 							<p>
 								Vuetify 3 is a comprehensive UI library for Vue.js projects,
 								offering pre-designed components, themes, and responsive design
 								features to enhance user interfaces.
 							</p>
+							<NuxtLink to="https://vuetifyjs.com/en" external target="_blank">
+								Learn more
+							</NuxtLink>
 						</div>
-						<div>
+						<div class="technologies__item">
 							<h6>React Native</h6>
 							<p>
 								React Native is utilized for developing cross-platform mobile
 								applications using JavaScript and React, enabling efficient code
 								sharing and native app experiences on iOS and Android.
 							</p>
+							<NuxtLink
+								to="https://en.wikipedia.org/wiki/React_Native"
+								external
+								target="_blank">
+								Learn more
+							</NuxtLink>
 						</div>
-						<div>
+						<div class="technologies__item">
 							<h6>WordPress</h6>
 							<p>
 								WordPress serves as a versatile platform for creating dynamic
 								websites and blogs, providing customizable themes, plugins, and
 								content management tools for easy publishing and management.
 							</p>
+							<NuxtLink
+								to="https://en.wikipedia.org/wiki/WordPress"
+								external
+								target="_blank">
+								Learn more
+							</NuxtLink>
 						</div>
-						<div>
+						<div class="technologies__item">
 							<h6>GitHub</h6>
 							<p>
 								GitHub plays a pivotal role in code collaboration and version
 								control, facilitating efficient code management, collaboration among
 								developers, and project tracking.
 							</p>
+							<NuxtLink
+								to="https://en.wikipedia.org/wiki/GitHub"
+								external
+								target="_blank">
+								Learn more
+							</NuxtLink>
 						</div>
-						<div>
+						<div class="technologies__item">
 							<h6>Vuex/Pinia</h6>
 							<p>
 								Vuex and Pinia are state management libraries for Vue.js, offering
 								centralized state management, data sharing, and reactive updates to
 								streamline application development and maintain data consistency.
 							</p>
+							<NuxtLink
+								to="https://www.telerik.com/blogs/vue-js-state-management-pinia-vs-vuex"
+								external
+								target="_blank">
+								Learn more
+							</NuxtLink>
 						</div>
 					</div>
 				</section>
@@ -127,7 +175,7 @@ export default {
 	row-gap: 2rem;
 	width: 100%;
 	margin-left: 20.125rem;
-	padding: 1rem;
+	padding: 0 1rem 1rem;
 	border-radius: var(--border-radius);
 }
 .content__hero {
@@ -141,7 +189,7 @@ export default {
 }
 .hero__text-bg {
 	padding: 1rem;
-	width: max-content;
+	width: fit-content;
 	background-image: linear-gradient(
 		90deg,
 		rgba(45, 45, 58, 0.7) 15%,
@@ -158,7 +206,7 @@ export default {
 	background-clip: text;
 	color: transparent;
 	text-align: left;
-	font-size: 3rem;
+	font-size: var(--fs-h1);
 	font-weight: 400;
 	animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 4000ms;
 	@keyframes reveal {
@@ -177,14 +225,56 @@ export default {
 }
 .hero__description {
 	max-width: 35rem;
-	font-size: 1.1rem;
+	font-size: var(--fs-secondary);
 	line-height: 120%;
 }
-.content__technologies {
+.technologies__title {
+	margin-bottom: 1rem;
+	font-size: var(--fs-h2);
 }
 .technologies__grid {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 	gap: 1rem;
+}
+.technologies__item {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	border-radius: var(--border-radius);
+	box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
+	background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+	& > h6 {
+		margin-bottom: 0.5rem;
+		font-size: var(--fs-h6);
+	}
+	& > p {
+		margin-bottom: 0.5rem;
+		color: var(--tc-secondary);
+	}
+	& > a {
+		position: relative;
+		display: flex;
+		align-items: center;
+		width: fit-content;
+		margin-top: auto;
+		padding-right: 1.5rem;
+		color: var(--light-blue);
+		text-decoration: none;
+		transition: text-shadow 0.3s;
+		&:hover {
+			text-shadow: 0 0 3px rgba(72, 171, 237, 0.4);
+			&::after {
+				right: 0rem;
+			}
+		}
+		&::after {
+			content: 'ᐳ';
+			position: absolute;
+			right: 0.5rem;
+			font-size: var(--fs-caption);
+			transition: right 0.3s;
+		}
+	}
 }
 </style>

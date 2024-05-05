@@ -4,11 +4,6 @@
 		@content;
 	}
 }
-@mixin minMedia($widthValue, $width: min-width) {
-	@media only screen and ($width: $widthValue) {
-		@content;
-	}
-}
 @mixin colorButton($color, $background) {
 	color: $color;
 	background: $background;

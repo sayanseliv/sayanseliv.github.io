@@ -1,7 +1,7 @@
 <template>
 	<main class="main-home">
 		<div class="container-1440 home__container">
-			<Sidebar />
+			<Sidebar v-model="isShowSidebar" />
 			<div class="home__content">
 				<section class="content__hero">
 					<div class="hero__text-bg">
@@ -155,7 +155,9 @@
 export default {
 	name: 'mainPage',
 	data() {
-		return {};
+		return {
+			isShowSidebar: false,
+		};
 	},
 	mounted() {},
 	methods: {},
@@ -177,6 +179,9 @@ export default {
 	margin-left: 20.125rem;
 	padding: 0 1rem 1rem;
 	border-radius: var(--border-radius);
+	@include media(992px) {
+		margin-left: 0;
+	}
 }
 .content__hero {
 	padding: 3rem 2rem;

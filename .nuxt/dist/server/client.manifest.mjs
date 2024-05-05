@@ -1,20 +1,20 @@
 export default {
-  "_nuxt-link.DmUYqlFv.js": {
+  "_nuxt-link.BomUTpe8.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "nuxt-link.DmUYqlFv.js",
+    "file": "nuxt-link.BomUTpe8.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_vue.f36acd1f.C17F1XLz.js": {
+  "_vue.f36acd1f.DWLo0A5o.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "vue.f36acd1f.C17F1XLz.js",
+    "file": "vue.f36acd1f.DWLo0A5o.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -24,12 +24,12 @@ export default {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "error-404.Dt6zjrJe.js",
+    "file": "error-404.zEnfiyIM.js",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_nuxt-link.DmUYqlFv.js",
-      "_vue.f36acd1f.C17F1XLz.js",
+      "_nuxt-link.BomUTpe8.js",
+      "_vue.f36acd1f.DWLo0A5o.js",
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
@@ -38,11 +38,11 @@ export default {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "error-500.ikF80Eip.js",
+    "file": "error-500.Dt9710Vx.js",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vue.f36acd1f.C17F1XLz.js",
+      "_vue.f36acd1f.DWLo0A5o.js",
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
@@ -51,7 +51,7 @@ export default {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "entry.DRzoulAz.js",
+    "file": "entry.uIy2uErS.js",
     "src": "node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
     "dynamicImports": [
@@ -74,12 +74,12 @@ export default {
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "index.DPXIKK6o.js",
+    "file": "index.DNk4qUzi.js",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_nuxt-link.DmUYqlFv.js"
+      "_nuxt-link.BomUTpe8.js"
     ]
   },
   "style.css": {

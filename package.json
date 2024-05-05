@@ -10,7 +10,9 @@
 		"dev": "nuxt dev",
 		"generate": "nuxt generate",
 		"preview": "nuxt preview",
-		"postinstall": "nuxt prepare"
+		"postinstall": "nuxt prepare",
+		"reset": "rm -rf .nuxt node_modules .output yarn.lock yarn",
+		"start": "node .output/server/index.mjs"
 	},
 	"dependencies": {
 		"vue": "3.4.19",

@@ -84,6 +84,7 @@
   },
   "include": [
     "./nuxt.d.ts",
+    "../.config/nuxt.*",
     "../**/*",
     "../node_modules/@nuxt/devtools/runtime",
     "../node_modules/@nuxt/telemetry/runtime",

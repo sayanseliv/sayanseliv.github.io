@@ -4,69 +4,69 @@
     {
       "name": "vite:load-fallback",
       "result": "<template>\n\t<main class=\"main-home\">\n\t\t<div class=\"container-1440 home__container\">\n\t\t\t<Sidebar v-model=\"isShowSidebar\" />\n\t\t\t<div class=\"home__content\">\n\t\t\t\t<section class=\"content__hero\">\n\t\t\t\t\t<div class=\"hero__text-bg\">\n\t\t\t\t\t\t<h1 class=\"hero__title\">Welcome to Lang Eugen's Digital Space</h1>\n\t\t\t\t\t\t<p class=\"hero__description\">\n\t\t\t\t\t\t\tExplore a portfolio showcasing Lang's expertise in HTML, CSS,\n\t\t\t\t\t\t\tJavaScript, and popular front-end frameworks like React and Vue.js. From\n\t\t\t\t\t\t\tresponsive designs that adapt seamlessly to any device to interactive\n\t\t\t\t\t\t\telements that engage users, Lang's work reflects a commitment to\n\t\t\t\t\t\t\texcellence and innovation.\n\t\t\t\t\t\t\t<br />\n\t\t\t\t\t\t\t<br />\n\t\t\t\t\t\t\tWhether you're seeking a modern website for your business, an engaging\n\t\t\t\t\t\t\tweb application, or advice on front-end development best practices, Lang\n\t\t\t\t\t\t\tEugen is your trusted partner. Join the digital revolution and elevate\n\t\t\t\t\t\t\tyour online presence with Lang Eugen's expertise.\n\t\t\t\t\t\t</p>\n\t\t\t\t\t</div>\n\t\t\t\t</section>\n\t\t\t\t<section class=\"content__technologies\">\n\t\t\t\t\t<h2 class=\"technologies__title\">Technologies</h2>\n\t\t\t\t\t<div class=\"technologies__grid\">\n\t\t\t\t\t\t<div class=\"technologies__item\">\n\t\t\t\t\t\t\t<h6>HTML5</h6>\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tHTML5 serves as the foundation for structuring and presenting\n\t\t\t\t\t\t\t\tcontent on the web, offering enhanced semantics, multimedia support,\n\t\t\t\t\t\t\t\tand interactive elements.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t<NuxtLink\n\t\t\t\t\t\t\t\tto=\"https://en.wikipedia.org/wiki/HTML5\"\n\t\t\t\t\t\t\t\texternal\n\t\t\t\t\t\t\t\ttarget=\"_blank\">\n\t\t\t\t\t\t\t\tLearn more\n\t\t\t\t\t\t\t</NuxtLink>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technologies__item\">\n\t\t\t\t\t\t\t<h6>CSS3</h6>\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tCSS3 plays a crucial role in styling and designing web pages,\n\t\t\t\t\t\t\t\tproviding advanced layout options, animations, and responsive design\n\t\t\t\t\t\t\t\tcapabilities for improved user interfaces.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t<NuxtLink\n\t\t\t\t\t\t\t\tto=\"https://en.wikipedia.org/wiki/CSS\"\n\t\t\t\t\t\t\t\texternal\n\t\t\t\t\t\t\t\ttarget=\"_blank\">\n\t\t\t\t\t\t\t\tLearn more\n\t\t\t\t\t\t\t</NuxtLink>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technologies__item\">\n\t\t\t\t\t\t\t<h6>JavaScript</h6>\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tJavaScript is essential for adding dynamic functionality to web\n\t\t\t\t\t\t\t\tapplications, enabling DOM manipulation, event handling, and\n\t\t\t\t\t\t\t\tasynchronous communication with servers.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t<NuxtLink\n\t\t\t\t\t\t\t\tto=\"https://en.wikipedia.org/wiki/JavaScript\"\n\t\t\t\t\t\t\t\texternal\n\t\t\t\t\t\t\t\ttarget=\"_blank\">\n\t\t\t\t\t\t\t\tLearn more\n\t\t\t\t\t\t\t</NuxtLink>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technologies__item\">\n\t\t\t\t\t\t\t<h6>Nuxt 3</h6>\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tNuxt 3 is a powerful framework built on Vue.js, used for creating\n\t\t\t\t\t\t\t\tmodern and high-performance server-side rendered (SSR) and static\n\t\t\t\t\t\t\t\twebsites with streamlined development workflows.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t<NuxtLink to=\"https://nuxt.com\" external target=\"_blank\">\n\t\t\t\t\t\t\t\tLearn more\n\t\t\t\t\t\t\t</NuxtLink>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technologies__item\">\n\t\t\t\t\t\t\t<h6>Vuetify 3</h6>\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tVuetify 3 is a comprehensive UI library for Vue.js projects,\n\t\t\t\t\t\t\t\toffering pre-designed components, themes, and responsive design\n\t\t\t\t\t\t\t\tfeatures to enhance user interfaces.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t<NuxtLink to=\"https://vuetifyjs.com/en\" external target=\"_blank\">\n\t\t\t\t\t\t\t\tLearn more\n\t\t\t\t\t\t\t</NuxtLink>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technologies__item\">\n\t\t\t\t\t\t\t<h6>React Native</h6>\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tReact Native is utilized for developing cross-platform mobile\n\t\t\t\t\t\t\t\tapplications using JavaScript and React, enabling efficient code\n\t\t\t\t\t\t\t\tsharing and native app experiences on iOS and Android.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t<NuxtLink\n\t\t\t\t\t\t\t\tto=\"https://en.wikipedia.org/wiki/React_Native\"\n\t\t\t\t\t\t\t\texternal\n\t\t\t\t\t\t\t\ttarget=\"_blank\">\n\t\t\t\t\t\t\t\tLearn more\n\t\t\t\t\t\t\t</NuxtLink>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technologies__item\">\n\t\t\t\t\t\t\t<h6>WordPress</h6>\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tWordPress serves as a versatile platform for creating dynamic\n\t\t\t\t\t\t\t\twebsites and blogs, providing customizable themes, plugins, and\n\t\t\t\t\t\t\t\tcontent management tools for easy publishing and management.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t<NuxtLink\n\t\t\t\t\t\t\t\tto=\"https://en.wikipedia.org/wiki/WordPress\"\n\t\t\t\t\t\t\t\texternal\n\t\t\t\t\t\t\t\ttarget=\"_blank\">\n\t\t\t\t\t\t\t\tLearn more\n\t\t\t\t\t\t\t</NuxtLink>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technologies__item\">\n\t\t\t\t\t\t\t<h6>GitHub</h6>\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tGitHub plays a pivotal role in code collaboration and version\n\t\t\t\t\t\t\t\tcontrol, facilitating efficient code management, collaboration among\n\t\t\t\t\t\t\t\tdevelopers, and project tracking.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t<NuxtLink\n\t\t\t\t\t\t\t\tto=\"https://en.wikipedia.org/wiki/GitHub\"\n\t\t\t\t\t\t\t\texternal\n\t\t\t\t\t\t\t\ttarget=\"_blank\">\n\t\t\t\t\t\t\t\tLearn more\n\t\t\t\t\t\t\t</NuxtLink>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t<div class=\"technologies__item\">\n\t\t\t\t\t\t\t<h6>Vuex/Pinia</h6>\n\t\t\t\t\t\t\t<p>\n\t\t\t\t\t\t\t\tVuex and Pinia are state management libraries for Vue.js, offering\n\t\t\t\t\t\t\t\tcentralized state management, data sharing, and reactive updates to\n\t\t\t\t\t\t\t\tstreamline application development and maintain data consistency.\n\t\t\t\t\t\t\t</p>\n\t\t\t\t\t\t\t<NuxtLink\n\t\t\t\t\t\t\t\tto=\"https://www.telerik.com/blogs/vue-js-state-management-pinia-vs-vuex\"\n\t\t\t\t\t\t\t\texternal\n\t\t\t\t\t\t\t\ttarget=\"_blank\">\n\t\t\t\t\t\t\t\tLearn more\n\t\t\t\t\t\t\t</NuxtLink>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t</div>\n\t\t\t\t</section>\n\t\t\t</div>\n\t\t</div>\n\t</main>\n</template>\n\n<script>\nexport default {\n\tname: 'mainPage',\n\tdata() {\n\t\treturn {\n\t\t\tisShowSidebar: false,\n\t\t};\n\t},\n\tmounted() {},\n\tmethods: {},\n};\n</script>\n\n<style lang=\"scss\" scoped>\n.home__container {\n\tposition: relative;\n\tdisplay: flex;\n\tcolumn-gap: 2rem;\n\tpadding-block: 1rem;\n}\n.home__content {\n\tdisplay: flex;\n\tflex-direction: column;\n\trow-gap: 2rem;\n\twidth: 100%;\n\tmargin-left: 20.125rem;\n\tpadding: 0 1rem 1rem;\n\tborder-radius: var(--border-radius);\n\t@include media(992px) {\n\t\tmargin-left: 0;\n\t}\n}\n.content__hero {\n\tpadding: 3rem 2rem;\n\twidth: 100%;\n\tbackground-image: url('/images/pixlr-6.webp');\n\tbackground-repeat: no-repeat;\n\tbackground-position: center;\n\tbackground-size: cover;\n\tborder-radius: var(--border-radius);\n}\n.hero__text-bg {\n\tpadding: 1rem;\n\twidth: fit-content;\n\tbackground-image: linear-gradient(\n\t\t90deg,\n\t\trgba(45, 45, 58, 0.7) 15%,\n\t\trgba(45, 45, 58, 0.5) 50%,\n\t\trgba(43, 43, 53, 0.5) 100%\n\t);\n\tborder-radius: var(--border-radius);\n}\n.hero__title {\n\tmax-width: 33rem;\n\tmargin-bottom: 2rem;\n\tbackground: 50% 100% / 50% 50% no-repeat\n\t\tradial-gradient(ellipse at bottom, var(--light-blue), transparent, transparent);\n\tbackground-clip: text;\n\tcolor: transparent;\n\ttext-align: left;\n\tfont-size: var(--fs-h1);\n\tfont-weight: 400;\n\tanimation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 4000ms;\n\t@keyframes reveal {\n\t\t80% {\n\t\t\tletter-spacing: 0.1rem;\n\t\t}\n\t\t100% {\n\t\t\tbackground-size: 300% 300%;\n\t\t}\n\t}\n\t@keyframes glow {\n\t\t40% {\n\t\t\ttext-shadow: 0 0 0.1rem var(--light-blue);\n\t\t}\n\t}\n}\n.hero__description {\n\tmax-width: 35rem;\n\tfont-size: var(--fs-secondary);\n\tline-height: 120%;\n}\n.technologies__title {\n\tmargin-bottom: 1rem;\n\tfont-size: var(--fs-h2);\n}\n.technologies__grid {\n\tdisplay: grid;\n\tgrid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));\n\tgap: 1rem;\n}\n.technologies__item {\n\tdisplay: flex;\n\tflex-direction: column;\n\tpadding: 1rem;\n\tborder-radius: var(--border-radius);\n\tbox-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);\n\tbackground: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);\n\t& > h6 {\n\t\tmargin-bottom: 0.5rem;\n\t\tfont-size: var(--fs-h6);\n\t}\n\t& > p {\n\t\tmargin-bottom: 0.5rem;\n\t\tcolor: var(--tc-secondary);\n\t}\n\t& > a {\n\t\tposition: relative;\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\twidth: fit-content;\n\t\tmargin-top: auto;\n\t\tpadding-right: 1.5rem;\n\t\tcolor: var(--light-blue);\n\t\ttext-decoration: none;\n\t\ttransition: text-shadow 0.3s;\n\t\t&:hover {\n\t\t\ttext-shadow: 0 0 3px rgba(72, 171, 237, 0.4);\n\t\t\t&::after {\n\t\t\t\tright: 0rem;\n\t\t\t}\n\t\t}\n\t\t&::after {\n\t\t\tcontent: 'ᐳ';\n\t\t\tposition: absolute;\n\t\t\tright: 0.5rem;\n\t\t\tfont-size: var(--fs-caption);\n\t\t\ttransition: right 0.3s;\n\t\t}\n\t}\n}\n</style>\n",
-      "start": 1714926703255,
-      "end": 1714926703392,
+      "start": 1714927345351,
+      "end": 1714927345397,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714926703392,
-      "end": 1714926703392,
+      "start": 1714927345397,
+      "end": 1714927345397,
       "order": "pre"
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1714926703392,
-      "end": 1714926703392,
+      "start": 1714927345397,
+      "end": 1714927345397,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714926703392,
-      "end": 1714926703392,
+      "start": 1714927345397,
+      "end": 1714927345397,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1714926703392,
-      "end": 1714926703392,
+      "start": 1714927345397,
+      "end": 1714927345397,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1714926703392,
-      "end": 1714926703392,
+      "start": 1714927345397,
+      "end": 1714927345397,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1714926703392,
-      "end": 1714926703392,
+      "start": 1714927345397,
+      "end": 1714927345397,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1714926703392,
-      "end": 1714926703392,
+      "start": 1714927345397,
+      "end": 1714927345397,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1714926703392,
-      "end": 1714926703392,
+      "start": 1714927345397,
+      "end": 1714927345397,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1714926703392,
-      "end": 1714926703392,
+      "start": 1714927345397,
+      "end": 1714927345397,
       "order": "normal"
     },
     {
       "name": "vite:vue",
       "result": "\nconst _sfc_main = {\n\tname: 'mainPage',\n\tdata() {\n\t\treturn {\n\t\t\tisShowSidebar: false,\n\t\t};\n\t},\n\tmounted() {},\n\tmethods: {},\n};\n\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_Sidebar = _resolveComponent(\"Sidebar\")\n  const _component_NuxtLink = _resolveComponent(\"NuxtLink\")\n\n  _push(`<main${_ssrRenderAttrs(_mergeProps({ class: \"main-home\" }, _attrs))} data-v-59172161><div class=\"container-1440 home__container\" data-v-59172161>`)\n  _push(_ssrRenderComponent(_component_Sidebar, {\n    modelValue: $data.isShowSidebar,\n    \"onUpdate:modelValue\": $event => (($data.isShowSidebar) = $event)\n  }, null, _parent))\n  _push(`<div class=\"home__content\" data-v-59172161><section class=\"content__hero\" data-v-59172161><div class=\"hero__text-bg\" data-v-59172161><h1 class=\"hero__title\" data-v-59172161>Welcome to Lang Eugen&#39;s Digital Space</h1><p class=\"hero__description\" data-v-59172161> Explore a portfolio showcasing Lang&#39;s expertise in HTML, CSS, JavaScript, and popular front-end frameworks like React and Vue.js. From responsive designs that adapt seamlessly to any device to interactive elements that engage users, Lang&#39;s work reflects a commitment to excellence and innovation. <br data-v-59172161><br data-v-59172161> Whether you&#39;re seeking a modern website for your business, an engaging web application, or advice on front-end development best practices, Lang Eugen is your trusted partner. Join the digital revolution and elevate your online presence with Lang Eugen&#39;s expertise. </p></div></section><section class=\"content__technologies\" data-v-59172161><h2 class=\"technologies__title\" data-v-59172161>Technologies</h2><div class=\"technologies__grid\" data-v-59172161><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>HTML5</h6><p data-v-59172161> HTML5 serves as the foundation for structuring and presenting content on the web, offering enhanced semantics, multimedia support, and interactive elements. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/HTML5\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>CSS3</h6><p data-v-59172161> CSS3 plays a crucial role in styling and designing web pages, providing advanced layout options, animations, and responsive design capabilities for improved user interfaces. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/CSS\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>JavaScript</h6><p data-v-59172161> JavaScript is essential for adding dynamic functionality to web applications, enabling DOM manipulation, event handling, and asynchronous communication with servers. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/JavaScript\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>Nuxt 3</h6><p data-v-59172161> Nuxt 3 is a powerful framework built on Vue.js, used for creating modern and high-performance server-side rendered (SSR) and static websites with streamlined development workflows. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://nuxt.com\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>Vuetify 3</h6><p data-v-59172161> Vuetify 3 is a comprehensive UI library for Vue.js projects, offering pre-designed components, themes, and responsive design features to enhance user interfaces. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://vuetifyjs.com/en\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>React Native</h6><p data-v-59172161> React Native is utilized for developing cross-platform mobile applications using JavaScript and React, enabling efficient code sharing and native app experiences on iOS and Android. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/React_Native\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>WordPress</h6><p data-v-59172161> WordPress serves as a versatile platform for creating dynamic websites and blogs, providing customizable themes, plugins, and content management tools for easy publishing and management. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/WordPress\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>GitHub</h6><p data-v-59172161> GitHub plays a pivotal role in code collaboration and version control, facilitating efficient code management, collaboration among developers, and project tracking. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/GitHub\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>Vuex/Pinia</h6><p data-v-59172161> Vuex and Pinia are state management libraries for Vue.js, offering centralized state management, data sharing, and reactive updates to streamline application development and maintain data consistency. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://www.telerik.com/blogs/vue-js-state-management-pinia-vs-vuex\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div></section></div></div></main>`)\n}\n\nimport \"/Users/eugen/Desktop/Projects/sayanseliv.github.io/pages/index.vue?vue&type=style&index=0&scoped=59172161&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-59172161\"]])",
-      "start": 1714926703392,
-      "end": 1714926703397,
+      "start": 1714927345397,
+      "end": 1714927345425,
       "order": "normal",
       "sourcemaps": {
         "version": 3,
@@ -83,159 +83,159 @@
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1714926703397,
-      "end": 1714926703397,
+      "start": 1714927345425,
+      "end": 1714927345425,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714926703397,
-      "end": 1714926703398,
+      "start": 1714927345425,
+      "end": 1714927345425,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714926703397,
-      "end": 1714926703398,
+      "start": 1714927345425,
+      "end": 1714927345425,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714926703398,
-      "end": 1714926703398,
+      "start": 1714927345425,
+      "end": 1714927345425,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1714926703398,
-      "end": 1714926703398,
+      "start": 1714927345425,
+      "end": 1714927345425,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1714926703398,
-      "end": 1714926703398,
+      "start": 1714927345425,
+      "end": 1714927345425,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1714926703398,
-      "end": 1714926703398,
+      "start": 1714927345425,
+      "end": 1714927345425,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1714926703398,
-      "end": 1714926703400,
+      "start": 1714927345425,
+      "end": 1714927345426,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "start": 1714926703400,
-      "end": 1714926703400,
+      "start": 1714927345426,
+      "end": 1714927345426,
       "order": "normal"
     },
     {
       "name": "vite:css-post",
-      "start": 1714926703400,
-      "end": 1714926703400,
+      "start": 1714927345426,
+      "end": 1714927345426,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1714926703400,
-      "end": 1714926703400,
+      "start": 1714927345426,
+      "end": 1714927345426,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1714926703400,
-      "end": 1714926703400,
+      "start": 1714927345426,
+      "end": 1714927345426,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1714926703400,
-      "end": 1714926703400,
+      "start": 1714927345426,
+      "end": 1714927345426,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1714926703400,
-      "end": 1714926703400,
+      "start": 1714927345426,
+      "end": 1714927345427,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1714926703400,
-      "end": 1714926703400,
+      "start": 1714927345427,
+      "end": 1714927345427,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1714926703400,
-      "end": 1714926703400,
+      "start": 1714927345427,
+      "end": 1714927345427,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714926703400,
-      "end": 1714926703400,
+      "start": 1714927345427,
+      "end": 1714927345427,
       "order": "post"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1714926703400,
-      "end": 1714926703400,
+      "start": 1714927345427,
+      "end": 1714927345427,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714926703400,
-      "end": 1714926703402,
+      "start": 1714927345427,
+      "end": 1714927345429,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1714926703400,
-      "end": 1714926703402,
+      "start": 1714927345427,
+      "end": 1714927345429,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714926703402,
-      "end": 1714926703402,
+      "start": 1714927345430,
+      "end": 1714927345430,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1714926703402,
-      "end": 1714926703402,
+      "start": 1714927345430,
+      "end": 1714927345430,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714926703402,
-      "end": 1714926703402,
+      "start": 1714927345430,
+      "end": 1714927345430,
       "order": "post"
     },
     {
       "name": "nuxt:pages-macros-transform",
-      "start": 1714926703402,
-      "end": 1714926703402,
+      "start": 1714927345430,
+      "end": 1714927345430,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-template",
-      "start": 1714926703402,
-      "end": 1714926703402,
+      "start": 1714927345430,
+      "end": 1714927345430,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
       "result": "import { default as __nuxt_component_0 } from \"/Users/eugen/Desktop/Projects/sayanseliv.github.io/components/UI/Sidebar.vue\";\nimport { default as __nuxt_component_1 } from \"/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/nuxt/dist/app/components/nuxt-link\";\n\nconst _sfc_main = {\n\tname: 'mainPage',\n\tdata() {\n\t\treturn {\n\t\t\tisShowSidebar: false,\n\t\t};\n\t},\n\tmounted() {},\n\tmethods: {},\n};\n\nimport { resolveComponent as _resolveComponent, withCtx as _withCtx, createTextVNode as _createTextVNode, mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  const _component_Sidebar = __nuxt_component_0\n  const _component_NuxtLink = __nuxt_component_1\n\n  _push(`<main${_ssrRenderAttrs(_mergeProps({ class: \"main-home\" }, _attrs))} data-v-59172161><div class=\"container-1440 home__container\" data-v-59172161>`)\n  _push(_ssrRenderComponent(_component_Sidebar, {\n    modelValue: $data.isShowSidebar,\n    \"onUpdate:modelValue\": $event => (($data.isShowSidebar) = $event)\n  }, null, _parent))\n  _push(`<div class=\"home__content\" data-v-59172161><section class=\"content__hero\" data-v-59172161><div class=\"hero__text-bg\" data-v-59172161><h1 class=\"hero__title\" data-v-59172161>Welcome to Lang Eugen&#39;s Digital Space</h1><p class=\"hero__description\" data-v-59172161> Explore a portfolio showcasing Lang&#39;s expertise in HTML, CSS, JavaScript, and popular front-end frameworks like React and Vue.js. From responsive designs that adapt seamlessly to any device to interactive elements that engage users, Lang&#39;s work reflects a commitment to excellence and innovation. <br data-v-59172161><br data-v-59172161> Whether you&#39;re seeking a modern website for your business, an engaging web application, or advice on front-end development best practices, Lang Eugen is your trusted partner. Join the digital revolution and elevate your online presence with Lang Eugen&#39;s expertise. </p></div></section><section class=\"content__technologies\" data-v-59172161><h2 class=\"technologies__title\" data-v-59172161>Technologies</h2><div class=\"technologies__grid\" data-v-59172161><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>HTML5</h6><p data-v-59172161> HTML5 serves as the foundation for structuring and presenting content on the web, offering enhanced semantics, multimedia support, and interactive elements. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/HTML5\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>CSS3</h6><p data-v-59172161> CSS3 plays a crucial role in styling and designing web pages, providing advanced layout options, animations, and responsive design capabilities for improved user interfaces. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/CSS\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>JavaScript</h6><p data-v-59172161> JavaScript is essential for adding dynamic functionality to web applications, enabling DOM manipulation, event handling, and asynchronous communication with servers. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/JavaScript\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>Nuxt 3</h6><p data-v-59172161> Nuxt 3 is a powerful framework built on Vue.js, used for creating modern and high-performance server-side rendered (SSR) and static websites with streamlined development workflows. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://nuxt.com\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>Vuetify 3</h6><p data-v-59172161> Vuetify 3 is a comprehensive UI library for Vue.js projects, offering pre-designed components, themes, and responsive design features to enhance user interfaces. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://vuetifyjs.com/en\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>React Native</h6><p data-v-59172161> React Native is utilized for developing cross-platform mobile applications using JavaScript and React, enabling efficient code sharing and native app experiences on iOS and Android. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/React_Native\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>WordPress</h6><p data-v-59172161> WordPress serves as a versatile platform for creating dynamic websites and blogs, providing customizable themes, plugins, and content management tools for easy publishing and management. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/WordPress\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>GitHub</h6><p data-v-59172161> GitHub plays a pivotal role in code collaboration and version control, facilitating efficient code management, collaboration among developers, and project tracking. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://en.wikipedia.org/wiki/GitHub\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div><div class=\"technologies__item\" data-v-59172161><h6 data-v-59172161>Vuex/Pinia</h6><p data-v-59172161> Vuex and Pinia are state management libraries for Vue.js, offering centralized state management, data sharing, and reactive updates to streamline application development and maintain data consistency. </p>`)\n  _push(_ssrRenderComponent(_component_NuxtLink, {\n    to: \"https://www.telerik.com/blogs/vue-js-state-management-pinia-vs-vuex\",\n    external: \"\",\n    target: \"_blank\"\n  }, {\n    default: _withCtx((_, _push, _parent, _scopeId) => {\n      if (_push) {\n        _push(` Learn more `)\n      } else {\n        return [\n          _createTextVNode(\" Learn more \")\n        ]\n      }\n    }),\n    _: 1\n  }, _parent))\n  _push(`</div></div></section></div></div></main>`)\n}\n\nimport \"/Users/eugen/Desktop/Projects/sayanseliv.github.io/pages/index.vue?vue&type=style&index=0&scoped=59172161&lang.scss\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"pages/index.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender],['__scopeId',\"data-v-59172161\"]])",
-      "start": 1714926703403,
-      "end": 1714926703403,
+      "start": 1714927345430,
+      "end": 1714927345431,
       "order": "post",
       "sourcemaps": {
         "version": 3,
@@ -248,20 +248,20 @@
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1714926703403,
-      "end": 1714926703403,
+      "start": 1714927345431,
+      "end": 1714927345431,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1714926703403,
-      "end": 1714926703403,
+      "start": 1714927345431,
+      "end": 1714927345431,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1714926703403,
-      "end": 1714926703403,
+      "start": 1714927345431,
+      "end": 1714927345431,
       "order": "normal"
     }
   ]

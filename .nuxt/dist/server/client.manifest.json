@@ -1,20 +1,20 @@
 {
-  "_nuxt-link.DH_3aDB-.js": {
+  "_nuxt-link.DmUYqlFv.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "nuxt-link.DH_3aDB-.js",
+    "file": "nuxt-link.DmUYqlFv.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
-  "_vue.f36acd1f.apXhIw6N.js": {
+  "_vue.f36acd1f.C17F1XLz.js": {
     "resourceType": "script",
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "vue.f36acd1f.apXhIw6N.js",
+    "file": "vue.f36acd1f.C17F1XLz.js",
     "imports": [
       "node_modules/nuxt/dist/app/entry.js"
     ]
@@ -24,12 +24,12 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "error-404.-o8TAd-e.js",
+    "file": "error-404.Dt6zjrJe.js",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_nuxt-link.DH_3aDB-.js",
-      "_vue.f36acd1f.apXhIw6N.js",
+      "_nuxt-link.DmUYqlFv.js",
+      "_vue.f36acd1f.C17F1XLz.js",
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
@@ -38,11 +38,11 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "error-500.DfRcRTxK.js",
+    "file": "error-500.ikF80Eip.js",
     "src": "node_modules/@nuxt/ui-templates/dist/templates/error-500.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_vue.f36acd1f.apXhIw6N.js",
+      "_vue.f36acd1f.C17F1XLz.js",
       "node_modules/nuxt/dist/app/entry.js"
     ]
   },
@@ -51,7 +51,7 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "entry.hR_UQkES.js",
+    "file": "entry.DRzoulAz.js",
     "src": "node_modules/nuxt/dist/app/entry.js",
     "isEntry": true,
     "dynamicImports": [
@@ -74,12 +74,12 @@
     "module": true,
     "prefetch": true,
     "preload": true,
-    "file": "index.BvWTcs2S.js",
+    "file": "index.DPXIKK6o.js",
     "src": "pages/index.vue",
     "isDynamicEntry": true,
     "imports": [
       "node_modules/nuxt/dist/app/entry.js",
-      "_nuxt-link.DH_3aDB-.js"
+      "_nuxt-link.DmUYqlFv.js"
     ]
   },
   "style.css": {

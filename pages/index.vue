@@ -165,6 +165,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/styles/_mixins.scss';
 .home__container {
 	position: relative;
 	display: flex;

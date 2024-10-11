@@ -9,6 +9,7 @@ export default defineNuxtConfig({
 		},
 	],
 	nitro: { compressPublicAssets: true },
+	ssr: false,
 	vite: {
 		css: {
 			preprocessorOptions: {

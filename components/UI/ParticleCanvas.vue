@@ -6,8 +6,8 @@
 
 <script setup>
 onMounted(() => {
-	if (process.client) {
-		const canvasDiv = document.getElementById('particle-canvas');
+	const canvasDiv = document.getElementById('particle-canvas');
+	if (canvasDiv) {
 		const options = {
 			particleColor: '#888',
 			background: '#161313',

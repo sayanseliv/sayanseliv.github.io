@@ -6,6 +6,8 @@ node_modules/
 yarn-error.log
 .yarn-integrity
 yarn.lock
+.yarn
+.yarn/
 
 # OS generated files
 .DS_Store

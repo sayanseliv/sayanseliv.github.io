@@ -1,5 +1,6 @@
 <template>
 	<main class="main-home">
+		<ParticleCanvas />
 		<div class="container-1440 home__container">
 			<Sidebar v-model="isShowSidebar" />
 			<div class="home__content">
@@ -166,6 +167,9 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/styles/_mixins.scss';
+.main-home {
+	padding-top: 3rem;
+}
 .home__container {
 	position: relative;
 	display: flex;

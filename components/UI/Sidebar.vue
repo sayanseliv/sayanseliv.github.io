@@ -1,10 +1,10 @@
 <template>
 	<aside class="aside">
-		<div class="aside__toggle">
+		<div :class="['aside__toggle', isHidden]">
 			<input :checked="modelValue" id="chackboxAside" type="checkbox" />
 			<label @click="toggle" for="chackboxAside"></label>
 		</div>
-		<div class="aside__container" :class="isHidden">
+		<div class="aside__container">
 			<figure class="aside__avatar">
 				<img src="/images/thinking.webp" alt="Lang Eugen avatar" class="aside__image" />
 				<figcaption class="aside__figcaption">
@@ -243,6 +243,7 @@ export default {
 	position: fixed;
 	z-index: 999;
 }
+
 .aside__container {
 	position: absolute;
 	left: 0;
@@ -253,11 +254,7 @@ export default {
 	border-radius: var(--border-radius);
 	transition: left 0.3s;
 }
-.aside__hidden {
-	@include media(992px) {
-		left: -20.125rem;
-	}
-}
+
 .aside__toggle {
 	z-index: 1;
 	position: absolute;
@@ -297,8 +294,15 @@ export default {
 			height: min-content;
 		}
 	}
-	&:has(> input:not(:checked)) {
+	&:not(.aside__hidden) {
 		right: -18.125rem;
+	}
+}
+.aside__hidden {
+	& + .aside__container {
+		@include media(992px) {
+			left: -20.125rem;
+		}
 	}
 }
 .aside__avatar {

@@ -133,6 +133,7 @@ export default defineNuxtConfig({
 					color: '#5bbad5',
 				},
 			],
+			script: [{ src: '/js/ParticleNetwork.js', defer: true }],
 		},
 	},
 	css: ['assets/styles/reset.scss', 'assets/styles/global.scss'],

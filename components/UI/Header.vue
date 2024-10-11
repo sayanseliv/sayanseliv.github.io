@@ -11,7 +11,10 @@ export default {
 
 <style scoped lang="scss">
 .header {
+	position: fixed;
+	z-index: 9999;
 	height: 3rem;
+	width: 100%;
 	background-color: var(--bg-color);
 }
 .header__nav {

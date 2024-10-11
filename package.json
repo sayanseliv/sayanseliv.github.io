@@ -16,7 +16,6 @@
 	},
 	"devDependencies": {
 		"nuxt": "3.13.0",
-		"nuxt-vitalizer": "0.10.0",
 		"sass": "1.79.1",
 		"vue": "3.4.38",
 		"vue-router": "4.4.3"

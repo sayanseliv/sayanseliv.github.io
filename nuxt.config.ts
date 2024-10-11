@@ -2,19 +2,23 @@
 const BASE_URL = 'https://sayanseliv.github.io/';
 export default defineNuxtConfig({
 	devtools: { enabled: true },
+
 	components: [
 		{
 			path: '~/components',
 			pathPrefix: false,
 		},
 	],
+
 	nitro: { compressPublicAssets: true },
-	ssr: false,
+	ssr: true,
+
 	vite: {
 		css: {
 			preprocessorOptions: {
 				scss: {
 					additionalData: '@use "@/assets/styles/_mixins.scss" as *;',
+					silenceDeprecations: ['legacy-js-api'],
 				},
 			},
 		},
@@ -22,6 +26,7 @@ export default defineNuxtConfig({
 			cssCodeSplit: false,
 		},
 	},
+
 	app: {
 		head: {
 			htmlAttrs: { lang: 'en' },
@@ -137,5 +142,7 @@ export default defineNuxtConfig({
 			script: [{ src: '/js/ParticleNetwork.js', defer: true }],
 		},
 	},
+
 	css: ['assets/styles/reset.scss', 'assets/styles/global.scss'],
+	compatibilityDate: '2024-10-11',
 });

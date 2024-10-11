@@ -14,12 +14,10 @@
 		"reset": "rm -rf .nuxt node_modules .output yarn.lock yarn",
 		"start": "node .output/server/index.mjs"
 	},
-	"dependencies": {
-		"vue": "3.4.19",
-		"vue-router": "4.3.0"
-	},
 	"devDependencies": {
-		"nuxt": "3.10.3",
-		"sass": "1.71.1"
+		"nuxt": "3.13.0",
+		"sass": "1.79.1",
+		"vue": "3.4.38",
+		"vue-router": "4.4.3"
 	}
 }

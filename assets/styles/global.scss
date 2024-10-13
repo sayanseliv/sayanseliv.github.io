@@ -18,8 +18,18 @@
 	--tc-secondary: #8c8c8e;
 	--tc-grey: #cacace;
 	--bg-color: #303030;
-	--bg-secondary-color: #20202a;
+	--bg-secondary-color: #040404;
 	--empty-color: #191923;
+	--gradient: conic-gradient(
+		from 90deg at 50% 50%,
+		rgb(251, 55, 60),
+		rgba(252, 114, 28, 1),
+		rgba(255, 220, 0, 1),
+		rgba(27, 206, 255, 1),
+		rgba(42, 107, 255, 1),
+		rgba(217, 41, 255, 1),
+		rgba(255, 10, 92, 1)
+	);
 	/* font-weight */
 	--fw-bold: 700;
 	--fw-semibold: 600;
@@ -34,6 +44,7 @@
 	--fs-h6: 1.2rem;
 	// radius
 	--border-radius: 5px;
+	--border-card: 14px;
 	// insent
 	--insent-sm: 0.3rem;
 }

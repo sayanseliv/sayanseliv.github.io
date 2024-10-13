@@ -308,13 +308,15 @@ export default {
 .aside__avatar {
 	position: absolute;
 	inset: 0;
+	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
 	max-height: max-content;
 	padding-block: 0.9375rem;
-	background: linear-gradient(159deg, rgba(37, 37, 50, 0.98) 0%, rgba(35, 35, 45, 0.98) 100%);
+	background: var(--bg-secondary-color);
+	border-bottom: 1px solid var(--white);
 }
 .aside__image {
 	width: 100%;

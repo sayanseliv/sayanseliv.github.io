@@ -590,7 +590,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-BL9UGsxn.mjs').then((m) => m.default || m)
+    component: () => import('./index-Bz_M8pdP.mjs').then((m) => m.default || m)
   }
 ];
 const _wrapIf = (component, props, slots) => {

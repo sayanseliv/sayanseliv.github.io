@@ -25,7 +25,8 @@
 				<section class="content__technologies">
 					<h2 class="technologies__title">Technologies</h2>
 					<div class="technologies__grid">
-						<div class="technologies__item">
+						<CardTechnology v-for="card in cards" :content="card" />
+						<!-- <div class="technologies__item">
 							<h6>HTML5</h6>
 							<p>
 								HTML5 serves as the foundation for structuring and presenting
@@ -144,7 +145,7 @@
 								target="_blank">
 								Learn more
 							</NuxtLink>
-						</div>
+						</div> -->
 					</div>
 				</section>
 			</div>
@@ -153,11 +154,13 @@
 </template>
 
 <script>
+import cardsData from '/static/technology.json';
 export default {
 	name: 'mainPage',
 	data() {
 		return {
 			isShowSidebar: false,
+			cards: cardsData.technology,
 		};
 	},
 	mounted() {},
@@ -246,45 +249,5 @@ export default {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
 	gap: 1rem;
-}
-.technologies__item {
-	display: flex;
-	flex-direction: column;
-	padding: 1rem;
-	border-radius: var(--border-radius);
-	box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
-	background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
-	& > h6 {
-		margin-bottom: 0.5rem;
-		font-size: var(--fs-h6);
-	}
-	& > p {
-		margin-bottom: 0.5rem;
-		color: var(--tc-secondary);
-	}
-	& > a {
-		position: relative;
-		display: flex;
-		align-items: center;
-		width: fit-content;
-		margin-top: auto;
-		padding-right: 1.5rem;
-		color: var(--light-blue);
-		text-decoration: none;
-		transition: text-shadow 0.3s;
-		&:hover {
-			text-shadow: 0 0 3px rgba(72, 171, 237, 0.4);
-			&::after {
-				right: 0rem;
-			}
-		}
-		&::after {
-			content: 'ᐳ';
-			position: absolute;
-			right: 0.5rem;
-			font-size: var(--fs-caption);
-			transition: right 0.3s;
-		}
-	}
 }
 </style>

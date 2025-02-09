@@ -573,7 +573,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import("./_nuxt/index-Bz_M8pdP.js").then((m) => m.default || m)
+    component: () => import("./_nuxt/index-DHDTqueg.js").then((m) => m.default || m)
   }
 ];
 const _wrapIf = (component, props, slots) => {

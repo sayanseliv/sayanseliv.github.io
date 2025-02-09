@@ -22,6 +22,7 @@
 						</p>
 					</div>
 				</section>
+				<section class="content__image"></section>
 				<section class="content__technologies">
 					<h2 class="technologies__title">Technologies</h2>
 					<div class="technologies__grid">
@@ -72,28 +73,16 @@ export default {
 	}
 }
 .content__hero {
-	padding: 3rem 2rem;
-	width: 100%;
-	background-image: url('/images/pixlr-6.webp');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
+	background-color: var(--bg-secondary-color);
 	border-radius: var(--border-radius);
 }
 .hero__text-bg {
 	padding: 1rem;
 	width: fit-content;
-	background-image: linear-gradient(
-		90deg,
-		rgba(45, 45, 58, 0.7) 15%,
-		rgba(45, 45, 58, 0.5) 50%,
-		rgba(43, 43, 53, 0.5) 100%
-	);
 	border-radius: var(--border-radius);
 }
 .hero__title {
-	max-width: 33rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 	background: 50% 100% / 50% 50% no-repeat
 		radial-gradient(ellipse at bottom, var(--light-blue), transparent, transparent);
 	background-clip: text;
@@ -117,9 +106,18 @@ export default {
 	}
 }
 .hero__description {
-	max-width: 35rem;
 	font-size: var(--fs-secondary);
 	line-height: 120%;
+	color: var(--tc-secondary);
+}
+.content__image {
+	min-height: 25rem;
+	width: 100%;
+	background-image: url('/images/pixlr-6.webp');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border-radius: var(--border-radius);
 }
 .technologies__title {
 	margin-bottom: 1rem;

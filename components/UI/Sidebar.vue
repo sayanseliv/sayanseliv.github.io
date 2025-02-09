@@ -13,92 +13,96 @@
 				</figcaption>
 			</figure>
 			<section class="aside__scrollable">
-				<ul class="aside__info">
-					<li class="info__item">
-						<h6>Residence:</h6>
-						<span>Ukraine</span>
-					</li>
-					<li class="info__item">
-						<h6>City:</h6>
-						<span>Odesa</span>
-					</li>
-					<li class="info__item">
-						<h6>Age:</h6>
-						<span>{{ age }}</span>
-					</li>
-				</ul>
-				<div class="aside__languages">
-					<div>
-						<CircleProgress
-							:show-percent="true"
-							:percent="100"
-							:size="60"
-							:borderBgWidth="2"
-							:borderWidth="2"
-							fill-color="#48abed"
-							emptyColor="#191923" />
-						<span class="aside__language">Ukranian</span>
+				<div>
+					<ul class="aside__info">
+						<li class="info__item">
+							<h6>Residence:</h6>
+							<span>Ukraine</span>
+						</li>
+						<li class="info__item">
+							<h6>City:</h6>
+							<span>Odesa</span>
+						</li>
+						<li class="info__item">
+							<h6>Age:</h6>
+							<span>{{ age }}</span>
+						</li>
+					</ul>
+					<div class="aside__languages">
+						<div>
+							<CircleProgress
+								:show-percent="true"
+								:percent="100"
+								:size="60"
+								:borderBgWidth="2"
+								:borderWidth="2"
+								fill-color="#48abed"
+								emptyColor="#191923" />
+							<span class="aside__language">Ukranian</span>
+						</div>
+						<div>
+							<CircleProgress
+								:show-percent="true"
+								:percent="55"
+								:size="60"
+								:borderBgWidth="2"
+								:borderWidth="2"
+								fill-color="#48abed"
+								emptyColor="#191923" />
+							<span class="aside__language">English</span>
+						</div>
+						<div>
+							<CircleProgress
+								:show-percent="true"
+								:percent="45"
+								:size="60"
+								:borderBgWidth="2"
+								:borderWidth="2"
+								fill-color="#48abed"
+								emptyColor="#191923" />
+							<span class="aside__language">German</span>
+						</div>
+						<div>
+							<CircleProgress
+								:show-percent="true"
+								:percent="39"
+								:size="60"
+								:borderBgWidth="2"
+								:borderWidth="2"
+								fill-color="#48abed"
+								emptyColor="#191923" />
+							<span class="aside__language">Italian</span>
+						</div>
 					</div>
-					<div>
-						<CircleProgress
-							:show-percent="true"
-							:percent="55"
-							:size="60"
-							:borderBgWidth="2"
-							:borderWidth="2"
-							fill-color="#48abed"
-							emptyColor="#191923" />
-						<span class="aside__language">English</span>
+					<div class="aside__skills">
+						<ProgressBar label="Html" :targetProgress="100" />
+						<ProgressBar label="Css" :targetProgress="100" />
+						<ProgressBar label="Js" :targetProgress="75" />
+						<ProgressBar label="Php" :targetProgress="45" />
+						<ProgressBar label="Wordpress" :targetProgress="56" />
+						<ProgressBar label="Nuxt" :targetProgress="100" />
+						<ProgressBar label="React Native" :targetProgress="100" />
 					</div>
-					<div>
-						<CircleProgress
-							:show-percent="true"
-							:percent="45"
-							:size="60"
-							:borderBgWidth="2"
-							:borderWidth="2"
-							fill-color="#48abed"
-							emptyColor="#191923" />
-						<span class="aside__language">German</span>
-					</div>
-					<div>
-						<CircleProgress
-							:show-percent="true"
-							:percent="39"
-							:size="60"
-							:borderBgWidth="2"
-							:borderWidth="2"
-							fill-color="#48abed"
-							emptyColor="#191923" />
-						<span class="aside__language">Italian</span>
-					</div>
-				</div>
-				<div class="aside__skills">
-					<ProgressBar label="Html" :targetProgress="100" />
-					<ProgressBar label="Css" :targetProgress="100" />
-					<ProgressBar label="Js" :targetProgress="75" />
-					<ProgressBar label="Php" :targetProgress="45" />
-					<ProgressBar label="Wordpress" :targetProgress="56" />
-					<ProgressBar label="Nuxt" :targetProgress="100" />
-					<ProgressBar label="React Native" :targetProgress="100" />
-				</div>
-				<ul class="aside__technologies">
-					<li>Bootstrap, Vuetify</li>
-					<li>Sass, SCSS</li>
-					<li>Webpack, Vite</li>
-					<li>GIT knowledge</li>
-					<li>Android Studio, Xcode</li>
-				</ul>
-				<div class="aside__certificates">
-					<h6>Certificates:</h6>
-					<div class="aside__btns">
-						<button @click="showCertificate('basic.png')" class="aside__btn">
-							Basic
-						</button>
-						<button @click="showCertificate('pro.png')" class="aside__btn">Pro</button>
-						<button @click="showCertificate('advance.jpg')" class="aside__btn">
-							Advance
-						</button>
+					<ul class="aside__technologies">
+						<li>Bootstrap, Vuetify</li>
+						<li>Sass, SCSS</li>
+						<li>Webpack, Vite</li>
+						<li>GIT knowledge</li>
+						<li>Android Studio, Xcode</li>
+					</ul>
+					<div class="aside__certificates">
+						<h6>Certificates:</h6>
+						<div class="aside__btns">
+							<button @click="showCertificate('basic.png')" class="aside__btn">
+								Basic
+							</button>
+							<button @click="showCertificate('pro.png')" class="aside__btn">
+								Pro
+							</button>
+							<button @click="showCertificate('advance.jpg')" class="aside__btn">
+								Advance
+							</button>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -175,6 +179,9 @@
 						</NuxtLink>
 					</li>
 				</ul>
+				<div class="aside__scroll">
+					<p class="aside__scroll-text">Scroll down</p>
+				</div>
 			</nav>
 		</div>
 		<DialogModal v-model="isShowCertificate" animation="fade">
@@ -252,6 +259,7 @@ export default {
 	padding: 13.05rem 0.9375rem 3rem;
 	background-color: var(--bg-secondary-color);
 	border-radius: var(--border-radius);
+	overflow: hidden;
 	transition: left 0.3s;
 }
 
@@ -295,7 +303,7 @@ export default {
 		}
 	}
 	&:not(.aside__hidden) {
-		right: -18.125rem;
+		right: -20.125rem;
 	}
 }
 .aside__hidden {
@@ -332,6 +340,7 @@ export default {
 	color: var(--tc-secondary);
 }
 .aside__scrollable {
+	position: relative;
 	height: 100%;
 	padding: 0.9375rem;
 	overflow: auto;
@@ -466,6 +475,7 @@ export default {
 	}
 }
 .aside__footer {
+	position: relative;
 	& > ul {
 		display: flex;
 		align-items: center;
@@ -480,6 +490,34 @@ export default {
 	transition: transform 0.3s;
 	&:hover {
 		transform: scale(1.1);
+	}
+}
+.aside__scroll {
+	position: absolute;
+	bottom: 500%;
+	right: calc(-0.9375rem / 2);
+	// width: 100%;
+}
+.aside__scroll-text {
+	margin-left: auto;
+	font-size: var(--fs-caption);
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+	white-space: nowrap;
+	pointer-events: none;
+}
+.aside__scroll-text::after {
+	content: '\2193';
+	display: inline-block;
+	animation: bounce 1s ease-in-out infinite;
+}
+@keyframes bounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(5px);
 	}
 }
 </style>

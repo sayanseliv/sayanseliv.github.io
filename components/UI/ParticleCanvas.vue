@@ -12,7 +12,7 @@ onMounted(() => {
 			particleColor: '#888',
 			background: '#161313',
 			interactive: false,
-			speed: 'medium',
+			speed: 'slow',
 			density: 'high',
 		};
 		new ParticleNetwork(canvasDiv, options);

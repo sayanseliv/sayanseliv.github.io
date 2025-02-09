@@ -36,7 +36,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	padding: 1rem;
-	border-radius: var(--border-card);
+	border-radius: var(--border-radius);
 	box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
 	background-color: var(--bg-secondary-color);
 	transition: border-color 0.3s ease-in-out;
@@ -48,7 +48,7 @@ export default {
 		left: 50%;
 		top: 50%;
 		transform: translate(-50%, -50%);
-		border-radius: var(--border-card);
+		border-radius: var(--border-radius);
 		border: 2px solid transparent;
 		background: var(--gradient);
 		background-attachment: fixed;

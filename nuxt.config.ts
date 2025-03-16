@@ -142,7 +142,6 @@ export default defineNuxtConfig({
 			script: [{ src: '/js/ParticleNetwork.js', defer: true }],
 		},
 	},
-
 	css: ['assets/styles/reset.scss', 'assets/styles/global.scss'],
 	compatibilityDate: '2024-10-11',
 });

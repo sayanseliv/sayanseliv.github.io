@@ -6,10 +6,7 @@ const header = document.querySelector('header');
 const menu = document.querySelector('.menu__box');
 const trans = 'transparent';
 const white = 'white';
-age.innerHTML =
-	((new Date().getTime() - new Date(1985, 03, 27)) /
-		(24 * 3600 * 365.25 * 1000)) |
-	0;
+age.innerHTML = ((new Date().getTime() - new Date(1985, 03, 27)) / (24 * 3600 * 365.25 * 1000)) | 0;
 changeAnimation(left, right);
 
 function changeAnimation(a, b) {
@@ -31,7 +28,7 @@ function changeAnimation(a, b) {
 }
 
 function animationLeft(el) {
-	if (window.innerWidth < 768) return;
+	if (window.innerWidth < 992) return;
 	el.animate(
 		[
 			// keyframes
@@ -64,7 +61,7 @@ function animationLeft(el) {
 }
 
 function animationRight(el) {
-	if (window.innerWidth < 768) return;
+	if (window.innerWidth < 992) return;
 	el.animate(
 		[
 			// keyframes

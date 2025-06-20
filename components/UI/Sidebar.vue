@@ -275,6 +275,9 @@ export default {
 	@include media(992px) {
 		display: block;
 	}
+	@include media(640px) {
+		right: -0.7rem;
+	}
 	& > input {
 		display: none;
 		visibility: hidden;

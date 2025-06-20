@@ -49,8 +49,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@import '@/assets/styles/_mixins.scss';
+<style lang="scss">
 .main-home {
 	padding-top: 3rem;
 }

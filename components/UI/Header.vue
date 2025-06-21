@@ -1,7 +1,7 @@
 <template>
 	<header class="header">
 		<nav class="container-1440 header__nav">
-			<div>
+			<div class="header__links">
 				<NuxtLink to="/">Home</NuxtLink>
 				<NuxtLink to="/portfolio">Projects</NuxtLink>
 			</div>
@@ -27,5 +27,29 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+.header__links {
+	display: flex;
+	column-gap: var(--fs-primary);
+	& > a {
+		position: relative;
+		display: inline-block;
+		color: var(--light-blue);
+		text-decoration: none;
+		&::after {
+			content: '';
+			position: absolute;
+			width: 0%;
+			height: 2px;
+			left: 50%;
+			bottom: 0;
+			background-color: currentColor;
+			transition: all 0.3s ease;
+			transform: translateX(-50%);
+		}
+		&:hover::after {
+			width: 100%;
+		}
+	}
 }
 </style>

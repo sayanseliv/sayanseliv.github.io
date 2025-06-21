@@ -118,6 +118,12 @@ export default {
 	background-position: center;
 	background-size: cover;
 	border-radius: var(--border-radius);
+	@include media(992px) {
+		min-height: 20rem;
+	}
+	@include media(640px) {
+		min-height: 15rem;
+	}
 }
 .technologies__title {
 	margin-bottom: 1rem;

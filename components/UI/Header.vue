@@ -1,6 +1,9 @@
 <template>
 	<header class="header">
 		<nav class="container-1440 header__nav">
+			<label class="header__hamburger">
+				<input type="checkbox" class="hamburger-input" />
+			</label>
 			<div class="header__links">
 				<NuxtLink to="/">Home</NuxtLink>
 				<NuxtLink to="/portfolio">Projects</NuxtLink>
@@ -27,6 +30,12 @@ export default {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+.header__hamburger {
+	display: none;
+	@include media(640px) {
+		display: flex;
+	}
 }
 .header__links {
 	display: flex;

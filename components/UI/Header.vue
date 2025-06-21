@@ -1,6 +1,11 @@
 <template>
 	<header class="header">
-		<nav class="container-1440 header__nav">Header</nav>
+		<nav class="container-1440 header__nav">
+			<div>
+				<NuxtLink to="/">Home</NuxtLink>
+				<NuxtLink to="/projects">Projects</NuxtLink>
+			</div>
+		</nav>
 	</header>
 </template>
 <script>

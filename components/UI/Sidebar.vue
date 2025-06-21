@@ -1,5 +1,8 @@
 <template>
 	<aside class="aside">
+		<transition name="fade-scale">
+			<div v-show="modelValue" @click="toggle" class="aside__overlay"></div>
+		</transition>
 		<div :class="['aside__toggle', isHidden]">
 			<input :checked="modelValue" id="chackboxAside" type="checkbox" />
 			<label @click="toggle" for="chackboxAside"></label>
@@ -16,16 +19,12 @@
 				<div>
 					<ul class="aside__info">
 						<li class="info__item">
-							<h6>Residence:</h6>
+							<h6>Country:</h6>
 							<span>Ukraine</span>
 						</li>
 						<li class="info__item">
 							<h6>City:</h6>
 							<span>Odesa</span>
-						</li>
-						<li class="info__item">
-							<h6>Age:</h6>
-							<span>{{ age }}</span>
 						</li>
 					</ul>
 					<div class="aside__languages">
@@ -249,6 +248,28 @@ export default {
 .aside {
 	position: fixed;
 	z-index: 999;
+}
+.aside__overlay {
+	position: fixed;
+	inset: 0;
+	height: 100dvh;
+	width: 100vw;
+	background: rgba(17, 25, 39, 0.2);
+	backdrop-filter: blur(3px);
+}
+.fade-scale-enter-active,
+.fade-scale-leave-active {
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.fade-scale-enter-from,
+.fade-scale-leave-to {
+	opacity: 0;
+	transform: scale(0.95);
+}
+.fade-scale-enter-to,
+.fade-scale-leave-from {
+	opacity: 1;
+	transform: scale(1);
 }
 
 .aside__container {

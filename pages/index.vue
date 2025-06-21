@@ -9,7 +9,7 @@
 						<h1 class="hero__title">Welcome to Lang Eugen's Digital Space</h1>
 						<p class="hero__description">
 							Explore a portfolio showcasing Lang's expertise in HTML, CSS,
-							JavaScript, and popular front-end frameworks like React and Vue.js. From
+							JavaScript, and popular front-end frameworks like React and Vue. From
 							responsive designs that adapt seamlessly to any device to interactive
 							elements that engage users, Lang's work reflects a commitment to
 							excellence and innovation.
@@ -49,7 +49,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/assets/styles/_mixins.scss';
 .main-home {
 	padding-top: 3rem;

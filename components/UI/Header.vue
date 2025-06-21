@@ -3,7 +3,7 @@
 		<nav class="container-1440 header__nav">
 			<div>
 				<NuxtLink to="/">Home</NuxtLink>
-				<NuxtLink to="/projects">Projects</NuxtLink>
+				<NuxtLink to="/portfolio">Projects</NuxtLink>
 			</div>
 		</nav>
 	</header>

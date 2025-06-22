@@ -282,6 +282,9 @@ export default {
 	border-radius: var(--border-radius);
 	overflow: hidden;
 	transition: left 0.3s;
+	@include media(640px) {
+		width: calc(100vw - 32px);
+	}
 }
 
 .aside__toggle {
@@ -297,14 +300,14 @@ export default {
 		display: block;
 	}
 	@include media(640px) {
-		right: -0.7rem;
+		position: fixed;
+		top: 0.9rem;
+		left: 16px;
+		right: auto;
 	}
 	& > input {
 		display: none;
 		visibility: hidden;
-		&:checked + label {
-			background-color: red;
-		}
 	}
 	& > label {
 		display: flex;
@@ -313,17 +316,23 @@ export default {
 		height: 100%;
 		cursor: pointer;
 		background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+		@include media(640px) {
+			background: var(--white);
+		}
 		&::after {
 			content: '\2026';
 			position: absolute;
 			top: 5%;
-			left: 45%;
+			left: 45.7%;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			transform: rotate(90deg);
 			width: min-content;
 			height: min-content;
+			@include media(640px) {
+				color: var(--bg-secondary-color);
+			}
 		}
 	}
 	&:not(.aside__hidden) {
@@ -334,6 +343,9 @@ export default {
 	& + .aside__container {
 		@include media(992px) {
 			left: -20.125rem;
+		}
+		@include media(640px) {
+			left: -100vw;
 		}
 	}
 }

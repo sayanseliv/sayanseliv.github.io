@@ -71,6 +71,9 @@ export default {
 	@include media(992px) {
 		margin-left: 0;
 	}
+	@include media(640px) {
+		padding: 0 0 1rem;
+	}
 }
 .content__hero {
 	background-color: var(--bg-secondary-color);
@@ -91,6 +94,9 @@ export default {
 	font-size: var(--fs-h1);
 	font-weight: 400;
 	animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 4000ms;
+	@include media(640px) {
+		font-size: 2rem;
+	}
 	@keyframes reveal {
 		80% {
 			letter-spacing: 0.1rem;
@@ -109,6 +115,9 @@ export default {
 	font-size: var(--fs-secondary);
 	line-height: 120%;
 	color: var(--tc-secondary);
+	@include media(640px) {
+		font-size: 1rem;
+	}
 }
 .content__image {
 	min-height: 25rem;

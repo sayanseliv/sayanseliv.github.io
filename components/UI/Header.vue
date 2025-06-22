@@ -11,6 +11,10 @@
 			<div class="header__links">
 				<NuxtLink to="/">Home</NuxtLink>
 				<NuxtLink to="/portfolio">Portfolio</NuxtLink>
+				<div class="header__contact">
+					<p>Contact:</p>
+					<NuxtLink to="mailto:sayanseliv@gmail.com">sayanseliv@gmail.com</NuxtLink>
+				</div>
 			</div>
 			<div @click="toggleCheckboxFalse" class="header__overlay"></div>
 		</nav>
@@ -101,6 +105,7 @@ export default {
 
 .header__links {
 	display: flex;
+	width: 100%;
 	column-gap: var(--fs-primary);
 	@include media(992px) {
 		position: absolute;
@@ -109,13 +114,15 @@ export default {
 		right: -100%;
 		height: calc(100dvh - 3rem);
 		min-width: 10rem;
+		width: fit-content;
 		padding: 1rem;
 		flex-direction: column;
 		row-gap: 1rem;
 		background-color: var(--bg-color);
 		transition: right 200ms ease-in-out;
 	}
-	& > a {
+	& > a,
+	& > .header__contact > a {
 		position: relative;
 		display: inline-block;
 		color: var(--light-blue);
@@ -133,6 +140,20 @@ export default {
 		}
 		&:hover::after {
 			width: 100%;
+		}
+	}
+	& > .header__contact {
+		display: flex;
+		align-items: center;
+		margin-inline: auto 1rem;
+		column-gap: 0.5rem;
+		@include media(992px) {
+			flex-direction: column;
+			align-items: flex-start;
+			margin-inline: 0;
+			padding-top: 0.5rem;
+			border-top: 1px solid var(--grey-hr);
+			row-gap: 0.5rem;
 		}
 	}
 }

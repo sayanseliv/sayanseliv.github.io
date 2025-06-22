@@ -95,7 +95,7 @@ export default {
 	font-weight: 400;
 	animation: reveal 3000ms ease-in-out forwards 200ms, glow 2500ms linear infinite 4000ms;
 	@include media(640px) {
-		font-size: 2rem;
+		font-size: var(--fs-h1-s);
 	}
 	@keyframes reveal {
 		80% {

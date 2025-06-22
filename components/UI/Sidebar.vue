@@ -78,7 +78,7 @@
 						<ProgressBar label="Css" :targetProgress="100" />
 						<ProgressBar label="Js" :targetProgress="75" />
 						<ProgressBar label="Php" :targetProgress="45" />
-						<ProgressBar label="Wordpress" :targetProgress="56" />
+						<ProgressBar label="Wordpress" :targetProgress="70" />
 						<ProgressBar label="Nuxt" :targetProgress="100" />
 						<ProgressBar label="React Native" :targetProgress="100" />
 					</div>

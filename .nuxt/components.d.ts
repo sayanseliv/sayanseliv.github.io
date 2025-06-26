@@ -2,7 +2,8 @@
 import type { DefineComponent, SlotsType } from 'vue'
 type IslandComponent<T extends DefineComponent> = T & DefineComponent<{}, {refresh: () => Promise<void>}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, SlotsType<{ fallback: { error: unknown } }>>
 interface _GlobalComponents {
-      'CardTechnology': typeof import("../components/UI/CardTechnology.vue")['default']
+      'CardPortfolio': typeof import("../components/UI/CardPortfolio.vue")['default']
+    'CardTechnology': typeof import("../components/UI/CardTechnology.vue")['default']
     'CircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
     'DialogModal': typeof import("../components/UI/DialogModal.vue")['default']
     'Header': typeof import("../components/UI/Header.vue")['default']
@@ -32,7 +33,8 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-      'LazyCardTechnology': typeof import("../components/UI/CardTechnology.vue")['default']
+      'LazyCardPortfolio': typeof import("../components/UI/CardPortfolio.vue")['default']
+    'LazyCardTechnology': typeof import("../components/UI/CardTechnology.vue")['default']
     'LazyCircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
     'LazyDialogModal': typeof import("../components/UI/DialogModal.vue")['default']
     'LazyHeader': typeof import("../components/UI/Header.vue")['default']
@@ -68,6 +70,7 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
+export const CardPortfolio: typeof import("../components/UI/CardPortfolio.vue")['default']
 export const CardTechnology: typeof import("../components/UI/CardTechnology.vue")['default']
 export const CircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
 export const DialogModal: typeof import("../components/UI/DialogModal.vue")['default']
@@ -98,6 +101,7 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
+export const LazyCardPortfolio: typeof import("../components/UI/CardPortfolio.vue")['default']
 export const LazyCardTechnology: typeof import("../components/UI/CardTechnology.vue")['default']
 export const LazyCircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
 export const LazyDialogModal: typeof import("../components/UI/DialogModal.vue")['default']

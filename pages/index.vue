@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import cardsData from '/static/technology.json';
+import cardsData from '/static/data.json';
 export default {
 	name: 'mainPage',
 	data() {

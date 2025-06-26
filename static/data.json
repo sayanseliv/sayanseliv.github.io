@@ -16,13 +16,13 @@
 			"link": "https://en.wikipedia.org/wiki/JavaScript"
 		},
 		{
-			"title": "Nuxt 3",
-			"text": "Nuxt 3 is a powerful framework built on Vue.js, used for creating modern and high-performance server-side rendered (SSR) and static websites with streamlined development workflows.",
+			"title": "Nuxt 2 / Nuxt 3",
+			"text": "Nuxt is a powerful framework built on Vue.js, used for creating modern and high-performance server-side rendered (SSR) and static websites with streamlined development workflows.",
 			"link": "https://nuxt.com"
 		},
 		{
-			"title": "Vuetify 3",
-			"text": "Vuetify 3 is a comprehensive UI library for Vue.js projects, offering pre-designed components, themes, and responsive design features to enhance user interfaces.",
+			"title": "Vuetify",
+			"text": "Vuetify is a comprehensive UI library for Vue.js projects, offering pre-designed components, themes, and responsive design features to enhance user interfaces.",
 			"link": "https://vuetifyjs.com/en"
 		},
 		{
@@ -44,6 +44,21 @@
 			"title": "Vuex/Pinia",
 			"text": "Vuex and Pinia are state management libraries for Vue.js, offering centralized state management, data sharing, and reactive updates to streamline application development and maintain data consistency.",
 			"link": "https://www.telerik.com/blogs/vue-js-state-management-pinia-vs-vuex"
+		},
+		{
+			"title": "AWS",
+			"text": "Amazon Web Services (AWS) is a comprehensive cloud platform that provides a wide range of services including computing power, storage, databases, and machine learning. It enables scalable, secure, and cost-effective solutions for deploying and managing applications.",
+			"link": "https://aws.amazon.com/"
+		},
+		{
+			"title": "OpenStreetMap",
+			"text": "OpenStreetMap is a collaborative project that provides free, editable maps created by contributors worldwide. It powers location-based applications with open geospatial data and supports a wide range of mapping solutions.",
+			"link": "https://www.openstreetmap.org/"
+		},
+		{
+			"title": "Mapbox",
+			"text": "Mapbox is a flexible mapping platform that enables developers to create custom maps and geolocation experiences. It offers advanced styling, real-time data visualization, and seamless integration with web and mobile applications.",
+			"link": "https://www.mapbox.com/"
 		}
 	],
 	"projects": [

@@ -38,6 +38,9 @@ const cards = cardsData.projects;
 }
 .portfolio-hero {
 	margin-bottom: 3rem;
+	@include media(992px) {
+		margin-bottom: 1.6rem;
+	}
 }
 .hero__container {
 	padding-block: 1rem;
@@ -49,7 +52,10 @@ const cards = cardsData.projects;
 	margin-inline: auto;
 	background-color: var(--bg-secondary-color);
 	border-radius: var(--border-radius);
-
+	@include media(992px) {
+		width: 100%;
+		flex-direction: column;
+	}
 	& > div {
 		padding: 1rem;
 	}
@@ -57,12 +63,20 @@ const cards = cardsData.projects;
 .hero__title {
 	margin-bottom: 1rem;
 	font-size: var(--fs-h2);
+	@include media(992px) {
+		text-align: center;
+	}
 }
 .hero__description {
 	max-width: 80%;
 	font-size: var(--fs-secondary);
 	line-height: 120%;
 	color: var(--tc-secondary);
+	@include media(992px) {
+		max-width: 100%;
+		padding-top: 1rem;
+		border-top: 1px solid var(--tc-secondary);
+	}
 	@include media(640px) {
 		font-size: 1rem;
 	}
@@ -77,6 +91,12 @@ const cards = cardsData.projects;
 	border-top-left-radius: 60%;
 	border-top-right-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
+	@include media(992px) {
+		min-height: 20rem;
+		width: 100%;
+		border-bottom-left-radius: var(--border-radius);
+		border-bottom-right-radius: 60%;
+	}
 	& > img {
 		position: absolute;
 		inset: 0;
@@ -84,6 +104,9 @@ const cards = cardsData.projects;
 		transform: scale(1.8);
 		width: 100%;
 		object-fit: cover;
+		@include media(992px) {
+			transform: scale(1.2);
+		}
 	}
 }
 

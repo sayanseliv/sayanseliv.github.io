@@ -142,6 +142,9 @@ export default {
 			width: 100%;
 		}
 	}
+	& > .router-link-exact-active::after {
+		width: 100%;
+	}
 	& > .header__contact {
 		display: flex;
 		align-items: center;

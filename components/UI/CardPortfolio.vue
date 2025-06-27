@@ -25,7 +25,9 @@
 				target="_blank"
 				class="card-portfolio__face card-portfolio__face--back">
 				<div class="card-portfolio__back-link">
-					<h3>Click to visit</h3>
+					<h3>Technology</h3>
+					<p>{{ content.technology }}</p>
+					<p class="card-portfolio__action">Click to Visit</p>
 				</div>
 			</NuxtLink>
 		</div>
@@ -169,10 +171,11 @@ defineProps({
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 	height: 100%;
 	width: 100%;
 	& > h3 {
-		margin-top: 1rem;
+		margin-bottom: 1rem;
 		font-size: var(--fs-h1);
 		font-weight: bold;
 		color: var(--white);
@@ -180,13 +183,25 @@ defineProps({
 		transform: translateY(8px);
 		transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
 	}
+	& > p {
+		color: var(--white);
+		opacity: 0;
+		transform: translateY(8px);
+		transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+	}
+	& > .card-portfolio__action {
+		margin-top: 2rem;
+		color: var(--light-blue);
+	}
 }
 .card-portfolio:hover
 	> .card-portfolio__inner
 	> .card-portfolio__face--back
-	> .card-portfolio__back-link
-	> h3 {
-	opacity: 1;
-	transform: translateY(0);
+	> .card-portfolio__back-link {
+	& > h3,
+	& > p {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 </style>

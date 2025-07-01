@@ -42,7 +42,7 @@
 						<div>
 							<CircleProgress
 								:show-percent="true"
-								:percent="55"
+								:percent="70"
 								:size="60"
 								:borderBgWidth="2"
 								:borderWidth="2"
@@ -64,7 +64,7 @@
 						<div>
 							<CircleProgress
 								:show-percent="true"
-								:percent="39"
+								:percent="40"
 								:size="60"
 								:borderBgWidth="2"
 								:borderWidth="2"

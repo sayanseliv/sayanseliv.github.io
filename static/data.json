@@ -16,6 +16,26 @@
 			"link": "https://en.wikipedia.org/wiki/JavaScript"
 		},
 		{
+			"title": "React",
+			"text": "React is a JavaScript library for building fast and interactive user interfaces, using a component-based architecture and a virtual DOM for efficient rendering.",
+			"link": "https://reactjs.org/"
+		},
+		{
+			"title": "Redux",
+			"text": "Redux is a predictable state container for JavaScript apps, often used with React for managing application state in a centralized and scalable way.",
+			"link": "https://redux.js.org/"
+		},
+		{
+			"title": "React Native",
+			"text": "React Native is utilized for developing cross-platform mobile applications using JavaScript and React, enabling efficient code sharing and native app experiences on iOS and Android.",
+			"link": "https://en.wikipedia.org/wiki/React_Native"
+		},
+		{
+			"title": "Vue",
+			"text": "Vue is a progressive JavaScript framework for building user interfaces. It features a declarative and component-based programming model that is simple to integrate and scale.",
+			"link": "https://vuejs.org/"
+		},
+		{
 			"title": "Nuxt 2 / Nuxt 3",
 			"text": "Nuxt is a powerful framework built on Vue.js, used for creating modern and high-performance server-side rendered (SSR) and static websites with streamlined development workflows.",
 			"link": "https://nuxt.com"
@@ -26,9 +46,9 @@
 			"link": "https://vuetifyjs.com/en"
 		},
 		{
-			"title": "React Native",
-			"text": "React Native is utilized for developing cross-platform mobile applications using JavaScript and React, enabling efficient code sharing and native app experiences on iOS and Android.",
-			"link": "https://en.wikipedia.org/wiki/React_Native"
+			"title": "Node.js",
+			"text": "Node.js is a runtime environment that allows JavaScript to be run on the server side, enabling the development of scalable and high-performance web applications.",
+			"link": "https://nodejs.org/"
 		},
 		{
 			"title": "WordPress",
@@ -51,9 +71,9 @@
 			"link": "https://aws.amazon.com/"
 		},
 		{
-			"title": "OpenStreetMap",
-			"text": "OpenStreetMap is a collaborative project that provides free, editable maps created by contributors worldwide. It powers location-based applications with open geospatial data and supports a wide range of mapping solutions.",
-			"link": "https://www.openstreetmap.org/"
+			"title": "Leaflet",
+			"text": "Leaflet is a lightweight, open-source JavaScript library for interactive maps, widely used for embedding customizable maps into web applications.",
+			"link": "https://leafletjs.com/"
 		},
 		{
 			"title": "Mapbox",

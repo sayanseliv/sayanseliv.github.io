@@ -119,12 +119,6 @@ export default {
 		font-size: 1rem;
 	}
 }
-.content__skills {
-}
-.skills__title {
-	margin-bottom: 1rem;
-	font-size: var(--fs-h2);
-}
 .content__image {
 	min-height: 25rem;
 	width: 100%;

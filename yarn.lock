@@ -7671,6 +7671,7 @@ __metadata:
   resolution: "sayanseliv@workspace:."
   dependencies:
     nuxt: 3.13.0
+    postcss-discard-duplicates: ^7.0.2
     sass: 1.79.1
     vue: 3.4.38
     vue-router: 4.4.3

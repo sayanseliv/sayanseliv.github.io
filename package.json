@@ -19,8 +19,5 @@
 		"sass": "1.79.1",
 		"vue": "3.4.38",
 		"vue-router": "4.4.3"
-	},
-	"dependencies": {
-		"postcss-discard-duplicates": "^7.0.2"
 	}
 }

@@ -224,6 +224,10 @@
 			"percent": 100
 		},
 		{
+			"label": "Typescript",
+			"percent": 100
+		},
+		{
 			"label": "Php",
 			"percent": 50
 		},

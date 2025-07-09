@@ -2,31 +2,29 @@
 	<div class="technology__card" @mousemove="handleMouseMove">
 		<div class="glow"></div>
 		<h6>{{ content.title }}</h6>
-		<p>
-			{{ content.text }}
-		</p>
+		<p>{{ content.text }}</p>
 		<NuxtLink :to="content.link" external target="_blank">Learn more</NuxtLink>
 	</div>
 </template>
 
-<script>
-export default {
-	name: 'CardTechnology',
-	props: ['content'],
-	methods: {
-		handleMouseMove(e) {
-			const card = e.currentTarget;
-			const rect = card.getBoundingClientRect();
-			const mouseX = e.clientX - rect.left - rect.width / 2;
-			const mouseY = e.clientY - rect.top - rect.height / 2;
+<script setup lang="ts">
+import type { Content } from '@types';
 
-			let angle = Math.atan2(mouseY, mouseX) * (180 / Math.PI);
-			angle = (angle + 360) % 360;
+defineProps<{
+	content: Content;
+}>();
 
-			card.style.setProperty('--start', angle + 60);
-		},
-	},
-};
+function handleMouseMove(e: MouseEvent) {
+	const card = e.currentTarget as HTMLElement;
+	const rect = card.getBoundingClientRect();
+	const mouseX = e.clientX - rect.left - rect.width / 2;
+	const mouseY = e.clientY - rect.top - rect.height / 2;
+
+	let angle = Math.atan2(mouseY, mouseX) * (180 / Math.PI);
+	angle = (angle + 360) % 360;
+
+	card.style.setProperty('--start', `${angle + 60}`);
+}
 </script>
 
 <style lang="scss" scoped>

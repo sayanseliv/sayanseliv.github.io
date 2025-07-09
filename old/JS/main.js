@@ -6,7 +6,7 @@ const header = document.querySelector('header');
 const menu = document.querySelector('.menu__box');
 const trans = 'transparent';
 const white = 'white';
-age.innerHTML = ((new Date().getTime() - new Date(1985, 03, 27)) / (24 * 3600 * 365.25 * 1000)) | 0;
+// age.innerHTML = ((new Date().getTime() - new Date(1985, 03, 27)) / (24 * 3600 * 365.25 * 1000)) | 0;
 changeAnimation(left, right);
 
 function changeAnimation(a, b) {

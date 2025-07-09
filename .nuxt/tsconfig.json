@@ -89,7 +89,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/7409d771-2bc2-4d9d-a146-20ab5fe92ec5.json"
+        "./manifest/meta/420940ad-294c-4ccf-9006-3110dff445fe.json"
       ],
       "#components": [
         "./components"
@@ -127,6 +127,8 @@
     "../**/*",
     "../.config/nuxt.*",
     "./nuxt.d.ts",
+    "../node_modules/@nuxt/eslint/runtime",
+    "../node_modules/@nuxt/eslint/dist/runtime",
     "../node_modules/@nuxt/devtools/runtime",
     "../node_modules/@nuxt/devtools/dist/runtime",
     "../node_modules/@nuxt/telemetry/runtime",
@@ -138,6 +140,8 @@
     "../.data",
     "../node_modules",
     "../node_modules/nuxt/node_modules",
+    "../node_modules/@nuxt/eslint/runtime/server",
+    "../node_modules/@nuxt/eslint/dist/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/devtools/dist/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",

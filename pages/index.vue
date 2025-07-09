@@ -22,7 +22,7 @@
 						</p>
 					</div>
 				</section>
-				<section class="content__image"></section>
+				<section class="content__image" />
 				<section class="content__technologies">
 					<h2 class="technologies__title">Technologies</h2>
 					<div class="technologies__grid">
@@ -37,7 +37,7 @@
 <script>
 import cardsData from '/static/data.json';
 export default {
-	name: 'mainPage',
+	name: 'MainPage',
 	data() {
 		return {
 			isShowSidebar: false,

@@ -1,64 +1,57 @@
 <template>
 	<ClientOnly>
 		<Teleport to="body">
-			<transition :class="classTransition" :name="animation">
-				<dialog
-					v-if="modelValue"
-					:open="modelValue"
-					@click="closeNative"
-					class="modal-dialog">
-					<slot :onClose="close" />
+			<transition :class="classTransition.value" :name="animation">
+				<dialog v-if="modelValue" :open="modelValue" class="app-modal" @click="closeNative">
+					<slot :on-close="close" />
 				</dialog>
 			</transition>
 		</Teleport>
 	</ClientOnly>
 </template>
 
-<script>
-export default {
-	name: 'DialogModal',
-	props: {
-		modelValue: {
-			type: Boolean,
-			default: false,
-		},
-		animation: {
-			type: String,
-			default: 'slide',
-		},
-		animationSlideDirection: {
-			type: String,
-			default: 'right',
-		},
-	},
-	watch: {
-		modelValue: {
-			handler() {
-				const bodyOverflow = document.body.style.overflow;
-				document.body.style.overflow = bodyOverflow === 'hidden' ? '' : 'hidden';
-			},
-		},
-	},
-	computed: {
-		classTransition() {
-			return { ['slide__' + this.animationSlideDirection]: true };
-		},
-	},
-	methods: {
-		close() {
-			this.$emit('update:modelValue', false);
-		},
-		closeNative(e) {
-			if (e.currentTarget === e.target) {
-				this.close();
-			}
-		},
-	},
-};
+<script setup lang="ts">
+import { computed, watch } from 'vue';
+
+const props = defineProps<{
+	modelValue: boolean;
+	animation?: string;
+	animationSlideDirection?: string;
+}>();
+
+const emit = defineEmits<{
+	(e: 'update:modelValue', value: boolean): void;
+}>();
+
+const animation = props.animation ?? 'slide';
+const animationSlideDirection = props.animationSlideDirection ?? 'right';
+
+const classTransition = computed(() => ({
+	[`slide__${animationSlideDirection}`]: true,
+}));
+
+// Watch modal open/close to toggle body scroll
+watch(
+	() => props.modelValue,
+	() => {
+		const bodyOverflow = document.body.style.overflow;
+		document.body.style.overflow = bodyOverflow === 'hidden' ? '' : 'hidden';
+	}
+);
+
+function close() {
+	emit('update:modelValue', false);
+}
+
+function closeNative(e: MouseEvent) {
+	if (e.currentTarget === e.target) {
+		close();
+	}
+}
 </script>
 
 <style lang="scss" scoped>
-.modal-dialog {
+.app-modal {
 	all: initial;
 	position: fixed;
 	inset: 0;

@@ -1,11 +1,11 @@
 <template>
 	<aside class="aside">
 		<transition name="fade-scale">
-			<div v-show="modelValue" @click="toggle" class="aside__overlay"></div>
+			<div v-show="modelValue" class="aside__overlay" @click="toggle" />
 		</transition>
 		<div :class="['aside__toggle', isHidden]">
-			<input :checked="modelValue" id="chackboxAside" type="checkbox" />
-			<label @click="toggle" for="chackboxAside"></label>
+			<input id="chackboxAside" :checked="modelValue" type="checkbox" />
+			<label for="chackboxAside" @click="toggle" />
 		</div>
 		<div class="aside__container">
 			<figure class="aside__avatar">
@@ -27,60 +27,20 @@
 							<span>Odesa</span>
 						</li>
 					</ul>
+
 					<div class="aside__languages">
-						<div>
-							<CircleProgress
-								:show-percent="true"
-								:percent="100"
-								:size="60"
-								:borderBgWidth="2"
-								:borderWidth="2"
-								fill-color="#48abed"
-								emptyColor="#191923" />
-							<span class="aside__language">Ukranian</span>
-						</div>
-						<div>
-							<CircleProgress
-								:show-percent="true"
-								:percent="70"
-								:size="60"
-								:borderBgWidth="2"
-								:borderWidth="2"
-								fill-color="#48abed"
-								emptyColor="#191923" />
-							<span class="aside__language">English</span>
-						</div>
-						<div>
-							<CircleProgress
-								:show-percent="true"
-								:percent="45"
-								:size="60"
-								:borderBgWidth="2"
-								:borderWidth="2"
-								fill-color="#48abed"
-								emptyColor="#191923" />
-							<span class="aside__language">German</span>
-						</div>
-						<div>
-							<CircleProgress
-								:show-percent="true"
-								:percent="40"
-								:size="60"
-								:borderBgWidth="2"
-								:borderWidth="2"
-								fill-color="#48abed"
-								emptyColor="#191923" />
-							<span class="aside__language">Italian</span>
+						<div v-for="(lang, i) in languages" :key="i">
+							<CircleProgress v-bind="lang.progress" />
+							<span class="aside__language">{{ lang.label }}</span>
 						</div>
 					</div>
+
 					<div class="aside__skills">
-						<ProgressBar label="Html" :targetProgress="100" />
-						<ProgressBar label="Css" :targetProgress="100" />
-						<ProgressBar label="Js" :targetProgress="75" />
-						<ProgressBar label="Php" :targetProgress="45" />
-						<ProgressBar label="Wordpress" :targetProgress="70" />
-						<ProgressBar label="Nuxt" :targetProgress="100" />
-						<ProgressBar label="React Native" :targetProgress="100" />
+						<ProgressBar
+							v-for="(skill, i) in skills"
+							:key="i"
+							:label="skill.label"
+							:target-progress="skill.percent" />
 					</div>
 					<ul class="aside__technologies">
 						<li>Bootstrap, Vuetify</li>
@@ -92,19 +52,20 @@
 					<div class="aside__certificates">
 						<h6>Certificates:</h6>
 						<div class="aside__btns">
-							<button @click="showCertificate('basic.png')" class="aside__btn">
+							<button class="aside__btn" @click="showCertificate('basic.png')">
 								Basic
 							</button>
-							<button @click="showCertificate('pro.png')" class="aside__btn">
+							<button class="aside__btn" @click="showCertificate('pro.png')">
 								Pro
 							</button>
-							<button @click="showCertificate('advance.jpg')" class="aside__btn">
+							<button class="aside__btn" @click="showCertificate('advance.jpg')">
 								Advance
 							</button>
 						</div>
 					</div>
 				</div>
 			</section>
+
 			<nav class="aside__footer">
 				<ul>
 					<li>
@@ -164,7 +125,7 @@
 						</NuxtLink>
 					</li>
 					<li>
-						<NuxtLink to="https://github.com/sayanseliv" external target="_blank">
+						<NuxtLink href="https://github.com/sayanseliv" external target="_blank">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 24 24"
@@ -183,65 +144,105 @@
 				</div>
 			</nav>
 		</div>
-		<DialogModal v-model="isShowCertificate" animation="fade">
-			<template v-slot="{ onClose }">
-				<figure @click="onClose" class="aside__document-wrapper">
+
+		<AppModal v-model="isShowCertificate" animation="fade">
+			<template #default="{ onClose }">
+				<figure class="aside__document-wrapper" @click="onClose">
 					<img class="aside__document" :src="'/certificates/' + docPath" />
 				</figure>
 			</template>
-		</DialogModal>
+		</AppModal>
 	</aside>
 </template>
 
-<script>
-export default {
-	name: 'Sidebar',
-	props: {
-		modelValue: {
-			type: Boolean,
-			default: false,
-		},
-	},
-	data() {
-		return {
-			birthDate: '1985-03-27',
-			isShowCertificate: false,
-			docPath: null,
-		};
-	},
-	computed: {
-		age() {
-			const currentDate = new Date();
-			const birthDateTime = new Date(this.birthDate);
+<script setup lang="ts">
+import { computed, ref } from 'vue';
 
-			let age = currentDate.getFullYear() - birthDateTime.getFullYear();
+const props = defineProps<{
+	modelValue: boolean;
+}>();
 
-			if (
-				currentDate.getMonth() < birthDateTime.getMonth() ||
-				(currentDate.getMonth() === birthDateTime.getMonth() &&
-					currentDate.getDate() < birthDateTime.getDate())
-			) {
-				age--;
-			}
+const emit = defineEmits<{
+	(e: 'update:modelValue', value: boolean): void;
+}>();
 
-			return age;
-		},
-		isHidden() {
-			return {
-				aside__hidden: !this.modelValue,
-			};
+const isHidden = computed(() => ({
+	aside__hidden: !props.modelValue,
+}));
+
+function toggle() {
+	emit('update:modelValue', !props.modelValue);
+}
+
+const isShowCertificate = ref(false);
+const docPath = ref<string | null>(null);
+
+function showCertificate(docName: string) {
+	isShowCertificate.value = true;
+	docPath.value = docName;
+}
+
+const languages = [
+	{
+		label: 'Ukrainian',
+		progress: {
+			percent: 100,
+			size: 60,
+			showPercent: true,
+			borderBgWidth: 2,
+			borderWidth: 2,
+			fillColor: '#48abed',
+			emptyColor: '#191923',
 		},
 	},
-	methods: {
-		showCertificate(docName) {
-			this.isShowCertificate = true;
-			this.docPath = docName;
-		},
-		toggle() {
-			this.$emit('update:modelValue', !this.modelValue);
+	{
+		label: 'English',
+		progress: {
+			percent: 75,
+			size: 60,
+			showPercent: true,
+			borderBgWidth: 2,
+			borderWidth: 2,
+			fillColor: '#48abed',
+			emptyColor: '#191923',
 		},
 	},
-};
+	{
+		label: 'German',
+		progress: {
+			percent: 45,
+			size: 60,
+			showPercent: true,
+			borderBgWidth: 2,
+			borderWidth: 2,
+			fillColor: '#48abed',
+			emptyColor: '#191923',
+		},
+	},
+	{
+		label: 'Italian',
+		progress: {
+			percent: 40,
+			size: 60,
+			showPercent: true,
+			borderBgWidth: 2,
+			borderWidth: 2,
+			fillColor: '#48abed',
+			emptyColor: '#191923',
+		},
+	},
+];
+
+const skills = [
+	{ label: 'Html', percent: 100 },
+	{ label: 'Css', percent: 100 },
+	{ label: 'Js', percent: 100 },
+	{ label: 'Php', percent: 50 },
+	{ label: 'Wordpress', percent: 80 },
+	{ label: 'Nuxt', percent: 100 },
+	{ label: 'React', percent: 100 },
+	{ label: 'React Native', percent: 100 },
+];
 </script>
 
 <style lang="scss" scoped>

@@ -1,4 +1,4 @@
 <template>
-	<Header />
+	<AppHeader />
 	<NuxtPage />
 </template>

@@ -1,6 +1,6 @@
 <template>
 	<div class="technology__card" @mousemove="handleMouseMove">
-		<div class="glow"></div>
+		<div class="glow" />
 		<h6>{{ content.title }}</h6>
 		<p>{{ content.text }}</p>
 		<NuxtLink :to="content.link" external target="_blank">Learn more</NuxtLink>

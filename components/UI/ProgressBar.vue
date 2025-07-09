@@ -8,7 +8,7 @@
 			<div
 				ref="progressBar"
 				class="progress-bar__line"
-				:style="{ width: progressBarWidth }"></div>
+				:style="{ width: progressBarWidth }" />
 		</div>
 	</div>
 </template>

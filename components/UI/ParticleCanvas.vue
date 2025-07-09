@@ -1,6 +1,6 @@
 <template>
 	<div class="particle-canvas__wrapper">
-		<div id="particle-canvas"></div>
+		<div id="particle-canvas" />
 	</div>
 </template>
 

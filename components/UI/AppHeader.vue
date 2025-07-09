@@ -3,8 +3,8 @@
 		<nav class="container-1440 header__nav">
 			<label class="header__hamburger">
 				<input
-					v-model="checkboxBurger"
 					id="checkboxBurger"
+					v-model="checkboxBurger"
 					type="checkbox"
 					class="hamburger-input" />
 			</label>
@@ -16,13 +16,13 @@
 					<NuxtLink to="mailto:sayanseliv@gmail.com">sayanseliv@gmail.com</NuxtLink>
 				</div>
 			</div>
-			<div @click="toggleCheckboxFalse" class="header__overlay"></div>
+			<div class="header__overlay" @click="toggleCheckboxFalse" />
 		</nav>
 	</header>
 </template>
 <script>
 export default {
-	name: 'Header',
+	name: 'AppHeader',
 	data() {
 		return {
 			checkboxBurger: false,

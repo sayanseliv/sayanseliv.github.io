@@ -1,6 +1,6 @@
 const left = document.querySelector('.wrapper_l_col');
 const right = document.querySelector('.wrapper_r_col');
-const age = document.querySelector('.age');
+// const age = document.querySelector('.age');
 const hamburger = document.querySelector('.hamburger-menu');
 const header = document.querySelector('header');
 const menu = document.querySelector('.menu__box');

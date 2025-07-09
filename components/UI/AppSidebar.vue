@@ -156,6 +156,7 @@
 </template>
 
 <script setup lang="ts">
+import data from '@/static/data.json';
 import { computed, ref } from 'vue';
 
 const props = defineProps<{
@@ -182,67 +183,8 @@ function showCertificate(docName: string) {
 	docPath.value = docName;
 }
 
-const languages = [
-	{
-		label: 'Ukrainian',
-		progress: {
-			percent: 100,
-			size: 60,
-			showPercent: true,
-			borderBgWidth: 2,
-			borderWidth: 2,
-			fillColor: '#48abed',
-			emptyColor: '#191923',
-		},
-	},
-	{
-		label: 'English',
-		progress: {
-			percent: 75,
-			size: 60,
-			showPercent: true,
-			borderBgWidth: 2,
-			borderWidth: 2,
-			fillColor: '#48abed',
-			emptyColor: '#191923',
-		},
-	},
-	{
-		label: 'German',
-		progress: {
-			percent: 45,
-			size: 60,
-			showPercent: true,
-			borderBgWidth: 2,
-			borderWidth: 2,
-			fillColor: '#48abed',
-			emptyColor: '#191923',
-		},
-	},
-	{
-		label: 'Italian',
-		progress: {
-			percent: 40,
-			size: 60,
-			showPercent: true,
-			borderBgWidth: 2,
-			borderWidth: 2,
-			fillColor: '#48abed',
-			emptyColor: '#191923',
-		},
-	},
-];
-
-const skills = [
-	{ label: 'Html', percent: 100 },
-	{ label: 'Css', percent: 100 },
-	{ label: 'Js', percent: 100 },
-	{ label: 'Php', percent: 50 },
-	{ label: 'Wordpress', percent: 80 },
-	{ label: 'Nuxt', percent: 100 },
-	{ label: 'React', percent: 100 },
-	{ label: 'React Native', percent: 100 },
-];
+const languages = data.languages;
+const skills = data.skills;
 </script>
 
 <style lang="scss" scoped>

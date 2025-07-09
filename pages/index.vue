@@ -2,7 +2,7 @@
 	<main class="main-home">
 		<ParticleCanvas />
 		<div class="container-1440 home__container">
-			<Sidebar v-model="isShowSidebar" />
+			<AppSidebar v-model="isShowSidebar" />
 			<div class="home__content">
 				<section class="content__hero">
 					<div class="hero__text-bg">
@@ -26,7 +26,10 @@
 				<section class="content__technologies">
 					<h2 class="technologies__title">Technologies</h2>
 					<div class="technologies__grid">
-						<CardTechnology v-for="card in cards" :content="card" />
+						<CardTechnology
+							v-for="(card, index) in cards"
+							:key="'card-technology-' + index"
+							:content="card" />
 					</div>
 				</section>
 			</div>
@@ -44,8 +47,6 @@ export default {
 			cards: cardsData.technology,
 		};
 	},
-	mounted() {},
-	methods: {},
 };
 </script>
 

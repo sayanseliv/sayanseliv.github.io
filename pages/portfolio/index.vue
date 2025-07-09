@@ -21,7 +21,10 @@
 		</section>
 		<section>
 			<div class="container-1440 hero__grid">
-				<CardPortfolio v-for="card in cards" :content="card" />
+				<CardPortfolio
+					v-for="(card, index) in cards"
+					:key="'card-portfolio-' + index"
+					:content="card" />
 			</div>
 		</section>
 	</main>

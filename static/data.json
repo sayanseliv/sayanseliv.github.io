@@ -159,5 +159,89 @@
 			"logo": "/projects/logisticszelhtech.webp",
 			"technology": "Nuxt 3"
 		}
+	],
+	"languages": [
+		{
+			"label": "Ukrainian",
+			"progress": {
+				"percent": 100,
+				"size": 60,
+				"showPercent": true,
+				"borderBgWidth": 2,
+				"borderWidth": 2,
+				"fillColor": "#48abed",
+				"emptyColor": "#191923"
+			}
+		},
+		{
+			"label": "English",
+			"progress": {
+				"percent": 75,
+				"size": 60,
+				"showPercent": true,
+				"borderBgWidth": 2,
+				"borderWidth": 2,
+				"fillColor": "#48abed",
+				"emptyColor": "#191923"
+			}
+		},
+		{
+			"label": "German",
+			"progress": {
+				"percent": 45,
+				"size": 60,
+				"showPercent": true,
+				"borderBgWidth": 2,
+				"borderWidth": 2,
+				"fillColor": "#48abed",
+				"emptyColor": "#191923"
+			}
+		},
+		{
+			"label": "Italian",
+			"progress": {
+				"percent": 40,
+				"size": 60,
+				"showPercent": true,
+				"borderBgWidth": 2,
+				"borderWidth": 2,
+				"fillColor": "#48abed",
+				"emptyColor": "#191923"
+			}
+		}
+	],
+	"skills": [
+		{
+			"label": "Html",
+			"percent": 100
+		},
+		{
+			"label": "Css",
+			"percent": 100
+		},
+		{
+			"label": "Js",
+			"percent": 100
+		},
+		{
+			"label": "Php",
+			"percent": 50
+		},
+		{
+			"label": "Wordpress",
+			"percent": 90
+		},
+		{
+			"label": "Nuxt",
+			"percent": 100
+		},
+		{
+			"label": "React",
+			"percent": 100
+		},
+		{
+			"label": "React Native",
+			"percent": 100
+		}
 	]
 }

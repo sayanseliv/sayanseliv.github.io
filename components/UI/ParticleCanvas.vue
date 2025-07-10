@@ -4,18 +4,21 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import { onMounted } from 'vue';
+
 onMounted(() => {
-	const canvasDiv = document.getElementById('particle-canvas');
-	if (canvasDiv) {
-		const options = {
-			particleColor: '#888',
-			background: '#161313',
-			interactive: false,
-			speed: 'slow',
-			density: 'high',
-		};
-		new ParticleNetwork(canvasDiv, options);
+	if (typeof window !== 'undefined' && window.ParticleNetwork) {
+		const container = document.getElementById('particle-canvas') as HTMLDivElement | null;
+		if (container) {
+			new window.ParticleNetwork(container, {
+				particleColor: '#888',
+				background: '#161313',
+				interactive: false,
+				speed: 'slow',
+				density: 'high',
+			});
+		}
 	}
 });
 </script>

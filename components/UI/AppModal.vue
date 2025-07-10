@@ -14,9 +14,9 @@
 import { computed, watch } from 'vue';
 
 const props = defineProps<{
-	modelValue: boolean;
-	animation?: string;
-	animationSlideDirection?: string;
+	readonly modelValue: boolean;
+	readonly animation?: string;
+	readonly animationSlideDirection?: string;
 }>();
 
 const emit = defineEmits<{
@@ -29,13 +29,18 @@ const animationSlideDirection = props.animationSlideDirection ?? 'right';
 const classTransition = computed(() => ({
 	[`slide__${animationSlideDirection}`]: true,
 }));
+const setBodyOverflow = (isLocked: boolean) => {
+	if (isLocked) {
+		document.body.classList.add('scroll-lock');
+	} else {
+		document.body.classList.remove('scroll-lock');
+	}
+};
 
-// Watch modal open/close to toggle body scroll
 watch(
 	() => props.modelValue,
-	() => {
-		const bodyOverflow = document.body.style.overflow;
-		document.body.style.overflow = bodyOverflow === 'hidden' ? '' : 'hidden';
+	(newVal) => {
+		setBodyOverflow(newVal);
 	}
 );
 

@@ -16,23 +16,15 @@
 					<NuxtLink to="mailto:sayanseliv@gmail.com">sayanseliv@gmail.com</NuxtLink>
 				</div>
 			</div>
-			<div class="header__overlay" @click="toggleCheckboxFalse" />
+			<div class="header__overlay" @click="toggleCheckbox(false)" />
 		</nav>
 	</header>
 </template>
-<script>
-export default {
-	name: 'AppHeader',
-	data() {
-		return {
-			checkboxBurger: false,
-		};
-	},
-	methods: {
-		toggleCheckboxFalse() {
-			this.checkboxBurger = false;
-		},
-	},
+<script lang="ts" setup>
+// AppHeader
+const checkboxBurger = ref(false);
+const toggleCheckbox = (isValue: boolean) => {
+	checkboxBurger.value = isValue;
 };
 </script>
 

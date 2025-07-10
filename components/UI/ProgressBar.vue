@@ -13,42 +13,34 @@
 	</div>
 </template>
 
-<script>
-export default {
-	props: {
-		targetProgress: {
-			type: Number,
-			required: true,
-		},
-		label: { type: String, default: null },
-	},
-	data() {
-		return {
-			progressBarWidth: '0%',
-			currentProgress: 0,
-		};
-	},
-	mounted() {
-		this.initializeProgressBar();
-	},
-	methods: {
-		initializeProgressBar() {
-			const progressLabel = this.$refs.progressLabel;
+<script setup lang="ts">
+import { ref, onMounted } from 'vue';
 
-			let width = 0;
-			const id = setInterval(() => {
-				if (width >= this.targetProgress) {
-					clearInterval(id);
-				} else {
-					width++;
-					this.currentProgress = width;
-					this.progressBarWidth = `${width}%`;
-					progressLabel.innerHTML = `${width}%`;
-				}
-			}, 10);
-		},
-	},
+const props = defineProps<{
+	readonly targetProgress: number;
+	readonly label?: string | null;
+}>();
+
+const progressBarWidth = ref('0%');
+const currentProgress = ref(0);
+const progressLabel = ref<HTMLElement | null>(null);
+
+const updateProgress = (target: number, progress = 0): void => {
+	if (progress > target) return;
+
+	currentProgress.value = progress;
+	progressBarWidth.value = `${progress}%`;
+
+	if (progressLabel.value) {
+		progressLabel.value.innerHTML = `${progress}%`;
+	}
+
+	setTimeout(() => updateProgress(target, progress + 1), 10);
 };
+
+onMounted(() => {
+	updateProgress(props.targetProgress);
+});
 </script>
 
 <style scoped>

@@ -11,20 +11,20 @@
 import type { Content } from '@types';
 
 defineProps<{
-	content: Content;
+	readonly content: Content;
 }>();
 
-function handleMouseMove(e: MouseEvent) {
+const handleMouseMove = (e: MouseEvent) => {
 	const card = e.currentTarget as HTMLElement;
 	const rect = card.getBoundingClientRect();
 	const mouseX = e.clientX - rect.left - rect.width / 2;
 	const mouseY = e.clientY - rect.top - rect.height / 2;
 
-	let angle = Math.atan2(mouseY, mouseX) * (180 / Math.PI);
-	angle = (angle + 360) % 360;
+	const rawAngle = Math.atan2(mouseY, mouseX) * (180 / Math.PI);
+	const angle = (rawAngle + 360) % 360;
 
 	card.style.setProperty('--start', `${angle + 60}`);
-}
+};
 </script>
 
 <style lang="scss" scoped>

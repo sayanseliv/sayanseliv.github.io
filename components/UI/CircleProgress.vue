@@ -61,7 +61,7 @@ export default {
 	},
 	setup(props) {
 		const circleRadiusBg = () => {
-			let value = (props.size - props.borderBgWidth) * 0.5;
+			const value = (props.size - props.borderBgWidth) * 0.5;
 			if (props.borderWidth > props.borderBgWidth) {
 				value -= (props.borderWidth - props.borderBgWidth) * 0.5;
 			}
@@ -69,7 +69,7 @@ export default {
 		};
 
 		const circleRadiusFg = () => {
-			let value = (props.size - props.borderWidth) * 0.5;
+			const value = (props.size - props.borderWidth) * 0.5;
 			if (props.borderBgWidth > props.borderWidth) {
 				value -= (props.borderBgWidth - props.borderWidth) * 0.5;
 			}

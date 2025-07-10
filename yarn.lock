@@ -2666,7 +2666,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/type-utils@npm:8.36.0":
+"@typescript-eslint/type-utils@npm:8.36.0, @typescript-eslint/type-utils@npm:^8.0.0":
   version: 8.36.0
   resolution: "@typescript-eslint/type-utils@npm:8.36.0"
   dependencies:
@@ -2708,7 +2708,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:8.36.0, @typescript-eslint/utils@npm:^8.35.1":
+"@typescript-eslint/utils@npm:8.36.0, @typescript-eslint/utils@npm:^8.26.0, @typescript-eslint/utils@npm:^8.35.1":
   version: 8.36.0
   resolution: "@typescript-eslint/utils@npm:8.36.0"
   dependencies:
@@ -4433,6 +4433,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"deepmerge-ts@npm:^7.1.5":
+  version: 7.1.5
+  resolution: "deepmerge-ts@npm:7.1.5"
+  checksum: 9a05828a026f43c30aab71a3e8a023f96bdd19fd5ef9cb4ce0c0ade3b28784da34e82b7ca04051fbb58f6e003c1672808391c89a362e0636c6541ae081c116b6
+  languageName: node
+  linkType: hard
+
 "deepmerge@npm:^4.2.2":
   version: 4.3.1
   resolution: "deepmerge@npm:4.3.1"
@@ -5276,6 +5283,26 @@ __metadata:
   peerDependencies:
     eslint: "*"
   checksum: 78c57f5aa5ca80953d850c0cff2a488b1d6a335a48119ba4b24fa252fbd99afacd55d837d3a9ecce5cef7187fee9efc823f1ad2b2e5a77bf8527e77656603153
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-functional@npm:^9.0.2":
+  version: 9.0.2
+  resolution: "eslint-plugin-functional@npm:9.0.2"
+  dependencies:
+    "@typescript-eslint/utils": ^8.26.0
+    deepmerge-ts: ^7.1.5
+    escape-string-regexp: ^5.0.0
+    is-immutable-type: ^5.0.1
+    ts-api-utils: ^2.0.1
+    ts-declaration-location: ^1.0.6
+  peerDependencies:
+    eslint: ^9.0.0
+    typescript: ">=4.7.4"
+  peerDependenciesMeta:
+    typescript:
+      optional: true
+  checksum: 974d2f05695d88edc8040628c06254b55ca512043458a0c52462f083932e246317bdba03f95f26f73635070b1ec359c766917539a78632676abcc491e9a6a613
   languageName: node
   linkType: hard
 
@@ -6500,6 +6527,20 @@ __metadata:
   dependencies:
     is-extglob: ^2.1.1
   checksum: d381c1319fcb69d341cc6e6c7cd588e17cd94722d9a32dbd60660b993c4fb7d0f19438674e68dfec686d09b7c73139c9166b47597f846af387450224a8101ab4
+  languageName: node
+  linkType: hard
+
+"is-immutable-type@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "is-immutable-type@npm:5.0.1"
+  dependencies:
+    "@typescript-eslint/type-utils": ^8.0.0
+    ts-api-utils: ^2.0.0
+    ts-declaration-location: ^1.0.4
+  peerDependencies:
+    eslint: "*"
+    typescript: ">=4.7.4"
+  checksum: ff9c6fabdfcf159c2931360e5f9a1cc1ed5577c4b0dc16b3c6fca178edb1f7a4932b6bb53955ccaac790865b3d90401940d565e5eee32bd2f88f4f0af36b7863
   languageName: node
   linkType: hard
 
@@ -9278,6 +9319,7 @@ __metadata:
   dependencies:
     "@nuxt/eslint": ^1.5.2
     eslint: ^9.30.1
+    eslint-plugin-functional: ^9.0.2
     nuxt: 3.13.0
     sass: 1.79.1
     typescript: ^5.8.3
@@ -10025,12 +10067,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ts-api-utils@npm:^2.1.0":
+"ts-api-utils@npm:^2.0.0, ts-api-utils@npm:^2.0.1, ts-api-utils@npm:^2.1.0":
   version: 2.1.0
   resolution: "ts-api-utils@npm:2.1.0"
   peerDependencies:
     typescript: ">=4.8.4"
   checksum: 5b1ef89105654d93d67582308bd8dfe4bbf6874fccbcaa729b08fbb00a940fd4c691ca6d0d2b18c3c70878d9a7e503421b7cc473dbc3d0d54258b86401d4b15d
+  languageName: node
+  linkType: hard
+
+"ts-declaration-location@npm:^1.0.4, ts-declaration-location@npm:^1.0.6":
+  version: 1.0.7
+  resolution: "ts-declaration-location@npm:1.0.7"
+  dependencies:
+    picomatch: ^4.0.2
+  peerDependencies:
+    typescript: ">=4.0.0"
+  checksum: d1bfa610fae8175389af580f25e8aab5dd5c7fb8daf83560fa8d555da8ef03542dde8552a9c3d1fb4beaed8670db863083c61413846d91cb3e5caea6636e45f7
   languageName: node
   linkType: hard
 

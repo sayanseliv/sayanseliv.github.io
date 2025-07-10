@@ -1,5 +1,5 @@
 export interface Content {
-	title: string;
-	text: string;
-	link: string;
+	readonly title: string;
+	readonly text: string;
+	readonly link: string;
 }

@@ -57,7 +57,7 @@ input {
 	color: var(--white);
 	font-weight: var(--fw-regular);
 }
-.overflow-hidden {
+body.scroll-lock {
 	overflow: hidden;
 }
 .container-1440 {

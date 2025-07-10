@@ -4,8 +4,8 @@
 			<div v-show="modelValue" class="aside__overlay" @click="toggle" />
 		</transition>
 		<div :class="['aside__toggle', isHidden]">
-			<input id="chackboxAside" :checked="modelValue" type="checkbox" />
-			<label for="chackboxAside" @click="toggle" />
+			<input id="checkboxAside" :checked="modelValue" type="checkbox" />
+			<label for="checkboxAside" @click="toggle" />
 		</div>
 		<div class="aside__container">
 			<figure class="aside__avatar">
@@ -159,32 +159,36 @@
 import data from '@/static/data.json';
 import { computed, ref } from 'vue';
 
+const languages = data.languages;
+const skills = data.skills;
+
 const props = defineProps<{
-	modelValue: boolean;
+	readonly modelValue: boolean;
 }>();
 
 const emit = defineEmits<{
 	(e: 'update:modelValue', value: boolean): void;
 }>();
 
-const isHidden = computed(() => ({
-	aside__hidden: !props.modelValue,
-}));
+const getAsideClass = (visible: boolean): Record<string, boolean> => {
+	return {
+		aside__hidden: !visible,
+	};
+};
 
-function toggle() {
+const isHidden = computed(() => getAsideClass(props.modelValue));
+
+const toggle = () => {
 	emit('update:modelValue', !props.modelValue);
-}
+};
 
 const isShowCertificate = ref(false);
 const docPath = ref<string | null>(null);
 
-function showCertificate(docName: string) {
+const showCertificate = (docName: string) => {
 	isShowCertificate.value = true;
 	docPath.value = docName;
-}
-
-const languages = data.languages;
-const skills = data.skills;
+};
 </script>
 
 <style lang="scss" scoped>

@@ -29,9 +29,9 @@
 		</section>
 	</main>
 </template>
-<script setup>
-import cardsData from '/static/data.json';
-const cards = cardsData.projects;
+<script setup lang="ts">
+import data from '@/static/data.json';
+const cards = data.projects;
 // 'Portfolio',
 </script>
 

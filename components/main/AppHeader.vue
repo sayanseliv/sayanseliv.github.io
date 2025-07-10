@@ -20,7 +20,7 @@
 		</nav>
 	</header>
 </template>
-<script lang="ts" setup>
+<script setup lang="ts">
 // AppHeader
 const checkboxBurger = ref(false);
 const toggleCheckbox = (isValue: boolean) => {

@@ -15,7 +15,7 @@
 	</div>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 // https://github.com/w2xi/vue3-circular-progress/tree/main
 import type { CSSProperties } from 'vue';
 //CircleProgress

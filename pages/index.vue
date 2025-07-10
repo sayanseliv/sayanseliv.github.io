@@ -37,17 +37,11 @@
 	</main>
 </template>
 
-<script>
-import cardsData from '/static/data.json';
-export default {
-	name: 'MainPage',
-	data() {
-		return {
-			isShowSidebar: false,
-			cards: cardsData.technology,
-		};
-	},
-};
+<script setup lang="ts">
+import cardsData from '@/static/data.json';
+// MainPage
+const cards = cardsData.technology;
+const isShowSidebar = ref(false);
 </script>
 
 <style lang="scss" scoped>

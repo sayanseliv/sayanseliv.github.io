@@ -12,7 +12,7 @@
 						<img :src="content.logo" alt="Projects logo" loading="lazy" />
 					</figure>
 					<div class="card-portfolio__body">
-						<h4>{{ content.title }}</h4>
+						<h3>{{ content.title }}</h3>
 						<p>{{ content.text }}</p>
 					</div>
 				</NuxtLink>
@@ -118,7 +118,7 @@ defineProps({
 	border-right: 1px solid var(--tc-secondary);
 	border-bottom: 1px solid var(--tc-secondary);
 	border-left: 1px solid var(--tc-secondary);
-	& > h4 {
+	& > h3 {
 		z-index: 10;
 		position: relative;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);

@@ -23,12 +23,15 @@
 			</div>
 		</section>
 		<section>
-			<div class="container-1440 hero__grid">
-				<CardPortfolio
-					v-for="(card, index) in cards"
-					:key="'card-portfolio-' + index"
-					v-memo="card.id"
-					:content="card" />
+			<div class="container-1440">
+				<h2 class="portfolio-projects__title">Projects</h2>
+				<div class="portfolio-projects__grid">
+					<CardPortfolio
+						v-for="(card, index) in cards"
+						:key="'card-portfolio-' + index"
+						v-memo="card.id"
+						:content="card" />
+				</div>
 			</div>
 		</section>
 	</main>
@@ -116,8 +119,11 @@ const cards = data.projects;
 		}
 	}
 }
-
-.hero__grid {
+.portfolio-projects__title {
+	margin-bottom: 1rem;
+	font-size: var(--fs-h2);
+}
+.portfolio-projects__grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
 	gap: 1rem;

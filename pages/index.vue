@@ -1,38 +1,41 @@
 <template>
 	<main class="main-home">
 		<ParticleCanvas />
-		<div class="container-1440 home__container">
-			<AppSidebar v-model="isShowSidebar" />
-			<div class="home__content">
-				<section class="content__hero">
-					<div class="hero__text-bg">
-						<h1 class="hero__title">Welcome to Lang Eugen's Digital Space</h1>
-						<p class="hero__description">
-							Explore a portfolio showcasing Lang's expertise in HTML, CSS,
-							JavaScript, and popular front-end frameworks like React and Vue. From
-							responsive designs that adapt seamlessly to any device to interactive
-							elements that engage users, Lang's work reflects a commitment to
-							excellence and innovation.
-							<br />
-							<br />
-							Whether you're seeking a modern website for your business, an engaging
-							web application, or advice on front-end development best practices, Lang
-							Eugen is your trusted partner. Join the digital revolution and elevate
-							your online presence with Lang Eugen's expertise.
-						</p>
-					</div>
-				</section>
-				<section class="content__image" />
-				<section class="content__technologies">
-					<h2 class="technologies__title">Technologies</h2>
-					<div class="technologies__grid">
-						<CardTechnology
-							v-for="(card, index) in cards"
-							:key="'card-technology-' + index"
-							v-memo="[card.id]"
-							:content="card" />
-					</div>
-				</section>
+		<div class="container-1440">
+			<div class="home__container">
+				<AppSidebar v-model="isShowSidebar" />
+				<div class="home__content">
+					<section class="content__hero">
+						<div class="hero__text-bg">
+							<h1 class="hero__title">Welcome to Lang Eugen's Digital Space</h1>
+							<p class="hero__description">
+								Explore a portfolio showcasing Lang's expertise in HTML, CSS,
+								JavaScript, and popular front-end frameworks like React and Vue.
+								From responsive designs that adapt seamlessly to any device to
+								interactive elements that engage users, Lang's work reflects a
+								commitment to excellence and innovation.
+								<br />
+								<br />
+								Whether you're seeking a modern website for your business, an
+								engaging web application, or advice on front-end development best
+								practices, Lang Eugen is your trusted partner. Join the digital
+								revolution and elevate your online presence with Lang Eugen's
+								expertise.
+							</p>
+						</div>
+					</section>
+					<section class="content__image" />
+					<section class="content__technologies">
+						<h2 class="technologies__title">Technologies</h2>
+						<div class="technologies__grid">
+							<CardTechnology
+								v-for="(card, index) in cards"
+								:key="'card-technology-' + index"
+								v-memo="[card.id]"
+								:content="card" />
+						</div>
+					</section>
+				</div>
 			</div>
 		</div>
 	</main>

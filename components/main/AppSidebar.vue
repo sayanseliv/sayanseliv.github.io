@@ -317,7 +317,8 @@ const showCertificate = (docName: string) => {
 }
 .aside__image {
 	width: 100%;
-	height: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
 	max-width: 8rem;
 	max-height: 8rem;
 	margin-bottom: 0.5rem;
@@ -330,10 +331,15 @@ const showCertificate = (docName: string) => {
 }
 .aside__scrollable {
 	position: relative;
+	z-index: 2;
 	height: 100%;
 	padding: 0.9375rem;
 	overflow: auto;
 	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-overflow-scrolling: touch;
+
+	touch-action: pan-y;
+	overscroll-behavior: contain;
 	-webkit-overflow-scrolling: touch;
 	&::-webkit-scrollbar {
 		display: none;
@@ -485,7 +491,7 @@ const showCertificate = (docName: string) => {
 	position: absolute;
 	bottom: 500%;
 	right: calc(-0.9375rem / 2);
-	// width: 100%;
+	width: 100%;
 }
 .aside__scroll-text {
 	margin-left: auto;

@@ -9,7 +9,11 @@
 		</div>
 		<div class="aside__container">
 			<figure class="aside__avatar">
-				<img src="/images/thinking.webp" alt="Lang Eugen avatar" class="aside__image" />
+				<img
+					src="/images/thinking.webp"
+					alt="Lang Eugen avatar"
+					loading="lazy"
+					class="aside__image" />
 				<figcaption class="aside__figcaption">
 					Lang Eugen
 					<p class="aside__position">Front-end developer</p>
@@ -336,7 +340,6 @@ const showCertificate = (docName: string) => {
 	padding: 0.9375rem;
 	overflow: auto;
 	-webkit-transform: translate3d(0, 0, 0);
-	-webkit-overflow-scrolling: touch;
 
 	touch-action: pan-y;
 	overscroll-behavior: contain;

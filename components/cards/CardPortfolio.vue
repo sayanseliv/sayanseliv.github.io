@@ -9,7 +9,7 @@
 					target="_blank"
 					class="card-portfolio__content">
 					<figure class="card-portfolio__figure">
-						<img :src="content.logo" alt="Projects logo" />
+						<img :src="content.logo" alt="Projects logo" loading="lazy" />
 					</figure>
 					<div class="card-portfolio__body">
 						<h3>{{ content.title }}</h3>

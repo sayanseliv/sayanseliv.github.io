@@ -1,81 +1,97 @@
 {
 	"technology": [
 		{
+			"id": 1,
 			"title": "HTML5",
 			"text": "HTML5 serves as the foundation for structuring and presenting content on the web, offering enhanced semantics, multimedia support, and interactive elements.",
 			"link": "https://en.wikipedia.org/wiki/HTML5"
 		},
 		{
+			"id": 2,
 			"title": "CSS3",
 			"text": "CSS3 plays a crucial role in styling and designing web pages, providing advanced layout options, animations, and responsive design capabilities for improved user interfaces.",
 			"link": "https://en.wikipedia.org/wiki/CSS"
 		},
 		{
+			"id": 3,
 			"title": "JavaScript",
 			"text": "JavaScript is essential for adding dynamic functionality to web applications, enabling DOM manipulation, event handling, and asynchronous communication with servers.",
 			"link": "https://en.wikipedia.org/wiki/JavaScript"
 		},
 		{
+			"id": 4,
 			"title": "React",
 			"text": "React is a JavaScript library for building fast and interactive user interfaces, using a component-based architecture and a virtual DOM for efficient rendering.",
 			"link": "https://reactjs.org/"
 		},
 		{
+			"id": 5,
 			"title": "Redux",
 			"text": "Redux is a predictable state container for JavaScript apps, often used with React for managing application state in a centralized and scalable way.",
 			"link": "https://redux.js.org/"
 		},
 		{
+			"id": 6,
 			"title": "React Native",
 			"text": "React Native is utilized for developing cross-platform mobile applications using JavaScript and React, enabling efficient code sharing and native app experiences on iOS and Android.",
 			"link": "https://en.wikipedia.org/wiki/React_Native"
 		},
 		{
+			"id": 7,
 			"title": "Vue",
 			"text": "Vue is a progressive JavaScript framework for building user interfaces. It features a declarative and component-based programming model that is simple to integrate and scale.",
 			"link": "https://vuejs.org/"
 		},
 		{
+			"id": 8,
 			"title": "Nuxt 2 / Nuxt 3",
 			"text": "Nuxt is a powerful framework built on Vue.js, used for creating modern and high-performance server-side rendered (SSR) and static websites with streamlined development workflows.",
 			"link": "https://nuxt.com"
 		},
 		{
+			"id": 9,
 			"title": "Vuetify",
 			"text": "Vuetify is a comprehensive UI library for Vue.js projects, offering pre-designed components, themes, and responsive design features to enhance user interfaces.",
 			"link": "https://vuetifyjs.com/en"
 		},
 		{
+			"id": 10,
 			"title": "Node.js",
 			"text": "Node.js is a runtime environment that allows JavaScript to be run on the server side, enabling the development of scalable and high-performance web applications.",
 			"link": "https://nodejs.org/"
 		},
 		{
+			"id": 11,
 			"title": "WordPress",
 			"text": "WordPress serves as a versatile platform for creating dynamic websites and blogs, providing customizable themes, plugins, and content management tools for easy publishing and management.",
 			"link": "https://en.wikipedia.org/wiki/WordPress"
 		},
 		{
+			"id": 12,
 			"title": "GitHub",
 			"text": "GitHub plays a pivotal role in code collaboration and version control, facilitating efficient code management, collaboration among developers, and project tracking.",
 			"link": "https://en.wikipedia.org/wiki/GitHub"
 		},
 		{
+			"id": 13,
 			"title": "Vuex/Pinia",
 			"text": "Vuex and Pinia are state management libraries for Vue.js, offering centralized state management, data sharing, and reactive updates to streamline application development and maintain data consistency.",
 			"link": "https://www.telerik.com/blogs/vue-js-state-management-pinia-vs-vuex"
 		},
 		{
+			"id": 14,
 			"title": "AWS",
 			"text": "Amazon Web Services (AWS) is a comprehensive cloud platform that provides a wide range of services including computing power, storage, databases, and machine learning. It enables scalable, secure, and cost-effective solutions for deploying and managing applications.",
 			"link": "https://aws.amazon.com/"
 		},
 		{
+			"id": 15,
 			"title": "Leaflet",
 			"text": "Leaflet is a lightweight, open-source JavaScript library for interactive maps, widely used for embedding customizable maps into web applications.",
 			"link": "https://leafletjs.com/"
 		},
 		{
+			"id": 16,
 			"title": "Mapbox",
 			"text": "Mapbox is a flexible mapping platform that enables developers to create custom maps and geolocation experiences. It offers advanced styling, real-time data visualization, and seamless integration with web and mobile applications.",
 			"link": "https://www.mapbox.com/"

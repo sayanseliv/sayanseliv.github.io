@@ -1,5 +1,5 @@
 <template>
-	<div class="technology__card" @mousemove="handleMouseMove">
+	<div class="card__technology" @mousemove="handleMouseMove">
 		<div class="glow" />
 		<h6>{{ content.title }}</h6>
 		<p>{{ content.text }}</p>
@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import type { Content } from '@types';
-
+// CardTechnology
 defineProps<{
 	readonly content: Content;
 }>();
@@ -28,7 +28,7 @@ const handleMouseMove = (e: MouseEvent) => {
 </script>
 
 <style lang="scss" scoped>
-.technology__card {
+.card__technology {
 	--start: 0;
 	position: relative;
 	display: flex;

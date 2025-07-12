@@ -105,8 +105,6 @@ export default defineNuxtConfig({
 				{
 					rel: 'stylesheet',
 					href: 'https://fonts.googleapis.com/css2?family=Barlow&family=Roboto:wght@400;500;700&display=swap',
-					media: 'print',
-					onload: "this.media='all'",
 				},
 				{ rel: 'canonical', href: BASE_URL + '/' },
 				{

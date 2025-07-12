@@ -2,11 +2,13 @@
 	<header class="header">
 		<nav class="container-1440 header__nav">
 			<label class="header__hamburger">
+				<span class="header__sr-only">Toggle navigation menu</span>
 				<input
 					id="checkboxBurger"
 					v-model="checkboxBurger"
 					type="checkbox"
-					class="hamburger-input" />
+					class="hamburger-input"
+					aria-label="Toggle navigation menu" />
 			</label>
 			<div class="header__links">
 				<NuxtLink to="/">Home</NuxtLink>
@@ -53,14 +55,14 @@ const toggleCheckbox = (isValue: boolean) => {
 		display: flex;
 		margin-left: auto;
 	}
-	& > .hamburger-input {
+	& .hamburger-input {
 		top: 50%;
 		transform: translateY(-50%);
 		appearance: none;
 		outline: none;
 		pointer-events: none;
 	}
-	& > .hamburger-input,
+	& .hamburger-input,
 	&::before,
 	&::after {
 		content: '';
@@ -89,12 +91,22 @@ const toggleCheckbox = (isValue: boolean) => {
 		bottom: auto;
 		top: 50%; // переместим в центр
 	}
-	& > .hamburger-input:checked {
+	& .hamburger-input:checked {
 		opacity: 0;
 		transform: translateY(-50%) scaleX(0);
 	}
 }
-
+.header__sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
 .header__links {
 	display: flex;
 	width: 100%;
@@ -134,10 +146,10 @@ const toggleCheckbox = (isValue: boolean) => {
 			width: 100%;
 		}
 	}
-	& > .router-link-exact-active::after {
+	& .router-link-exact-active::after {
 		width: 100%;
 	}
-	& > .header__contact {
+	& .header__contact {
 		display: flex;
 		align-items: center;
 		margin-inline: auto 1rem;

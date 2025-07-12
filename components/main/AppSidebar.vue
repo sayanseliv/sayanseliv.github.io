@@ -72,7 +72,8 @@
 						<NuxtLink
 							href="https://www.facebook.com/Evgenyyyi"
 							external
-							target="_blank">
+							target="_blank"
+							aria-label="Facebook profile">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -106,7 +107,8 @@
 						<NuxtLink
 							href="https://www.linkedin.com/in/eugen-lang-18475b143/"
 							external
-							target="_blank">
+							target="_blank"
+							aria-label="LinkedIn profile">
 							<svg
 								height="15"
 								viewBox="0 0 72 72"
@@ -125,7 +127,11 @@
 						</NuxtLink>
 					</li>
 					<li>
-						<NuxtLink href="https://github.com/sayanseliv" external target="_blank">
+						<NuxtLink
+							href="https://github.com/sayanseliv"
+							external
+							target="_blank"
+							aria-label="GitHub profile">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 24 24"

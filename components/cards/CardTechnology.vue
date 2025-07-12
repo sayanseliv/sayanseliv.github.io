@@ -1,7 +1,7 @@
 <template>
 	<div class="card__technology" @mousemove="handleMouseMove">
 		<div class="glow" />
-		<h6>{{ content.title }}</h6>
+		<h3>{{ content.title }}</h3>
 		<p>{{ content.text }}</p>
 		<NuxtLink :to="content.link" external target="_blank">Learn more</NuxtLink>
 	</div>
@@ -62,15 +62,15 @@ const handleMouseMove = (e: MouseEvent) => {
 		opacity: 0;
 		transition: 0.5s ease;
 	}
-	& > h6 {
+	& h3 {
 		margin-bottom: 0.5rem;
 		font-size: var(--fs-h6);
 	}
-	& > p {
+	& p {
 		margin-bottom: 0.5rem;
 		color: var(--tc-secondary);
 	}
-	& > a {
+	& a {
 		position: relative;
 		display: flex;
 		align-items: center;
@@ -94,7 +94,7 @@ const handleMouseMove = (e: MouseEvent) => {
 			transition: right 0.3s;
 		}
 	}
-	&:hover > .glow::before {
+	&:hover .glow::before {
 		opacity: 1;
 	}
 	&:hover::before {

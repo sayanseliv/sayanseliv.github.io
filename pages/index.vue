@@ -28,8 +28,8 @@
 					<div class="technologies__grid">
 						<CardTechnology
 							v-for="(card, index) in cards"
-							v-memo="[card.id]"
 							:key="'card-technology-' + index"
+							v-memo="[card.id]"
 							:content="card" />
 					</div>
 				</section>

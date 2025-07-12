@@ -24,6 +24,7 @@
 				<CardPortfolio
 					v-for="(card, index) in cards"
 					:key="'card-portfolio-' + index"
+					v-memo="card.id"
 					:content="card" />
 			</div>
 		</section>

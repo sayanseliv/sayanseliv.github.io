@@ -99,6 +99,7 @@
 	],
 	"projects": [
 		{
+			"id": 1,
 			"title": "xDock",
 			"link": "https://xdock.io/",
 			"text": "xDock is a powerful platform that simplifies distribution and logistics by connecting drivers with cross-dock facilities, warehouses, and storage points across the country.",
@@ -106,6 +107,7 @@
 			"technology": "Nuxt 2, Vuetify, Vuex, AWS, Mapbox"
 		},
 		{
+			"id": 2,
 			"title": "Blue ridge suppliers",
 			"link": "https://blueridgesuppliers.com/",
 			"text": "A one-stop shop offering a wide range of high-quality building materials tailored to meet the unique needs of contractors and construction professionals.",
@@ -113,6 +115,7 @@
 			"technology": "Nuxt 3, Gsap, Pinia, AWS"
 		},
 		{
+			"id": 3,
 			"title": "Serve Freight",
 			"link": "https://servefreight.com/",
 			"text": "ServeFreight is a digital platform that connects shippers with top-tier carriers to ensure fast, reliable, and cost-effective transportation solutions.",
@@ -120,6 +123,7 @@
 			"technology": "Wordpress, Contact Form 7"
 		},
 		{
+			"id": 4,
 			"title": "Patton cap",
 			"link": "https://pattoncap.com/",
 			"text": "Patton Cap specializes in crafting custom homes throughout Western North Carolina, delivering quality construction and personalized service for every client.",
@@ -127,6 +131,7 @@
 			"technology": "Wordpress, Contact Form 7, ACF, Custom Post Type UI"
 		},
 		{
+			"id": 5,
 			"title": "Jump Cup",
 			"link": "https://jumpcup.com/",
 			"text": "JumpCup transforms your daily coffee run into an adventure with bold flavors, unique drinks, and a vibrant customer experience you’ll want to repeat.",
@@ -134,6 +139,7 @@
 			"technology": "Wordpress, Contact Form 7, ACF, Custom Post Type UI"
 		},
 		{
+			"id": 6,
 			"title": "Xcold",
 			"link": "https://xcoldchain.com/",
 			"text": "Xcold offers specialized cold chain logistics with expert temperature control and monitoring for perishable goods, ensuring freshness and safety.",
@@ -141,6 +147,7 @@
 			"technology": "Wordpress, Contact Form 7"
 		},
 		{
+			"id": 7,
 			"title": "Zelh",
 			"link": "https://zelh.com/",
 			"text": "Zelh helps businesses scale by building remote teams, optimizing operations, and handling administrative tasks so clients can focus on growth.",
@@ -148,6 +155,7 @@
 			"technology": "Wordpress, Contact Form 7, ACF"
 		},
 		{
+			"id": 8,
 			"title": "Zelh Logistics",
 			"link": "https://zelhlogistics.com/",
 			"text": "Zelh Logistics provides tailored staffing and outsourcing services for logistics companies, helping streamline workflows and reduce operational costs.",
@@ -155,6 +163,7 @@
 			"technology": "Nuxt 3, Swiper"
 		},
 		{
+			"id": 9,
 			"title": "Zelh Academy",
 			"link": "https://academy.zelh.com/",
 			"text": "Zelh Academy offers career guidance and professional training programs designed to help individuals grow and succeed in the logistics industry.",
@@ -162,6 +171,7 @@
 			"technology": "Wordpress, Polylang, Contact Form 7, ACF"
 		},
 		{
+			"id": 10,
 			"title": "Zelh Tech",
 			"link": "https://zelh.tech/",
 			"text": "Zelh Tech blends strategy, technology, and design to deliver high-impact digital solutions — from MVP launch to full-scale product growth.",
@@ -169,6 +179,7 @@
 			"technology": "Nuxt 3, Swiper"
 		},
 		{
+			"id": 11,
 			"title": "Logistics Zelh Tech",
 			"link": "https://logistics.zelhtech.com/",
 			"text": "Logistics Zelh Tech supports freight brokerage companies with scalable growth tools, tech integrations, and process automation tailored to the industry.",

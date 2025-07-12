@@ -14,7 +14,10 @@
 						</p>
 					</div>
 					<figure class="hero__figure">
-						<img src="/images/photo4.jpeg" alt="Portfolio image" loading="lazy" />
+						<img
+							src="/images/portfolio-hero.webp"
+							alt="Portfolio image"
+							loading="lazy" />
 					</figure>
 				</div>
 			</div>

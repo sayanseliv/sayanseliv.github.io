@@ -35,7 +35,9 @@
 </template>
 
 <script setup lang="ts">
-// CardPortfolio
+defineOptions({
+	name: 'CardPortfolio',
+});
 defineProps({
 	content: {
 		type: Object,

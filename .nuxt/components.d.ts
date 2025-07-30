@@ -2,7 +2,8 @@
 import type { DefineComponent, SlotsType } from 'vue'
 type IslandComponent<T extends DefineComponent> = T & DefineComponent<{}, {refresh: () => Promise<void>}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, SlotsType<{ fallback: { error: unknown } }>>
 interface _GlobalComponents {
-      'CircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
+      'AnimatedCircles': typeof import("../components/UI/AnimatedCircles.vue")['default']
+    'CircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
     'ParticleCanvas': typeof import("../components/UI/ParticleCanvas.vue")['default']
     'ProgressBar': typeof import("../components/UI/ProgressBar.vue")['default']
     'CardPortfolio': typeof import("../components/cards/CardPortfolio.vue")['default']
@@ -33,7 +34,8 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-      'LazyCircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
+      'LazyAnimatedCircles': typeof import("../components/UI/AnimatedCircles.vue")['default']
+    'LazyCircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
     'LazyParticleCanvas': typeof import("../components/UI/ParticleCanvas.vue")['default']
     'LazyProgressBar': typeof import("../components/UI/ProgressBar.vue")['default']
     'LazyCardPortfolio': typeof import("../components/cards/CardPortfolio.vue")['default']
@@ -70,6 +72,7 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
+export const AnimatedCircles: typeof import("../components/UI/AnimatedCircles.vue")['default']
 export const CircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
 export const ParticleCanvas: typeof import("../components/UI/ParticleCanvas.vue")['default']
 export const ProgressBar: typeof import("../components/UI/ProgressBar.vue")['default']
@@ -101,6 +104,7 @@ export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
+export const LazyAnimatedCircles: typeof import("../components/UI/AnimatedCircles.vue")['default']
 export const LazyCircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
 export const LazyParticleCanvas: typeof import("../components/UI/ParticleCanvas.vue")['default']
 export const LazyProgressBar: typeof import("../components/UI/ProgressBar.vue")['default']

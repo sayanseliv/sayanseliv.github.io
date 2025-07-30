@@ -9,7 +9,9 @@
 
 <script setup lang="ts">
 import type { Content } from '@types';
-// CardTechnology
+defineOptions({
+	name: 'CardTechnology',
+});
 defineProps<{
 	readonly content: Content;
 }>();

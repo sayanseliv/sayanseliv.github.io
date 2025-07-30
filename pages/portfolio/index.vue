@@ -1,5 +1,6 @@
 <template>
 	<main class="main-portfolio">
+		<AnimatedCircles />
 		<section class="portfolio-hero">
 			<div class="container-1440 hero__container">
 				<div class="hero__info">

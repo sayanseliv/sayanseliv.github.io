@@ -1,12 +1,13 @@
 <template>
-	<div class="particle-canvas__wrapper">
+	<div class="particle-canvas">
 		<div id="particle-canvas" />
 	</div>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
-
+defineOptions({
+	name: 'ParticleCanvas',
+});
 onMounted(() => {
 	if (typeof window !== 'undefined' && window.ParticleNetwork) {
 		const container = document.getElementById('particle-canvas') as HTMLDivElement | null;
@@ -24,7 +25,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-.particle-canvas__wrapper {
+.particle-canvas {
 	position: fixed;
 	top: 3rem;
 	height: 100%;

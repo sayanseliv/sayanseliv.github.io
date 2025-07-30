@@ -12,6 +12,9 @@
 
 <script setup lang="ts">
 import { computed, watch } from 'vue';
+defineOptions({
+	name: 'AppModal',
+});
 
 const props = defineProps<{
 	readonly modelValue: boolean;

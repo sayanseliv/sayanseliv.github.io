@@ -23,7 +23,9 @@
 	</header>
 </template>
 <script setup lang="ts">
-// AppHeader
+defineOptions({
+	name: 'AppHeader',
+});
 const checkboxBurger = ref(false);
 const toggleCheckbox = (isValue: boolean) => {
 	checkboxBurger.value = isValue;

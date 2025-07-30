@@ -168,6 +168,9 @@
 <script setup lang="ts">
 import data from '@/static/data.json';
 import { computed, ref } from 'vue';
+defineOptions({
+	name: 'AppSidebar',
+});
 
 const languages = data.languages;
 const skills = data.skills;

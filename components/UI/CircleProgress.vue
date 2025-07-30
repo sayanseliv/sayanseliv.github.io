@@ -1,10 +1,10 @@
 <template>
-	<div class="vue-circle-progress" v-bind="wrapAttr">
-		<svg v-bind="svgAttr" class="svg-wrapper">
+	<div class="circle-progress" v-bind="wrapAttr">
+		<svg v-bind="svgAttr" class="circle-progress__svg">
 			<circle v-bind="circleBgAttr" />
 			<circle v-bind="circleFgAttr" />
 		</svg>
-		<div v-if="showPercent" class="current-percent" :style="{ color: fillColor }">
+		<div v-if="showPercent" class="circle-progress__percent" :style="{ color: fillColor }">
 			<template v-if="$slots.content">
 				<slot name="content" :percent="currentPercent" />
 			</template>
@@ -18,7 +18,9 @@
 <script setup lang="ts">
 // https://github.com/w2xi/vue3-circular-progress/tree/main
 import type { CSSProperties } from 'vue';
-//CircleProgress
+defineOptions({
+	name: 'CircleProgress',
+});
 const props = defineProps({
 	size: {
 		type: Number,
@@ -162,12 +164,12 @@ watch(
 </script>
 
 <style lang="scss" scoped>
-.vue-circle-progress {
+.circle-progress {
 	position: relative;
-	.svg-wrapper {
+	.circle-progress__svg {
 		transform: rotate(-90deg);
 	}
-	.current-percent {
+	.circle-progress__percent {
 		position: absolute;
 		top: 50%;
 		left: 50%;

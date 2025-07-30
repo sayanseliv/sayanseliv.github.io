@@ -1,20 +1,19 @@
 <template>
-	<div class="progress-container">
-		<div class="progress__title">
+	<div class="progress">
+		<div class="progress__header">
 			<p>{{ label }}</p>
 			<p ref="progressLabel">{{ currentProgress }}%</p>
 		</div>
 		<div class="progress-bar__wrapper">
-			<div
-				ref="progressBar"
-				class="progress-bar__line"
-				:style="{ width: progressBarWidth }" />
+			<div ref="progressBar" class="progress__bar" :style="{ width: progressBarWidth }" />
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+defineOptions({
+	name: 'ProgressBar',
+});
 
 const props = defineProps<{
 	readonly targetProgress: number;
@@ -44,11 +43,11 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.progress-container {
+.progress {
 	max-width: 400px;
 	margin-block: 0.9375rem;
 }
-.progress__title {
+.progress__header {
 	display: flex;
 	justify-content: space-between;
 }
@@ -56,7 +55,7 @@ onMounted(() => {
 	margin-block: 0.9375rem;
 	background-color: var(--empty-color);
 }
-.progress-bar__line {
+.progress__bar {
 	height: 2px;
 	border-radius: 25px;
 	background-color: var(--light-blue);

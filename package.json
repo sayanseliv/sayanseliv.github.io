@@ -19,6 +19,7 @@
 		"type-check": "vue-tsc --noEmit"
 	},
 	"dependencies": {
+		"@nuxtjs/sitemap": "^7.4.3",
 		"nuxt": "3.13.0",
 		"sass": "1.79.1",
 		"vue": "3.4.38",

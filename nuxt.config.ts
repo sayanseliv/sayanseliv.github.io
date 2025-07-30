@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 	nitro: { compressPublicAssets: true },
 	ssr: true,
 	features: { inlineStyles: false },
-	modules: ['@nuxt/eslint'],
+	modules: ['@nuxt/eslint', '@nuxtjs/sitemap'],
 	vite: {
 		css: {
 			preprocessorOptions: {
@@ -146,5 +146,13 @@ export default defineNuxtConfig({
 		},
 	},
 	css: ['assets/styles/reset.scss', 'assets/styles/global.scss'],
+	site: { url: 'https://sayanseliv.github.io' },
+	sitemap: {
+		defaults: {
+			changefreq: 'monthly',
+			priority: 0.8,
+			lastmod: new Date().toISOString(),
+		},
+	},
 	compatibilityDate: '2024-10-11',
 });

@@ -30,19 +30,24 @@
 		rgba(217, 41, 255, 1),
 		rgba(255, 10, 92, 1)
 	);
+	--error: red;
+	--color-card: #3c3163;
+	--transition-time: 0.5s;
 	/* font-weight */
 	--fw-bold: 700;
 	--fw-semibold: 600;
 	--fw-medium: 500;
 	--fw-regular: 400;
 	/* font-size */
-	--fs-primary: 1rem;
-	--fs-secondary: 1.1rem;
-	--fs-caption: 0.8rem;
 	--fs-h1: 2.5rem;
 	--fs-h1-s: 2rem;
 	--fs-h2: 1.8rem;
+	--fs-h3: 1.5rem;
 	--fs-h6: 1.2rem;
+	--fs-secondary: 1.1rem;
+	--fs-primary: 1rem;
+	--fs-caption: 0.8rem;
+	--fs-small: 0.7rem;
 	// radius
 	--border-radius: 5px;
 	// insent

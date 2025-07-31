@@ -13,6 +13,9 @@
 			<div class="header__links">
 				<NuxtLink to="/">Home</NuxtLink>
 				<NuxtLink to="/portfolio">Portfolio</NuxtLink>
+				<NuxtLink to="/features" :class="{ active: route.path.startsWith('/features') }">
+					Features
+				</NuxtLink>
 				<div class="header__contact">
 					<p>Contact:</p>
 					<NuxtLink to="mailto:sayanseliv@gmail.com">sayanseliv@gmail.com</NuxtLink>
@@ -26,6 +29,7 @@
 defineOptions({
 	name: 'AppHeader',
 });
+const route = useRoute();
 const checkboxBurger = ref(false);
 const toggleCheckbox = (isValue: boolean) => {
 	checkboxBurger.value = isValue;
@@ -83,15 +87,15 @@ const toggleCheckbox = (isValue: boolean) => {
 	&::after {
 		bottom: 0;
 	}
-	// Анимация в checked
+
 	&:has(.hamburger-input:checked)::before {
 		transform: rotate(45deg);
-		top: 50%; // переместим в центр
+		top: 50%;
 	}
 	&:has(.hamburger-input:checked)::after {
 		transform: rotate(-45deg);
 		bottom: auto;
-		top: 50%; // переместим в центр
+		top: 50%;
 	}
 	& .hamburger-input:checked {
 		opacity: 0;
@@ -148,18 +152,19 @@ const toggleCheckbox = (isValue: boolean) => {
 			width: 100%;
 		}
 	}
-	& .router-link-exact-active::after {
+	& .router-link-exact-active::after,
+	.active::after {
 		width: 100%;
 	}
 	& .header__contact {
 		display: flex;
 		align-items: center;
-		margin-inline: auto 1rem;
+		margin-left: auto;
 		column-gap: 0.5rem;
 		@include media(992px) {
 			flex-direction: column;
 			align-items: flex-start;
-			margin-inline: 0;
+			margin-left: 0;
 			padding-top: 0.5rem;
 			border-top: 1px solid var(--grey-hr);
 			row-gap: 0.5rem;

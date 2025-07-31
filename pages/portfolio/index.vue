@@ -40,7 +40,9 @@
 <script setup lang="ts">
 import data from '@/static/data.json';
 const cards = data.projects;
-// 'Portfolio',
+defineOptions({
+	name: 'PagePortfolio',
+});
 </script>
 
 <style lang="scss" scoped>

@@ -274,5 +274,15 @@
 			"label": "React Native",
 			"percent": 100
 		}
+	],
+	"features": [
+		{
+			"id": 1,
+			"title": "WebSocket",
+			"description": "WebSocket enables a persistent connection between the client and server, allowing real-time, bidirectional communication with minimal overhead. It's ideal for chat apps, live updates, multiplayer games, and more.",
+			"tags": ["WebSocket", "Real-time", "Bidirectional", "Low latency", "Protocol"],
+			"link": "/features/websocket",
+			"image": "/features/websocket.webp"
+		}
 	]
 }

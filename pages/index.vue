@@ -43,7 +43,10 @@
 
 <script setup lang="ts">
 import cardsData from '@/static/data.json';
-// MainPage
+defineOptions({
+	name: 'MainPage',
+});
+
 const cards = cardsData.technology;
 const isShowSidebar = ref(false);
 </script>

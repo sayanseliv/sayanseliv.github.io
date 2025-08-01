@@ -146,7 +146,7 @@ export default defineNuxtConfig({
 		},
 	},
 	css: ['assets/styles/reset.scss', 'assets/styles/global.scss'],
-	site: { url: 'https://sayanseliv.github.io' },
+	site: { url: 'https://sayanseliv.github.io', name: 'Lang Eugen - Front-End Developer' },
 	sitemap: {
 		defaults: {
 			changefreq: 'monthly',

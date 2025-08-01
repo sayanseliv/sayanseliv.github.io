@@ -33,5 +33,4 @@ export { useSiteConfig } from '../node_modules/nuxt-site-config/dist/runtime/app
 export { createSitePathResolver, withSiteTrailingSlash, withSiteUrl } from '../node_modules/nuxt-site-config/dist/runtime/app/composables/utils';
 export { useCamera, useLoader, useLogger, useLoop, useRaycaster, useRenderLoop, useRenderer, useSeek, useTexture, useTres, useTresContext, useTresContextProvider, useTresEventManager, extend as extendTres, TresObject } from '@tresjs/core';
 export { extractBindingPosition, hasSetter, pick, useAnimations, useEnvironment, useFBO, useFBX, useGLTF, useGLTFExporter, useMask, useProgress, useSurfaceSampler, useVideoTexture } from '@tresjs/cientos';
-export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';

@@ -12,7 +12,7 @@ type HydrationStrategies = {
 }
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
-      'ModelThreed': typeof impo../components/ModelThreed.vuereed.vue")['default']
+      'ModelThreeD': typeof import("../components/ModelThreeD.vue")['default']
     'ThreeDCar': typeof import("../components/ThreeDCar.vue")['default']
     'AnimatedCircles': typeof import("../components/UI/AnimatedCircles.vue")['default']
     'CircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
@@ -120,7 +120,7 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-      'LazyModelThreed': LazyComponent<typeof impo../components/ModelThreed.vuereed.vue")['default']>
+      'LazyModelThreeD': LazyComponent<typeof import("../components/ModelThreeD.vue")['default']>
     'LazyThreeDCar': LazyComponent<typeof import("../components/ThreeDCar.vue")['default']>
     'LazyAnimatedCircles': LazyComponent<typeof import("../components/UI/AnimatedCircles.vue")['default']>
     'LazyCircleProgress': LazyComponent<typeof import("../components/UI/CircleProgress.vue")['default']>
@@ -234,7 +234,7 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
-export const ModelThreed: typeof impo../components/ModelThreed.vuereed.vue")['default']
+export const ModelThreeD: typeof import("../components/ModelThreeD.vue")['default']
 export const ThreeDCar: typeof import("../components/ThreeDCar.vue")['default']
 export const AnimatedCircles: typeof import("../components/UI/AnimatedCircles.vue")['default']
 export const CircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
@@ -342,7 +342,7 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-export const LazyModelThreed: LazyComponent<typeof impo../components/ModelThreed.vuereed.vue")['default']>
+export const LazyModelThreeD: LazyComponent<typeof import("../components/ModelThreeD.vue")['default']>
 export const LazyThreeDCar: LazyComponent<typeof import("../components/ThreeDCar.vue")['default']>
 export const LazyAnimatedCircles: LazyComponent<typeof import("../components/UI/AnimatedCircles.vue")['default']>
 export const LazyCircleProgress: LazyComponent<typeof import("../components/UI/CircleProgress.vue")['default']>

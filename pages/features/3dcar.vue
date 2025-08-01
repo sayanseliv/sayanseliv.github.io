@@ -10,6 +10,7 @@ defineOptions({
 </script>
 <style scoped lang="scss">
 .main-page-3d-car {
+	padding-top: 4rem;
 	overflow: hidden;
 }
 </style>

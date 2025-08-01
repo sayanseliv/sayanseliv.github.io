@@ -47,5 +47,8 @@ const features = data.features;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 	gap: 1rem;
+	@include media(640px) {
+		grid-template-columns: 1fr;
+	}
 }
 </style>

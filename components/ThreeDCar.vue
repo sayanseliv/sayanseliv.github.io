@@ -5,11 +5,18 @@
 		</div>
 
 		<div class="controls">
-			<button @click="start">Start Rotation</button>
-			<button @click="stop">Stop Rotation</button>
+			<div>
+				<button @click="start">Start Rotation</button>
+				<button @click="stop">Stop Rotation</button>
+			</div>
+			<h1 class="controls__title">
+				<NuxtLink to="https://docs.tresjs.org/" external target="_blank">
+					TresJS create awesome 3D
+				</NuxtLink>
+			</h1>
 		</div>
 
-		<TresCanvas clear-color="#1a1a1a" shadows alpha>
+		<TresCanvas clear-color="#161313" shadows alpha>
 			<!-- Camera -->
 			<TresPerspectiveCamera
 				ref="camera"
@@ -48,7 +55,7 @@
 <script setup lang="ts">
 import { OrbitControls } from '@tresjs/cientos';
 const modelRef = ref();
-const isModelReady = ref(false);
+const isModelReady = ref<boolean>(false);
 const onModelReady = () => {
 	isModelReady.value = true;
 };
@@ -84,8 +91,9 @@ loadProgress();
 .car-viewer {
 	position: relative;
 	width: 100%;
-	height: 100vh;
+	height: 100dvh;
 }
+
 .loading-overlay {
 	position: absolute;
 	top: 0;
@@ -103,13 +111,18 @@ loadProgress();
 }
 .controls {
 	position: absolute;
-	top: 5rem;
+	top: 4rem;
 	left: 20px;
 	z-index: 20;
 	display: flex;
+	flex-direction: column;
 	gap: 10px;
+	& div {
+		display: flex;
+		gap: 10px;
+	}
 	& button {
-		background-color: #2684ff;
+		background-color: var(--dark-blue-2);
 		color: white;
 		border: none;
 		border-radius: 4px;
@@ -119,7 +132,24 @@ loadProgress();
 		transition: background-color 0.3s ease;
 	}
 	& button:hover {
-		background-color: #1a5bbf;
+		background-color: var(--light-blue);
+	}
+}
+
+.controls__title {
+	font-size: var(--fs-primary);
+	& > a {
+		position: relative;
+		display: inline-block;
+		color: var(--light-blue);
+		text-decoration: underline;
+		transition: color 0.3s;
+		&:hover {
+			color: var(--dark-blue-2);
+		}
+	}
+	@include media(992px) {
+		font-size: var(--fs-h2);
 	}
 }
 </style>

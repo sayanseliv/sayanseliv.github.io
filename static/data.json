@@ -283,6 +283,14 @@
 			"tags": ["WebSocket", "Real-time", "Bidirectional", "Low latency", "Protocol"],
 			"link": "/features/websocket",
 			"image": "/features/websocket.webp"
+		},
+		{
+			"id": 2,
+			"title": "TresJS",
+			"description": "TresJS is a progressive framework for building interactive 3D experiences in Vue applications using the power of Three.js. It simplifies the integration of 3D graphics, animations, and WebGL rendering with a declarative and reactive approach.",
+			"tags": ["3D", "Three.js", "Vue", "TresJS", "WebGL", "Interactive"],
+			"link": "/features/3dcar",
+			"image": "/features/retro-futuristic-car.webp"
 		}
 	]
 }

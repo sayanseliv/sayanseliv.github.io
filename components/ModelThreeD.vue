@@ -5,13 +5,14 @@
 defineOptions({
 	name: 'ModelThreeD',
 });
-const { modelPath, draco } = withDefaults(
+const props = withDefaults(
 	defineProps<{
 		readonly modelPath: string;
 		readonly draco?: boolean;
 	}>(),
 	{ draco: true }
 );
+const { modelPath, draco } = props;
 
 const startRotation = () => {
 	isRotating.value = true;

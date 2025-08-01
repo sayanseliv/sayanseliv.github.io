@@ -13,7 +13,7 @@ export default defineNuxtConfig({
 	nitro: { compressPublicAssets: true },
 	ssr: true,
 	features: { inlineStyles: false },
-	modules: ['@nuxt/eslint', '@nuxtjs/sitemap'],
+	modules: ['@nuxt/eslint', '@nuxtjs/sitemap', '@tresjs/nuxt'],
 	vite: {
 		css: {
 			preprocessorOptions: {
@@ -154,5 +154,6 @@ export default defineNuxtConfig({
 			lastmod: new Date().toISOString(),
 		},
 	},
+
 	compatibilityDate: '2024-10-11',
 });

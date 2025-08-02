@@ -10,7 +10,12 @@ export default defineNuxtConfig({
 		},
 	],
 
-	nitro: { compressPublicAssets: true },
+	nitro: {
+		compressPublicAssets: true,
+		prerender: {
+			routes: ['/sitemap.xml'],
+		},
+	},
 	ssr: true,
 	features: { inlineStyles: false },
 	modules: ['@nuxt/eslint', '@nuxtjs/sitemap', '@tresjs/nuxt'],
@@ -29,6 +34,7 @@ export default defineNuxtConfig({
 	},
 
 	app: {
+		baseURL: '/',
 		head: {
 			htmlAttrs: { lang: 'en' },
 			title: 'Lang Eugen - Front-End Developer | Vue, Nuxt, React Native, React, WordPress',
@@ -146,12 +152,18 @@ export default defineNuxtConfig({
 		},
 	},
 	css: ['assets/styles/reset.scss', 'assets/styles/global.scss'],
-	site: { url: 'https://sayanseliv.github.io', name: 'Lang Eugen - Front-End Developer' },
+	site: {
+		url: 'https://sayanseliv.github.io',
+		name: 'Lang Eugen - Front-End Developer',
+		trailingSlash: false,
+	},
 	sitemap: {
+		enabled: true,
+		autoLastmod: true,
+		sortEntries: true,
 		defaults: {
 			changefreq: 'monthly',
 			priority: 0.8,
-			lastmod: new Date().toISOString(),
 		},
 	},
 

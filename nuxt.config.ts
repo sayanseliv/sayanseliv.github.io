@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const BASE_URL = 'https://sayanseliv.github.io/';
+const BASE_URL = 'https://sayanseliv.github.io';
 export default defineNuxtConfig({
 	devtools: { enabled: true },
 
@@ -75,7 +75,7 @@ export default defineNuxtConfig({
 				{
 					key: 'og-url',
 					property: 'og:url',
-					content: `${BASE_URL}`,
+					content: BASE_URL,
 				},
 				{ key: 'og-type', property: 'og:type', content: 'website' },
 				{
@@ -111,7 +111,7 @@ export default defineNuxtConfig({
 					media: 'print',
 					onload: "this.media='all'",
 				},
-				{ rel: 'canonical', href: BASE_URL + '/' },
+				{ rel: 'canonical', href: BASE_URL },
 				{
 					rel: 'icon',
 					type: 'image/x-icon',

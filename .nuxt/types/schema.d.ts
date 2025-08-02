@@ -164,7 +164,7 @@ declare module 'nuxt/schema' {
 
       isNuxtContentDocumentDriven: boolean,
 
-      xsl: string,
+      xsl: boolean,
 
       xslTips: boolean,
 

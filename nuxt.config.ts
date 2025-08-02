@@ -168,8 +168,10 @@ export default defineNuxtConfig({
 		enabled: true,
 		autoLastmod: true,
 		sortEntries: true,
-		debug: true,
+		debug: false,
 		credits: false,
+		xsl: false,
+		discoverImages: true,
 		defaults: {
 			changefreq: 'monthly',
 			priority: 0.8,

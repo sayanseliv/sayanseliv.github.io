@@ -17,6 +17,21 @@ jobs:
             # Pick your own package manager and build script
             - run: npm install
             - run: npx nuxt build --preset github_pages
+
+            # Добавляем отладку для проверки файлов
+            - name: List generated files
+              run: |
+                  echo "Contents of .output/public:"
+                  ls -la .output/public/
+                  echo "Check if sitemap.xml exists:"
+                  if [ -f .output/public/sitemap.xml ]; then
+                    echo "✅ sitemap.xml found"
+                    echo "First few lines of sitemap.xml:"
+                    head -10 .output/public/sitemap.xml
+                  else
+                    echo "❌ sitemap.xml NOT found"
+                  fi
+
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:

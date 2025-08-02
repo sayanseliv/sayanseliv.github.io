@@ -1,21 +1,28 @@
 # sayanseliv.github.io
 
-## Front-end and mobile development
+## 👨‍💻 Front-end & Mobile Development Portfolio
 
-Resume / CV for recruiters, soursers, HRs, Talent acquisitions.
-I collect here my works, it's my laboratory for experiments
+Welcome to my personal website and portfolio.
 
-[My Linkedin Profile](https://www.linkedin.com/in/eugen-lang-18475b143/)
+This project serves as a **resume** and **experimental lab** for my front-end and mobile development work.  
+Here you’ll find examples of my projects, certificates, and contact information for recruiters, sourcers, and HR specialists.
 
-![alt text](https://sayanseliv.github.io/img/images/cv_photo.jpeg)
+🔗 [View my LinkedIn profile](https://www.linkedin.com/in/eugen-lang-18475b143/)
 
-## Certificates
+![Eugen Lang - CV Photo](https://sayanseliv.github.io/cv_photo.jpeg)
 
-> Certificate Basic
-> ![alt text](https://sayanseliv.github.io/img/certifications/basic_en.png)
+---
 
-> Certificate PRO
-> ![alt text](https://sayanseliv.github.io/img/certifications/pro_en.png)
+## 📜 Certificates
 
-> Certificate Advance
-> ![alt text](https://sayanseliv.github.io/img/certifications/Lang_Eugen.jpg)
+### 🟢 Basic Certificate
+
+![Basic Certificate](https://sayanseliv.github.io/certificates/basic.png)
+
+### 🔵 PRO Certificate
+
+![PRO Certificate](https://sayanseliv.github.io/certificates/pro.png)
+
+### 🟣 Advanced Certificate
+
+![Advanced Certificate](https://sayanseliv.github.io/certificates/advance.jpg)

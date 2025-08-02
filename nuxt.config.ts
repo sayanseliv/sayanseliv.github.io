@@ -12,16 +12,6 @@ export default defineNuxtConfig({
 
 	nitro: {
 		compressPublicAssets: true,
-		routeRules: {
-			'/sitemap.xml': {
-				headers: {
-					'Content-Type': 'application/xml; charset=utf-8',
-				},
-			},
-		},
-		prerender: {
-			routes: ['/sitemap.xml'],
-		},
 	},
 	ssr: true,
 	features: { inlineStyles: false },

@@ -12,20 +12,20 @@ export default defineNuxtConfig({
 
 	nitro: {
 		compressPublicAssets: true,
-		routeRules: {
-			'/sitemap.xml': {
-				headers: {
-					'Content-Type': 'application/xml; charset=utf-8',
-				},
-			},
-		},
-		prerender: {
-			routes: ['/sitemap.xml'],
-		},
+		// routeRules: {
+		// 	'/sitemap.xml': {
+		// 		headers: {
+		// 			'Content-Type': 'application/xml; charset=utf-8',
+		// 		},
+		// 	},
+		// },
+		// prerender: {
+		// 	routes: ['/sitemap.xml'],
+		// },
 	},
 	ssr: true,
 	features: { inlineStyles: false },
-	modules: ['@nuxt/eslint', '@nuxtjs/sitemap', '@tresjs/nuxt'],
+	modules: ['@nuxt/eslint', '@tresjs/nuxt'], //'@nuxtjs/sitemap',
 	vite: {
 		css: {
 			preprocessorOptions: {
@@ -159,24 +159,24 @@ export default defineNuxtConfig({
 		},
 	},
 	css: ['assets/styles/reset.scss', 'assets/styles/global.scss'],
-	site: {
-		url: 'https://sayanseliv.github.io',
-		name: 'Lang Eugen - Front-End Developer',
-		trailingSlash: false,
-	},
-	sitemap: {
-		enabled: true,
-		autoLastmod: true,
-		sortEntries: true,
-		debug: false,
-		credits: false,
-		xsl: false,
-		discoverImages: true,
-		defaults: {
-			changefreq: 'monthly',
-			priority: 0.8,
-		},
-	},
+	// site: {
+	// 	url: 'https://sayanseliv.github.io',
+	// 	name: 'Lang Eugen - Front-End Developer',
+	// 	trailingSlash: false,
+	// },
+	// sitemap: {
+	// 	enabled: true,
+	// 	autoLastmod: true,
+	// 	sortEntries: true,
+	// 	debug: false,
+	// 	credits: false,
+	// 	xsl: false,
+	// 	discoverImages: true,
+	// 	defaults: {
+	// 		changefreq: 'monthly',
+	// 		priority: 0.8,
+	// 	},
+	// },
 
 	compatibilityDate: '2024-10-11',
 });

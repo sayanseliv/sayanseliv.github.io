@@ -95,18 +95,6 @@
       "vue-demi": [
         "../node_modules/nuxt/dist/app/compat/vue-demi"
       ],
-      "#sitemap": [
-        "../node_modules/@nuxtjs/sitemap/dist/runtime"
-      ],
-      "#sitemap/*": [
-        "../node_modules/@nuxtjs/sitemap/dist/runtime/*"
-      ],
-      "#site-config": [
-        "../node_modules/nuxt-site-config/dist/runtime"
-      ],
-      "#site-config/*": [
-        "../node_modules/nuxt-site-config/dist/runtime/*"
-      ],
       "#vue-router": [
         "../node_modules/vue-router"
       ],
@@ -117,7 +105,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/7a4c63d1-a076-415d-86a3-de509422b794.json"
+        "./manifest/meta/b40b5928-e6d6-4fa3-a2c1-f5e3785cbb7a.json"
       ],
       "#components": [
         "./components"
@@ -163,10 +151,6 @@
     "../**/*",
     "../node_modules/@nuxt/eslint/runtime",
     "../node_modules/@nuxt/eslint/dist/runtime",
-    "../node_modules/nuxt-site-config/dist/runtime",
-    "../node_modules/nuxt-site-config/dist/dist/runtime",
-    "../node_modules/@nuxtjs/sitemap/runtime",
-    "../node_modules/@nuxtjs/sitemap/dist/runtime",
     "../node_modules/@tresjs/nuxt/runtime",
     "../node_modules/@tresjs/nuxt/dist/runtime",
     "../node_modules/@nuxt/devtools/runtime",
@@ -180,17 +164,11 @@
     "../node_modules",
     "../node_modules/nuxt/node_modules",
     "../node_modules/@nuxt/eslint/node_modules",
-    "../node_modules/nuxt-site-config/node_modules",
-    "../node_modules/@nuxtjs/sitemap/node_modules",
     "../node_modules/@tresjs/nuxt/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxt/eslint/runtime/server",
     "../node_modules/@nuxt/eslint/dist/runtime/server",
-    "../node_modules/nuxt-site-config/dist/runtime/server",
-    "../node_modules/nuxt-site-config/dist/dist/runtime/server",
-    "../node_modules/@nuxtjs/sitemap/runtime/server",
-    "../node_modules/@nuxtjs/sitemap/dist/runtime/server",
     "../node_modules/@tresjs/nuxt/runtime/server",
     "../node_modules/@tresjs/nuxt/dist/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",

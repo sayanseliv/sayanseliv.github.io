@@ -12,6 +12,13 @@ export default defineNuxtConfig({
 
 	nitro: {
 		compressPublicAssets: true,
+		routeRules: {
+			'/sitemap.xml': {
+				headers: {
+					'Content-Type': 'application/xml; charset=utf-8',
+				},
+			},
+		},
 		prerender: {
 			routes: ['/sitemap.xml'],
 		},
@@ -161,6 +168,8 @@ export default defineNuxtConfig({
 		enabled: true,
 		autoLastmod: true,
 		sortEntries: true,
+		debug: true,
+		credits: false,
 		defaults: {
 			changefreq: 'monthly',
 			priority: 0.8,

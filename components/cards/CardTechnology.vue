@@ -2,7 +2,7 @@
 	<div class="card__technology" @mousemove="handleMouseMove">
 		<div class="glow" />
 		<h3>{{ content.title }}</h3>
-		<p>{{ content.text }}</p>
+		<p>{{ content.description }}</p>
 		<NuxtLink :to="content.link" external target="_blank">Learn more</NuxtLink>
 	</div>
 </template>

@@ -117,7 +117,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/f71da796-12d1-4479-a943-695169a4fb54.json"
+        "./manifest/meta/44ddc5d6-0bc7-4c9c-9b12-3bff7b6be01d.json"
       ],
       "#components": [
         "./components"
@@ -169,6 +169,8 @@
     "../node_modules/nuxt-site-config/dist/dist/runtime",
     "../node_modules/@nuxtjs/sitemap/runtime",
     "../node_modules/@nuxtjs/sitemap/dist/runtime",
+    "../../../P/runtime",
+    "../../../P/dist/runtime",
     "../node_modules/@nuxt/devtools/runtime",
     "../node_modules/@nuxt/devtools/dist/runtime",
     "../node_modules/@nuxt/telemetry/runtime",
@@ -183,6 +185,7 @@
     "../node_modules/@tresjs/nuxt/node_modules",
     "../node_modules/nuxt-site-config/node_modules",
     "../node_modules/@nuxtjs/sitemap/node_modules",
+    "../node_modules/@nuxt/test-utils/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxt/eslint/runtime/server",
@@ -193,6 +196,8 @@
     "../node_modules/nuxt-site-config/dist/dist/runtime/server",
     "../node_modules/@nuxtjs/sitemap/runtime/server",
     "../node_modules/@nuxtjs/sitemap/dist/runtime/server",
+    "../../../P/runtime/server",
+    "../../../P/dist/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/devtools/dist/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",

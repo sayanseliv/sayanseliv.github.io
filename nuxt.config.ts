@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 	},
 	ssr: true,
 	features: { inlineStyles: false },
-	modules: ['@nuxt/eslint', '@tresjs/nuxt', '@nuxtjs/sitemap'], //,
+	modules: ['@nuxt/eslint', '@tresjs/nuxt', '@nuxtjs/sitemap', '@nuxt/test-utils/module'],
 	vite: {
 		css: {
 			preprocessorOptions: {
@@ -29,7 +29,6 @@ export default defineNuxtConfig({
 			cssCodeSplit: true,
 		},
 	},
-
 	app: {
 		baseURL: '/',
 		head: {

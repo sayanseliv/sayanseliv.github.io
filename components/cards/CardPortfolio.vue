@@ -3,30 +3,26 @@
 		<div class="card-portfolio__inner">
 			<!-- Front -->
 			<div class="card-portfolio__face card-portfolio__face--front">
-				<NuxtLink
-					:to="content.link"
-					external
-					target="_blank"
-					class="card-portfolio__content">
+				<NuxtLink :to="link" external target="_blank" class="card-portfolio__content">
 					<figure class="card-portfolio__figure">
-						<img :src="content.logo" alt="Projects logo" loading="lazy" />
+						<img :src="logo" alt="Projects logo" loading="lazy" />
 					</figure>
 					<div class="card-portfolio__body">
-						<h3>{{ content.title }}</h3>
-						<p>{{ content.text }}</p>
+						<h3>{{ title }}</h3>
+						<p>{{ description }}</p>
 					</div>
 				</NuxtLink>
 			</div>
 
 			<!-- Back -->
 			<NuxtLink
-				:to="content.link"
+				:to="link"
 				external
 				target="_blank"
 				class="card-portfolio__face card-portfolio__face--back">
 				<div class="card-portfolio__back-link">
 					<h3>Technology</h3>
-					<p>{{ content.technology }}</p>
+					<p>{{ technology }}</p>
 					<p class="card-portfolio__action">Click to Visit</p>
 				</div>
 			</NuxtLink>
@@ -38,12 +34,19 @@
 defineOptions({
 	name: 'CardPortfolio',
 });
-defineProps({
-	content: {
-		type: Object,
-		required: true,
-	},
-});
+interface Content {
+	readonly id: number;
+	readonly title: string;
+	readonly description: string;
+	readonly logo: string;
+	readonly technology: string;
+	readonly link: string;
+}
+const props = defineProps<{
+	readonly content: Content;
+}>();
+const { content } = props;
+const { title, description, logo, technology, link } = content;
 </script>
 
 <style lang="scss" scoped>

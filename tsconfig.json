@@ -5,7 +5,8 @@
 		"baseUrl": ".",
 		"paths": { "@/*": ["./*"], "@types": ["types/index.ts"], "@types/*": ["types/*"] },
 		"resolveJsonModule": true,
-		"esModuleInterop": true
+		"esModuleInterop": true,
+		"types": ["vitest/globals"]
 	},
 	"typeRoots": ["./types", "./node_modules/@types"]
 }

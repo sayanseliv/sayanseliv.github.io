@@ -12,6 +12,17 @@ export default defineNuxtConfig({
 
 	nitro: {
 		compressPublicAssets: true,
+		// prerender: {
+		// 	crawlLinks: false,
+		// },
+	},
+	router: {
+		options: {
+			strict: true,
+		},
+	},
+	experimental: {
+		payloadExtraction: false,
 	},
 	ssr: true,
 	features: { inlineStyles: false },

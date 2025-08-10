@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const BASE_URL = 'https://sayanseliv.github.io';
+// const BASE_URL = 'https://sayanseliv.github.io';
 export default defineNuxtConfig({
 	devtools: { enabled: true },
 	ssr: true,
@@ -32,6 +32,11 @@ export default defineNuxtConfig({
 		'@nuxt/test-utils/module',
 		'nuxt-github-pages',
 	],
+	githubPages: {
+		enabled: true,
+		outputDirs: ['.output/public'],
+		verbose: true,
+	},
 	vite: {
 		css: {
 			preprocessorOptions: {

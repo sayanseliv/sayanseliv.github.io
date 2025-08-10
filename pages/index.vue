@@ -47,7 +47,10 @@ defineOptions({
 	name: 'MainPage',
 });
 
-const cards = cardsData.technology;
+const cards = cardsData.technology.map((card) => ({
+	...card,
+	text: card.description,
+}));
 const isShowSidebar = ref(false);
 </script>
 
@@ -67,7 +70,7 @@ const isShowSidebar = ref(false);
 	row-gap: 2rem;
 	width: 100%;
 	margin-left: 20.125rem;
-	padding: 0 1rem 1rem;
+	padding: 0 0 1rem;
 	border-radius: var(--border-radius);
 	@include media(992px) {
 		margin-left: 0;

@@ -2,26 +2,28 @@
 const BASE_URL = 'https://sayanseliv.github.io';
 export default defineNuxtConfig({
 	devtools: { enabled: true },
-
+	ssr: true,
 	components: [
 		{
 			path: '~/components',
 			pathPrefix: false,
 		},
 	],
-
 	nitro: {
 		compressPublicAssets: true,
+		prerender: {
+			routes: ['/'],
+			crawlLinks: true,
+		},
 	},
 	router: {
 		options: {
-			strict: true,
+			strict: false,
 		},
 	},
 	experimental: {
 		payloadExtraction: false,
 	},
-	ssr: true,
 	features: { inlineStyles: false },
 	modules: ['@nuxt/eslint', '@tresjs/nuxt', '@nuxtjs/sitemap', '@nuxt/test-utils/module'],
 	vite: {
@@ -159,7 +161,6 @@ export default defineNuxtConfig({
 	site: {
 		url: 'https://sayanseliv.github.io/',
 		name: 'Lang Eugen - Front-End Developer',
-		trailingSlash: true,
 	},
 	sitemap: {
 		enabled: true,

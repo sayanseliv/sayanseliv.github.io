@@ -36,6 +36,8 @@ export default defineNuxtConfig({
 		enabled: true,
 		outputDirs: ['.output/public'],
 		verbose: true,
+		canonicalUrls: true,
+		trailingSlash: false,
 	},
 	vite: {
 		css: {
@@ -130,6 +132,7 @@ export default defineNuxtConfig({
 					media: 'print',
 					onload: "this.media='all'",
 				},
+				{ rel: 'canonical', href: '/' },
 				{
 					rel: 'icon',
 					type: 'image/x-icon',

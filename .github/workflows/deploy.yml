@@ -16,13 +16,10 @@ jobs:
               with:
                   node-version: '20'
 
-            # Используем yarn вместо npm для согласованности
-            - run: yarn install --frozen-lockfile
+            - run: yarn install
 
-            # Используем generate вместо build для статической генерации
             - run: yarn generate
 
-            # Добавляем отладку для проверки файлов
             - name: List generated files
               run: |
                   echo "Contents of .output/public:"

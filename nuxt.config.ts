@@ -12,9 +12,6 @@ export default defineNuxtConfig({
 
 	nitro: {
 		compressPublicAssets: true,
-		// prerender: {
-		// 	crawlLinks: false,
-		// },
 	},
 	router: {
 		options: {
@@ -85,7 +82,7 @@ export default defineNuxtConfig({
 				{
 					key: 'og-url',
 					property: 'og:url',
-					content: BASE_URL,
+					content: `${BASE_URL}/`,
 				},
 				{ key: 'og-type', property: 'og:type', content: 'website' },
 				{
@@ -121,7 +118,7 @@ export default defineNuxtConfig({
 					media: 'print',
 					onload: "this.media='all'",
 				},
-				{ rel: 'canonical', href: BASE_URL },
+				{ rel: 'canonical', href: `${BASE_URL}/` },
 				{
 					rel: 'icon',
 					type: 'image/x-icon',
@@ -160,9 +157,9 @@ export default defineNuxtConfig({
 	},
 	css: ['assets/styles/reset.scss', 'assets/styles/global.scss'],
 	site: {
-		url: 'https://sayanseliv.github.io',
+		url: 'https://sayanseliv.github.io/',
 		name: 'Lang Eugen - Front-End Developer',
-		trailingSlash: false,
+		trailingSlash: true,
 	},
 	sitemap: {
 		enabled: true,

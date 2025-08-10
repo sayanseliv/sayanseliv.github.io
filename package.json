@@ -27,6 +27,7 @@
 		"@tresjs/cientos": "^4.3.1",
 		"@tresjs/nuxt": "^4.0.0",
 		"nuxt": "3.16.0",
+		"nuxt-github-pages": "1.5.0",
 		"sass": "1.79.1",
 		"three": "^0.179.0",
 		"vue": "^3.5.12",

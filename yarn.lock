@@ -1537,7 +1537,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/kit@npm:^3.15.4, @nuxt/kit@npm:^3.16.0, @nuxt/kit@npm:^3.17.5, @nuxt/kit@npm:^3.17.6":
+"@nuxt/kit@npm:^3.15.4, @nuxt/kit@npm:^3.16.0, @nuxt/kit@npm:^3.17.4, @nuxt/kit@npm:^3.17.5, @nuxt/kit@npm:^3.17.6":
   version: 3.18.1
   resolution: "@nuxt/kit@npm:3.18.1"
   dependencies:
@@ -7847,6 +7847,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nuxt-github-pages@npm:1.5.0":
+  version: 1.5.0
+  resolution: "nuxt-github-pages@npm:1.5.0"
+  dependencies:
+    "@nuxt/kit": ^3.17.4
+  checksum: 69695b22ff89809b55230b9f6d50561c1836e62c3163bbef60495d2d2fcd1ead2bbe52503b85404777645adfe9a25443ff32fdc199b1a7495b32ac657c8ced6e
+  languageName: node
+  linkType: hard
+
 "nuxt-site-config-kit@npm:3.2.2":
   version: 3.2.2
   resolution: "nuxt-site-config-kit@npm:3.2.2"
@@ -9425,6 +9434,7 @@ __metadata:
     eslint-plugin-functional: ^9.0.2
     happy-dom: ^18.0.1
     nuxt: 3.16.0
+    nuxt-github-pages: 1.5.0
     playwright-core: ^1.54.2
     sass: 1.79.1
     three: ^0.179.0

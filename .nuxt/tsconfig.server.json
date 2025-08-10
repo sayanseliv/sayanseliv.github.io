@@ -88,6 +88,7 @@
     "../node_modules/nuxt-site-config/dist/module.mjs/runtime/server",
     "../node_modules/@nuxtjs/sitemap/runtime/server",
     "../../../P/runtime/server",
+    "../node_modules/nuxt-github-pages/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",
     "./module/nuxt-site-config.d.ts",
@@ -104,6 +105,7 @@
     "../node_modules/nuxt-site-config/node_modules",
     "../node_modules/@nuxtjs/sitemap/node_modules",
     "../node_modules/@nuxt/test-utils/node_modules",
+    "../node_modules/nuxt-github-pages/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../dist"

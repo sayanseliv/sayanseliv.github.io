@@ -25,7 +25,13 @@ export default defineNuxtConfig({
 		payloadExtraction: false,
 	},
 	features: { inlineStyles: false },
-	modules: ['@nuxt/eslint', '@tresjs/nuxt', '@nuxtjs/sitemap', '@nuxt/test-utils/module'],
+	modules: [
+		'@nuxt/eslint',
+		'@tresjs/nuxt',
+		'@nuxtjs/sitemap',
+		'@nuxt/test-utils/module',
+		'nuxt-github-pages',
+	],
 	vite: {
 		css: {
 			preprocessorOptions: {
@@ -40,7 +46,6 @@ export default defineNuxtConfig({
 		},
 	},
 	app: {
-		baseURL: '/',
 		head: {
 			htmlAttrs: { lang: 'en' },
 			title: 'Lang Eugen - Front-End Developer | Vue, Nuxt, React Native, React, WordPress',
@@ -68,7 +73,7 @@ export default defineNuxtConfig({
 				{
 					key: 'twitter-image',
 					name: 'twitter:image',
-					content: `${BASE_URL + '/cv_photo.jpeg'}`,
+					content: '/cv_photo.jpeg',
 				},
 				{
 					key: 'twitter:description',
@@ -84,7 +89,7 @@ export default defineNuxtConfig({
 				{
 					key: 'og-url',
 					property: 'og:url',
-					content: `${BASE_URL}/`,
+					content: '/',
 				},
 				{ key: 'og-type', property: 'og:type', content: 'website' },
 				{
@@ -102,7 +107,7 @@ export default defineNuxtConfig({
 				{
 					key: 'og-image',
 					property: 'og:image',
-					content: `${BASE_URL + '/cv_photo.jpeg'}`,
+					content: '/cv_photo.jpeg',
 				},
 				{ key: 'og-image-width', property: 'og:image:width', content: '200' },
 				{ key: 'og-image-height', property: 'og:image:height', content: '200' },
@@ -120,7 +125,6 @@ export default defineNuxtConfig({
 					media: 'print',
 					onload: "this.media='all'",
 				},
-				{ rel: 'canonical', href: `${BASE_URL}/` },
 				{
 					rel: 'icon',
 					type: 'image/x-icon',

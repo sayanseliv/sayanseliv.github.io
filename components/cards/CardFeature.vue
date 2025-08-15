@@ -85,7 +85,7 @@ const backgroundStyle = computed(() => ({
 
 .card:hover .tags .tag {
 	color: var(--white);
-	background-color: var(--black);
+	background-color: var(--gray-800);
 }
 
 .card:before,
@@ -105,7 +105,7 @@ const backgroundStyle = computed(() => ({
 .card:before {
 	width: 250%;
 	height: 250%;
-	background-color: var(--light-blue);
+	background-color: var(--blue-300);
 	opacity: 0.2;
 }
 
@@ -117,7 +117,7 @@ const backgroundStyle = computed(() => ({
 }
 
 .card:hover {
-	color: var(--black);
+	color: var(--gray-800);
 }
 
 .card:hover:before,

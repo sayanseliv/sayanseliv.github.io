@@ -6172,6 +6172,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gsap@npm:^3.13.0":
+  version: 3.13.0
+  resolution: "gsap@npm:3.13.0"
+  checksum: 40884726718b5bed8cdd6faa621b3eaec64541b6fc163a0af810d3626d750e5d010f7300f4b106327d4474623a9fd5f915a48081d7744eec38c57a1fce20fb62
+  languageName: node
+  linkType: hard
+
 "gzip-size@npm:^7.0.0":
   version: 7.0.0
   resolution: "gzip-size@npm:7.0.0"
@@ -7128,6 +7135,15 @@ __metadata:
   dependencies:
     yallist: ^3.0.2
   checksum: c154ae1cbb0c2206d1501a0e94df349653c92c8cbb25236d7e85190bcaf4567a03ac6eb43166fabfa36fd35623694da7233e88d9601fbf411a9a481d85dbd2cb
+  languageName: node
+  linkType: hard
+
+"lucide-vue-next@npm:^0.539.0":
+  version: 0.539.0
+  resolution: "lucide-vue-next@npm:0.539.0"
+  peerDependencies:
+    vue: ">=3.0.1"
+  checksum: 32440265bcee528450b4061596fa4ad81d0fab6a94f31719998a0e65d44f4f14432f67e6cd4987fe4d27035540f04bc6544d4522a6b30dcf045d7f23d6043aa5
   languageName: node
   linkType: hard
 
@@ -9432,7 +9448,9 @@ __metadata:
     "@vue/test-utils": ^2.4.6
     eslint: ^9.30.1
     eslint-plugin-functional: ^9.0.2
+    gsap: ^3.13.0
     happy-dom: ^18.0.1
+    lucide-vue-next: ^0.539.0
     nuxt: 3.16.0
     nuxt-github-pages: 1.5.0
     playwright-core: ^1.54.2

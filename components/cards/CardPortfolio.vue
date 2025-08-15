@@ -92,7 +92,7 @@ const { title, description, logo, technology, link } = content;
 .card-portfolio__face--front {
 	backface-visibility: hidden;
 	transform: rotateY(0deg);
-	background-color: var(--bg-secondary-color);
+	background-color: var(--gray-900);
 }
 
 .card-portfolio__content {
@@ -116,19 +116,19 @@ const { title, description, logo, technology, link } = content;
 .card-portfolio__body {
 	height: 100%;
 	padding: 1rem;
-	background-color: var(--bg-secondary-color);
+	background-color: var(--gray-900);
 	color: var(--white);
 	border-bottom-left-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
-	border-right: 1px solid var(--tc-secondary);
-	border-bottom: 1px solid var(--tc-secondary);
-	border-left: 1px solid var(--tc-secondary);
+	border-right: 1px solid var(--gray-300);
+	border-bottom: 1px solid var(--gray-300);
+	border-left: 1px solid var(--gray-300);
 	& > h3 {
 		z-index: 10;
 		position: relative;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-		color: var(--light-blue);
-		border-bottom: 1px solid var(--tc-secondary);
+		color: var(--blue-300);
+		border-bottom: 1px solid var(--gray-300);
 		padding-bottom: 0.6rem;
 		margin-bottom: 1rem;
 	}
@@ -142,7 +142,7 @@ const { title, description, logo, technology, link } = content;
 	padding: 1rem;
 	border-radius: var(--border-radius);
 	text-align: center;
-	background-color: var(--bg-secondary-color);
+	background-color: var(--gray-900);
 	backface-visibility: hidden;
 	overflow: hidden;
 	text-decoration: none;
@@ -196,7 +196,7 @@ const { title, description, logo, technology, link } = content;
 	}
 	& > .card-portfolio__action {
 		margin-top: 2rem;
-		color: var(--light-blue);
+		color: var(--blue-300);
 	}
 }
 .card-portfolio:hover

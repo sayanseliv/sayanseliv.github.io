@@ -51,7 +51,7 @@ defineOptions({
 }
 .portfolio-hero {
 	margin-bottom: 3rem;
-	@include media(992px) {
+	@include media(768px) {
 		margin-bottom: 1.6rem;
 	}
 }
@@ -63,9 +63,9 @@ defineOptions({
 	display: flex;
 	width: 75%;
 	margin-inline: auto;
-	background-color: var(--bg-secondary-color);
+	background-color: var(--gray-900);
 	border-radius: var(--border-radius);
-	@include media(992px) {
+	@include media(768px) {
 		width: 100%;
 		flex-direction: column;
 	}
@@ -76,7 +76,7 @@ defineOptions({
 .hero__title {
 	margin-bottom: 1rem;
 	font-size: var(--fs-h2);
-	@include media(992px) {
+	@include media(768px) {
 		text-align: center;
 	}
 }
@@ -84,13 +84,13 @@ defineOptions({
 	max-width: 80%;
 	font-size: var(--fs-secondary);
 	line-height: 120%;
-	color: var(--tc-secondary);
-	@include media(992px) {
+	color: var(--gray-300);
+	@include media(768px) {
 		max-width: 100%;
 		padding-top: 1rem;
-		border-top: 1px solid var(--tc-secondary);
+		border-top: 1px solid var(--gray-300);
 	}
-	@include media(640px) {
+	@include media(480px) {
 		font-size: 1rem;
 	}
 }
@@ -104,7 +104,7 @@ defineOptions({
 	border-top-left-radius: 60%;
 	border-top-right-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
-	@include media(992px) {
+	@include media(768px) {
 		min-height: 20rem;
 		width: 100%;
 		border-bottom-left-radius: var(--border-radius);
@@ -117,7 +117,7 @@ defineOptions({
 		transform: scale(1.8);
 		width: 100%;
 		object-fit: cover;
-		@include media(992px) {
+		@include media(768px) {
 			transform: scale(1.2);
 		}
 	}

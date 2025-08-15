@@ -1,27 +1,44 @@
 /* VARIABLES */
 :root {
-	/* color */
-	color-scheme: only light;
-	--black-body: #161313;
-	--black: #151515;
+	/* ================= Misc ================= */
+	color-scheme: light;
+
+	/* White */
 	--white: white;
-	--grey-hr: rgba(253, 253, 253, 0.5);
-	--grey-span: rgba(253, 253, 253, 0.7);
-	--dark-grey: #333;
-	--grey-blue: rgb(47, 49, 77);
-	--dark-blue: rgb(60, 63, 99);
-	--light-blue: #48abed;
-	--dark-blue-2: #1a5bbf;
-	--button-pink: rgb(250, 42, 111);
-	--jira: #2684ff;
-	--violet: rgb(183, 36, 183);
-	--aws: #f90;
-	--tc-secondary: #8c8c8e;
-	--tc-grey: #cacace;
-	--bg-color: #303030;
-	--bg-secondary-color: #040404;
-	--empty-color: #191923;
-	--gradient: conic-gradient(
+
+	/* Gray scale */
+	--gray-50: rgba(253, 253, 253, 0.7); /* grey-span */
+	--gray-100: rgba(253, 253, 253, 0.5); /* grey-hr */
+	--gray-200: #cacace; /* tc-grey */
+	--gray-300: #8c8c8e; /* tc-secondary */
+	--gray-400: #333333; /* dark-grey */
+	--gray-500: #303030; /* bg-color */
+	--gray-600: #191923; /* empty-color */
+	--gray-700: #161313; /* black-body */
+	--gray-800: #151515; /* black */
+	--gray-900: #040404; /* bg-secondary-color */
+
+	/* Blue shades */
+	--blue-300: #48abed; /* light-blue */
+	--blue-400: rgb(47, 49, 77); /* grey-blue */
+	--blue-500: rgb(60, 63, 99); /* dark-blue */
+	--blue-600: #1a5bbf; /* dark-blue-2 */
+	--blue-700: #2684ff; /* jira / brand */
+	--blue-rgb: 59, 130, 246; /* light-blue-rgb (для прозрачностей) */
+
+	/* Pink & Violet */
+	--pink-500: rgb(250, 42, 111); /* button-pink */
+	--violet-500: rgb(183, 36, 183);
+
+	/* Brand / Special */
+	--orange-500: #ff9900; /* aws */
+	--purple-700: #3c3163; /* color-card */
+
+	/* States */
+	--error: red;
+
+	/* Gradients */
+	--gradient-main: conic-gradient(
 		from 90deg at 50% 50%,
 		rgb(251, 55, 60),
 		rgba(252, 114, 28, 1),
@@ -31,8 +48,18 @@
 		rgba(217, 41, 255, 1),
 		rgba(255, 10, 92, 1)
 	);
-	--error: red;
-	--color-card: #3c3163;
+	--gradient-text: linear-gradient(135deg, var(--white) 0%, var(--blue-300) 100%);
+	--gradient-btn: linear-gradient(
+		135deg,
+		rgba(var(--blue-rgb), 0.1),
+		rgba(var(--blue-rgb), 0.05)
+	);
+	--gradient-btn-hover: linear-gradient(
+		135deg,
+		rgba(var(--blue-rgb), 0.2),
+		rgba(var(--blue-rgb), 0.1)
+	);
+
 	--transition-time: 0.5s;
 	/* font-weight */
 	--fw-bold: 700;
@@ -59,7 +86,7 @@ body,
 button,
 input {
 	font-family: 'Roboto', sans-serif;
-	background-color: var(--black-body);
+	background-color: var(--gray-700);
 	color: var(--white);
 	font-weight: var(--fw-regular);
 }
@@ -77,10 +104,26 @@ body.scroll-lock {
 	@include media(1024px) {
 		padding: 0 32px;
 	}
-	@include media(992px) {
+	@include media(768px) {
 		padding: 0 24px;
 	}
-	@include media(640px) {
+	@include media(480px) {
 		padding: 0 16px;
 	}
+}
+
+.block-wrapper {
+	padding: 2rem;
+	background-color: var(--gray-900);
+	border-radius: var(--border-radius);
+	@include media(768px) {
+		padding: 1rem;
+	}
+}
+
+.text-gradient {
+	background: var(--gradient-text);
+	background-clip: text;
+	webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }

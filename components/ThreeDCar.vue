@@ -122,7 +122,7 @@ loadProgress();
 		gap: 10px;
 	}
 	& button {
-		background-color: var(--dark-blue-2);
+		background-color: var(--blue-600);
 		color: white;
 		border: none;
 		border-radius: 4px;
@@ -132,7 +132,7 @@ loadProgress();
 		transition: background-color 0.3s ease;
 	}
 	& button:hover {
-		background-color: var(--light-blue);
+		background-color: var(--blue-300);
 	}
 }
 
@@ -141,14 +141,14 @@ loadProgress();
 	& > a {
 		position: relative;
 		display: inline-block;
-		color: var(--light-blue);
+		color: var(--blue-300);
 		text-decoration: underline;
 		transition: color 0.3s;
 		&:hover {
-			color: var(--dark-blue-2);
+			color: var(--blue-600);
 		}
 	}
-	@include media(992px) {
+	@include media(768px) {
 		font-size: var(--fs-h2);
 	}
 }

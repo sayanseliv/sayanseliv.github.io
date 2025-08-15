@@ -12,18 +12,20 @@ type HydrationStrategies = {
 }
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
-      'ModelThreeD': typeof import("../components/ModelThreeD.vue")['default']
+      'AnimatedBlock': typeof import("../components/AnimatedBlock.vue")['default']
+    'ModelThreeD': typeof import("../components/ModelThreeD.vue")['default']
     'ThreeDCar': typeof import("../components/ThreeDCar.vue")['default']
     'AnimatedCircles': typeof import("../components/UI/AnimatedCircles.vue")['default']
     'CircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
     'ParticleCanvas': typeof import("../components/UI/ParticleCanvas.vue")['default']
     'ProgressBar': typeof import("../components/UI/ProgressBar.vue")['default']
+    'TagCloud': typeof import("../components/UI/TagCloud.vue")['default']
     'CardFeature': typeof import("../components/cards/CardFeature.vue")['default']
     'CardPortfolio': typeof import("../components/cards/CardPortfolio.vue")['default']
     'CardTechnology': typeof import("../components/cards/CardTechnology.vue")['default']
+    'CardTools': typeof import("../components/cards/CardTools.vue")['default']
     'AppHeader': typeof import("../components/main/AppHeader.vue")['default']
     'AppModal': typeof import("../components/main/AppModal.vue")['default']
-    'AppSidebar': typeof import("../components/main/AppSidebar.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
     'NuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -120,18 +122,20 @@ interface _GlobalComponents {
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-      'LazyModelThreeD': LazyComponent<typeof import("../components/ModelThreeD.vue")['default']>
+      'LazyAnimatedBlock': LazyComponent<typeof import("../components/AnimatedBlock.vue")['default']>
+    'LazyModelThreeD': LazyComponent<typeof import("../components/ModelThreeD.vue")['default']>
     'LazyThreeDCar': LazyComponent<typeof import("../components/ThreeDCar.vue")['default']>
     'LazyAnimatedCircles': LazyComponent<typeof import("../components/UI/AnimatedCircles.vue")['default']>
     'LazyCircleProgress': LazyComponent<typeof import("../components/UI/CircleProgress.vue")['default']>
     'LazyParticleCanvas': LazyComponent<typeof import("../components/UI/ParticleCanvas.vue")['default']>
     'LazyProgressBar': LazyComponent<typeof import("../components/UI/ProgressBar.vue")['default']>
+    'LazyTagCloud': LazyComponent<typeof import("../components/UI/TagCloud.vue")['default']>
     'LazyCardFeature': LazyComponent<typeof import("../components/cards/CardFeature.vue")['default']>
     'LazyCardPortfolio': LazyComponent<typeof import("../components/cards/CardPortfolio.vue")['default']>
     'LazyCardTechnology': LazyComponent<typeof import("../components/cards/CardTechnology.vue")['default']>
+    'LazyCardTools': LazyComponent<typeof import("../components/cards/CardTools.vue")['default']>
     'LazyAppHeader': LazyComponent<typeof import("../components/main/AppHeader.vue")['default']>
     'LazyAppModal': LazyComponent<typeof import("../components/main/AppModal.vue")['default']>
-    'LazyAppSidebar': LazyComponent<typeof import("../components/main/AppSidebar.vue")['default']>
     'LazyNuxtWelcome': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
     'LazyNuxtLayout': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
     'LazyNuxtErrorBoundary': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']>
@@ -234,18 +238,20 @@ declare module 'vue' {
   export interface GlobalComponents extends _GlobalComponents { }
 }
 
+export const AnimatedBlock: typeof import("../components/AnimatedBlock.vue")['default']
 export const ModelThreeD: typeof import("../components/ModelThreeD.vue")['default']
 export const ThreeDCar: typeof import("../components/ThreeDCar.vue")['default']
 export const AnimatedCircles: typeof import("../components/UI/AnimatedCircles.vue")['default']
 export const CircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
 export const ParticleCanvas: typeof import("../components/UI/ParticleCanvas.vue")['default']
 export const ProgressBar: typeof import("../components/UI/ProgressBar.vue")['default']
+export const TagCloud: typeof import("../components/UI/TagCloud.vue")['default']
 export const CardFeature: typeof import("../components/cards/CardFeature.vue")['default']
 export const CardPortfolio: typeof import("../components/cards/CardPortfolio.vue")['default']
 export const CardTechnology: typeof import("../components/cards/CardTechnology.vue")['default']
+export const CardTools: typeof import("../components/cards/CardTools.vue")['default']
 export const AppHeader: typeof import("../components/main/AppHeader.vue")['default']
 export const AppModal: typeof import("../components/main/AppModal.vue")['default']
-export const AppSidebar: typeof import("../components/main/AppSidebar.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
@@ -342,18 +348,20 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
+export const LazyAnimatedBlock: LazyComponent<typeof import("../components/AnimatedBlock.vue")['default']>
 export const LazyModelThreeD: LazyComponent<typeof import("../components/ModelThreeD.vue")['default']>
 export const LazyThreeDCar: LazyComponent<typeof import("../components/ThreeDCar.vue")['default']>
 export const LazyAnimatedCircles: LazyComponent<typeof import("../components/UI/AnimatedCircles.vue")['default']>
 export const LazyCircleProgress: LazyComponent<typeof import("../components/UI/CircleProgress.vue")['default']>
 export const LazyParticleCanvas: LazyComponent<typeof import("../components/UI/ParticleCanvas.vue")['default']>
 export const LazyProgressBar: LazyComponent<typeof import("../components/UI/ProgressBar.vue")['default']>
+export const LazyTagCloud: LazyComponent<typeof import("../components/UI/TagCloud.vue")['default']>
 export const LazyCardFeature: LazyComponent<typeof import("../components/cards/CardFeature.vue")['default']>
 export const LazyCardPortfolio: LazyComponent<typeof import("../components/cards/CardPortfolio.vue")['default']>
 export const LazyCardTechnology: LazyComponent<typeof import("../components/cards/CardTechnology.vue")['default']>
+export const LazyCardTools: LazyComponent<typeof import("../components/cards/CardTools.vue")['default']>
 export const LazyAppHeader: LazyComponent<typeof import("../components/main/AppHeader.vue")['default']>
 export const LazyAppModal: LazyComponent<typeof import("../components/main/AppModal.vue")['default']>
-export const LazyAppSidebar: LazyComponent<typeof import("../components/main/AppSidebar.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
 export const LazyNuxtLayout: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']>
 export const LazyNuxtErrorBoundary: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']>

@@ -42,7 +42,7 @@ const toggleCheckbox = (isValue: boolean) => {
 	z-index: 100;
 	height: 3rem;
 	width: 100%;
-	background-color: var(--bg-color);
+	background-color: var(--gray-500);
 }
 .header__nav {
 	position: relative;
@@ -57,7 +57,7 @@ const toggleCheckbox = (isValue: boolean) => {
 	width: 28px;
 	height: 18px;
 	cursor: pointer;
-	@include media(992px) {
+	@include media(768px) {
 		display: flex;
 		margin-left: auto;
 	}
@@ -117,7 +117,7 @@ const toggleCheckbox = (isValue: boolean) => {
 	display: flex;
 	width: 100%;
 	column-gap: var(--fs-primary);
-	@include media(992px) {
+	@include media(768px) {
 		position: absolute;
 		top: 100%;
 		left: auto;
@@ -128,14 +128,14 @@ const toggleCheckbox = (isValue: boolean) => {
 		padding: 1rem;
 		flex-direction: column;
 		row-gap: 1rem;
-		background-color: var(--bg-color);
+		background-color: var(--gray-500);
 		transition: right 200ms ease-in-out;
 	}
 	& > a,
 	& > .header__contact > a {
 		position: relative;
 		display: inline-block;
-		color: var(--light-blue);
+		color: var(--blue-300);
 		text-decoration: none;
 		&::after {
 			content: '';
@@ -161,12 +161,12 @@ const toggleCheckbox = (isValue: boolean) => {
 		align-items: center;
 		margin-left: auto;
 		column-gap: 0.5rem;
-		@include media(992px) {
+		@include media(768px) {
 			flex-direction: column;
 			align-items: flex-start;
 			margin-left: 0;
 			padding-top: 0.5rem;
-			border-top: 1px solid var(--grey-hr);
+			border-top: 1px solid var(--gray-100);
 			row-gap: 0.5rem;
 		}
 	}
@@ -183,17 +183,17 @@ const toggleCheckbox = (isValue: boolean) => {
 	backdrop-filter: blur(3px);
 	opacity: 0;
 	transition: opacity 0.3s ease;
-	@include media(992px) {
+	@include media(768px) {
 		display: flex;
 	}
 }
 .header__hamburger:has(> .hamburger-input:checked) {
 	& + .header__links {
-		@include media(992px) {
+		@include media(768px) {
 			right: 0;
 		}
 		& + .header__overlay {
-			@include media(992px) {
+			@include media(768px) {
 				right: 0;
 				opacity: 1;
 			}

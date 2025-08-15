@@ -36,7 +36,7 @@ const features = data.features;
 	flex-direction: column;
 	padding: 1rem;
 	margin-inline: auto;
-	background-color: var(--bg-secondary-color);
+	background-color: var(--gray-900);
 	border-radius: var(--border-radius);
 }
 .hero__title {
@@ -47,7 +47,7 @@ const features = data.features;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 	gap: 1rem;
-	@include media(640px) {
+	@include media(480px) {
 		grid-template-columns: 1fr;
 	}
 }

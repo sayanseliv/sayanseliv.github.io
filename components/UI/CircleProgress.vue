@@ -21,49 +21,34 @@ import type { CSSProperties } from 'vue';
 defineOptions({
 	name: 'CircleProgress',
 });
-const props = defineProps({
-	size: {
-		type: Number,
-		default: 180,
-	},
-	borderWidth: {
-		type: Number,
-		default: 15,
-	},
-	borderBgWidth: {
-		type: Number,
-		default: 15,
-	},
-	fillColor: {
-		type: String,
-		default: '#288feb',
-	},
-	contentColor: { type: String, default: '#cacace' },
-	emptyColor: {
-		type: String,
-		default: '#dddddd',
-	},
-	percent: {
-		type: Number,
-		default: 50,
-	},
-	linecap: {
-		type: String as () => 'round' | 'inherit' | 'butt' | 'square',
-		default: 'round',
-	},
-	transition: {
-		type: Number,
-		default: 400,
-	},
-	showPercent: {
-		type: Boolean,
-		default: false,
-	},
-	class: {
-		type: String,
-		default: '',
-	},
-});
+const props = withDefaults(
+	defineProps<{
+		readonly size?: number;
+		readonly borderWidth?: number;
+		readonly borderBgWidth?: number;
+		readonly fillColor?: string;
+		readonly contentColor?: string;
+		readonly emptyColor?: string;
+		readonly percent?: number;
+		readonly linecap?: 'round' | 'inherit' | 'butt' | 'square';
+		readonly transition?: number;
+		readonly showPercent?: boolean;
+		readonly class?: string;
+	}>(),
+	{
+		size: 180,
+		borderWidth: 15,
+		borderBgWidth: 15,
+		fillColor: '#288feb',
+		contentColor: '#cacace',
+		emptyColor: '#dddddd',
+		percent: 50,
+		linecap: 'round',
+		transition: 400,
+		showPercent: false,
+		class: '',
+	}
+);
 const cx = props.size / 2;
 const cy = props.size / 2;
 
@@ -78,6 +63,7 @@ const circleRadiusFg = (): number =>
 const circumference = 2 * Math.PI * circleRadiusFg();
 const offset = ref(circumference);
 const currentPercent = ref(0);
+const isVisible = ref(false);
 
 const wrapStyle: CSSProperties = {
 	height: `${props.size}px`,
@@ -124,6 +110,7 @@ const circleFgAttr = computed(() => ({
 }));
 
 const updatePercent = () => {
+	if (!isVisible.value) return;
 	const percent = Math.round(props.percent ?? 0);
 	animateValue(percent);
 };
@@ -139,20 +126,32 @@ function animateValue(to: number) {
 			}
 		} else {
 			currentPercent.value -= 1;
-
 			if (currentPercent.value <= to) {
 				clearInterval(counter);
 			}
 		}
-
 		offset.value = (circumference * (100 - currentPercent.value)) / 100;
 	}, delay);
 }
 
 onMounted(() => {
-	if ((props.percent ?? 0) !== 0) {
-		updatePercent();
-	}
+	const element = document.querySelector('.circle-progress');
+	if (!element) return;
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					isVisible.value = true;
+					updatePercent();
+					observer.disconnect();
+				}
+			});
+		},
+		{ threshold: 0.1 }
+	);
+
+	observer.observe(element);
 });
 
 watch(

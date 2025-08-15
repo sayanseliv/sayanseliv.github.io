@@ -57,9 +57,9 @@ const send = () => {
 	flex-direction: column;
 	padding: 1rem;
 	margin-inline: auto;
-	background-color: var(--bg-secondary-color);
+	background-color: var(--gray-900);
 	border-radius: var(--border-radius);
-	@include media(992px) {
+	@include media(768px) {
 		width: 100%;
 		flex-direction: column;
 	}
@@ -70,7 +70,7 @@ const send = () => {
 	& > a {
 		position: relative;
 		display: inline-block;
-		color: var(--light-blue);
+		color: var(--blue-300);
 		text-decoration: none;
 		&::after {
 			content: '';
@@ -87,7 +87,7 @@ const send = () => {
 			width: 100%;
 		}
 	}
-	@include media(992px) {
+	@include media(768px) {
 		font-size: var(--fs-h2);
 	}
 }
@@ -105,14 +105,14 @@ const send = () => {
 	font-size: var(--fs-primary);
 	transition: border-color 0.3s;
 	&:hover {
-		border-color: var(--light-blue);
+		border-color: var(--blue-300);
 	}
 	&:focus {
 		outline: none;
-		border-color: var(--light-blue);
-		background: linear-gradient(to top, var(--bg-secondary-color), var(--empty-color));
+		border-color: var(--blue-300);
+		background: linear-gradient(to top, var(--gray-900), var(--gray-600));
 	}
-	@include media(640px) {
+	@include media(480px) {
 		width: 100%;
 	}
 }
@@ -123,9 +123,9 @@ const send = () => {
 	border-radius: var(--border-radius);
 	transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 	&:hover {
-		color: var(--light-blue);
-		border-color: var(--light-blue);
-		background-color: var(--bg-secondary-color);
+		color: var(--blue-300);
+		border-color: var(--blue-300);
+		background-color: var(--gray-900);
 	}
 }
 .hero__messages {
@@ -146,7 +146,7 @@ const send = () => {
 	& > li {
 		padding: 0.5rem;
 		border-radius: var(--border-radius);
-		background-color: var(--bg-color);
+		background-color: var(--gray-500);
 	}
 }
 .hero__error {

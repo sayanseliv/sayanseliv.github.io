@@ -53,11 +53,11 @@ onMounted(() => {
 }
 .progress-bar__wrapper {
 	margin-block: 0.9375rem;
-	background-color: var(--empty-color);
+	background-color: var(--gray-600);
 }
 .progress__bar {
 	height: 2px;
 	border-radius: 25px;
-	background-color: var(--light-blue);
+	background-color: var(--blue-300);
 }
 </style>

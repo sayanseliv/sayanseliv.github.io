@@ -187,6 +187,10 @@ export default defineNuxtConfig({
 			priority: 0.8,
 		},
 	},
-
+	runtimeConfig: {
+		public: {
+			siteUrl: BASE_URL,
+		},
+	},
 	compatibilityDate: '2024-10-11',
 });

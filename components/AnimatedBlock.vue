@@ -29,8 +29,6 @@ onMounted(() => {
 	if (animatedBlock.value) {
 		const yValue = props.direction === 'top' ? -50 : props.direction === 'bottom' ? 50 : 0;
 		const xValue = props.direction === 'left' ? -50 : props.direction === 'right' ? 50 : 0;
-		console.log('yValue', yValue);
-		console.log('xValue', xValue);
 		$gsap.from(animatedBlock.value, {
 			x: xValue,
 			y: yValue,

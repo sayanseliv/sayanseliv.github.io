@@ -45,6 +45,17 @@ const cards = data.projects;
 defineOptions({
 	name: 'PagePortfolio',
 });
+const config = useRuntimeConfig();
+
+useHead({
+	title: 'Portfolio – Lang Eugen',
+	link: [
+		{
+			rel: 'canonical',
+			href: `${config.public.siteUrl}/portfolio`,
+		},
+	],
+});
 </script>
 
 <style lang="scss" scoped>

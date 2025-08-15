@@ -4,8 +4,8 @@
 		<section class="portfolio-hero">
 			<div class="container-1440 hero__container">
 				<div class="hero__info">
-					<div>
-						<h1 class="hero__title">Portfolio</h1>
+					<div class="hero__content">
+						<h1 class="text-gradient hero__title">Portfolio</h1>
 						<p class="hero__description">
 							The portfolio presents a range of projects, reflecting my experience
 							with chat apps, mobile development, admin dashboards, interactive maps,
@@ -26,13 +26,15 @@
 		<section>
 			<div class="container-1440">
 				<h2 class="portfolio-projects__title">Projects</h2>
-				<div class="portfolio-projects__grid">
-					<CardPortfolio
-						v-for="(card, index) in cards"
-						:key="'card-portfolio-' + index"
-						v-memo="card.id"
-						:content="card" />
-				</div>
+				<AnimatedBlock>
+					<div class="portfolio-projects__grid">
+						<CardPortfolio
+							v-for="(card, index) in cards"
+							:key="'card-portfolio-' + index"
+							v-memo="card.id"
+							:content="card" />
+					</div>
+				</AnimatedBlock>
 			</div>
 		</section>
 	</main>
@@ -50,32 +52,56 @@ defineOptions({
 	padding-block: 3rem;
 }
 .portfolio-hero {
-	margin-bottom: 3rem;
+	margin-bottom: 2rem;
 	@include media(768px) {
 		margin-bottom: 1.6rem;
 	}
 }
 .hero__container {
-	padding-block: 1rem;
+	padding-block: 2rem;
 	overflow: hidden;
+	@include media(768px) {
+		padding-block: 1rem;
+	}
 }
 .hero__info {
+	position: relative;
 	display: flex;
-	width: 75%;
-	margin-inline: auto;
-	background-color: var(--gray-900);
+	background: linear-gradient(135deg, var(--gray-900) 0%, rgba(45, 45, 58, 0.8) 100%);
 	border-radius: var(--border-radius);
+
 	@include media(768px) {
-		width: 100%;
 		flex-direction: column;
 	}
-	& > div {
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(
+			45deg,
+			transparent 30%,
+			rgba(var(--blue-rgb), 0.1) 50%,
+			transparent 70%
+		);
+		opacity: 0;
+		animation: shimmer 3s ease-in-out infinite;
+		pointer-events: none;
+	}
+}
+.hero__content {
+	padding: 2rem;
+	@include media(768px) {
 		padding: 1rem;
 	}
 }
 .hero__title {
 	margin-bottom: 1rem;
-	font-size: var(--fs-h2);
+	font-size: 2.5rem;
+	font-weight: 700;
 	@include media(768px) {
 		text-align: center;
 	}

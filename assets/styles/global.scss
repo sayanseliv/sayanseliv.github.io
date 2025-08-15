@@ -127,3 +127,13 @@ body.scroll-lock {
 	webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+/* Animations */
+@keyframes shimmer {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}

@@ -63,7 +63,7 @@
 						</div>
 					</div>
 					<div class="hero__info">
-						<h1 class="hero__name">Lang Eugen</h1>
+						<h1 class="text-gradient hero__name">Lang Eugen</h1>
 						<p class="hero__title-role">Front-end Developer</p>
 						<div class="hero__location">
 							<svg
@@ -345,10 +345,10 @@ const showCertificate = (docName: string) => {
 
 /* Section Hero*/
 .home__hero {
+	position: relative;
+	padding: 2rem;
 	background: linear-gradient(135deg, var(--gray-900) 0%, rgba(45, 45, 58, 0.8) 100%);
 	border-radius: var(--border-radius);
-	padding: 2rem;
-	position: relative;
 	overflow: hidden;
 	@include media(768px) {
 		padding: 1rem;
@@ -458,10 +458,6 @@ const showCertificate = (docName: string) => {
 	margin: 0;
 	font-size: 2.5rem;
 	font-weight: 700;
-	background: linear-gradient(135deg, var(--white) 0%, var(--blue-300) 100%);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
 
 	@include media(768px) {
 		font-size: 2rem;
@@ -792,16 +788,5 @@ const showCertificate = (docName: string) => {
 	height: auto;
 	border-radius: var(--border-radius);
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Animations */
-@keyframes shimmer {
-	0%,
-	100% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 1;
-	}
 }
 </style>

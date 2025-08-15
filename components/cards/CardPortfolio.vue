@@ -21,9 +21,9 @@
 				target="_blank"
 				class="card-portfolio__face card-portfolio__face--back">
 				<div class="card-portfolio__back-link">
-					<h3>Technology</h3>
+					<h3 class="text-gradient">🛠 Tech Stack</h3>
 					<p>{{ technology }}</p>
-					<p class="card-portfolio__action">Click to Visit</p>
+					<p class="card-portfolio__action">Click to Visit →</p>
 				</div>
 			</NuxtLink>
 		</div>
@@ -58,13 +58,24 @@ const { title, description, logo, technology, link } = content;
 
 @keyframes rotateBorder {
 	to {
-		--a: 1turn;
+		--angle: 360deg;
 	}
 }
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
 .card-portfolio {
-	perspective: 1000px;
+	perspective: 1200px;
 	width: 100%;
 	cursor: pointer;
+	transition: transform 0.3s ease;
 }
 .card-portfolio__inner {
 	position: relative;
@@ -72,11 +83,12 @@ const { title, description, logo, technology, link } = content;
 	height: 100%;
 	min-height: 18rem;
 	transform-style: preserve-3d;
-	transition: transform 0.8s ease;
+	transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .card-portfolio:hover > .card-portfolio__inner {
 	transform: rotateY(180deg);
 }
+
 .card-portfolio__face {
 	position: absolute;
 	width: 100%;
@@ -108,6 +120,7 @@ const { title, description, logo, technology, link } = content;
 	justify-content: center;
 	padding: 2rem 1rem;
 	background-color: var(--white);
+	border-bottom: 1px solid var(--blue-300);
 	& > img {
 		height: 30px;
 		width: auto;
@@ -185,28 +198,28 @@ const { title, description, logo, technology, link } = content;
 		font-weight: bold;
 		color: var(--white);
 		opacity: 0;
-		transform: translateY(8px);
-		transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+		transform: translateY(20px) scale(0.8);
+		transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
 	}
 	& > p {
 		color: var(--white);
 		opacity: 0;
-		transform: translateY(8px);
-		transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s;
+		transform: translateY(20px) scale(0.8);
+		transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
 	}
 	& > .card-portfolio__action {
+		position: relative;
+		transform: translateY(20px) scale(0.8);
 		margin-top: 2rem;
 		color: var(--blue-300);
+		opacity: 0;
+		transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
 	}
 }
-.card-portfolio:hover
-	> .card-portfolio__inner
-	> .card-portfolio__face--back
-	> .card-portfolio__back-link {
-	& > h3,
-	& > p {
-		opacity: 1;
-		transform: translateY(0);
-	}
+.card-portfolio:hover .card-portfolio__face--back h3,
+.card-portfolio:hover .card-portfolio__face--back p,
+.card-portfolio:hover .card-portfolio__action {
+	opacity: 1;
+	transform: translateY(0) scale(1);
 }
 </style>

@@ -55,7 +55,7 @@ export default defineNuxtConfig({
 	app: {
 		head: {
 			htmlAttrs: { lang: 'en' },
-			title: 'Lang Eugen - Front-End Developer | Vue, Nuxt, React Native, React, WordPress',
+			title: 'Lang Eugen – Front-End Developer | Vue, Nuxt & React',
 			viewport: 'width=device-width, initial-scale=1.0, user-scalable=yes',
 			meta: [
 				{ 'http-equiv': 'content-type', content: 'text/html; charset=utf-8' },
@@ -70,7 +70,7 @@ export default defineNuxtConfig({
 					key: 'description',
 					name: 'description',
 					content:
-						'Welcome to the digital showcase of Lang Eugen, a passionate front-end developer specializing in Vue.js, Nuxt.js, React, React Native, and WordPress. Explore innovative web and mobile solutions. Crafted with creativity and expertise in Vue, Nuxt, React Native, and WordPress development.',
+						'Front-end developer skilled in Vue, Nuxt, React, React Native & WordPress. Explore creative web and mobile solutions by Lang Eugen.',
 				},
 				{
 					key: 'twitter-card',
@@ -86,7 +86,7 @@ export default defineNuxtConfig({
 					key: 'twitter:description',
 					name: 'twitter:description',
 					content:
-						'Welcome to the digital showcase of Lang Eugen, a passionate front-end developer specializing in Vue.js, Nuxt.js, React, React Native, and WordPress. Explore innovative web and mobile solutions. Crafted with creativity and expertise in Vue, Nuxt, React Native, and WordPress development.',
+						'Front-end developer skilled in Vue, Nuxt, React, React Native & WordPress. Explore creative web and mobile solutions by Lang Eugen.',
 				},
 				{
 					key: 'og:site-name',
@@ -102,14 +102,13 @@ export default defineNuxtConfig({
 				{
 					key: 'og-title',
 					property: 'og:title',
-					content:
-						'Lang Eugen - Front-End Developer | Vue, Nuxt, React Native, React, WordPress',
+					content: 'Lang Eugen – Front-End Developer | Vue, Nuxt & React',
 				},
 				{
 					key: 'og-desc',
 					property: 'og:description',
 					content:
-						'Welcome to the digital showcase of Lang Eugen, a passionate front-end developer specializing in Vue.js, Nuxt.js, React, React Native, and WordPress. Explore innovative web and mobile solutions. Crafted with creativity and expertise in Vue, Nuxt, React Native, and WordPress development.',
+						'Front-end developer skilled in Vue, Nuxt, React, React Native & WordPress. Explore creative web and mobile solutions by Lang Eugen.',
 				},
 				{
 					key: 'og-image',

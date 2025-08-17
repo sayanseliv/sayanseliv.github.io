@@ -69,7 +69,7 @@ useHead({
 	}
 }
 .hero__container {
-	padding-block: 2rem;
+	padding-block: 1rem;
 	overflow: hidden;
 	@include media(768px) {
 		padding-block: 1rem;

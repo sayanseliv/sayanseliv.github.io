@@ -48,7 +48,7 @@ const send = () => {
 	}
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .main-websoсket {
 	padding-top: 4rem;
 }

@@ -11,13 +11,13 @@
     </url>
     <url>
         <loc>https://sayanseliv.github.io/features</loc>
-        <lastmod>2025-08-14T12:00:54Z</lastmod>
+        <lastmod>2025-08-16T15:05:07Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://sayanseliv.github.io/portfolio</loc>
-        <lastmod>2025-08-15T22:39:04Z</lastmod>
+        <lastmod>2025-08-16T10:23:26Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -64,8 +64,14 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://sayanseliv.github.io/features/canvas-particle-interactive</loc>
+        <lastmod>2025-08-17T16:18:50Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://sayanseliv.github.io/features/websocket</loc>
-        <lastmod>2025-08-14T12:00:57Z</lastmod>
+        <lastmod>2025-08-16T10:20:56Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

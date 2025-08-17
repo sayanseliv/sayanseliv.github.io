@@ -25,7 +25,7 @@ export default withNuxt({
 			'error',
 			{
 				html: {
-					void: 'always', // <img /> → разрешить
+					void: 'always', // <img />
 					normal: 'always', // <div />
 					component: 'always', // <MyComponent />
 				},
@@ -33,8 +33,13 @@ export default withNuxt({
 				math: 'always',
 			},
 		],
-		'functional/no-let': 'warn',
-		'functional/no-expression-statement': 'off', // рекомендую выключить сначала
+		'functional/no-let': [
+			'warn',
+			{
+				allowInForLoopInit: true,
+			},
+		],
+		'functional/no-expression-statement': 'off',
 		'functional/prefer-readonly-type': 'warn',
 		'functional/immutable-data': [
 			'warn',

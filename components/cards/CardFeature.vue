@@ -1,7 +1,7 @@
 <template>
 	<NuxtLink class="card" :to="link" :style="backgroundStyle">
 		<div>
-			<h3>{{ title }}</h3>
+			<h3 class="text-gradient">{{ title }}</h3>
 			<p>
 				{{ description }}
 			</p>
@@ -41,12 +41,15 @@ const backgroundStyle = computed(() => ({
 	padding: 1rem;
 	font-size: var(--fs-secondary);
 	color: var(--white);
-	border-radius: 1em;
-	border: 2px solid var(--white);
-	box-shadow: 0 0 5em -1em black;
+	border-radius: 1rem;
+	border: 1px solid var(--gray-600);
+
+	box-shadow: 0 0 5em -1rem black;
 	--bg-filter-opacity: 0.5;
 	background-size: cover;
 	background-position: center;
+	// background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%), var(--bg-img);
+
 	background-image: linear-gradient(
 			rgba(0, 0, 0, var(--bg-filter-opacity)),
 			rgba(0, 0, 0, var(--bg-filter-opacity))
@@ -54,7 +57,10 @@ const backgroundStyle = computed(() => ({
 		var(--bg-img);
 	text-decoration: none;
 	overflow: hidden;
-	transition: transform, var(--transition-time);
+	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	& > div {
+		// background-color: rgba(0, 0, 0, 0.5);
+	}
 }
 
 .card h3 {
@@ -77,15 +83,19 @@ const backgroundStyle = computed(() => ({
 
 .card .tags .tag {
 	font-size: var(--fs-caption);
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 0.3rem;
-	padding: 0.2rem 0.5rem;
-	transition: background-color var(--transition-time), color var(--transition-time);
+	background: rgba(38, 132, 255, 0.5);
+	color: var(--white);
+	border: 1px solid rgba(72, 171, 237, 0.2);
+	border-radius: 12px;
+	padding: 4px 10px;
+	transition: all 0.3s ease;
+	white-space: nowrap;
 }
 
 .card:hover .tags .tag {
-	color: var(--white);
-	background-color: var(--gray-800);
+	background-color: var(--blue-300);
+	color: var(--gray-900);
+	box-shadow: 0 4px 8px rgba(72, 171, 237, 0.3);
 }
 
 .card:before,
@@ -117,7 +127,9 @@ const backgroundStyle = computed(() => ({
 }
 
 .card:hover {
-	color: var(--gray-800);
+	// color: var(--gray-800);
+	border-color: var(--blue-300);
+	box-shadow: 0 20px 40px rgba(72, 171, 237, 0.2);
 }
 
 .card:hover:before,

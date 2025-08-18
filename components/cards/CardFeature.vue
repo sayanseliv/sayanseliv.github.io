@@ -1,5 +1,5 @@
 <template>
-	<NuxtLink class="card" :to="link" :style="backgroundStyle">
+	<NuxtLink class="card" :to="link">
 		<div>
 			<h3 class="text-gradient">{{ title }}</h3>
 			<p>
@@ -20,120 +20,102 @@ const props = defineProps<{
 	readonly title: string;
 	readonly description: string;
 	readonly tags: readonly string[];
-	readonly image: string;
 	readonly link: string;
 }>();
 
-const { title, description, tags, image, link } = props;
-
-const backgroundStyle = computed(() => ({
-	'--bg-img': `url('${image}')`,
-}));
+const { title, description, tags, link } = props;
 </script>
 <style lang="scss" scoped>
 .card {
 	position: relative;
-	transform: rotate(0);
 	display: flex;
-	align-items: flex-end;
-	min-height: 24rem;
+	align-items: center;
+	justify-content: center;
+	min-height: 14rem;
 	width: 100%;
 	padding: 1rem;
-	font-size: var(--fs-secondary);
-	color: var(--white);
-	border-radius: 1rem;
+	background: var(--gray-900);
 	border: 1px solid var(--gray-600);
-
-	box-shadow: 0 0 5em -1rem black;
-	--bg-filter-opacity: 0.5;
-	background-size: cover;
-	background-position: center;
-	// background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 100%), var(--bg-img);
-
-	background-image: linear-gradient(
-			rgba(0, 0, 0, var(--bg-filter-opacity)),
-			rgba(0, 0, 0, var(--bg-filter-opacity))
-		),
-		var(--bg-img);
+	border-radius: var(--border-radius);
 	text-decoration: none;
 	overflow: hidden;
-	transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	& > div {
-		// background-color: rgba(0, 0, 0, 0.5);
+	transition: border-color var(--transition-time) ease, box-shadow var(--transition-time) ease;
+
+	background-image: linear-gradient(
+		135deg,
+		rgba(var(--blue-rgb), 0.05),
+		rgba(var(--blue-rgb), 0.15)
+	);
+
+	&:hover {
+		border-color: var(--blue-300);
+		box-shadow: 0 8px 16px rgba(var(--blue-rgb), 0.2);
 	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: -100%;
+		width: 50%;
+		height: 100%;
+		background: linear-gradient(90deg, transparent, rgba(var(--blue-rgb), 0.3), transparent);
+		animation: shimmer 2s infinite;
+		z-index: 0;
+	}
+}
+
+.card__canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.card__content {
+	position: relative;
+	z-index: 1;
+	padding: 1.5rem;
+	width: 100%;
 }
 
 .card h3 {
 	margin: 0;
 	font-size: var(--fs-h3);
+	font-weight: var(--fw-semibold);
+	color: var(--white);
+	transition: color var(--transition-time) ease;
 }
 
 .card p {
-	margin-block: 0.5rem;
+	margin-block: 0.75rem;
 	font-size: var(--fs-caption);
-	line-height: 150%;
+	line-height: 1.6;
+	color: var(--gray-50);
+	max-width: 90%;
 }
 
 .card .tags {
 	display: flex;
-	align-items: center;
 	flex-wrap: wrap;
 	gap: 0.5rem;
 }
 
 .card .tags .tag {
-	font-size: var(--fs-caption);
-	background: rgba(38, 132, 255, 0.5);
-	color: var(--white);
-	border: 1px solid rgba(72, 171, 237, 0.2);
-	border-radius: 12px;
-	padding: 4px 10px;
-	transition: all 0.3s ease;
-	white-space: nowrap;
+	font-size: var(--fs-small);
+	background: rgba(var(--blue-rgb), 0.2);
+	color: var(--gray-50);
+	border: 1px solid rgba(var(--blue-rgb), 0.3);
+	border-radius: 20px;
+	padding: 0.3rem 0.8rem;
+	transition: all var(--transition-time) ease;
 }
 
 .card:hover .tags .tag {
-	background-color: var(--blue-300);
+	background: var(--blue-300);
 	color: var(--gray-900);
-	box-shadow: 0 4px 8px rgba(72, 171, 237, 0.3);
-}
-
-.card:before,
-.card:after {
-	content: '';
-	position: absolute;
-	left: -50%;
-	top: -50%;
-	z-index: -5;
-	transform: scale(0);
-	transform-origin: top left;
-	border-radius: 50%;
-	transition: all, var(--transition-time);
-	transition-timing-function: ease-in-out;
-}
-
-.card:before {
-	width: 250%;
-	height: 250%;
-	background-color: var(--blue-300);
-	opacity: 0.2;
-}
-
-.card:after {
-	width: 200%;
-	height: 200%;
-	background-color: var(--white);
-	opacity: 0.2;
-}
-
-.card:hover {
-	// color: var(--gray-800);
 	border-color: var(--blue-300);
-	box-shadow: 0 20px 40px rgba(72, 171, 237, 0.2);
-}
-
-.card:hover:before,
-.card:hover:after {
-	transform: scale(1);
 }
 </style>

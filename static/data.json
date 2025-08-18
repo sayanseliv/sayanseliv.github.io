@@ -408,32 +408,28 @@
 			"title": "WebSocket",
 			"description": "WebSocket enables a persistent connection between the client and server, allowing real-time, bidirectional communication with minimal overhead. It's ideal for chat apps, live updates, multiplayer games, and more.",
 			"tags": ["WebSocket", "Real-time", "Bidirectional", "Low latency", "Protocol"],
-			"link": "/features/websocket",
-			"image": "/features/websocket.webp"
+			"link": "/features/websocket"
 		},
 		{
 			"id": 2,
 			"title": "TresJS",
 			"description": "TresJS is a progressive framework for building interactive 3D experiences in Vue applications using the power of Three.js. It simplifies the integration of 3D graphics, animations, and WebGL rendering with a declarative and reactive approach.",
 			"tags": ["3D", "Three.js", "Vue", "TresJS", "WebGL", "Interactive"],
-			"link": "/features/3dcar",
-			"image": "/features/retro-futuristic-car.webp"
+			"link": "/features/3dcar"
 		},
 		{
 			"id": 3,
 			"title": "Particle Canvas",
 			"description": "Particle Canvas is an interactive visualization using HTML5 Canvas, where particles respond to cursor movement or touch. This effect is ideal for background animations, interactive banners, and modern web interfaces, creating a dynamic and engaging experience.",
 			"tags": ["Canvas", "Animation", "Interactive", "JavaScript", "HTML5"],
-			"link": "/features/canvas-particle-interactive",
-			"image": "/features/canvas-particle.webp"
+			"link": "/features/canvas-particle-interactive"
 		},
 		{
 			"id": 4,
 			"title": "Animated Grid Canvas",
 			"description": "An interactive animated grid on HTML5 Canvas with dynamic particles reacting to cursor or touch, featuring glowing lines, neon colors, and a sleek, futuristic UI for engaging web interfaces.",
 			"tags": ["Canvas", "Animation", "Interactive", "JavaScript", "HTML5"],
-			"link": "/features/animated-grid-canvas",
-			"image": "/features/animated-grid.webp"
+			"link": "/features/animated-grid-canvas"
 		}
 	]
 }

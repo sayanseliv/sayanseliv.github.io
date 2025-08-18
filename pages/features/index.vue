@@ -23,7 +23,6 @@
 						:title="feature.title"
 						:description="feature.description"
 						:link="feature.link"
-						:image="feature.image"
 						:tags="feature.tags" />
 				</AnimatedBlock>
 			</div>

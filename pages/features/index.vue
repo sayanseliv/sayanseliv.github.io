@@ -35,11 +35,21 @@ import data from '@/static/data.json';
 defineOptions({
 	name: 'PageFeatures',
 });
+const config = useRuntimeConfig();
+useHead({
+	title: 'Features – Lang Eugen',
+	link: [
+		{
+			rel: 'canonical',
+			href: `${config.public.siteUrl}/features`,
+		},
+	],
+});
 const features = data.features;
 </script>
 <style lang="scss" scoped>
 .main-features {
-	padding-top: 4rem;
+	padding-block: 4rem 2rem;
 }
 .features-hero {
 	margin-bottom: 3rem;

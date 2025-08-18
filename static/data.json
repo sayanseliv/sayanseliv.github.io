@@ -426,6 +426,14 @@
 			"tags": ["Canvas", "Animation", "Interactive", "JavaScript", "HTML5"],
 			"link": "/features/canvas-particle-interactive",
 			"image": "/features/canvas-particle.webp"
+		},
+		{
+			"id": 4,
+			"title": "Animated Grid Canvas",
+			"description": "An interactive animated grid on HTML5 Canvas with dynamic particles reacting to cursor or touch, featuring glowing lines, neon colors, and a sleek, futuristic UI for engaging web interfaces.",
+			"tags": ["Canvas", "Animation", "Interactive", "JavaScript", "HTML5"],
+			"link": "/features/animated-grid-canvas",
+			"image": "/features/animated-grid.webp"
 		}
 	]
 }

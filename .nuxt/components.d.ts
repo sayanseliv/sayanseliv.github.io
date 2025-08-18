@@ -13,6 +13,7 @@ type HydrationStrategies = {
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
       'AnimatedBlock': typeof import("../components/AnimatedBlock.vue")['default']
+    'AnimatedGrid': typeof import("../components/AnimatedGrid.vue")['default']
     'CanvasParticle': typeof import("../components/CanvasParticle.vue")['default']
     'ModelThreeD': typeof import("../components/ModelThreeD.vue")['default']
     'ThreeDCar': typeof import("../components/ThreeDCar.vue")['default']
@@ -124,6 +125,7 @@ interface _GlobalComponents {
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
       'LazyAnimatedBlock': LazyComponent<typeof import("../components/AnimatedBlock.vue")['default']>
+    'LazyAnimatedGrid': LazyComponent<typeof import("../components/AnimatedGrid.vue")['default']>
     'LazyCanvasParticle': LazyComponent<typeof import("../components/CanvasParticle.vue")['default']>
     'LazyModelThreeD': LazyComponent<typeof import("../components/ModelThreeD.vue")['default']>
     'LazyThreeDCar': LazyComponent<typeof import("../components/ThreeDCar.vue")['default']>
@@ -241,6 +243,7 @@ declare module 'vue' {
 }
 
 export const AnimatedBlock: typeof import("../components/AnimatedBlock.vue")['default']
+export const AnimatedGrid: typeof import("../components/AnimatedGrid.vue")['default']
 export const CanvasParticle: typeof import("../components/CanvasParticle.vue")['default']
 export const ModelThreeD: typeof import("../components/ModelThreeD.vue")['default']
 export const ThreeDCar: typeof import("../components/ThreeDCar.vue")['default']
@@ -352,6 +355,7 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
 export const LazyAnimatedBlock: LazyComponent<typeof import("../components/AnimatedBlock.vue")['default']>
+export const LazyAnimatedGrid: LazyComponent<typeof import("../components/AnimatedGrid.vue")['default']>
 export const LazyCanvasParticle: LazyComponent<typeof import("../components/CanvasParticle.vue")['default']>
 export const LazyModelThreeD: LazyComponent<typeof import("../components/ModelThreeD.vue")['default']>
 export const LazyThreeDCar: LazyComponent<typeof import("../components/ThreeDCar.vue")['default']>

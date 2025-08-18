@@ -11,7 +11,7 @@
     </url>
     <url>
         <loc>https://sayanseliv.github.io/features</loc>
-        <lastmod>2025-08-16T15:05:07Z</lastmod>
+        <lastmod>2025-08-18T14:55:49Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -60,6 +60,12 @@
     <url>
         <loc>https://sayanseliv.github.io/features/3dcar</loc>
         <lastmod>2025-08-01T15:09:40Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://sayanseliv.github.io/features/animated-grid-canvas</loc>
+        <lastmod>2025-08-17T22:09:42Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

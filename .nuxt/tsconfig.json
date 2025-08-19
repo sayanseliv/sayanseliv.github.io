@@ -107,6 +107,12 @@
       "#site-config/*": [
         "../node_modules/nuxt-site-config/dist/runtime/*"
       ],
+      "#robots": [
+        "../node_modules/@nuxtjs/robots/dist/runtime"
+      ],
+      "#robots/*": [
+        "../node_modules/@nuxtjs/robots/dist/runtime/*"
+      ],
       "#vue-router": [
         "../node_modules/vue-router"
       ],
@@ -117,7 +123,7 @@
         "./imports"
       ],
       "#app-manifest": [
-        "./manifest/meta/7b6d4dbb-ea59-4ce5-a95b-b7cae6db165b.json"
+        "./manifest/meta/0122dd26-2e64-4fe4-811e-62a568e22b43.json"
       ],
       "#components": [
         "./components"
@@ -173,6 +179,8 @@
     "../../../P/dist/runtime",
     "../node_modules/nuxt-github-pages/runtime",
     "../node_modules/nuxt-github-pages/dist/runtime",
+    "../node_modules/@nuxtjs/robots/runtime",
+    "../node_modules/@nuxtjs/robots/dist/runtime",
     "../node_modules/@nuxt/devtools/runtime",
     "../node_modules/@nuxt/devtools/dist/runtime",
     "../node_modules/@nuxt/telemetry/runtime",
@@ -189,6 +197,7 @@
     "../node_modules/@nuxtjs/sitemap/node_modules",
     "../node_modules/@nuxt/test-utils/node_modules",
     "../node_modules/nuxt-github-pages/node_modules",
+    "../node_modules/@nuxtjs/robots/node_modules",
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxt/eslint/runtime/server",
@@ -203,6 +212,8 @@
     "../../../P/dist/runtime/server",
     "../node_modules/nuxt-github-pages/runtime/server",
     "../node_modules/nuxt-github-pages/dist/runtime/server",
+    "../node_modules/@nuxtjs/robots/runtime/server",
+    "../node_modules/@nuxtjs/robots/dist/runtime/server",
     "../node_modules/@nuxt/devtools/runtime/server",
     "../node_modules/@nuxt/devtools/dist/runtime/server",
     "../node_modules/@nuxt/telemetry/runtime/server",

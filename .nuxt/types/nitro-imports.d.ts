@@ -46,11 +46,13 @@ declare global {
   const fromNodeMiddleware: typeof import('../../node_modules/h3')['fromNodeMiddleware']
   const fromPlainHandler: typeof import('../../node_modules/h3')['fromPlainHandler']
   const fromWebHandler: typeof import('../../node_modules/h3')['fromWebHandler']
+  const getBotDetection: typeof import('../../node_modules/@nuxtjs/robots/dist/runtime/server/composables/getBotDetection')['getBotDetection']
+  const getBotInfo: typeof import('../../node_modules/@nuxtjs/robots/dist/runtime/server/composables/getBotDetection')['getBotInfo']
   const getCookie: typeof import('../../node_modules/h3')['getCookie']
   const getHeader: typeof import('../../node_modules/h3')['getHeader']
   const getHeaders: typeof import('../../node_modules/h3')['getHeaders']
   const getMethod: typeof import('../../node_modules/h3')['getMethod']
-  const getPathRobotConfig: typeof import('../../node_modules/@nuxtjs/sitemap/dist/runtime/server/robots-polyfill/getPathRobotConfig')['getPathRobotConfig']
+  const getPathRobotConfig: typeof import('../../node_modules/@nuxtjs/robots/dist/runtime/server/composables/getPathRobotConfig')['getPathRobotConfig']
   const getProxyRequestHeaders: typeof import('../../node_modules/h3')['getProxyRequestHeaders']
   const getQuery: typeof import('../../node_modules/h3')['getQuery']
   const getRequestFingerprint: typeof import('../../node_modules/h3')['getRequestFingerprint']
@@ -71,10 +73,12 @@ declare global {
   const getRouterParams: typeof import('../../node_modules/h3')['getRouterParams']
   const getSession: typeof import('../../node_modules/h3')['getSession']
   const getSiteIndexable: typeof import('../../node_modules/nuxt-site-config/dist/runtime/server/composables/getSiteIndexable')['getSiteIndexable']
+  const getSiteRobotConfig: typeof import('../../node_modules/@nuxtjs/robots/dist/runtime/server/composables/getSiteRobotConfig')['getSiteRobotConfig']
   const getValidatedQuery: typeof import('../../node_modules/h3')['getValidatedQuery']
   const getValidatedRouterParams: typeof import('../../node_modules/h3')['getValidatedRouterParams']
   const handleCacheHeaders: typeof import('../../node_modules/h3')['handleCacheHeaders']
   const handleCors: typeof import('../../node_modules/h3')['handleCors']
+  const isBot: typeof import('../../node_modules/@nuxtjs/robots/dist/runtime/server/composables/getBotDetection')['isBot']
   const isCorsOriginAllowed: typeof import('../../node_modules/h3')['isCorsOriginAllowed']
   const isError: typeof import('../../node_modules/h3')['isError']
   const isEvent: typeof import('../../node_modules/h3')['isEvent']
@@ -128,12 +132,19 @@ declare global {
   const useNitroApp: typeof import('../../node_modules/nitropack/dist/runtime/internal/app')['useNitroApp']
   const useNitroOrigin: typeof import('../../node_modules/nuxt-site-config/dist/runtime/server/composables/useNitroOrigin')['useNitroOrigin']
   const useRuntimeConfig: typeof import('../../node_modules/nitropack/dist/runtime/internal/config')['useRuntimeConfig']
+  const useRuntimeConfigNuxtRobots: typeof import('../../node_modules/@nuxtjs/robots/dist/runtime/server/composables/useRuntimeConfigNuxtRobots')['useRuntimeConfigNuxtRobots']
   const useSession: typeof import('../../node_modules/h3')['useSession']
   const useSiteConfig: typeof import('../../node_modules/nuxt-site-config/dist/runtime/server/composables/useSiteConfig')['useSiteConfig']
   const useStorage: typeof import('../../node_modules/nitropack/dist/runtime/internal/storage')['useStorage']
   const withSiteTrailingSlash: typeof import('../../node_modules/nuxt-site-config/dist/runtime/server/composables/utils')['withSiteTrailingSlash']
   const withSiteUrl: typeof import('../../node_modules/nuxt-site-config/dist/runtime/server/composables/utils')['withSiteUrl']
   const writeEarlyHints: typeof import('../../node_modules/h3')['writeEarlyHints']
+}
+// for type re-export
+declare global {
+  // @ts-ignore
+  export type { BotDetectionContext } from '../../node_modules/@nuxtjs/robots/dist/runtime/server/composables/getBotDetection.d'
+  import('../../node_modules/@nuxtjs/robots/dist/runtime/server/composables/getBotDetection.d')
 }
 export { useNitroApp } from 'nitropack/runtime/internal/app';
 export { useRuntimeConfig, useAppConfig } from 'nitropack/runtime/internal/config';
@@ -151,9 +162,12 @@ export { buildAssetsURL as __buildAssetsURL, publicAssetsURL as __publicAssetsUR
 export { defineAppConfig } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/nuxt/dist/core/runtime/nitro/utils/config';
 export { defineSitemapEventHandler } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/@nuxtjs/sitemap/dist/runtime/server/composables/defineSitemapEventHandler';
 export { asSitemapUrl } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/@nuxtjs/sitemap/dist/runtime/server/composables/asSitemapUrl';
-export { getPathRobotConfig } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/@nuxtjs/sitemap/dist/runtime/server/robots-polyfill/getPathRobotConfig';
 export { getSiteIndexable } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/nuxt-site-config/dist/runtime/server/composables/getSiteIndexable';
 export { updateSiteConfig } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/nuxt-site-config/dist/runtime/server/composables/updateSiteConfig';
 export { useNitroOrigin } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/nuxt-site-config/dist/runtime/server/composables/useNitroOrigin';
 export { useSiteConfig } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/nuxt-site-config/dist/runtime/server/composables/useSiteConfig';
 export { createSitePathResolver, withSiteTrailingSlash, withSiteUrl } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/nuxt-site-config/dist/runtime/server/composables/utils';
+export { getBotDetection, isBot, getBotInfo } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/@nuxtjs/robots/dist/runtime/server/composables/getBotDetection';
+export { getPathRobotConfig } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/@nuxtjs/robots/dist/runtime/server/composables/getPathRobotConfig';
+export { getSiteRobotConfig } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/@nuxtjs/robots/dist/runtime/server/composables/getSiteRobotConfig';
+export { useRuntimeConfigNuxtRobots } from '/Users/eugen/Desktop/Projects/sayanseliv.github.io/node_modules/@nuxtjs/robots/dist/runtime/server/composables/useRuntimeConfigNuxtRobots';

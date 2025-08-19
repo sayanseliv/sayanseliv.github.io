@@ -31,6 +31,7 @@ export default defineNuxtConfig({
 		'@nuxtjs/sitemap',
 		'@nuxt/test-utils/module',
 		'nuxt-github-pages',
+		'@nuxtjs/robots',
 	],
 	githubPages: {
 		enabled: true,
@@ -38,6 +39,19 @@ export default defineNuxtConfig({
 		verbose: true,
 		canonicalUrls: true,
 		trailingSlash: false,
+	},
+	robots: {
+		enabled: true,
+		groups: [{ userAgent: ['*'], allow: ['/'], disallow: [] }],
+		allow: ['/'],
+		sitemap: ['https://sayanseliv.github.io/sitemap.xml'],
+		header: false,
+		metaTag: false,
+		blockNonSeoBots: false,
+		blockAiBots: false,
+		mergeWithRobotsTxtPath: false,
+		credits: false,
+		debug: false,
 	},
 	vite: {
 		css: {

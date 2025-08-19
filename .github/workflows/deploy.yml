@@ -32,6 +32,13 @@ jobs:
                   else
                     echo "❌ sitemap.xml NOT found"
                   fi
+                  echo "Check if robots.txt exists:"
+                  if [ -f .output/public/robots.txt ]; then
+                    echo "✅ robots.txt found"
+                    cat .output/public/robots.txt
+                  else
+                    echo "❌ robots.txt NOT found"
+                  fi
                   echo "Check for index.html files:"
                   find .output/public -name "index.html" | head -10
 
@@ -53,3 +60,10 @@ jobs:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v4
+
+            - name: Invalidate GitHub Pages Cache
+              run: |
+                  curl -X POST \
+                    -H "Accept: application/vnd.github+json" \
+                    -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                    https://api.github.com/repos/sayanseliv/sayanseliv.github.io/pages/builds

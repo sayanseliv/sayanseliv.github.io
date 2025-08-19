@@ -40,7 +40,7 @@ export default withNuxt({
 			},
 		],
 		'functional/no-expression-statement': 'off',
-		'functional/prefer-readonly-type': 'warn',
+		'functional/prefer-readonly-type': 'off',
 		'functional/immutable-data': [
 			'warn',
 			{

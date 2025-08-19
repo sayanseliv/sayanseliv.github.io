@@ -44,7 +44,7 @@ useHead({
 		},
 	],
 });
-const features = data.features;
+const features = data.features.slice().reverse();
 </script>
 <style lang="scss" scoped>
 .main-features {

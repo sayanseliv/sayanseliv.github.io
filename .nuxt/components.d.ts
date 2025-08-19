@@ -26,6 +26,7 @@ interface _GlobalComponents {
     'CardPortfolio': typeof import("../components/cards/CardPortfolio.vue")['default']
     'CardTechnology': typeof import("../components/cards/CardTechnology.vue")['default']
     'CardTools': typeof import("../components/cards/CardTools.vue")['default']
+    'PlatformerChaseGame': typeof import("../components/features/PlatformerChaseGame.vue")['default']
     'AppHeader': typeof import("../components/main/AppHeader.vue")['default']
     'AppModal': typeof import("../components/main/AppModal.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -138,6 +139,7 @@ interface _GlobalComponents {
     'LazyCardPortfolio': LazyComponent<typeof import("../components/cards/CardPortfolio.vue")['default']>
     'LazyCardTechnology': LazyComponent<typeof import("../components/cards/CardTechnology.vue")['default']>
     'LazyCardTools': LazyComponent<typeof import("../components/cards/CardTools.vue")['default']>
+    'LazyPlatformerChaseGame': LazyComponent<typeof import("../components/features/PlatformerChaseGame.vue")['default']>
     'LazyAppHeader': LazyComponent<typeof import("../components/main/AppHeader.vue")['default']>
     'LazyAppModal': LazyComponent<typeof import("../components/main/AppModal.vue")['default']>
     'LazyNuxtWelcome': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
@@ -256,6 +258,7 @@ export const CardFeature: typeof import("../components/cards/CardFeature.vue")['
 export const CardPortfolio: typeof import("../components/cards/CardPortfolio.vue")['default']
 export const CardTechnology: typeof import("../components/cards/CardTechnology.vue")['default']
 export const CardTools: typeof import("../components/cards/CardTools.vue")['default']
+export const PlatformerChaseGame: typeof import("../components/features/PlatformerChaseGame.vue")['default']
 export const AppHeader: typeof import("../components/main/AppHeader.vue")['default']
 export const AppModal: typeof import("../components/main/AppModal.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -368,6 +371,7 @@ export const LazyCardFeature: LazyComponent<typeof import("../components/cards/C
 export const LazyCardPortfolio: LazyComponent<typeof import("../components/cards/CardPortfolio.vue")['default']>
 export const LazyCardTechnology: LazyComponent<typeof import("../components/cards/CardTechnology.vue")['default']>
 export const LazyCardTools: LazyComponent<typeof import("../components/cards/CardTools.vue")['default']>
+export const LazyPlatformerChaseGame: LazyComponent<typeof import("../components/features/PlatformerChaseGame.vue")['default']>
 export const LazyAppHeader: LazyComponent<typeof import("../components/main/AppHeader.vue")['default']>
 export const LazyAppModal: LazyComponent<typeof import("../components/main/AppModal.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>

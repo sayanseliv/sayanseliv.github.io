@@ -11,7 +11,7 @@
     </url>
     <url>
         <loc>https://sayanseliv.github.io/features</loc>
-        <lastmod>2025-08-18T16:08:06Z</lastmod>
+        <lastmod>2025-08-19T18:28:37Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -72,6 +72,12 @@
     <url>
         <loc>https://sayanseliv.github.io/features/canvas-particle-interactive</loc>
         <lastmod>2025-08-17T16:18:50Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://sayanseliv.github.io/features/chase-game</loc>
+        <lastmod>2025-08-19T10:21:45Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

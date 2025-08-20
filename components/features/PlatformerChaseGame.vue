@@ -415,23 +415,17 @@ const movePlayer = () => {
 	const playerHeight = player.value?.offsetHeight || 40;
 	const playerWidth = 40;
 
-	if (
-		(keys.value['ArrowUp'] || keys.value['w'] || keys.value['W']) &&
-		newY > GAME_CONFIG.BORDER_OFFSET
-	)
+	if ((keys.value['ArrowUp'] || keys.value['KeyW']) && newY > GAME_CONFIG.BORDER_OFFSET)
 		newY -= GAME_CONFIG.PLAYER_SPEED;
 	if (
-		(keys.value['ArrowDown'] || keys.value['s'] || keys.value['S']) &&
+		(keys.value['KeyS'] || keys.value['ArrowDown']) &&
 		newY < gameArea.value!.clientHeight - playerHeight - GAME_CONFIG.BORDER_OFFSET
 	)
 		newY += GAME_CONFIG.PLAYER_SPEED;
-	if (
-		(keys.value['ArrowLeft'] || keys.value['a'] || keys.value['A']) &&
-		newX > GAME_CONFIG.BORDER_OFFSET
-	)
+	if ((keys.value['KeyA'] || keys.value['ArrowLeft']) && newX > GAME_CONFIG.BORDER_OFFSET)
 		newX -= GAME_CONFIG.PLAYER_SPEED;
 	if (
-		(keys.value['ArrowRight'] || keys.value['d'] || keys.value['D']) &&
+		(keys.value['KeyD'] || keys.value['ArrowRight']) &&
 		newX < gameArea.value!.clientWidth - playerWidth - GAME_CONFIG.BORDER_OFFSET
 	)
 		newX += GAME_CONFIG.PLAYER_SPEED;
@@ -567,11 +561,11 @@ onMounted(() => {
 	initGame();
 
 	document.addEventListener('keydown', (e: KeyboardEvent) => {
-		keys.value[e.key] = true;
+		keys.value[e.code] = true;
 	});
 
 	document.addEventListener('keyup', (e: KeyboardEvent) => {
-		keys.value[e.key] = false;
+		keys.value[e.code] = false;
 	});
 
 	document.addEventListener('contextmenu', showContextMenu);

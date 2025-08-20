@@ -24,7 +24,7 @@
 			</div>
 		</section>
 		<section>
-			<div class="container-1440">
+			<div class="container">
 				<h2 class="portfolio-projects__title">Projects</h2>
 				<AnimatedBlock>
 					<div class="portfolio-projects__grid">

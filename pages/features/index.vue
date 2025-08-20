@@ -1,7 +1,7 @@
 <template>
 	<main class="main-features">
 		<section class="features-hero">
-			<div class="container-1440">
+			<div class="container">
 				<div class="hero__wrapper">
 					<h1 class="text-gradient hero__title">Features</h1>
 					<p class="hero__description">
@@ -15,7 +15,7 @@
 		</section>
 
 		<section class="features__cards">
-			<div class="container-1440">
+			<div class="container">
 				<AnimatedBlock class="cards__container">
 					<CardFeature
 						v-for="(feature, index) in features"

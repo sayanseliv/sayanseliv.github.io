@@ -205,5 +205,6 @@ export default defineNuxtConfig({
 			siteUrl: BASE_URL,
 		},
 	},
+	typescript: { typeCheck: true, strict: true },
 	compatibilityDate: '2024-10-11',
 });

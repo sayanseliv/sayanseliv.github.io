@@ -1,6 +1,6 @@
 <template>
 	<main class="main__canvas-vanilla">
-		<div class="container-1440">
+		<div class="container">
 			<CanvasParticle />
 		</div>
 	</main>

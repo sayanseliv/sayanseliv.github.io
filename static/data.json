@@ -437,6 +437,20 @@
 			"description": "An interactive animated grid on HTML5 Canvas with dynamic particles reacting to cursor or touch, featuring glowing lines, neon colors, and a sleek, futuristic UI for engaging web interfaces.",
 			"tags": ["Canvas", "Animation", "Interactive", "JavaScript", "HTML5"],
 			"link": "/features/animated-grid-canvas"
+		},
+		{
+			"id": 6,
+			"title": "Pure Css Morphing",
+			"description": "Pure CSS Morphing is an animation technique that smoothly transforms shapes and colors using only CSS. With keyframes and gradients, you can create organic transitions, dynamic background effects, and modern visuals without relying on JavaScript or Canvas.",
+			"tags": ["CSS", "Animation", "Morphing", "Gradients", "Keyframes", "UI Effects"],
+			"link": "/features/css-morphing"
+		},
+		{
+			"id": 7,
+			"title": "Emoji switcher",
+			"description": "Emoji Switcher is an interactive component that lets users switch between different emojis with smooth animations and gradient transitions. It supports manual selection, random morphing, and auto mode, creating a playful and dynamic user experience for web interfaces.",
+			"tags": ["Emoji", "Switcher", "Animation", "UI Effects", "Interactive"],
+			"link": "/features/emoji-switching"
 		}
 	]
 }

@@ -1,6 +1,6 @@
 <template>
 	<header class="header">
-		<nav class="container-1440 header__nav">
+		<nav class="container header__nav">
 			<label class="header__hamburger">
 				<span class="header__sr-only">Toggle navigation menu</span>
 				<input

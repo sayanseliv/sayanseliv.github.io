@@ -1,7 +1,7 @@
 <template>
 	<main class="main-websoсket">
 		<section class="websocket-hero">
-			<div class="container-1440">
+			<div class="container">
 				<div class="hero__wrapper">
 					<h1 class="hero__title">
 						<NuxtLink

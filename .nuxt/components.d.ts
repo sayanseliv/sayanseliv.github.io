@@ -13,10 +13,6 @@ type HydrationStrategies = {
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
       'AnimatedBlock': typeof import("../components/AnimatedBlock.vue")['default']
-    'AnimatedGrid': typeof import("../components/AnimatedGrid.vue")['default']
-    'CanvasParticle': typeof import("../components/CanvasParticle.vue")['default']
-    'ModelThreeD': typeof import("../components/ModelThreeD.vue")['default']
-    'ThreeDCar': typeof import("../components/ThreeDCar.vue")['default']
     'AnimatedCircles': typeof import("../components/UI/AnimatedCircles.vue")['default']
     'CircleProgress': typeof import("../components/UI/CircleProgress.vue")['default']
     'ParticleCanvas': typeof import("../components/UI/ParticleCanvas.vue")['default']
@@ -26,7 +22,13 @@ interface _GlobalComponents {
     'CardPortfolio': typeof import("../components/cards/CardPortfolio.vue")['default']
     'CardTechnology': typeof import("../components/cards/CardTechnology.vue")['default']
     'CardTools': typeof import("../components/cards/CardTools.vue")['default']
+    'AnimatedGrid': typeof import("../components/features/AnimatedGrid.vue")['default']
+    'CanvasParticle': typeof import("../components/features/CanvasParticle.vue")['default']
+    'EmojiSwitchingInterface': typeof import("../components/features/EmojiSwitchingInterface.vue")['default']
+    'ModelThreeD': typeof import("../components/features/ModelThreeD.vue")['default']
     'PlatformerChaseGame': typeof import("../components/features/PlatformerChaseGame.vue")['default']
+    'PureCssMorphing': typeof import("../components/features/PureCssMorphing.vue")['default']
+    'ThreeDCar': typeof import("../components/features/ThreeDCar.vue")['default']
     'AppHeader': typeof import("../components/main/AppHeader.vue")['default']
     'AppModal': typeof import("../components/main/AppModal.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -126,10 +128,6 @@ interface _GlobalComponents {
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
       'LazyAnimatedBlock': LazyComponent<typeof import("../components/AnimatedBlock.vue")['default']>
-    'LazyAnimatedGrid': LazyComponent<typeof import("../components/AnimatedGrid.vue")['default']>
-    'LazyCanvasParticle': LazyComponent<typeof import("../components/CanvasParticle.vue")['default']>
-    'LazyModelThreeD': LazyComponent<typeof import("../components/ModelThreeD.vue")['default']>
-    'LazyThreeDCar': LazyComponent<typeof import("../components/ThreeDCar.vue")['default']>
     'LazyAnimatedCircles': LazyComponent<typeof import("../components/UI/AnimatedCircles.vue")['default']>
     'LazyCircleProgress': LazyComponent<typeof import("../components/UI/CircleProgress.vue")['default']>
     'LazyParticleCanvas': LazyComponent<typeof import("../components/UI/ParticleCanvas.vue")['default']>
@@ -139,7 +137,13 @@ interface _GlobalComponents {
     'LazyCardPortfolio': LazyComponent<typeof import("../components/cards/CardPortfolio.vue")['default']>
     'LazyCardTechnology': LazyComponent<typeof import("../components/cards/CardTechnology.vue")['default']>
     'LazyCardTools': LazyComponent<typeof import("../components/cards/CardTools.vue")['default']>
+    'LazyAnimatedGrid': LazyComponent<typeof import("../components/features/AnimatedGrid.vue")['default']>
+    'LazyCanvasParticle': LazyComponent<typeof import("../components/features/CanvasParticle.vue")['default']>
+    'LazyEmojiSwitchingInterface': LazyComponent<typeof import("../components/features/EmojiSwitchingInterface.vue")['default']>
+    'LazyModelThreeD': LazyComponent<typeof import("../components/features/ModelThreeD.vue")['default']>
     'LazyPlatformerChaseGame': LazyComponent<typeof import("../components/features/PlatformerChaseGame.vue")['default']>
+    'LazyPureCssMorphing': LazyComponent<typeof import("../components/features/PureCssMorphing.vue")['default']>
+    'LazyThreeDCar': LazyComponent<typeof import("../components/features/ThreeDCar.vue")['default']>
     'LazyAppHeader': LazyComponent<typeof import("../components/main/AppHeader.vue")['default']>
     'LazyAppModal': LazyComponent<typeof import("../components/main/AppModal.vue")['default']>
     'LazyNuxtWelcome': LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>
@@ -245,10 +249,6 @@ declare module 'vue' {
 }
 
 export const AnimatedBlock: typeof import("../components/AnimatedBlock.vue")['default']
-export const AnimatedGrid: typeof import("../components/AnimatedGrid.vue")['default']
-export const CanvasParticle: typeof import("../components/CanvasParticle.vue")['default']
-export const ModelThreeD: typeof import("../components/ModelThreeD.vue")['default']
-export const ThreeDCar: typeof import("../components/ThreeDCar.vue")['default']
 export const AnimatedCircles: typeof import("../components/UI/AnimatedCircles.vue")['default']
 export const CircleProgress: typeof import("../components/UI/CircleProgress.vue")['default']
 export const ParticleCanvas: typeof import("../components/UI/ParticleCanvas.vue")['default']
@@ -258,7 +258,13 @@ export const CardFeature: typeof import("../components/cards/CardFeature.vue")['
 export const CardPortfolio: typeof import("../components/cards/CardPortfolio.vue")['default']
 export const CardTechnology: typeof import("../components/cards/CardTechnology.vue")['default']
 export const CardTools: typeof import("../components/cards/CardTools.vue")['default']
+export const AnimatedGrid: typeof import("../components/features/AnimatedGrid.vue")['default']
+export const CanvasParticle: typeof import("../components/features/CanvasParticle.vue")['default']
+export const EmojiSwitchingInterface: typeof import("../components/features/EmojiSwitchingInterface.vue")['default']
+export const ModelThreeD: typeof import("../components/features/ModelThreeD.vue")['default']
 export const PlatformerChaseGame: typeof import("../components/features/PlatformerChaseGame.vue")['default']
+export const PureCssMorphing: typeof import("../components/features/PureCssMorphing.vue")['default']
+export const ThreeDCar: typeof import("../components/features/ThreeDCar.vue")['default']
 export const AppHeader: typeof import("../components/main/AppHeader.vue")['default']
 export const AppModal: typeof import("../components/main/AppModal.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
@@ -358,10 +364,6 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
 export const LazyAnimatedBlock: LazyComponent<typeof import("../components/AnimatedBlock.vue")['default']>
-export const LazyAnimatedGrid: LazyComponent<typeof import("../components/AnimatedGrid.vue")['default']>
-export const LazyCanvasParticle: LazyComponent<typeof import("../components/CanvasParticle.vue")['default']>
-export const LazyModelThreeD: LazyComponent<typeof import("../components/ModelThreeD.vue")['default']>
-export const LazyThreeDCar: LazyComponent<typeof import("../components/ThreeDCar.vue")['default']>
 export const LazyAnimatedCircles: LazyComponent<typeof import("../components/UI/AnimatedCircles.vue")['default']>
 export const LazyCircleProgress: LazyComponent<typeof import("../components/UI/CircleProgress.vue")['default']>
 export const LazyParticleCanvas: LazyComponent<typeof import("../components/UI/ParticleCanvas.vue")['default']>
@@ -371,7 +373,13 @@ export const LazyCardFeature: LazyComponent<typeof import("../components/cards/C
 export const LazyCardPortfolio: LazyComponent<typeof import("../components/cards/CardPortfolio.vue")['default']>
 export const LazyCardTechnology: LazyComponent<typeof import("../components/cards/CardTechnology.vue")['default']>
 export const LazyCardTools: LazyComponent<typeof import("../components/cards/CardTools.vue")['default']>
+export const LazyAnimatedGrid: LazyComponent<typeof import("../components/features/AnimatedGrid.vue")['default']>
+export const LazyCanvasParticle: LazyComponent<typeof import("../components/features/CanvasParticle.vue")['default']>
+export const LazyEmojiSwitchingInterface: LazyComponent<typeof import("../components/features/EmojiSwitchingInterface.vue")['default']>
+export const LazyModelThreeD: LazyComponent<typeof import("../components/features/ModelThreeD.vue")['default']>
 export const LazyPlatformerChaseGame: LazyComponent<typeof import("../components/features/PlatformerChaseGame.vue")['default']>
+export const LazyPureCssMorphing: LazyComponent<typeof import("../components/features/PureCssMorphing.vue")['default']>
+export const LazyThreeDCar: LazyComponent<typeof import("../components/features/ThreeDCar.vue")['default']>
 export const LazyAppHeader: LazyComponent<typeof import("../components/main/AppHeader.vue")['default']>
 export const LazyAppModal: LazyComponent<typeof import("../components/main/AppModal.vue")['default']>
 export const LazyNuxtWelcome: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']>

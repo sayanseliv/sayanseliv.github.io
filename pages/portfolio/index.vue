@@ -16,7 +16,7 @@
 					</div>
 					<figure class="hero__figure">
 						<img
-							src="/images/portfolio-hero.webp"
+							src="/images/portfolio-hero-cold.webp"
 							alt="Portfolio image"
 							loading="lazy" />
 					</figure>
@@ -151,11 +151,11 @@ useHead({
 		position: absolute;
 		inset: 0;
 		height: 100%;
-		transform: scale(1.8);
+		transform: scale(1.2);
 		width: 100%;
 		object-fit: cover;
 		@include media(768px) {
-			transform: scale(1.2);
+			transform: scale(1);
 		}
 	}
 }

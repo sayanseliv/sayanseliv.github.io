@@ -1,7 +1,7 @@
 <template>
 	<main class="main-home">
 		<ParticleCanvas />
-		<div class="container-1440 home__container">
+		<div class="container home__container">
 			<section class="home__hero">
 				<div class="hero__profile-section">
 					<div class="hero__avatar-wrapper">

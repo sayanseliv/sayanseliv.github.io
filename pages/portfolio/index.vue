@@ -2,7 +2,7 @@
 	<main class="main-portfolio">
 		<AnimatedCircles />
 		<section class="portfolio-hero">
-			<div class="container-1440 hero__container">
+			<div class="container hero__container">
 				<div class="hero__info">
 					<div class="hero__content">
 						<h1 class="text-gradient hero__title">Portfolio</h1>

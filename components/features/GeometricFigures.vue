@@ -1,5 +1,5 @@
 <template>
-	<div class="container geometric-figures">
+	<div class="geometric-figures">
 		<h1 class="text-gradient geometric-figures__title">Adaptive geometric shapes on canvas</h1>
 
 		<div class="geometric-figures__controls">
@@ -22,362 +22,205 @@ defineOptions({
 	name: 'GeometricFigures',
 });
 type Mode = 'basic' | 'complex' | 'patterns' | 'animated';
+type DrawContext = CanvasRenderingContext2D;
 
+// Refs
 const canvasWrap = ref<HTMLDivElement | null>(null);
 const canvas = ref<HTMLCanvasElement | null>(null);
-const ctx = ref<CanvasRenderingContext2D | null>(null);
-
+const ctx = ref<DrawContext | null>(null);
 const currentMode = ref<Mode>('basic');
 const animationId = ref<number | null>(null);
 const animationTime = ref<number>(0);
 
-const aspectRatio = 2 / 3;
-const maxCanvasWidth = 800;
+// Constants
+const ASPECT_RATIO = 2 / 3;
+const MAX_CANVAS_WIDTH = 800;
 
-const drawShapes = (mode: Mode) => {
-	currentMode.value = mode;
+// Utility functions
+const clearCanvas = (): void => {
+	if (!canvas.value || !ctx.value) return;
+	ctx.value.clearRect(0, 0, canvas.value.width, canvas.value.height);
+};
+
+const getCanvasDimensions = () => {
+	if (!canvas.value) return { width: 0, height: 0 };
+	const dpr = window.devicePixelRatio || 1;
+	return {
+		width: canvas.value.width / dpr,
+		height: canvas.value.height / dpr,
+	};
+};
+
+const stopAnimation = (): void => {
 	if (animationId.value) {
 		cancelAnimationFrame(animationId.value);
 		animationId.value = null;
 	}
-	switch (mode) {
-		case 'basic':
-			drawBasicShapes();
-			break;
-		case 'complex':
-			drawComplexShapes();
-			break;
-		case 'patterns':
-			drawPatterns();
-			break;
-		case 'animated':
-			animationTime.value = 0;
-			drawAnimatedShapes();
-			break;
+};
+
+// Shape drawing functions
+const drawRect = (
+	ctx: DrawContext | null,
+	x: number,
+	y: number,
+	width: number,
+	height: number,
+	color: string,
+	hasStroke = false
+): void => {
+	if (!ctx) return;
+
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = color;
+	ctx.fillRect(x, y, width, height);
+
+	if (hasStroke) {
+		// eslint-disable-next-line functional/immutable-data
+		ctx.strokeStyle = '#C0392B';
+		// eslint-disable-next-line functional/immutable-data
+		ctx.lineWidth = 3;
+		ctx.strokeRect(x, y, width, height);
 	}
 };
-const drawBasicShapes = () => {
-	if (!canvas.value) return;
-	const dpr = window.devicePixelRatio || 1;
-	const w = canvas.value.width / dpr;
-	const h = canvas.value.height / dpr;
 
-	ctx.value?.clearRect(0, 0, canvas.value.width, canvas.value.height);
-	if (ctx.value) {
-		// Rectangle
-		ctx.value.fillStyle = '#FF6B6B';
-		ctx.value.fillRect(w * 0.05, h * 0.05, w * 0.2, h * 0.25);
+const drawCircle = (
+	ctx: DrawContext | null,
+	x: number,
+	y: number,
+	radius: number,
+	color: string,
+	isStroke = false
+): void => {
+	if (!ctx) return;
 
-		// Rectangle with stroke
-		ctx.value.fillStyle = '#E74C3C';
-		ctx.value.strokeStyle = '#C0392B';
-		ctx.value.lineWidth = 3;
-		ctx.value.fillRect(w * 0.3, h * 0.05, w * 0.15, h * 0.25);
-		ctx.value.strokeRect(w * 0.3, h * 0.05, w * 0.15, h * 0.25);
+	ctx.beginPath();
+	ctx.arc(x, y, radius, 0, 2 * Math.PI);
 
-		// Circle
-		ctx.value.fillStyle = '#4ECDC4';
-		ctx.value.beginPath();
-		ctx.value.arc(w * 0.6, h * 0.18, w * 0.1, 0, 2 * Math.PI);
-		ctx.value.fill();
-
-		// Ring
-		ctx.value.strokeStyle = '#26A69A';
-		ctx.value.lineWidth = 8;
-		ctx.value.beginPath();
-		ctx.value.arc(w * 0.8, h * 0.18, w * 0.08, 0, 2 * Math.PI);
-		ctx.value.stroke();
-
-		// Triangle
-		ctx.value.fillStyle = '#45B7D1';
-		ctx.value.beginPath();
-		ctx.value.moveTo(w * 0.15, h * 0.7);
-		ctx.value.lineTo(w * 0.05, h * 0.45);
-		ctx.value.lineTo(w * 0.25, h * 0.45);
-		ctx.value.closePath();
-		ctx.value.fill();
-
-		// Rhombus
-		ctx.value.fillStyle = '#3498DB';
-		ctx.value.beginPath();
-		ctx.value.moveTo(w * 0.4, h * 0.45);
-		ctx.value.lineTo(w * 0.35, h * 0.55);
-		ctx.value.lineTo(w * 0.4, h * 0.65);
-		ctx.value.lineTo(w * 0.45, h * 0.55);
-		ctx.value.closePath();
-		ctx.value.fill();
-
-		// Ellipse
-		ctx.value.fillStyle = '#F7DC6F';
-		ctx.value.beginPath();
-		ctx.value.ellipse(w * 0.65, h * 0.55, w * 0.12, h * 0.08, 0, 0, 2 * Math.PI);
-		ctx.value.fill();
-
-		// Parallelogram
-		ctx.value.fillStyle = '#F39C12';
-		ctx.value.beginPath();
-		ctx.value.moveTo(w * 0.75, h * 0.45);
-		ctx.value.lineTo(w * 0.9, h * 0.45);
-		ctx.value.lineTo(w * 0.95, h * 0.65);
-		ctx.value.lineTo(w * 0.8, h * 0.65);
-		ctx.value.closePath();
-		ctx.value.fill();
-
-		// Trapezoid
-		ctx.value.fillStyle = '#9B59B6';
-		ctx.value.beginPath();
-		ctx.value.moveTo(w * 0.05, h * 0.8);
-		ctx.value.lineTo(w * 0.25, h * 0.8);
-		ctx.value.lineTo(w * 0.22, h * 0.95);
-		ctx.value.lineTo(w * 0.08, h * 0.95);
-		ctx.value.closePath();
-		ctx.value.fill();
-
-		// Lines of different thickness
-		ctx.value.strokeStyle = '#8E44AD';
-		ctx.value.lineWidth = 2;
-		ctx.value.beginPath();
-		ctx.value.moveTo(w * 0.4, h * 0.8);
-		ctx.value.lineTo(w * 0.6, h * 0.95);
-		ctx.value.stroke();
-
-		ctx.value.lineWidth = 5;
-		ctx.value.beginPath();
-		ctx.value.moveTo(w * 0.65, h * 0.8);
-		ctx.value.lineTo(w * 0.85, h * 0.95);
-		ctx.value.stroke();
-
-		// Dotted lines
-		ctx.value.setLineDash([10, 5]);
-		ctx.value.lineWidth = 3;
-		ctx.value.strokeStyle = '#E67E22';
-		ctx.value.beginPath();
-		ctx.value.moveTo(w * 0.5, h * 0.35);
-		ctx.value.lineTo(w * 0.9, h * 0.35);
-		ctx.value.stroke();
-		ctx.value.setLineDash([]);
+	if (isStroke) {
+		// eslint-disable-next-line functional/immutable-data
+		ctx.strokeStyle = color;
+		// eslint-disable-next-line functional/immutable-data
+		ctx.lineWidth = 8;
+		ctx.stroke();
+	} else {
+		// eslint-disable-next-line functional/immutable-data
+		ctx.fillStyle = color;
+		ctx.fill();
 	}
 };
-const drawComplexShapes = () => {
-	if (!canvas.value) return;
-	const dpr = window.devicePixelRatio || 1;
-	const w = canvas.value.width / dpr;
-	const h = canvas.value.height / dpr;
 
-	ctx.value?.clearRect(0, 0, canvas.value.width, canvas.value.height);
+const drawTriangle = (
+	ctx: DrawContext | null,
+	x: number,
+	y: number,
+	size: number,
+	color: string
+): void => {
+	if (!ctx) return;
 
-	drawStar(ctx.value, w * 0.15, h * 0.2, w * 0.08, w * 0.04, 5, '#FF6B6B');
-	drawStar(ctx.value, w * 0.35, h * 0.2, w * 0.06, w * 0.03, 8, '#E74C3C');
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = color;
+	ctx.beginPath();
+	ctx.moveTo(x, y - size);
+	ctx.lineTo(x - size, y + size);
+	ctx.lineTo(x + size, y + size);
+	ctx.closePath();
+	ctx.fill();
+};
 
-	drawPolygon(ctx.value, w * 0.6, h * 0.2, w * 0.08, 6, '#4ECDC4');
-	drawPolygon(ctx.value, w * 0.8, h * 0.2, w * 0.06, 8, '#26A69A');
+const drawRhombus = (
+	ctx: DrawContext | null,
+	centerX: number,
+	centerY: number,
+	size: number,
+	color: string
+): void => {
+	if (!ctx) return;
 
-	drawRoundedRect(ctx.value, w * 0.05, h * 0.4, w * 0.2, h * 0.15, w * 0.015, '#45B7D1');
-	drawRoundedRect(ctx.value, w * 0.3, h * 0.4, w * 0.15, h * 0.15, w * 0.03, '#3498DB');
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = color;
+	ctx.beginPath();
+	ctx.moveTo(centerX, centerY - size);
+	ctx.lineTo(centerX - size, centerY);
+	ctx.lineTo(centerX, centerY + size);
+	ctx.lineTo(centerX + size, centerY);
+	ctx.closePath();
+	ctx.fill();
+};
 
-	if (ctx.value) {
-		ctx.value.fillStyle = '#F7DC6F';
-		ctx.value.beginPath();
-		ctx.value.arc(w * 0.6, h * 0.5, w * 0.1, 0, Math.PI * 1.5); // Drawing an arc
-		ctx.value.lineTo(w * 0.6, h * 0.5);
-		ctx.value.closePath();
-		ctx.value.fill();
+const drawEllipse = (
+	ctx: DrawContext | null,
+	x: number,
+	y: number,
+	radiusX: number,
+	radiusY: number,
+	color: string
+): void => {
+	if (!ctx) return;
 
-		ctx.value.fillStyle = '#F39C12';
-		ctx.value.beginPath();
-		ctx.value.arc(w * 0.8, h * 0.5, w * 0.08, Math.PI * 0.5, Math.PI * 1.8);
-		ctx.value.lineTo(w * 0.8, h * 0.5);
-		ctx.value.closePath();
-		ctx.value.fill();
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = color;
+	ctx.beginPath();
+	ctx.ellipse(x, y, radiusX, radiusY, 0, 0, 2 * Math.PI);
+	ctx.fill();
+};
 
-		// Bezier curves
-		ctx.value.strokeStyle = '#8E44AD';
-		ctx.value.lineWidth = 4;
-		ctx.value.beginPath();
-		ctx.value.moveTo(w * 0.1, h * 0.7);
-		ctx.value.bezierCurveTo(w * 0.2, h * 0.6, w * 0.3, h * 0.8, w * 0.4, h * 0.7);
-		ctx.value.stroke();
+const drawParallelogram = (
+	ctx: DrawContext | null,
+	points: [number, number][],
+	color: string
+): void => {
+	if (!ctx || points.length !== 4) return;
 
-		ctx.value.strokeStyle = '#9B59B6';
-		ctx.value.lineWidth = 3;
-		ctx.value.beginPath();
-		ctx.value.moveTo(w * 0.5, h * 0.8);
-		ctx.value.quadraticCurveTo(w * 0.65, h * 0.7, w * 0.8, h * 0.8);
-		ctx.value.stroke();
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = color;
+	ctx.beginPath();
+	ctx.moveTo(points[0][0], points[0][1]);
+	points.slice(1).forEach(([x, y]) => ctx!.lineTo(x, y));
+	ctx.closePath();
+	ctx.fill();
+};
 
-		// Arrow
-		drawArrow(ctx.value, w * 0.15, h * 0.85, w * 0.35, h * 0.85, w * 0.02, '#E67E22');
+const drawLine = (
+	ctx: DrawContext | null,
+	x1: number,
+	y1: number,
+	x2: number,
+	y2: number,
+	color: string,
+	width: number,
+	isDashed = false
+): void => {
+	if (!ctx) return;
 
-		// Heart
-		drawHeart(ctx.value, w * 0.65, h * 0.85, w * 0.04, '#E91E63');
+	// eslint-disable-next-line functional/immutable-data
+	ctx.strokeStyle = color;
+	// eslint-disable-next-line functional/immutable-data
+	ctx.lineWidth = width;
+
+	if (isDashed) {
+		ctx.setLineDash([10, 5]);
+	}
+
+	ctx.beginPath();
+	ctx.moveTo(x1, y1);
+	ctx.lineTo(x2, y2);
+	ctx.stroke();
+
+	if (isDashed) {
+		ctx.setLineDash([]);
 	}
 };
-const drawPatterns = () => {
-	if (!canvas.value) return;
-	const dpr = window.devicePixelRatio || 1;
-	const w = canvas.value.width / dpr;
-	const h = canvas.value.height / dpr;
 
-	ctx.value?.clearRect(0, 0, canvas.value.width, canvas.value.height);
-
-	// Grid of multi-colored circles
-	const gridSize = Math.min(w, h) * 0.04;
-	const rectX = w * 0.25; // Shift the rectangle to the right
-	const rectY = h * 0.01; // Rectangle start Y
-	const rectWidth = w * 0.28;
-	const rectHeight = h * 0.28;
-	if (!ctx.value) return;
-
-	// Draw a rectangle for the grid
-	ctx.value.fillStyle = 'rgba(255, 255, 255, 0.1)';
-	ctx.value.fillRect(rectX, rectY, rectWidth, rectHeight);
-
-	// Draw circles inside the rectangle for the grid
-	for (let x = rectX + gridSize; x < rectX + rectWidth - gridSize; x += gridSize) {
-		for (let y = rectY + gridSize; y < rectY + rectHeight - gridSize; y += gridSize) {
-			const hue = ((x + y) * 0.5) % 360;
-			ctx.value.fillStyle = `hsl(${hue}, 70%, 60%)`;
-			ctx.value.beginPath();
-			ctx.value.arc(x, y, gridSize * 0.15, 0, 2 * Math.PI);
-			ctx.value.fill();
-		}
-	}
-
-	// Zigzag pattern
-	ctx.value.strokeStyle = '#FF6B6B';
-	ctx.value.lineWidth = 3;
-	ctx.value.beginPath();
-	for (let x = 0; x < w; x += 20) {
-		const y1 = h * 0.3 + Math.sin(x * 0.1) * 20;
-		const y2 = h * 0.3 + Math.sin((x + 10) * 0.1) * 20;
-		if (x === 0) ctx.value.moveTo(x, y1);
-		else ctx.value.lineTo(x, y1);
-		ctx.value.lineTo(x + 10, y2);
-	}
-	ctx.value.stroke();
-
-	// Spirals
-	drawSpiral(ctx.value, w * 0.1, h * 0.1, w * 0.04, '#4ECDC4');
-	drawSpiral(ctx.value, w * 0.9, h * 0.1, w * 0.05, '#45B7D1');
-	drawSpiral(ctx.value, w * 0.1, h * 0.9, w * 0.06, '#F7DC6F');
-	drawSpiral(ctx.value, w * 0.9, h * 0.9, w * 0.04, '#9B59B6');
-
-	// Checkered pattern
-	const cellSize = 15;
-	for (let x = w * 0.4; x < w * 0.6; x += cellSize) {
-		for (let y = h * 0.6; y < h * 0.9; y += cellSize) {
-			if ((Math.floor(x / cellSize) + Math.floor(y / cellSize)) % 2 === 0) {
-				ctx.value.fillStyle = '#E74C3C';
-				ctx.value.fillRect(x, y, cellSize, cellSize);
-			}
-		}
-	}
-
-	// Concentric circles
-	const centerX = w * 0.75;
-	const centerY = h * 0.75;
-	const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#F7DC6F', '#9B59B6'];
-	for (let i = 5; i > 0; i--) {
-		ctx.value.strokeStyle = colors[i - 1];
-		ctx.value.lineWidth = 2;
-		ctx.value.beginPath();
-		ctx.value.arc(centerX, centerY, i * 8, 0, 2 * Math.PI);
-		ctx.value.stroke();
-	}
-};
-const drawAnimatedShapes = () => {
-	if (!canvas.value) return;
-	const dpr = window.devicePixelRatio || 1;
-	const w = canvas.value.width / dpr;
-	const h = canvas.value.height / dpr;
-
-	ctx.value?.clearRect(0, 0, canvas.value.width, canvas.value.height);
-
-	if (!ctx.value) return;
-	// Rotating triangle
-	ctx.value.save();
-	ctx.value.translate(w * 0.2, h * 0.2);
-	ctx.value.rotate(animationTime.value * 0.02);
-	ctx.value.fillStyle = '#FF6B6B';
-	ctx.value.beginPath();
-	ctx.value.moveTo(0, -w * 0.08);
-	ctx.value.lineTo(-w * 0.07, w * 0.07);
-	ctx.value.lineTo(w * 0.07, w * 0.07);
-	ctx.value.closePath();
-	ctx.value.fill();
-	ctx.value.restore();
-
-	// Rotating square
-	ctx.value.save();
-	ctx.value.translate(w * 0.45, h * 0.2);
-	ctx.value.rotate(animationTime.value * -0.015);
-	ctx.value.fillStyle = '#4ECDC4';
-	ctx.value.fillRect(-w * 0.06, -w * 0.06, w * 0.12, w * 0.12);
-	ctx.value.restore();
-
-	// Pulsating circle
-	const pulseRadius = w * 0.06 + Math.sin(animationTime.value * 0.05) * w * 0.03;
-	ctx.value.fillStyle = `hsl(${(animationTime.value * 2) % 360}, 70%, 60%)`;
-	ctx.value.beginPath();
-	ctx.value.arc(w * 0.75, h * 0.2, pulseRadius, 0, 2 * Math.PI);
-	ctx.value.fill();
-
-	// Oscillating Ellipse
-	const oscillation = Math.sin(animationTime.value * 0.03) * 0.5 + 1;
-	ctx.value.fillStyle = '#F7DC6F';
-	ctx.value.beginPath();
-	ctx.value.ellipse(w * 0.15, h * 0.5, w * 0.08 * oscillation, w * 0.04, 0, 0, 2 * Math.PI);
-	ctx.value.fill();
-
-	// Moving sine wave
-	ctx.value.strokeStyle = '#45B7D1';
-	ctx.value.lineWidth = 3;
-	ctx.value.beginPath();
-	for (let x = 0; x < w; x += 3) {
-		const y = h * 0.5 + Math.sin((x + animationTime.value * 2) * 0.02) * h * 0.08;
-		if (x === 0) ctx.value.moveTo(x, y);
-		else ctx.value.lineTo(x, y);
-	}
-	ctx.value.stroke();
-
-	// Moving particles
-	for (let i = 0; i < 8; i++) {
-		const angle = animationTime.value * 0.01 + (i * Math.PI * 2) / 8;
-		const radius = w * 0.15 + Math.sin(animationTime.value * 0.02 + i) * w * 0.05;
-		const x = w * 0.75 + Math.cos(angle) * radius;
-		const y = h * 0.75 + Math.sin(angle) * radius;
-
-		ctx.value.fillStyle = `hsl(${i * 45 + animationTime.value}, 80%, 60%)`;
-		ctx.value.beginPath();
-		ctx.value.arc(x, y, w * 0.01, 0, 2 * Math.PI);
-		ctx.value.fill();
-	}
-
-	// Waves of different frequencies
-	ctx.value.strokeStyle = '#9B59B6';
-	ctx.value.lineWidth = 2;
-	ctx.value.beginPath();
-	for (let x = 0; x < w; x += 2) {
-		const y = h * 0.8 + Math.sin((x + animationTime.value * 3) * 0.03) * h * 0.05;
-		if (x === 0) ctx.value.moveTo(x, y);
-		else ctx.value.lineTo(x, y);
-	}
-	ctx.value.stroke();
-
-	animationTime.value++;
-	if (currentMode.value === 'animated') {
-		animationId.value = requestAnimationFrame(drawAnimatedShapes);
-	}
-};
 const drawStar = (
-	ctx: CanvasRenderingContext2D | null,
+	ctx: DrawContext | null,
 	x: number, // X coordinate of the star center
 	y: number, // Y coordinate of the star center
 	outerRadius: number, // outer radius (length of rays)
 	innerRadius: number, // inner radius (depth between rays)
 	points: number, // number of "rays"
 	color: string
-) => {
+): void => {
 	if (!ctx) return;
 	// eslint-disable-next-line functional/immutable-data
 	ctx.fillStyle = color;
@@ -395,13 +238,13 @@ const drawStar = (
 };
 
 const drawPolygon = (
-	ctx: CanvasRenderingContext2D | null,
+	ctx: DrawContext | null,
 	x: number, // X coordinate of the polygon center
 	y: number, // Y coordinate of the polygon center
 	radius: number, // radius of the circle in which the polygon is inscribed
 	sides: number, // number of sides of a polygon
 	color: string
-) => {
+): void => {
 	if (!ctx) return;
 	// eslint-disable-next-line functional/immutable-data
 	ctx.fillStyle = color;
@@ -418,14 +261,14 @@ const drawPolygon = (
 };
 
 const drawRoundedRect = (
-	ctx: CanvasRenderingContext2D | null,
+	ctx: DrawContext | null,
 	x: number, // the X coordinate of the upper left corner of the rectangle
 	y: number, // Y coordinate of the upper left corner
 	width: number,
 	height: number,
 	radius: number, // corner rounding radius
 	color: string
-) => {
+): void => {
 	if (!ctx) return;
 	// eslint-disable-next-line functional/immutable-data
 	ctx.fillStyle = color;
@@ -434,15 +277,83 @@ const drawRoundedRect = (
 	ctx.fill();
 };
 
+const drawArc = (
+	ctx: DrawContext | null,
+	x: number,
+	y: number,
+	radius: number,
+	startAngle: number,
+	endAngle: number,
+	color: string
+): void => {
+	if (!ctx) return;
+
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = color;
+	ctx.beginPath();
+	ctx.arc(x, y, radius, startAngle, endAngle);
+	ctx.lineTo(x, y);
+	ctx.closePath();
+	ctx.fill();
+};
+
+const drawBezierCurve = (
+	ctx: DrawContext | null,
+	startX: number,
+	startY: number,
+	cp1X: number,
+	cp1Y: number,
+	cp2X: number,
+	cp2Y: number,
+	endX: number,
+	endY: number,
+	color: string,
+	width: number
+): void => {
+	if (!ctx) return;
+
+	// eslint-disable-next-line functional/immutable-data
+	ctx.strokeStyle = color;
+	// eslint-disable-next-line functional/immutable-data
+	ctx.lineWidth = width;
+	ctx.beginPath();
+	ctx.moveTo(startX, startY);
+	ctx.bezierCurveTo(cp1X, cp1Y, cp2X, cp2Y, endX, endY);
+	ctx.stroke();
+};
+
+const drawQuadraticCurve = (
+	ctx: DrawContext | null,
+	startX: number,
+	startY: number,
+	cpX: number,
+	cpY: number,
+	endX: number,
+	endY: number,
+	color: string,
+	width: number
+): void => {
+	if (!ctx) return;
+
+	// eslint-disable-next-line functional/immutable-data
+	ctx.strokeStyle = color;
+	// eslint-disable-next-line functional/immutable-data
+	ctx.lineWidth = width;
+	ctx.beginPath();
+	ctx.moveTo(startX, startY);
+	ctx.quadraticCurveTo(cpX, cpY, endX, endY);
+	ctx.stroke();
+};
+
 const drawArrow = (
-	ctx: CanvasRenderingContext2D | null,
+	ctx: DrawContext | null,
 	x1: number,
 	y1: number,
 	x2: number,
 	y2: number,
 	thickness: number,
 	color: string
-) => {
+): void => {
 	if (!ctx) return;
 	const angle = Math.atan2(y2 - y1, x2 - x1);
 	const arrowLength = thickness * 3;
@@ -477,12 +388,12 @@ const drawArrow = (
 };
 
 const drawHeart = (
-	ctx: CanvasRenderingContext2D | null,
+	ctx: DrawContext | null,
 	x: number,
 	y: number,
 	size: number,
 	color: string
-) => {
+): void => {
 	if (!ctx) return;
 	// eslint-disable-next-line functional/immutable-data
 	ctx.fillStyle = color;
@@ -517,12 +428,12 @@ const drawHeart = (
 };
 
 const drawSpiral = (
-	ctx: CanvasRenderingContext2D | null,
+	ctx: DrawContext | null,
 	centerX: number,
 	centerY: number,
 	maxRadius: number,
 	color: string
-) => {
+): void => {
 	if (!ctx) return;
 	// eslint-disable-next-line functional/immutable-data
 	ctx.strokeStyle = color;
@@ -539,18 +450,378 @@ const drawSpiral = (
 	ctx.stroke();
 };
 
+const drawGridWithCircles = (ctx: DrawContext | null, w: number, h: number): void => {
+	if (!ctx) return;
+	const gridSize = Math.min(w, h) * 0.04;
+	const rectX = w * 0.25;
+	const rectY = h * 0.01;
+	const rectWidth = w * 0.28;
+	const rectHeight = h * 0.28;
+
+	// Grid background
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+	ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+
+	// Colored circles grid
+	for (let x = rectX + gridSize; x < rectX + rectWidth - gridSize; x += gridSize) {
+		for (let y = rectY + gridSize; y < rectY + rectHeight - gridSize; y += gridSize) {
+			const hue = ((x + y) * 0.5) % 360;
+			drawCircle(ctx, x, y, gridSize * 0.15, `hsl(${hue}, 70%, 60%)`);
+		}
+	}
+};
+const drawZigzag = (ctx: DrawContext | null, w: number, h: number): void => {
+	if (!ctx) return;
+	// eslint-disable-next-line functional/immutable-data
+	ctx.strokeStyle = '#FF6B6B';
+	// eslint-disable-next-line functional/immutable-data
+	ctx.lineWidth = 3;
+	ctx.beginPath();
+
+	for (let x = 0; x < w; x += 20) {
+		const y1 = h * 0.3 + Math.sin(x * 0.1) * 20;
+		const y2 = h * 0.3 + Math.sin((x + 10) * 0.1) * 20;
+
+		if (x === 0) {
+			ctx.moveTo(x, y1);
+		} else {
+			ctx.lineTo(x, y1);
+		}
+
+		ctx.lineTo(x + 10, y2);
+	}
+
+	ctx.stroke();
+};
+
+const drawCheckeredPattern = (
+	ctx: DrawContext | null,
+	w: number,
+	h: number,
+	cellSize: number = 15
+): void => {
+	if (!ctx) return;
+	for (let x = w * 0.4; x < w * 0.6; x += cellSize) {
+		for (let y = h * 0.6; y < h * 0.9; y += cellSize) {
+			if ((Math.floor(x / cellSize) + Math.floor(y / cellSize)) % 2 === 0) {
+				// eslint-disable-next-line functional/immutable-data
+				ctx.fillStyle = '#E74C3C';
+				ctx.fillRect(x, y, cellSize, cellSize);
+			}
+		}
+	}
+};
+const drawConcentricCircles = (ctx: DrawContext | null, w: number, h: number): void => {
+	if (!ctx) return;
+	const centerX = w * 0.75;
+	const centerY = h * 0.75;
+	const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#F7DC6F', '#9B59B6'];
+
+	colors.forEach((color, i) => {
+		const reverseIndex = colors.length - i;
+		// eslint-disable-next-line functional/immutable-data
+		ctx.strokeStyle = color;
+		// eslint-disable-next-line functional/immutable-data
+		ctx.lineWidth = 2;
+		ctx.beginPath();
+		ctx.arc(centerX, centerY, reverseIndex * 8, 0, 2 * Math.PI);
+		ctx.stroke();
+	});
+};
+
+const drawRotatingTriangle = (
+	ctx: DrawContext | null,
+	w: number,
+	h: number,
+	time: number
+): void => {
+	if (!ctx) return;
+	ctx.save();
+	ctx.translate(w * 0.2, h * 0.2);
+	ctx.rotate(time * 0.02);
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = '#FF6B6B';
+	ctx.beginPath();
+	ctx.moveTo(0, -w * 0.08);
+	ctx.lineTo(-w * 0.07, w * 0.07);
+	ctx.lineTo(w * 0.07, w * 0.07);
+	ctx.closePath();
+	ctx.fill();
+	ctx.restore();
+};
+
+const drawRotatingSquare = (ctx: DrawContext | null, w: number, h: number, time: number): void => {
+	if (!ctx) return;
+	ctx.save();
+	ctx.translate(w * 0.45, h * 0.2);
+	ctx.rotate(time * -0.015);
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = '#4ECDC4';
+	ctx.fillRect(-w * 0.06, -w * 0.06, w * 0.12, w * 0.12);
+	ctx.restore();
+};
+
+const drawPulsatingCircle = (ctx: DrawContext | null, w: number, h: number, time: number): void => {
+	if (!ctx) return;
+	const pulseRadius = w * 0.06 + Math.sin(time * 0.05) * w * 0.03;
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = `hsl(${(time * 2) % 360}, 70%, 60%)`;
+	ctx.beginPath();
+	ctx.arc(w * 0.75, h * 0.2, pulseRadius, 0, 2 * Math.PI);
+	ctx.fill();
+};
+
+const drawOscillatingEllipse = (
+	ctx: DrawContext | null,
+	w: number,
+	h: number,
+	time: number
+): void => {
+	if (!ctx) return;
+	const oscillation = Math.sin(time * 0.03) * 0.5 + 1;
+	// eslint-disable-next-line functional/immutable-data
+	ctx.fillStyle = '#F7DC6F';
+	ctx.beginPath();
+	ctx.ellipse(w * 0.15, h * 0.5, w * 0.08 * oscillation, w * 0.04, 0, 0, 2 * Math.PI);
+	ctx.fill();
+};
+
+const drawSineWave = (ctx: DrawContext | null, w: number, h: number, time: number): void => {
+	if (!ctx) return;
+	// eslint-disable-next-line functional/immutable-data
+	ctx.strokeStyle = '#45B7D1';
+	// eslint-disable-next-line functional/immutable-data
+	ctx.lineWidth = 3;
+	ctx.beginPath();
+	for (let x = 0; x < w; x += 3) {
+		const y = h * 0.5 + Math.sin((x + time * 2) * 0.02) * h * 0.08;
+		if (x === 0) ctx.moveTo(x, y);
+		else ctx.lineTo(x, y);
+	}
+	ctx.stroke();
+};
+
+const drawMovingParticles = (ctx: DrawContext | null, w: number, h: number, time: number): void => {
+	if (!ctx) return;
+	for (let i = 0; i < 8; i++) {
+		const angle = time * 0.01 + (i * Math.PI * 2) / 8;
+		const radius = w * 0.15 + Math.sin(time * 0.02 + i) * w * 0.05;
+		const x = w * 0.75 + Math.cos(angle) * radius;
+		const y = h * 0.75 + Math.sin(angle) * radius;
+
+		// eslint-disable-next-line functional/immutable-data
+		ctx.fillStyle = `hsl(${i * 45 + time}, 80%, 60%)`;
+		ctx.beginPath();
+		ctx.arc(x, y, w * 0.01, 0, 2 * Math.PI);
+		ctx.fill();
+	}
+};
+
+const drawFrequencyWaves = (ctx: DrawContext | null, w: number, h: number, time: number): void => {
+	if (!ctx) return;
+	// eslint-disable-next-line functional/immutable-data
+	ctx.strokeStyle = '#9B59B6';
+	// eslint-disable-next-line functional/immutable-data
+	ctx.lineWidth = 2;
+	ctx.beginPath();
+	for (let x = 0; x < w; x += 2) {
+		const y = h * 0.8 + Math.sin((x + time * 3) * 0.03) * h * 0.05;
+		if (x === 0) ctx.moveTo(x, y);
+		else ctx.lineTo(x, y);
+	}
+	ctx.stroke();
+};
+
+const drawBasicShapes = () => {
+	const { width: w, height: h } = getCanvasDimensions();
+	if (!w || !h) return;
+
+	clearCanvas();
+
+	// Basic rectangles
+	drawRect(ctx.value, w * 0.05, h * 0.05, w * 0.2, h * 0.25, '#FF6B6B');
+	drawRect(ctx.value, w * 0.3, h * 0.05, w * 0.15, h * 0.25, '#E74C3C', true);
+
+	// Circles
+	drawCircle(ctx.value, w * 0.6, h * 0.18, w * 0.1, '#4ECDC4');
+	drawCircle(ctx.value, w * 0.8, h * 0.18, w * 0.08, '#26A69A', true);
+
+	// Polygons
+	drawTriangle(ctx.value, w * 0.15, h * 0.575, w * 0.1, '#45B7D1');
+	drawRhombus(ctx.value, w * 0.4, h * 0.55, w * 0.05, '#3498DB');
+
+	// Ellipse
+	drawEllipse(ctx.value, w * 0.65, h * 0.55, w * 0.12, h * 0.08, '#F7DC6F');
+
+	// Parallelogram
+	const parallelogramPoints: [number, number][] = [
+		[w * 0.75, h * 0.45],
+		[w * 0.9, h * 0.45],
+		[w * 0.95, h * 0.65],
+		[w * 0.8, h * 0.65],
+	];
+	drawParallelogram(ctx.value, parallelogramPoints, '#F39C12');
+
+	// Trapezoid
+	const trapezoidPoints: [number, number][] = [
+		[w * 0.05, h * 0.8],
+		[w * 0.25, h * 0.8],
+		[w * 0.22, h * 0.95],
+		[w * 0.08, h * 0.95],
+	];
+	drawParallelogram(ctx.value, trapezoidPoints, '#9B59B6');
+
+	// Lines
+	drawLine(ctx.value, w * 0.4, h * 0.8, w * 0.6, h * 0.95, '#8E44AD', 2);
+	drawLine(ctx.value, w * 0.65, h * 0.8, w * 0.85, h * 0.95, '#8E44AD', 5);
+	drawLine(ctx.value, w * 0.5, h * 0.35, w * 0.9, h * 0.35, '#E67E22', 3, true);
+};
+
+const drawComplexShapes = () => {
+	const { width: w, height: h } = getCanvasDimensions();
+	if (!w || !h) return;
+
+	clearCanvas();
+
+	// Stars
+	drawStar(ctx.value, w * 0.15, h * 0.2, w * 0.08, w * 0.04, 5, '#FF6B6B');
+	drawStar(ctx.value, w * 0.35, h * 0.2, w * 0.06, w * 0.03, 8, '#E74C3C');
+
+	// Polygons
+	drawPolygon(ctx.value, w * 0.6, h * 0.2, w * 0.08, 6, '#4ECDC4');
+	drawPolygon(ctx.value, w * 0.8, h * 0.2, w * 0.06, 8, '#26A69A');
+
+	// Rounded rectangles
+	drawRoundedRect(ctx.value, w * 0.05, h * 0.4, w * 0.2, h * 0.15, w * 0.015, '#45B7D1');
+	drawRoundedRect(ctx.value, w * 0.3, h * 0.4, w * 0.15, h * 0.15, w * 0.03, '#3498DB');
+
+	// Arcs
+	drawArc(ctx.value, w * 0.6, h * 0.5, w * 0.1, 0, Math.PI * 1.5, '#F7DC6F');
+	drawArc(ctx.value, w * 0.8, h * 0.5, w * 0.08, Math.PI * 0.5, Math.PI * 1.8, '#F39C12');
+
+	// Curves
+	drawBezierCurve(
+		ctx.value,
+		w * 0.1,
+		h * 0.7,
+		w * 0.2,
+		h * 0.6,
+		w * 0.3,
+		h * 0.8,
+		w * 0.4,
+		h * 0.7,
+		'#8E44AD',
+		4
+	);
+	drawQuadraticCurve(
+		ctx.value,
+		w * 0.5,
+		h * 0.8,
+		w * 0.65,
+		h * 0.7,
+		w * 0.8,
+		h * 0.8,
+		'#9B59B6',
+		3
+	);
+
+	// Special shapes
+	drawArrow(ctx.value, w * 0.15, h * 0.85, w * 0.35, h * 0.85, w * 0.02, '#E67E22');
+	drawHeart(ctx.value, w * 0.65, h * 0.85, w * 0.04, '#E91E63');
+};
+const drawPatterns = () => {
+	const { width: w, height: h } = getCanvasDimensions();
+	if (!w || !h || !ctx.value) return;
+
+	clearCanvas();
+
+	// Grid pattern
+	drawGridWithCircles(ctx.value, w, h);
+
+	// Zigzag pattern
+	drawZigzag(ctx.value, w, h);
+
+	// Spirals
+	drawSpiral(ctx.value, w * 0.1, h * 0.1, w * 0.04, '#4ECDC4');
+	drawSpiral(ctx.value, w * 0.9, h * 0.1, w * 0.05, '#45B7D1');
+	drawSpiral(ctx.value, w * 0.1, h * 0.9, w * 0.06, '#F7DC6F');
+	drawSpiral(ctx.value, w * 0.9, h * 0.9, w * 0.04, '#9B59B6');
+
+	// Checkered pattern
+	drawCheckeredPattern(ctx.value, w, h);
+
+	// Concentric circles
+	drawConcentricCircles(ctx.value, w, h);
+};
+const drawAnimatedShapes = () => {
+	const { width: w, height: h } = getCanvasDimensions();
+	if (!w || !h || !ctx.value) return;
+
+	clearCanvas();
+
+	const context = ctx.value;
+	const time = animationTime.value;
+
+	if (!ctx.value) return;
+
+	// Rotating triangle
+	drawRotatingTriangle(context, w, h, time);
+
+	// Rotating square
+	drawRotatingSquare(context, w, h, time);
+
+	// Pulsating circle
+	drawPulsatingCircle(context, w, h, time);
+
+	// Oscillating ellipse
+	drawOscillatingEllipse(context, w, h, time);
+
+	// Moving sine wave
+	drawSineWave(context, w, h, time);
+
+	// Moving particles
+	drawMovingParticles(context, w, h, time);
+
+	// Secondary wave
+	drawFrequencyWaves(context, w, h, time);
+
+	animationTime.value++;
+	if (currentMode.value === 'animated') {
+		animationId.value = requestAnimationFrame(drawAnimatedShapes);
+	}
+};
+
+// Mode drawing dispatcher
+const drawingModes: Record<Mode, () => void> = {
+	basic: drawBasicShapes,
+	complex: drawComplexShapes,
+	patterns: drawPatterns,
+	animated: drawAnimatedShapes,
+};
+const drawShapes = (mode: Mode): void => {
+	currentMode.value = mode;
+	stopAnimation();
+
+	if (mode === 'animated') {
+		animationTime.value = 0;
+	}
+
+	drawingModes[mode]();
+};
+
 const resizeCanvas = () => {
 	if (canvas.value && canvasWrap.value) {
-		const containerWidth = canvasWrap.value.clientWidth - 40;
-		const maxWidth = Math.min(containerWidth, maxCanvasWidth);
+		const containerWidth = canvasWrap.value.clientWidth;
+		const maxWidth = Math.min(containerWidth, MAX_CANVAS_WIDTH);
 
 		const dpr = window.devicePixelRatio || 1;
 
 		canvas.value.width = maxWidth * dpr;
-		canvas.value.height = maxWidth * aspectRatio * dpr;
+		canvas.value.height = maxWidth * ASPECT_RATIO * dpr;
 
 		canvas.value.style.width = `${maxWidth}px`;
-		canvas.value.style.height = `${maxWidth * aspectRatio}px`;
+		canvas.value.style.height = `${maxWidth * ASPECT_RATIO}px`;
 
 		ctx.value = canvas.value.getContext('2d');
 		if (!ctx.value) {
@@ -578,6 +849,7 @@ onMounted(() => {
 
 onUnmounted(() => {
 	window.removeEventListener('resize', resizeCanvas);
+	stopAnimation();
 });
 </script>
 

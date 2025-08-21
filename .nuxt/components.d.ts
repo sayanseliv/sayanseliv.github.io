@@ -25,6 +25,7 @@ interface _GlobalComponents {
     'AnimatedGrid': typeof import("../components/features/AnimatedGrid.vue")['default']
     'CanvasParticle': typeof import("../components/features/CanvasParticle.vue")['default']
     'EmojiSwitchingInterface': typeof import("../components/features/EmojiSwitchingInterface.vue")['default']
+    'GeometricFigures': typeof import("../components/features/GeometricFigures.vue")['default']
     'ModelThreeD': typeof import("../components/features/ModelThreeD.vue")['default']
     'PlatformerChaseGame': typeof import("../components/features/PlatformerChaseGame.vue")['default']
     'PureCssMorphing': typeof import("../components/features/PureCssMorphing.vue")['default']
@@ -140,6 +141,7 @@ interface _GlobalComponents {
     'LazyAnimatedGrid': LazyComponent<typeof import("../components/features/AnimatedGrid.vue")['default']>
     'LazyCanvasParticle': LazyComponent<typeof import("../components/features/CanvasParticle.vue")['default']>
     'LazyEmojiSwitchingInterface': LazyComponent<typeof import("../components/features/EmojiSwitchingInterface.vue")['default']>
+    'LazyGeometricFigures': LazyComponent<typeof import("../components/features/GeometricFigures.vue")['default']>
     'LazyModelThreeD': LazyComponent<typeof import("../components/features/ModelThreeD.vue")['default']>
     'LazyPlatformerChaseGame': LazyComponent<typeof import("../components/features/PlatformerChaseGame.vue")['default']>
     'LazyPureCssMorphing': LazyComponent<typeof import("../components/features/PureCssMorphing.vue")['default']>
@@ -261,6 +263,7 @@ export const CardTools: typeof import("../components/cards/CardTools.vue")['defa
 export const AnimatedGrid: typeof import("../components/features/AnimatedGrid.vue")['default']
 export const CanvasParticle: typeof import("../components/features/CanvasParticle.vue")['default']
 export const EmojiSwitchingInterface: typeof import("../components/features/EmojiSwitchingInterface.vue")['default']
+export const GeometricFigures: typeof import("../components/features/GeometricFigures.vue")['default']
 export const ModelThreeD: typeof import("../components/features/ModelThreeD.vue")['default']
 export const PlatformerChaseGame: typeof import("../components/features/PlatformerChaseGame.vue")['default']
 export const PureCssMorphing: typeof import("../components/features/PureCssMorphing.vue")['default']
@@ -376,6 +379,7 @@ export const LazyCardTools: LazyComponent<typeof import("../components/cards/Car
 export const LazyAnimatedGrid: LazyComponent<typeof import("../components/features/AnimatedGrid.vue")['default']>
 export const LazyCanvasParticle: LazyComponent<typeof import("../components/features/CanvasParticle.vue")['default']>
 export const LazyEmojiSwitchingInterface: LazyComponent<typeof import("../components/features/EmojiSwitchingInterface.vue")['default']>
+export const LazyGeometricFigures: LazyComponent<typeof import("../components/features/GeometricFigures.vue")['default']>
 export const LazyModelThreeD: LazyComponent<typeof import("../components/features/ModelThreeD.vue")['default']>
 export const LazyPlatformerChaseGame: LazyComponent<typeof import("../components/features/PlatformerChaseGame.vue")['default']>
 export const LazyPureCssMorphing: LazyComponent<typeof import("../components/features/PureCssMorphing.vue")['default']>

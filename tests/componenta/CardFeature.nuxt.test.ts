@@ -7,7 +7,6 @@ describe('CardFeature', () => {
 		title: 'Test Title',
 		description: 'Test description for the card component',
 		tags: ['Vue', 'Nuxt', 'TypeScript'],
-		image: '/test-image.jpg',
 		link: 'https://en.wikipedia.org/wiki/HTML5',
 	};
 
@@ -63,16 +62,6 @@ describe('CardFeature', () => {
 		expect(link.attributes('href')).toBe(mockProps.link);
 	});
 
-	it('applies correct background image style', async () => {
-		const wrapper = await mountSuspended(CardFeature, {
-			props: mockProps,
-		});
-
-		const card = wrapper.find('.card');
-		const style = card.attributes('style');
-		expect(style).toContain(`--bg-img: url('${mockProps.image}')`);
-	});
-
 	it('has correct CSS classes', async () => {
 		const wrapper = await mountSuspended(CardFeature, {
 			props: mockProps,
@@ -81,6 +70,19 @@ describe('CardFeature', () => {
 		expect(wrapper.find('.card').exists()).toBe(true);
 		expect(wrapper.find('.tags').exists()).toBe(true);
 		expect(wrapper.findAll('.tag')).toHaveLength(mockProps.tags.length);
+	});
+
+	it('has correct CSS classes and styling', async () => {
+		const wrapper = await mountSuspended(CardFeature, {
+			props: mockProps,
+		});
+
+		const card = wrapper.find('.card');
+		expect(card.exists()).toBe(true);
+		expect(card.classes()).toContain('card');
+
+		const title = wrapper.find('h3');
+		expect(title.classes()).toContain('text-gradient');
 	});
 
 	it('handles empty tags array', async () => {
@@ -102,7 +104,6 @@ describe('CardFeature', () => {
 			title: 'Another Title',
 			description: 'A completely different description with more text',
 			tags: ['React', 'Next.js', 'JavaScript', 'CSS'],
-			image: '/another-image.png',
 			link: 'https://en.wikipedia.org/wiki/CSS',
 		};
 
@@ -121,7 +122,6 @@ describe('CardFeature', () => {
 			title: 'Title with "quotes" & symbols',
 			description: 'Description with <HTML> & special chars!',
 			tags: ['Tag with spaces', 'Tag-with-dashes', 'Tag_with_underscores'],
-			image: '/images/special-chars_image.jpg',
 			link: 'https://en.wikipedia.org/wiki/HTML5',
 		};
 

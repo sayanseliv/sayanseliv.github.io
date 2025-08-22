@@ -1,13 +1,13 @@
 <template>
-	<NuxtLink class="card" :to="link">
+	<NuxtLink class="card" :to="link" :aria-label="`${title}: ${description}`">
 		<div>
 			<h3 class="text-gradient">{{ title }}</h3>
 			<p>
 				{{ description }}
 			</p>
-			<div class="tags">
-				<div v-for="tag in tags" :key="tag" class="tag">{{ tag }}</div>
-			</div>
+			<ul class="tags">
+				<li v-for="tag in tags" :key="tag" class="tag">{{ tag }}</li>
+			</ul>
 		</div>
 	</NuxtLink>
 </template>
@@ -50,6 +50,15 @@ const { title, description, tags, link } = props;
 	&:hover {
 		border-color: var(--blue-300);
 		box-shadow: 0 8px 16px rgba(var(--blue-rgb), 0.2);
+		& .tags .tag {
+			background: var(--blue-300);
+			color: var(--gray-900);
+			border-color: var(--blue-300);
+		}
+	}
+	&:focus {
+		outline: 2px solid var(--blue-300);
+		outline-offset: 4px;
 	}
 
 	&::before {
@@ -63,59 +72,39 @@ const { title, description, tags, link } = props;
 		animation: shimmer 2s infinite;
 		z-index: 0;
 	}
+	& h3 {
+		margin: 0;
+		font-size: var(--fs-h3);
+		font-weight: var(--fw-semibold);
+		color: var(--white);
+		transition: color var(--transition-time) ease;
+	}
+	& p {
+		margin-block: 0.75rem;
+		font-size: var(--fs-caption);
+		line-height: 1.6;
+		color: var(--gray-50);
+		max-width: 90%;
+	}
+	& .tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+	& .tags .tag {
+		font-size: var(--fs-small);
+		background: rgba(var(--blue-rgb), 0.2);
+		color: var(--gray-50);
+		border: 1px solid rgba(var(--blue-rgb), 0.3);
+		border-radius: 20px;
+		padding: 0.3rem 0.8rem;
+		transition: all var(--transition-time) ease;
+	}
 }
 
-.card__canvas {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 0;
-}
-
-.card__content {
-	position: relative;
-	z-index: 1;
-	padding: 1.5rem;
-	width: 100%;
-}
-
-.card h3 {
-	margin: 0;
-	font-size: var(--fs-h3);
-	font-weight: var(--fw-semibold);
-	color: var(--white);
-	transition: color var(--transition-time) ease;
-}
-
-.card p {
-	margin-block: 0.75rem;
-	font-size: var(--fs-caption);
-	line-height: 1.6;
-	color: var(--gray-50);
-	max-width: 90%;
-}
-
-.card .tags {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-}
-
-.card .tags .tag {
-	font-size: var(--fs-small);
-	background: rgba(var(--blue-rgb), 0.2);
-	color: var(--gray-50);
-	border: 1px solid rgba(var(--blue-rgb), 0.3);
-	border-radius: 20px;
-	padding: 0.3rem 0.8rem;
-	transition: all var(--transition-time) ease;
-}
-
-.card:hover .tags .tag {
-	background: var(--blue-300);
-	color: var(--gray-900);
-	border-color: var(--blue-300);
+@media (prefers-reduced-motion: reduce) {
+	.card::before {
+		animation: none;
+	}
 }
 </style>

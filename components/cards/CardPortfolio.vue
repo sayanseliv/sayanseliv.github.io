@@ -1,39 +1,63 @@
 <template>
-	<div class="card-portfolio">
-		<div class="card-portfolio__inner">
+	<div
+		class="card-portfolio"
+		@click="handleCardClick"
+		@mouseenter="handleMouseEnter"
+		@mouseleave="handleMouseLeave">
+		<div
+			class="card-portfolio__inner"
+			:class="{ 'is-flipped': isFlipped, 'is-hovered': isHovered }">
 			<!-- Front -->
 			<div class="card-portfolio__face card-portfolio__face--front">
-				<NuxtLink :to="link" external target="_blank" class="card-portfolio__content">
+				<div class="card-portfolio__content">
 					<figure class="card-portfolio__figure">
 						<img :src="logo" alt="Projects logo" loading="lazy" />
 					</figure>
 					<div class="card-portfolio__body">
 						<h3>{{ title }}</h3>
 						<p>{{ description }}</p>
+
+						<div class="card-portfolio__mobile-hint">
+							<span class="card-portfolio__tap-hint">👆 Tap to see tech stack</span>
+						</div>
 					</div>
-				</NuxtLink>
+				</div>
 			</div>
 
 			<!-- Back -->
-			<NuxtLink
-				:to="link"
-				external
-				target="_blank"
-				class="card-portfolio__face card-portfolio__face--back">
+			<div class="card-portfolio__face card-portfolio__face--back">
 				<div class="card-portfolio__back-link">
 					<h3 class="text-gradient">🛠 Tech Stack</h3>
 					<p>{{ technology }}</p>
-					<p class="card-portfolio__action">Click to Visit →</p>
+					<NuxtLink
+						:to="link"
+						external
+						target="_blank"
+						class="card-portfolio__action"
+						@click.stop>
+						Click to Visit →
+					</NuxtLink>
+
+					<button
+						class="card-portfolio__flip-back"
+						type="button"
+						aria-label="Flip back to project info"
+						@click.stop="flipBack">
+						<ArrowLeft :size="16" />
+					</button>
 				</div>
-			</NuxtLink>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
+import { ArrowLeft } from 'lucide-vue-next';
+
 defineOptions({
 	name: 'CardPortfolio',
 });
+
 interface Content {
 	readonly id: number;
 	readonly title: string;
@@ -42,11 +66,40 @@ interface Content {
 	readonly technology: string;
 	readonly link: string;
 }
+
 const props = defineProps<{
 	readonly content: Content;
 }>();
+
 const { content } = props;
 const { title, description, logo, technology, link } = content;
+
+const isFlipped = ref(false);
+const isHovered = ref(false);
+
+const handleCardClick = (event: Event) => {
+	const target = event.target as HTMLElement;
+	if (target.closest('.card-portfolio__action') || target.closest('.card-portfolio__flip-back')) {
+		return;
+	}
+
+	isFlipped.value = !isFlipped.value;
+};
+
+const handleMouseEnter = () => {
+	if (!isFlipped.value) {
+		isHovered.value = true;
+	}
+};
+
+const handleMouseLeave = () => {
+	isHovered.value = false;
+};
+
+const flipBack = () => {
+	isFlipped.value = false;
+	isHovered.value = false;
+};
 </script>
 
 <style lang="scss" scoped>
@@ -58,16 +111,17 @@ const { title, description, logo, technology, link } = content;
 
 @keyframes rotateBorder {
 	to {
-		--angle: 360deg;
+		--a: 360deg;
 	}
 }
-@keyframes float {
+
+@keyframes pulse {
 	0%,
 	100% {
-		transform: translateY(0px);
+		opacity: 0.6;
 	}
 	50% {
-		transform: translateY(-8px);
+		opacity: 1;
 	}
 }
 
@@ -77,6 +131,7 @@ const { title, description, logo, technology, link } = content;
 	cursor: pointer;
 	transition: transform 0.3s ease;
 }
+
 .card-portfolio__inner {
 	position: relative;
 	width: 100%;
@@ -84,25 +139,27 @@ const { title, description, logo, technology, link } = content;
 	min-height: 18rem;
 	transform-style: preserve-3d;
 	transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-.card-portfolio:hover > .card-portfolio__inner {
-	transform: rotateY(180deg);
+
+	&.is-hovered,
+	&.is-flipped {
+		transform: rotateY(180deg);
+	}
 }
 
 .card-portfolio__face {
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	backface-visibility: hidden;
-	border-radius: var(--border-radius);
-	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-}
-.card-portfolio__face--front {
+	width: 100%;
+	height: 100%;
+	border-radius: var(--border-radius);
+	overflow: hidden;
 	backface-visibility: hidden;
+}
+
+.card-portfolio__face--front {
 	transform: rotateY(0deg);
 	background-color: var(--gray-900);
 }
@@ -112,8 +169,8 @@ const { title, description, logo, technology, link } = content;
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
-	text-decoration: none;
 }
+
 .card-portfolio__figure {
 	display: flex;
 	align-items: center;
@@ -121,34 +178,59 @@ const { title, description, logo, technology, link } = content;
 	padding: 2rem 1rem;
 	background-color: var(--white);
 	border-bottom: 1px solid var(--blue-300);
+
 	& > img {
 		height: 30px;
 		width: auto;
 	}
 }
+
 .card-portfolio__body {
+	position: relative;
 	height: 100%;
 	padding: 1rem;
-	background-color: var(--gray-900);
 	color: var(--white);
+	background-color: var(--gray-900);
 	border-bottom-left-radius: var(--border-radius);
 	border-bottom-right-radius: var(--border-radius);
 	border-right: 1px solid var(--gray-300);
 	border-bottom: 1px solid var(--gray-300);
 	border-left: 1px solid var(--gray-300);
+
 	& > h3 {
-		z-index: 10;
 		position: relative;
+		z-index: 10;
+		margin-bottom: 0.5rem;
+		padding-bottom: 0.6rem;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 		color: var(--blue-300);
 		border-bottom: 1px solid var(--gray-300);
-		padding-bottom: 0.6rem;
-		margin-bottom: 1rem;
 	}
+
 	& > p {
 		color: var(--white);
 	}
 }
+
+.card-portfolio__mobile-hint {
+	position: absolute;
+	bottom: 0.5rem;
+	right: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.card-portfolio__tap-hint {
+	padding: 0.25rem 0.5rem;
+	font-size: 0.65rem;
+	color: var(--blue-300);
+	background: rgba(72, 171, 237, 0.1);
+	border-radius: 12px;
+	border: 1px solid var(--blue-300);
+	animation: pulse 2s infinite;
+}
+
 .card-portfolio__face--back {
 	position: relative;
 	transform: rotateY(180deg);
@@ -158,7 +240,6 @@ const { title, description, logo, technology, link } = content;
 	background-color: var(--gray-900);
 	backface-visibility: hidden;
 	overflow: hidden;
-	text-decoration: none;
 
 	&::before {
 		content: '';
@@ -185,6 +266,7 @@ const { title, description, logo, technology, link } = content;
 		animation: rotateBorder 4s linear infinite;
 	}
 }
+
 .card-portfolio__back-link {
 	display: flex;
 	align-items: center;
@@ -192,6 +274,7 @@ const { title, description, logo, technology, link } = content;
 	flex-direction: column;
 	height: 100%;
 	width: 100%;
+
 	& > h3 {
 		margin-bottom: 1rem;
 		font-size: var(--fs-h1);
@@ -201,25 +284,92 @@ const { title, description, logo, technology, link } = content;
 		transform: translateY(20px) scale(0.8);
 		transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
 	}
+
 	& > p {
 		color: var(--white);
 		opacity: 0;
 		transform: translateY(20px) scale(0.8);
 		transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
 	}
-	& > .card-portfolio__action {
-		position: relative;
-		transform: translateY(20px) scale(0.8);
-		margin-top: 2rem;
-		color: var(--blue-300);
-		opacity: 0;
-		transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+}
+
+.card-portfolio__action {
+	position: relative;
+	transform: translateY(20px) scale(0.8);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2rem;
+	padding: 0.75rem 1.5rem;
+	font-size: 1rem;
+	font-weight: 500;
+	text-decoration: none;
+	color: var(--blue-300);
+	background-color: transparent;
+	border: 2px solid var(--blue-300);
+	border-radius: 8px;
+	cursor: pointer;
+	opacity: 0;
+	transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+	&:hover {
+		color: var(--white);
+		background-color: var(--blue-300);
+		transform: translateY(0) scale(1.05);
 	}
 }
-.card-portfolio:hover .card-portfolio__face--back h3,
-.card-portfolio:hover .card-portfolio__face--back p,
-.card-portfolio:hover .card-portfolio__action {
-	opacity: 1;
+
+.card-portfolio__flip-back {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	z-index: 10;
+	transform: translateY(-10px) scale(0.9);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.3rem;
+	width: 1.8rem;
+	height: 1.8rem;
+	font-size: 0.75rem;
+	line-height: 1;
+	text-align: center;
+	color: var(--blue-300);
+	background: var(--gradient-btn);
+	border: 1px solid var(--blue-300);
+	border-radius: 50%;
+	cursor: pointer;
+	opacity: 0;
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.1s, box-shadow 0.3s ease;
+	box-shadow: 0 2px 6px rgba(72, 171, 237, 0.2);
+
+	&:hover {
+		transform: translateY(-10px) scale(1);
+		color: var(--white);
+		background: var(--blue-300);
+		border: 1px solid var(--blue-300);
+		box-shadow: 0 3px 8px rgba(72, 171, 237, 0.4);
+	}
+}
+
+// Animation of elements appearing on the back side
+.card-portfolio__inner.is-flipped .card-portfolio__face--back h3,
+.card-portfolio__inner.is-flipped .card-portfolio__face--back p,
+.card-portfolio__inner.is-flipped .card-portfolio__action,
+.card-portfolio__inner.is-flipped .card-portfolio__flip-back,
+.card-portfolio__inner.is-hovered .card-portfolio__face--back h3,
+.card-portfolio__inner.is-hovered .card-portfolio__face--back p,
+.card-portfolio__inner.is-hovered .card-portfolio__action,
+.card-portfolio__inner.is-hovered .card-portfolio__flip-back {
 	transform: translateY(0) scale(1);
+	opacity: 1;
+}
+
+@media (hover: none) and (pointer: coarse) {
+	.card-portfolio {
+		&:active {
+			transform: scale(0.98);
+		}
+	}
 }
 </style>

@@ -4,6 +4,8 @@
 	</main>
 </template>
 <script lang="ts" setup>
+const ThreeDCar = defineAsyncComponent(() => import('@/components/features/ThreeDCar.vue'));
+
 defineOptions({
 	name: 'Page3dCar',
 });

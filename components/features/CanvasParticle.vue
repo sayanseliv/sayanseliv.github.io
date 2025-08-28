@@ -22,11 +22,8 @@ const mouseY = ref<number>(0);
 const hue = ref<number>(0);
 
 class Particle {
-	// eslint-disable-next-line functional/prefer-readonly-type
 	x: number;
-	// eslint-disable-next-line functional/prefer-readonly-type
 	y: number;
-	// eslint-disable-next-line functional/prefer-readonly-type
 	size: number;
 	readonly speedX: number;
 	readonly speedY: number;

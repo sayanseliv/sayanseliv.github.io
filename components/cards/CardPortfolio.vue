@@ -28,14 +28,13 @@
 			<div class="card-portfolio__face card-portfolio__face--back">
 				<div class="card-portfolio__back-link">
 					<h3 class="text-gradient">🛠 Tech Stack</h3>
-					<p>{{ technology }}</p>
-					<NuxtLink
-						:to="link"
-						external
-						target="_blank"
-						class="card-portfolio__action"
-						@click.stop>
-						Click to Visit →
+					<p>
+						{{ technology }}
+						<span class="sr-only">{{ technology }}</span>
+					</p>
+					<NuxtLink :to="link" external target="_blank" class="card-portfolio__action">
+						Go to the project website
+						<span class="sr-only">(opens in a new tab)</span>
 					</NuxtLink>
 
 					<button

@@ -46,13 +46,53 @@ defineOptions({
 	name: 'PagePortfolio',
 });
 const config = useRuntimeConfig();
+const portfolioSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'CreativeWork',
+	name: 'Lang Eugen Portfolio',
+	url: 'https://sayanseliv.github.io/portfolio',
+	creator: {
+		'@type': 'Person',
+		name: 'Lang Eugen',
+	},
+	about: 'Commercial front-end projects in Vue, Nuxt, React, React Native and WordPress',
+	genre: ['Web Development', 'Mobile Development', 'WordPress'],
+};
 
 useHead({
-	title: 'Portfolio – Lang Eugen',
+	title: 'Lang Eugen | Front-End Portfolio – Commercial Projects in Vue, Nuxt & React',
+	meta: [
+		{
+			name: 'description',
+			content:
+				"Explore Lang Eugen's portfolio of commercial projects, showcasing real-world expertise in front-end development. Featuring logistics platforms, e-commerce sites, and custom solutions built with Vue.js, Nuxt.js, React Native, and more, highlighting clean architecture, responsive design, and user-centered applications in areas like supply chain, construction, and digital staffing.",
+		},
+		{
+			property: 'og:title',
+			content: 'Lang Eugen | Front-End Portfolio – Commercial Projects in Vue, Nuxt & React',
+		},
+		{
+			property: 'og:description',
+			content:
+				"Explore Lang Eugen's portfolio of commercial projects, showcasing real-world expertise in front-end development. Featuring logistics platforms, e-commerce sites, and custom solutions built with Vue.js, Nuxt.js, React Native, and more, highlighting clean architecture, responsive design, and user-centered applications.",
+		},
+		{
+			name: 'twitter:description',
+			content:
+				"Explore Lang Eugen's portfolio of commercial projects, showcasing real-world expertise in front-end development. Featuring logistics platforms, e-commerce sites, and custom solutions built with Vue.js, Nuxt.js, React Native, and more.",
+		},
+		{ property: 'og:url', content: `${config.public.siteUrl}/portfolio` },
+	],
 	link: [
 		{
 			rel: 'canonical',
 			href: `${config.public.siteUrl}/portfolio`,
+		},
+	],
+	script: [
+		{
+			type: 'application/ld+json',
+			innerHTML: JSON.stringify(portfolioSchema),
 		},
 	],
 });

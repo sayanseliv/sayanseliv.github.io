@@ -11,7 +11,7 @@
 			<div class="card-portfolio__face card-portfolio__face--front">
 				<div class="card-portfolio__content">
 					<figure class="card-portfolio__figure">
-						<img :src="logo" alt="Projects logo" loading="lazy" />
+						<img :src="logo" :alt="`Projects logo - ${title}`" loading="lazy" />
 					</figure>
 					<div class="card-portfolio__body">
 						<h3>{{ title }}</h3>

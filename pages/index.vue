@@ -232,7 +232,13 @@
 
 		<AppModal v-model="isShowCertificate" animation="fade">
 			<template #default="{ onClose }">
-				<figure class="certificate__modal-wrapper" @click="onClose">
+				<figure
+					class="certificate__modal-wrapper"
+					role="button"
+					tabindex="0"
+					aria-label="Click or press Enter, Space, or Escape to close the certificate modal"
+					@click="onClose"
+					@keydown="handleKeyDown($event, onClose)">
 					<img
 						class="certificate__modal-image"
 						:src="'/certificates/' + docPath"
@@ -327,6 +333,12 @@ const docPath = ref<string | null>(null);
 const showCertificate = (docName: string) => {
 	isShowCertificate.value = true;
 	docPath.value = docName;
+};
+const handleKeyDown = (event: KeyboardEvent, onClose: () => void) => {
+	if (event.key === 'Enter' || event.key === ' ' || event.key === 'Escape') {
+		event.preventDefault();
+		onClose();
+	}
 };
 </script>
 
@@ -780,6 +792,10 @@ const showCertificate = (docName: string) => {
 	justify-content: center;
 	height: 100vh;
 	cursor: pointer;
+	&:focus {
+		outline: 2px solid var(--blue-300);
+		outline-offset: 2px;
+	}
 }
 
 .certificate__modal-image {

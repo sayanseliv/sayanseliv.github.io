@@ -2,7 +2,14 @@
 	<ClientOnly>
 		<Teleport to="body">
 			<transition :class="classTransition.value" :name="animation">
-				<dialog v-if="modelValue" :open="modelValue" class="app-modal" @click="closeNative">
+				<dialog
+					v-if="modelValue"
+					ref="dialogRef"
+					:open="modelValue"
+					class="app-modal"
+					aria-label="Modal dialog, press Escape, Enter, or Space to close"
+					@click="closeNative"
+					@keydown="handleKeyDown">
 					<slot :on-close="close" />
 				</dialog>
 			</transition>
@@ -11,7 +18,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch } from 'vue';
 defineOptions({
 	name: 'AppModal',
 });
@@ -21,6 +27,8 @@ const props = defineProps<{
 	readonly animation?: string;
 	readonly animationSlideDirection?: string;
 }>();
+
+const dialogRef = ref<HTMLDialogElement | null>(null);
 
 const emit = defineEmits<{
 	(e: 'update:modelValue', value: boolean): void;
@@ -32,6 +40,7 @@ const animationSlideDirection = props.animationSlideDirection ?? 'right';
 const classTransition = computed(() => ({
 	[`slide__${animationSlideDirection}`]: true,
 }));
+
 const setBodyOverflow = (isLocked: boolean) => {
 	if (isLocked) {
 		document.body.classList.add('scroll-lock');
@@ -44,6 +53,11 @@ watch(
 	() => props.modelValue,
 	(newVal) => {
 		setBodyOverflow(newVal);
+		if (newVal) {
+			nextTick(() => {
+				dialogRef.value?.focus();
+			});
+		}
 	}
 );
 
@@ -53,6 +67,13 @@ function close() {
 
 function closeNative(e: MouseEvent) {
 	if (e.currentTarget === e.target) {
+		close();
+	}
+}
+
+function handleKeyDown(e: KeyboardEvent) {
+	if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') {
+		e.preventDefault();
 		close();
 	}
 }

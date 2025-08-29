@@ -1,3 +1,4 @@
+<!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <template>
 	<div
 		class="card-portfolio"

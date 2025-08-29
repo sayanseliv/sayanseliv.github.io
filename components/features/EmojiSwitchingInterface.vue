@@ -4,7 +4,13 @@
 			<h1 class="emoji__title">EMOJI SWITCHER</h1>
 			<p class="emoji__instructions">Click on the emoji below or use the buttons to morph!</p>
 
-			<div class="emoji__morph-area" @click="randomMorph">
+			<div
+				class="emoji__morph-area"
+				role="button"
+				tabindex="0"
+				aria-label="Morph to a random emoji"
+				@click="randomMorph"
+				@keydown="handleKeyDown">
 				<div
 					class="emoji__shape-display"
 					:style="{ background: currentGradient, transform: shapeTransform }">
@@ -75,6 +81,14 @@ const randomMorph = () => {
 		morphTo(randomIndex);
 	}
 };
+
+const handleKeyDown = (event: KeyboardEvent) => {
+	if (event.key === 'Enter' || event.key === ' ') {
+		event.preventDefault();
+		randomMorph();
+	}
+};
+
 const toggleAuto = () => {
 	autoMode.value = !autoMode.value;
 

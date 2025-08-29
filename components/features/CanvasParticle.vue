@@ -3,10 +3,15 @@
 		<canvas
 			ref="canvas"
 			class="canvas-el"
+			role="button"
+			tabindex="0"
+			aria-label="Interactive canvas for adding particles with mouse or keyboard"
 			@click="handleClick"
-			@pointerdown="handlePointerDown" />
+			@pointerdown="handlePointerDown"
+			@keydown="handleKeyDown" />
 	</div>
 </template>
+
 <script lang="ts" setup>
 defineOptions({
 	name: 'CanvasParticle',
@@ -16,7 +21,6 @@ const wrap = ref<HTMLDivElement | null>(null);
 const canvas = ref<HTMLCanvasElement | null>(null);
 const ctx = ref<CanvasRenderingContext2D | null>(null);
 const particlesArray = ref<readonly Particle[]>([]);
-
 const mouseX = ref<number>(0);
 const mouseY = ref<number>(0);
 const hue = ref<number>(0);
@@ -49,6 +53,7 @@ class Particle {
 		drawCircle(ctx.value, this.x, this.y, this.size, this.color);
 	}
 }
+
 const drawCircle = (
 	ctx: CanvasRenderingContext2D,
 	x: number,
@@ -131,6 +136,27 @@ const handlePointerDown = (event: PointerEvent) => {
 	addParticles(10);
 };
 
+const handleKeyDown = (event: KeyboardEvent) => {
+	if (!canvas.value) return;
+	const step = 10; // Шаг перемещения "курсора" с клавиатуры
+	if (event.key === 'Enter' || event.key === ' ') {
+		event.preventDefault(); // Предотвращаем прокрутку при нажатии пробела
+		addParticles(10);
+	} else if (event.key === 'ArrowUp') {
+		mouseY.value = Math.max(0, mouseY.value - step);
+		addParticles(5); // Добавляем частицы при движении
+	} else if (event.key === 'ArrowDown') {
+		mouseY.value = Math.min(canvas.value.height, mouseY.value + step);
+		addParticles(5);
+	} else if (event.key === 'ArrowLeft') {
+		mouseX.value = Math.max(0, mouseX.value - step);
+		addParticles(5);
+	} else if (event.key === 'ArrowRight') {
+		mouseX.value = Math.min(canvas.value.width, mouseX.value + step);
+		addParticles(5);
+	}
+};
+
 const handleParticles = () => {
 	if (!ctx.value || !canvas.value) return;
 	ctx.value.clearRect(0, 0, canvas.value.width, canvas.value.height);
@@ -157,7 +183,17 @@ const handleParticles = () => {
 	});
 
 	drawText(ctx.value, 'Canvas Particle', canvas.value.width / 2, 50, 'white', 'bold 28px Arial');
-	drawText(ctx.value, 'Hover - Touch', canvas.value.width / 2, 100, 'white', 'bold 28px Arial');
+	drawText(
+		ctx.value,
+		'Click and press Enter/Space to add particles',
+		canvas.value.width / 2,
+		100,
+		'white',
+		'bold 16px Arial'
+	);
+	if (canvas.value.contains(document.activeElement)) {
+		drawCircle(ctx.value, mouseX.value, mouseY.value, 5, 'rgba(255, 255, 255, 0.5)');
+	}
 
 	hue.value += 2;
 };
@@ -196,6 +232,7 @@ onUnmounted(() => {
 	window.removeEventListener('resize', resizeCanvas);
 });
 </script>
+
 <style lang="scss" scoped>
 .canvas-wrap {
 	display: block;
@@ -205,5 +242,6 @@ onUnmounted(() => {
 }
 .canvas-el {
 	touch-action: none;
+	cursor: pointer;
 }
 </style>

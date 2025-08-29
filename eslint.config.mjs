@@ -3,7 +3,7 @@ import { dirname } from 'path';
 import withNuxt from './.nuxt/eslint.config.mjs';
 import vue from 'eslint-plugin-vue';
 import functional from 'eslint-plugin-functional';
-import jsxA11y from 'eslint-plugin-jsx-a11y';
+import vueA11y from 'eslint-plugin-vuejs-accessibility';
 import parser from 'vue-eslint-parser';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,7 +13,7 @@ export default withNuxt({
 	plugins: {
 		vue,
 		functional,
-		'jsx-a11y': jsxA11y,
+		'vuejs-accessibility': vueA11y,
 	},
 	languageOptions: {
 		parser,
@@ -51,16 +51,17 @@ export default withNuxt({
 				ignoreAccessorPattern: ['**.value'],
 			},
 		],
-		'jsx-a11y/anchor-has-content': 'error',
-		'jsx-a11y/anchor-is-valid': [
+		'vuejs-accessibility/click-events-have-key-events': 'error',
+
+		'vuejs-accessibility/label-has-for': [
 			'error',
 			{
-				components: ['NuxtLink'],
-				specialLink: ['to'],
-				aspects: ['noHref', 'invalidHref', 'preferButton'],
+				required: {
+					some: ['nesting', 'id'],
+				},
 			},
 		],
-		'jsx-a11y/click-events-have-key-events': 'warn',
-		'jsx-a11y/no-static-element-interactions': 'warn',
+		'vuejs-accessibility/form-control-has-label': 'error',
+		'vuejs-accessibility/alt-text': 'error',
 	},
 });

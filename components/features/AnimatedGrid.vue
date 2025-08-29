@@ -3,6 +3,9 @@
 		<canvas
 			ref="canvas"
 			class="animated-grid"
+			role="img"
+			aria-label="Interactive animated grid with mouse and keyboard controls"
+			tabindex="0"
 			@mousemove="onMouseMove"
 			@touchmove.prevent="onTouchMove" />
 		<div class="animated-grid__controls">

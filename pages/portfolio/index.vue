@@ -17,7 +17,7 @@
 					<figure class="hero__figure">
 						<img
 							src="/images/portfolio-hero-cold.webp"
-							alt="Portfolio image"
+							alt="Showcase of Lang Eugen's portfolio projects"
 							loading="lazy" />
 					</figure>
 				</div>

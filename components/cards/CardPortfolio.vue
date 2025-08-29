@@ -135,7 +135,7 @@ const flipBack = () => {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	min-height: 18rem;
+	min-height: 19rem;
 	transform-style: preserve-3d;
 	transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -221,9 +221,10 @@ const flipBack = () => {
 }
 
 .card-portfolio__tap-hint {
-	padding: 0.25rem 0.5rem;
-	font-size: 0.65rem;
-	color: var(--blue-300);
+	padding: 0.3rem 0.6rem;
+	font-size: 0.875rem;
+	font-weight: 600;
+	color: var(--blue-200);
 	background: rgba(72, 171, 237, 0.1);
 	border-radius: 12px;
 	border: 1px solid var(--blue-300);
@@ -303,7 +304,7 @@ const flipBack = () => {
 	font-size: 1rem;
 	font-weight: 500;
 	text-decoration: none;
-	color: var(--blue-300);
+	color: var(--blue-200);
 	background-color: transparent;
 	border: 2px solid var(--blue-300);
 	border-radius: 8px;

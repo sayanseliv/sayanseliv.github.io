@@ -1,27 +1,41 @@
 <template>
 	<header class="header">
 		<nav class="container header__nav">
-			<label class="header__hamburger">
-				<span class="header__sr-only">Toggle navigation menu</span>
+			<label
+				class="header__hamburger"
+				aria-label="Toggle navigation menu"
+				:aria-expanded="checkboxBurger">
 				<input
 					id="checkboxBurger"
 					v-model="checkboxBurger"
 					type="checkbox"
-					class="hamburger-input"
-					aria-label="Toggle navigation menu" />
+					class="hamburger-input" />
 			</label>
-			<div class="header__links">
-				<NuxtLink to="/">Home</NuxtLink>
-				<NuxtLink to="/portfolio">Portfolio</NuxtLink>
-				<NuxtLink to="/features" :class="{ active: route.path.startsWith('/features') }">
-					Features
-				</NuxtLink>
-				<div class="header__contact">
-					<p>Contact:</p>
-					<NuxtLink to="mailto:sayanseliv@gmail.com">sayanseliv@gmail.com</NuxtLink>
-				</div>
-			</div>
-			<div class="header__overlay" @click="toggleCheckbox(false)" />
+			<ul class="header__links">
+				<li>
+					<NuxtLink to="/">Home</NuxtLink>
+				</li>
+				<li>
+					<NuxtLink to="/portfolio">Portfolio</NuxtLink>
+				</li>
+				<li>
+					<NuxtLink
+						to="/features"
+						:class="{ active: route.path.startsWith('/features') }">
+						Features
+					</NuxtLink>
+				</li>
+				<li>
+					<address class="header__contact">
+						<span>Contact:</span>
+						<NuxtLink to="mailto:sayanseliv@gmail.com" aria-label="Email Lang Eugen">
+							sayanseliv@gmail.com
+							<span class="sr-only">(email address)</span>
+						</NuxtLink>
+					</address>
+				</li>
+			</ul>
+			<div class="header__overlay" aria-hidden="true" @click="toggleCheckbox(false)" />
 		</nav>
 	</header>
 </template>
@@ -30,7 +44,15 @@ defineOptions({
 	name: 'AppHeader',
 });
 const route = useRoute();
-const checkboxBurger = ref(false);
+const checkboxBurger = ref<boolean>(false);
+
+watch(
+	() => route.path,
+	() => {
+		checkboxBurger.value = false;
+	}
+);
+
 const toggleCheckbox = (isValue: boolean) => {
 	checkboxBurger.value = isValue;
 };
@@ -54,12 +76,18 @@ const toggleCheckbox = (isValue: boolean) => {
 .header__hamburger {
 	position: relative;
 	display: none;
-	width: 28px;
-	height: 18px;
+	width: 44px;
+	height: 44px;
+	padding: 13px 8px;
 	cursor: pointer;
+	border-radius: 0.5rem;
+	transition: background-color 0.3s;
 	@include media(768px) {
 		display: flex;
 		margin-left: auto;
+	}
+	&:hover {
+		background-color: var(--gray-800);
 	}
 	& .hamburger-input {
 		top: 50%;
@@ -73,8 +101,8 @@ const toggleCheckbox = (isValue: boolean) => {
 	&::after {
 		content: '';
 		position: absolute;
-		left: 0;
-		width: 100%;
+		left: 8px;
+		width: 28px;
 		height: 2px;
 		border-radius: 5px;
 		background-color: var(--white);
@@ -82,10 +110,10 @@ const toggleCheckbox = (isValue: boolean) => {
 		transform-origin: center;
 	}
 	&::before {
-		top: 0;
+		top: 13px;
 	}
 	&::after {
-		bottom: 0;
+		bottom: 13px;
 	}
 
 	&:has(.hamburger-input:checked)::before {
@@ -102,17 +130,6 @@ const toggleCheckbox = (isValue: boolean) => {
 		transform: translateY(-50%) scaleX(0);
 	}
 }
-.header__sr-only {
-	position: absolute;
-	width: 1px;
-	height: 1px;
-	padding: 0;
-	margin: -1px;
-	overflow: hidden;
-	clip: rect(0, 0, 0, 0);
-	white-space: nowrap;
-	border: 0;
-}
 .header__links {
 	display: flex;
 	width: 100%;
@@ -128,11 +145,12 @@ const toggleCheckbox = (isValue: boolean) => {
 		padding: 1rem;
 		flex-direction: column;
 		row-gap: 1rem;
+		border-top: 1px solid var(--gray-100);
 		background-color: var(--gray-500);
 		transition: right 200ms ease-in-out;
 	}
-	& > a,
-	& > .header__contact > a {
+	& > li > a,
+	& > li > .header__contact > a {
 		position: relative;
 		display: inline-block;
 		color: var(--blue-300);
@@ -152,15 +170,19 @@ const toggleCheckbox = (isValue: boolean) => {
 			width: 100%;
 		}
 	}
-	& .router-link-exact-active::after,
-	.active::after {
+	& li .router-link-exact-active::after,
+	& li .active::after {
 		width: 100%;
 	}
-	& .header__contact {
+	& li:last-child {
+		margin-left: auto;
+	}
+	& li > .header__contact {
 		display: flex;
 		align-items: center;
-		margin-left: auto;
+
 		column-gap: 0.5rem;
+		font-style: normal;
 		@include media(768px) {
 			flex-direction: column;
 			align-items: flex-start;

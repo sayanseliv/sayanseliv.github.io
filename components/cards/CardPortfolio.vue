@@ -29,7 +29,7 @@
 			<div class="card-portfolio__face card-portfolio__face--back">
 				<div class="card-portfolio__back-link">
 					<h3 class="text-gradient">🛠 Tech Stack</h3>
-					<p>
+					<p class="card-portfolio__tech-stack">
 						{{ technology }}
 						<span class="sr-only">{{ technology }}</span>
 					</p>
@@ -285,13 +285,16 @@ const flipBack = () => {
 		transform: translateY(20px) scale(0.8);
 		transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.2s;
 	}
+}
 
-	& > p {
-		color: var(--white);
-		opacity: 0;
-		transform: translateY(20px) scale(0.8);
-		transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
-	}
+.card-portfolio__tech-stack {
+	color: #f8f9fa;
+	font-weight: 500;
+	font-size: 1.1rem;
+	line-height: 1.5;
+	opacity: 0;
+	transform: translateY(20px) scale(0.8);
+	transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
 }
 
 .card-portfolio__action {
@@ -303,20 +306,28 @@ const flipBack = () => {
 	margin-top: 2rem;
 	padding: 0.75rem 1.5rem;
 	font-size: 1rem;
-	font-weight: 500;
+	font-weight: 600;
 	text-decoration: none;
-	color: var(--blue-200);
-	background-color: transparent;
-	border: 2px solid var(--blue-300);
+	color: #ffffff;
+	background-color: var(--blue-600);
+	border: 2px solid var(--blue-600);
 	border-radius: 8px;
 	cursor: pointer;
 	opacity: 0;
 	transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); // Тень для текста
 
 	&:hover {
-		color: var(--white);
-		background-color: var(--blue-300);
+		color: #ffffff !important;
+		background-color: var(--blue-700);
+		border-color: var(--blue-700);
 		transform: translateY(0) scale(1.05);
+		box-shadow: 0 4px 12px rgba(38, 132, 255, 0.4);
+	}
+
+	&:focus {
+		outline: 3px solid rgba(38, 132, 255, 0.5);
+		outline-offset: 2px;
 	}
 }
 
@@ -335,9 +346,9 @@ const flipBack = () => {
 	font-size: 0.75rem;
 	line-height: 1;
 	text-align: center;
-	color: var(--blue-300);
-	background: var(--gradient-btn);
-	border: 1px solid var(--blue-300);
+	color: #ffffff;
+	background: var(--blue-600);
+	border: 1px solid var(--blue-600);
 	border-radius: 50%;
 	cursor: pointer;
 	opacity: 0;
@@ -346,20 +357,25 @@ const flipBack = () => {
 
 	&:hover {
 		transform: translateY(-10px) scale(1);
-		color: var(--white);
-		background: var(--blue-300);
-		border: 1px solid var(--blue-300);
+		color: #ffffff;
+		background: var(--blue-700);
+		border: 1px solid var(--blue-700);
 		box-shadow: 0 3px 8px rgba(72, 171, 237, 0.4);
+	}
+
+	&:focus {
+		outline: 3px solid rgba(38, 132, 255, 0.5);
+		outline-offset: 2px;
 	}
 }
 
 // Animation of elements appearing on the back side
 .card-portfolio__inner.is-flipped .card-portfolio__face--back h3,
-.card-portfolio__inner.is-flipped .card-portfolio__face--back p,
+.card-portfolio__inner.is-flipped .card-portfolio__tech-stack,
 .card-portfolio__inner.is-flipped .card-portfolio__action,
 .card-portfolio__inner.is-flipped .card-portfolio__flip-back,
 .card-portfolio__inner.is-hovered .card-portfolio__face--back h3,
-.card-portfolio__inner.is-hovered .card-portfolio__face--back p,
+.card-portfolio__inner.is-hovered .card-portfolio__tech-stack,
 .card-portfolio__inner.is-hovered .card-portfolio__action,
 .card-portfolio__inner.is-hovered .card-portfolio__flip-back {
 	transform: translateY(0) scale(1);

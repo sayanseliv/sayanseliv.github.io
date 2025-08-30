@@ -205,7 +205,10 @@ useHead({
 }
 .portfolio-projects__grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
 	gap: 1rem;
+	@include media(640px) {
+		grid-template-columns: 1fr;
+	}
 }
 </style>

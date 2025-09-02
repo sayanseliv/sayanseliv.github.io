@@ -15,7 +15,12 @@
 				</div>
 
 				<div class="card-portfolio__actions">
-					<NuxtLink :to="link" external target="_blank" class="card-portfolio__action">
+					<NuxtLink
+						:to="link"
+						external
+						target="_blank"
+						class="card-portfolio__action"
+						:aria-label="`Visit ${title} project website (opens in new tab)`">
 						<span>Visit Project</span>
 						<svg
 							width="16"
@@ -31,7 +36,6 @@
 								stroke-linecap="round"
 								stroke-linejoin="round" />
 						</svg>
-						<span class="sr-only">(opens in new tab)</span>
 					</NuxtLink>
 				</div>
 			</div>

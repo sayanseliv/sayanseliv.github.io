@@ -3,6 +3,7 @@
 		<nav class="container header__nav">
 			<label
 				class="header__hamburger"
+				role="button"
 				aria-label="Toggle navigation menu"
 				:aria-expanded="checkboxBurger">
 				<input

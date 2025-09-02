@@ -2,7 +2,7 @@
 	<div class="card-portfolio">
 		<div class="card-portfolio__content">
 			<figure class="card-portfolio__figure">
-				<img :src="logo" :alt="`Projects logo - ${title}`" loading="lazy" />
+				<img :src="logo" :alt="`${title} project logo`" loading="lazy" />
 			</figure>
 
 			<div class="card-portfolio__body">
@@ -15,19 +15,15 @@
 				</div>
 
 				<div class="card-portfolio__actions">
-					<NuxtLink
-						:to="link"
-						external
-						target="_blank"
-						class="card-portfolio__action"
-						:aria-label="`Visit ${title} project website (opens in new tab)`">
+					<NuxtLink :to="link" external target="_blank" class="card-portfolio__action">
 						<span>Visit Project</span>
 						<svg
 							width="16"
 							height="16"
 							viewBox="0 0 24 24"
 							fill="none"
-							xmlns="http://www.w3.org/2000/svg">
+							xmlns="http://www.w3.org/2000/svg"
+							aria-hidden="true">
 							<path
 								d="M7 17L17 7M17 7H7M17 7V17"
 								stroke="currentColor"
@@ -35,6 +31,7 @@
 								stroke-linecap="round"
 								stroke-linejoin="round" />
 						</svg>
+						<span class="sr-only">(opens in new tab)</span>
 					</NuxtLink>
 				</div>
 			</div>

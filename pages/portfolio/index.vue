@@ -31,12 +31,13 @@
 			<div class="container">
 				<h2 class="portfolio-projects__title">Projects</h2>
 				<AnimatedBlock>
-					<div class="portfolio-projects__grid">
+					<div class="portfolio-projects__grid" role="list" aria-live="polite">
 						<CardPortfolio
 							v-for="(card, index) in cards"
 							:key="'card-portfolio-' + index"
 							v-memo="card.id"
-							:content="card" />
+							:content="card"
+							role="listitem" />
 					</div>
 				</AnimatedBlock>
 			</div>

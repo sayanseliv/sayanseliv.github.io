@@ -1,18 +1,17 @@
 <template>
 	<header class="header">
 		<nav class="container header__nav">
-			<label
+			<button
 				class="header__hamburger"
-				role="button"
+				type="button"
 				aria-label="Toggle navigation menu"
-				:aria-expanded="checkboxBurger">
-				<input
-					id="checkboxBurger"
-					v-model="checkboxBurger"
-					type="checkbox"
-					class="hamburger-input" />
-			</label>
-			<ul class="header__links">
+				:aria-expanded="checkboxBurger"
+				@click="toggleCheckbox(!checkboxBurger)">
+				<span class="hamburger-line" />
+				<span class="hamburger-line" />
+				<span class="hamburger-line" />
+			</button>
+			<ul class="header__links" :class="{ 'header__links--open': checkboxBurger }">
 				<li>
 					<NuxtLink to="/">Home</NuxtLink>
 				</li>
@@ -36,7 +35,11 @@
 					</address>
 				</li>
 			</ul>
-			<div class="header__overlay" aria-hidden="true" @click="toggleCheckbox(false)" />
+			<div
+				class="header__overlay"
+				:class="{ 'header__overlay--visible': checkboxBurger }"
+				aria-hidden="true"
+				@click="toggleCheckbox(false)" />
 		</nav>
 	</header>
 </template>
@@ -44,6 +47,7 @@
 defineOptions({
 	name: 'AppHeader',
 });
+
 const route = useRoute();
 const checkboxBurger = ref<boolean>(false);
 
@@ -57,6 +61,21 @@ watch(
 const toggleCheckbox = (isValue: boolean) => {
 	checkboxBurger.value = isValue;
 };
+
+// Закриття меню при натисканні Escape
+const handleKeydown = (event: KeyboardEvent) => {
+	if (event.key === 'Escape' && checkboxBurger.value) {
+		checkboxBurger.value = false;
+	}
+};
+
+onMounted(() => {
+	document.addEventListener('keydown', handleKeydown);
+});
+
+onUnmounted(() => {
+	document.removeEventListener('keydown', handleKeydown);
+});
 </script>
 
 <style scoped lang="scss">
@@ -67,6 +86,7 @@ const toggleCheckbox = (isValue: boolean) => {
 	width: 100%;
 	background-color: var(--gray-500);
 }
+
 .header__nav {
 	position: relative;
 	height: inherit;
@@ -74,71 +94,69 @@ const toggleCheckbox = (isValue: boolean) => {
 	align-items: center;
 	justify-content: space-between;
 }
+
 .header__hamburger {
 	position: relative;
 	display: none;
 	width: 44px;
 	height: 44px;
-	padding: 13px 8px;
+	padding: 8px;
 	cursor: pointer;
+	border: none;
+	background: transparent;
 	border-radius: 0.5rem;
 	transition: background-color 0.3s;
+
 	@include media(768px) {
 		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 4px;
 		margin-left: auto;
 	}
+
 	&:hover {
 		background-color: var(--gray-800);
 	}
-	& .hamburger-input {
-		top: 50%;
-		transform: translateY(-50%);
-		appearance: none;
-		outline: none;
-		pointer-events: none;
-	}
-	& .hamburger-input,
-	&::before,
-	&::after {
-		content: '';
-		position: absolute;
-		left: 8px;
-		width: 28px;
-		height: 2px;
-		border-radius: 5px;
-		background-color: var(--white);
-		transition: transform 200ms ease-in-out, top 200ms ease-in-out, opacity 200ms ease-in-out;
-		transform-origin: center;
-	}
-	&::before {
-		top: 13px;
-	}
-	&::after {
-		bottom: 13px;
-	}
 
-	&:has(.hamburger-input:checked)::before {
-		transform: rotate(45deg);
-		top: 50%;
-	}
-	&:has(.hamburger-input:checked)::after {
-		transform: rotate(-45deg);
-		bottom: auto;
-		top: 50%;
-	}
-	& .hamburger-input:checked {
-		opacity: 0;
-		transform: translateY(-50%) scaleX(0);
+	&:focus {
+		outline: 2px solid var(--blue-300);
 	}
 }
+
+.hamburger-line {
+	display: block;
+	width: 28px;
+	height: 2px;
+	background-color: var(--white);
+	border-radius: 5px;
+	transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+	transform-origin: center;
+
+	.header__hamburger[aria-expanded='true'] & {
+		&:nth-child(1) {
+			transform: translateY(6px) rotate(45deg);
+		}
+
+		&:nth-child(2) {
+			opacity: 0;
+		}
+
+		&:nth-child(3) {
+			transform: translateY(-6px) rotate(-45deg);
+		}
+	}
+}
+
 .header__links {
 	display: flex;
 	width: 100%;
 	column-gap: var(--fs-primary);
+
 	@include media(768px) {
 		position: absolute;
 		top: 100%;
-		left: auto;
 		right: -100%;
 		height: calc(100dvh - 3rem);
 		min-width: 10rem;
@@ -150,12 +168,20 @@ const toggleCheckbox = (isValue: boolean) => {
 		background-color: var(--gray-500);
 		transition: right 200ms ease-in-out;
 	}
+
+	&--open {
+		@include media(768px) {
+			right: 0;
+		}
+	}
+
 	& > li > a,
 	& > li > .header__contact > a {
 		position: relative;
 		display: inline-block;
 		color: var(--blue-300);
 		text-decoration: none;
+
 		&::after {
 			content: '';
 			position: absolute;
@@ -167,23 +193,28 @@ const toggleCheckbox = (isValue: boolean) => {
 			transition: all 0.3s ease;
 			transform: translateX(-50%);
 		}
-		&:hover::after {
+
+		&:hover::after,
+		&:focus::after {
 			width: 100%;
 		}
 	}
+
 	& li .router-link-exact-active::after,
 	& li .active::after {
 		width: 100%;
 	}
+
 	& li:last-child {
 		margin-left: auto;
 	}
+
 	& li > .header__contact {
 		display: flex;
 		align-items: center;
-
 		column-gap: 0.5rem;
 		font-style: normal;
+
 		@include media(768px) {
 			flex-direction: column;
 			align-items: flex-start;
@@ -194,6 +225,7 @@ const toggleCheckbox = (isValue: boolean) => {
 		}
 	}
 }
+
 .header__overlay {
 	display: none;
 	position: absolute;
@@ -205,21 +237,16 @@ const toggleCheckbox = (isValue: boolean) => {
 	background: rgba(17, 25, 39, 0.2);
 	backdrop-filter: blur(3px);
 	opacity: 0;
-	transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease, right 0.3s ease;
+
 	@include media(768px) {
 		display: flex;
 	}
-}
-.header__hamburger:has(> .hamburger-input:checked) {
-	& + .header__links {
+
+	&--visible {
 		@include media(768px) {
 			right: 0;
-		}
-		& + .header__overlay {
-			@include media(768px) {
-				right: 0;
-				opacity: 1;
-			}
+			opacity: 1;
 		}
 	}
 }

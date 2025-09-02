@@ -2,7 +2,7 @@
 	<div class="card-portfolio">
 		<div class="card-portfolio__content">
 			<figure class="card-portfolio__figure">
-				<img :src="logo" :alt="`${title} project logo`" loading="lazy" />
+				<img :src="logo" :alt="`${title} project logo`" loading="lazy" decoding="async" />
 			</figure>
 
 			<div class="card-portfolio__body">
@@ -94,7 +94,8 @@ const { title, description, logo, technology, link } = content;
 	border-radius: var(--border-radius);
 	border: 1px solid var(--gray-300);
 	overflow: hidden;
-	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	will-change: transform, box-shadow;
+	transition: box-shadow 0.3s ease, border-color 0.3s ease;
 
 	&:hover {
 		animation: glow 2s ease-in-out infinite;
@@ -127,6 +128,11 @@ const { title, description, logo, technology, link } = content;
 	background-color: var(--white);
 	min-height: 80px;
 	overflow: hidden;
+	@media (prefers-reduced-motion: reduce) {
+		&::after {
+			display: none;
+		}
+	}
 	@include media(768px) {
 		padding: 1.5rem 1rem;
 	}
@@ -147,6 +153,7 @@ const { title, description, logo, technology, link } = content;
 		max-width: 200px;
 		object-fit: contain;
 		transition: transform 0.3s ease;
+		contain: layout;
 		@include media(768px) {
 			height: 32px;
 		}
@@ -168,7 +175,7 @@ const { title, description, logo, technology, link } = content;
 }
 
 .card-portfolio__description {
-	color: #e5e7eb;
+	color: var(--white);
 	font-size: var(--fs-primary);
 	line-height: 1.6;
 	margin: 0;
@@ -205,6 +212,7 @@ const { title, description, logo, technology, link } = content;
 }
 
 .card-portfolio__action {
+	position: relative;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -220,8 +228,8 @@ const { title, description, logo, technology, link } = content;
 	border-radius: calc(var(--border-radius) + 2px);
 	cursor: pointer;
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-	position: relative;
 	overflow: hidden;
+	will-change: transform, box-shadow;
 	@include media(768px) {
 		padding: 0.75rem 1.25rem;
 		font-size: 0.9rem;
@@ -236,6 +244,9 @@ const { title, description, logo, technology, link } = content;
 		height: 100%;
 		background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
 		transition: left 0.5s;
+		@media (prefers-reduced-motion: reduce) {
+			display: none;
+		}
 	}
 
 	&:hover {
@@ -268,19 +279,21 @@ const { title, description, logo, technology, link } = content;
 	}
 }
 
-.card-portfolio__title {
-	animation: slideUp 0.6s ease-out 0.1s both;
-}
+@media (prefers-reduced-motion: no-preference) {
+	.card-portfolio__title {
+		animation: slideUp 0.6s ease-out 0.1s both;
+	}
 
-.card-portfolio__description {
-	animation: slideUp 0.6s ease-out 0.2s both;
-}
+	.card-portfolio__description {
+		animation: slideUp 0.6s ease-out 0.2s both;
+	}
 
-.card-portfolio__tech {
-	animation: slideUp 0.6s ease-out 0.3s both;
-}
+	.card-portfolio__tech {
+		animation: slideUp 0.6s ease-out 0.3s both;
+	}
 
-.card-portfolio__actions {
-	animation: slideUp 0.6s ease-out 0.4s both;
+	.card-portfolio__actions {
+		animation: slideUp 0.6s ease-out 0.4s both;
+	}
 }
 </style>

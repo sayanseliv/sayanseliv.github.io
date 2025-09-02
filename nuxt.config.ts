@@ -69,17 +69,41 @@ export default defineNuxtConfig({
 			cssCodeSplit: true,
 			rollupOptions: {
 				output: {
-					manualChunks: {
-						vendor: ['vue', 'vue-router'],
-						animations: [
-							'@/components/UI/AnimatedCircles.vue',
-							'@/components/AnimatedBlock.vue',
-							'@/components/UI/ParticleCanvas.vue',
-						],
+					manualChunks(id) {
+						// Vendor chunks
+						if (id.includes('node_modules')) {
+							if (id.includes('vue') || id.includes('@vue')) {
+								return 'vue-vendor';
+							}
+							if (id.includes('three')) {
+								return 'three-vendor';
+							}
+							return 'vendor';
+						}
+
+						// Animation components
+						if (
+							id.includes('components/AnimatedCircles') ||
+							id.includes('components/AnimatedBlock') ||
+							id.includes('components/ParticleCanvas')
+						) {
+							return 'animations';
+						}
+
+						// UI components
+						if (id.includes('components/UI/')) {
+							return 'ui-components';
+						}
+
+						// Explicitly return undefined for clarity
+						return undefined;
 					},
 				},
 			},
 		},
+	},
+	esbuild: {
+		options: { drop: ['console', 'debugger'] },
 	},
 	app: {
 		head: {

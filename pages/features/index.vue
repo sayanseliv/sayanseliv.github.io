@@ -1,6 +1,6 @@
 <template>
 	<main class="main-features">
-		<section class="features-hero">
+		<section class="features__hero">
 			<div class="container">
 				<div class="hero__wrapper">
 					<h1 class="text-gradient hero__title">Features</h1>
@@ -50,7 +50,7 @@ const features = data.features.slice().reverse();
 .main-features {
 	padding-block: 4rem 2rem;
 }
-.features-hero {
+.features__hero {
 	margin-bottom: 3rem;
 }
 .hero__wrapper {

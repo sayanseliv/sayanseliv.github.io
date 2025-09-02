@@ -1,6 +1,8 @@
 <template>
 	<main class="main-portfolio">
-		<AnimatedCircles />
+		<ClientOnly>
+			<AnimatedCircles />
+		</ClientOnly>
 		<section class="portfolio-hero">
 			<div class="container hero__container">
 				<div class="hero__info">
@@ -17,8 +19,10 @@
 					<figure class="hero__figure">
 						<img
 							src="/images/portfolio-hero-cold.webp"
+							width="380"
+							height="570"
 							alt="Showcase of Lang Eugen's portfolio projects"
-							loading="lazy" />
+							fetchpriority="high" />
 					</figure>
 				</div>
 			</div>
@@ -209,6 +213,7 @@ useHead({
 	gap: 1rem;
 	@include media(640px) {
 		grid-template-columns: 1fr;
+		gap: 0.75rem;
 	}
 }
 </style>

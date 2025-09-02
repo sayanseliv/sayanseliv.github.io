@@ -3,13 +3,16 @@ const BASE_URL = 'https://sayanseliv.github.io';
 export default defineNuxtConfig({
 	devtools: { enabled: true },
 	ssr: true,
-	components: [
-		{
-			path: '~/components',
-			pathPrefix: false,
-		},
-	],
+	components: {
+		dirs: [
+			{
+				path: '~/components',
+				pathPrefix: false,
+			},
+		],
+	},
 	nitro: {
+		minify: true,
 		compressPublicAssets: true,
 		prerender: {
 			routes: ['/'],
@@ -64,6 +67,18 @@ export default defineNuxtConfig({
 		},
 		build: {
 			cssCodeSplit: true,
+			rollupOptions: {
+				output: {
+					manualChunks: {
+						vendor: ['vue', 'vue-router'],
+						animations: [
+							'@/components/UI/AnimatedCircles.vue',
+							'@/components/AnimatedBlock.vue',
+							'@/components/UI/ParticleCanvas.vue',
+						],
+					},
+				},
+			},
 		},
 	},
 	app: {

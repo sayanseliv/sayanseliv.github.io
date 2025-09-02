@@ -1,6 +1,8 @@
 <template>
 	<main class="main-home">
-		<ParticleCanvas />
+		<ClientOnly>
+			<ParticleCanvas />
+		</ClientOnly>
 		<div class="container home__container">
 			<section class="home__hero">
 				<div class="hero__profile-section">

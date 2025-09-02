@@ -1,5 +1,5 @@
 <template>
-	<main class="emoji-switching">
+	<main class="main-emoji-switching">
 		<div class="container">
 			<EmojiSwitchingInterface />
 		</div>
@@ -13,7 +13,7 @@ defineOptions({
 </script>
 
 <style scoped lang="scss">
-.emoji-switching {
+.main-emoji-switching {
 	padding-top: 4rem;
 	overflow: hidden;
 }

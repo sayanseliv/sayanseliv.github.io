@@ -67,39 +67,6 @@ export default defineNuxtConfig({
 		},
 		build: {
 			cssCodeSplit: true,
-			// rollupOptions: {
-			// 	output: {
-			// 		manualChunks(id) {
-			// 			// Vendor chunks
-			// 			if (id.includes('node_modules')) {
-			// 				if (id.includes('vue') || id.includes('@vue')) {
-			// 					return 'vue-vendor';
-			// 				}
-			// 				if (id.includes('three')) {
-			// 					return 'three-vendor';
-			// 				}
-			// 				return 'vendor';
-			// 			}
-
-			// 			// Animation components
-			// 			if (
-			// 				id.includes('components/AnimatedCircles') ||
-			// 				id.includes('components/AnimatedBlock') ||
-			// 				id.includes('components/ParticleCanvas')
-			// 			) {
-			// 				return 'animations';
-			// 			}
-
-			// 			// UI components
-			// 			if (id.includes('components/UI/')) {
-			// 				return 'ui-components';
-			// 			}
-
-			// 			// Explicitly return undefined for clarity
-			// 			return undefined;
-			// 		},
-			// 	},
-			// },
 		},
 	},
 	esbuild: {

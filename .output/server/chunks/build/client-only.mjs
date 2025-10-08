@@ -1,0 +1,2 @@
+import{defineComponent as l,ref as a,provide as e,createElementBlock as r}from"vue";const t=Symbol.for("nuxt:client-only"),o=l({name:"ClientOnly",inheritAttrs:!1,props:["fallback","placeholder","placeholderTag","fallbackTag"],setup(l,{slots:o,attrs:n}){const c=a(!1);return e(t,!0),l=>{var a;if(c.value)return null==(a=o.default)?void 0:a.call(o);const e=o.fallback||o.placeholder;if(e)return e();const t=l.fallback||l.placeholder||"",s=l.fallbackTag||l.placeholderTag||"span";return r(s,n,t)}}});export{o as _};
+//# sourceMappingURL=client-only.mjs.map

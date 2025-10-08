@@ -23,6 +23,8 @@ interface _GlobalComponents {
     'CardTechnology': typeof import("../components/cards/CardTechnology.vue")['default']
     'CardTools': typeof import("../components/cards/CardTools.vue")['default']
     'AnimatedGrid': typeof import("../components/features/AnimatedGrid.vue")['default']
+    'AnimationBlueMellow': typeof import("../components/features/AnimationBlueMellow.vue")['default']
+    'BgWaveSurface': typeof import("../components/features/BgWaveSurface.vue")['default']
     'CanvasParticle': typeof import("../components/features/CanvasParticle.vue")['default']
     'EmojiSwitchingInterface': typeof import("../components/features/EmojiSwitchingInterface.vue")['default']
     'GeometricFigures': typeof import("../components/features/GeometricFigures.vue")['default']
@@ -139,6 +141,8 @@ interface _GlobalComponents {
     'LazyCardTechnology': LazyComponent<typeof import("../components/cards/CardTechnology.vue")['default']>
     'LazyCardTools': LazyComponent<typeof import("../components/cards/CardTools.vue")['default']>
     'LazyAnimatedGrid': LazyComponent<typeof import("../components/features/AnimatedGrid.vue")['default']>
+    'LazyAnimationBlueMellow': LazyComponent<typeof import("../components/features/AnimationBlueMellow.vue")['default']>
+    'LazyBgWaveSurface': LazyComponent<typeof import("../components/features/BgWaveSurface.vue")['default']>
     'LazyCanvasParticle': LazyComponent<typeof import("../components/features/CanvasParticle.vue")['default']>
     'LazyEmojiSwitchingInterface': LazyComponent<typeof import("../components/features/EmojiSwitchingInterface.vue")['default']>
     'LazyGeometricFigures': LazyComponent<typeof import("../components/features/GeometricFigures.vue")['default']>
@@ -261,6 +265,8 @@ export const CardPortfolio: typeof import("../components/cards/CardPortfolio.vue
 export const CardTechnology: typeof import("../components/cards/CardTechnology.vue")['default']
 export const CardTools: typeof import("../components/cards/CardTools.vue")['default']
 export const AnimatedGrid: typeof import("../components/features/AnimatedGrid.vue")['default']
+export const AnimationBlueMellow: typeof import("../components/features/AnimationBlueMellow.vue")['default']
+export const BgWaveSurface: typeof import("../components/features/BgWaveSurface.vue")['default']
 export const CanvasParticle: typeof import("../components/features/CanvasParticle.vue")['default']
 export const EmojiSwitchingInterface: typeof import("../components/features/EmojiSwitchingInterface.vue")['default']
 export const GeometricFigures: typeof import("../components/features/GeometricFigures.vue")['default']
@@ -377,6 +383,8 @@ export const LazyCardPortfolio: LazyComponent<typeof import("../components/cards
 export const LazyCardTechnology: LazyComponent<typeof import("../components/cards/CardTechnology.vue")['default']>
 export const LazyCardTools: LazyComponent<typeof import("../components/cards/CardTools.vue")['default']>
 export const LazyAnimatedGrid: LazyComponent<typeof import("../components/features/AnimatedGrid.vue")['default']>
+export const LazyAnimationBlueMellow: LazyComponent<typeof import("../components/features/AnimationBlueMellow.vue")['default']>
+export const LazyBgWaveSurface: LazyComponent<typeof import("../components/features/BgWaveSurface.vue")['default']>
 export const LazyCanvasParticle: LazyComponent<typeof import("../components/features/CanvasParticle.vue")['default']>
 export const LazyEmojiSwitchingInterface: LazyComponent<typeof import("../components/features/EmojiSwitchingInterface.vue")['default']>
 export const LazyGeometricFigures: LazyComponent<typeof import("../components/features/GeometricFigures.vue")['default']>

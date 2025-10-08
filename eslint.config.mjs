@@ -37,20 +37,9 @@ export default withNuxt({
 				math: 'always',
 			},
 		],
-		'functional/no-let': [
-			'warn',
-			{
-				allowInForLoopInit: true,
-			},
-		],
 		'functional/no-expression-statement': 'off',
 		'functional/prefer-readonly-type': 'off',
-		'functional/immutable-data': [
-			'warn',
-			{
-				ignoreAccessorPattern: ['**.value'],
-			},
-		],
+		'functional/immutable-data': 'off',
 		'vuejs-accessibility/click-events-have-key-events': 'error',
 
 		'vuejs-accessibility/label-has-for': [
@@ -63,5 +52,6 @@ export default withNuxt({
 		],
 		'vuejs-accessibility/form-control-has-label': 'error',
 		'vuejs-accessibility/alt-text': 'error',
+		'prefer-const': 'off',
 	},
 });

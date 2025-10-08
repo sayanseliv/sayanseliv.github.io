@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://sayanseliv.github.io/</loc>
-        <lastmod>2025-09-02T11:04:04Z</lastmod>
+        <lastmod>2025-10-08T10:09:52Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         <image:image>
@@ -11,7 +11,7 @@
     </url>
     <url>
         <loc>https://sayanseliv.github.io/features</loc>
-        <lastmod>2025-09-01T15:38:07Z</lastmod>
+        <lastmod>2025-09-25T16:34:14Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -66,6 +66,12 @@
     <url>
         <loc>https://sayanseliv.github.io/features/animated-grid-canvas</loc>
         <lastmod>2025-08-17T22:09:42Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://sayanseliv.github.io/features/blue-mellow</loc>
+        <lastmod>2025-10-08T10:15:10Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

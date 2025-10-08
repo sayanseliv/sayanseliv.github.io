@@ -466,6 +466,22 @@
 				"HTML5"
 			],
 			"link": "/features/canvas-geometric-figures"
+		},
+		{
+			"id": 9,
+			"title": "Blue mellow",
+			"description": "Blue Mellow is an interactive particle canvas effect where glowing blue particles flow in smooth, wave-like patterns. It creates a mesmerizing dynamic background for web interfaces, reacting to user interactions and offering a visually engaging experience.",
+			"tags": [
+				"Canvas",
+				"Animation",
+				"Interactive",
+				"Particles",
+				"JavaScript",
+				"HTML5",
+				"Visual Effects",
+				"Background"
+			],
+			"link": "features/blue-mellow"
 		}
 	]
 }

@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./BeHx6iVo.js","./2cLet2fW.js","./entry.Dl2-dQc_.css","./-iTP7Vvr.js","./ThreeDCar.j0R0eFS-.css"])))=>i.map(i=>d[i]);
+import{f as a,c as o,o as t,b as r,u as _,g as s,h as n,_ as c}from"./2cLet2fW.js";const d={class:"main-page-3d-car"},m=a({name:"Page3dCar",__name:"3dcar",setup(p){const e=s(()=>n(()=>import("./BeHx6iVo.js"),__vite__mapDeps([0,1,2,3,4]),import.meta.url));return(i,f)=>(t(),o("main",d,[r(_(e))]))}}),l=c(m,[["__scopeId","data-v-7ab08b9e"]]);export{l as default};

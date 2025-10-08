@@ -16,7 +16,7 @@
 						</figure>
 						<div class="hero__social-links">
 							<NuxtLink
-								href="https://www.facebook.com/Evgenyyyi"
+								to="https://www.facebook.com/Evgenyyyi"
 								external
 								target="_blank"
 								aria-label="Facebook profile"
@@ -32,7 +32,7 @@
 								</svg>
 							</NuxtLink>
 							<NuxtLink
-								href="https://www.linkedin.com/in/eugen-lang-18475b143/"
+								to="https://www.linkedin.com/in/eugen-lang-18475b143/"
 								external
 								target="_blank"
 								aria-label="LinkedIn profile"
@@ -47,7 +47,7 @@
 								</svg>
 							</NuxtLink>
 							<NuxtLink
-								href="https://github.com/sayanseliv"
+								to="https://github.com/sayanseliv"
 								external
 								target="_blank"
 								aria-label="GitHub profile"

@@ -482,6 +482,22 @@
 				"Background"
 			],
 			"link": "features/blue-mellow"
+		},
+		{
+			"id": 10,
+			"title": "Animated smoke",
+			"description": "Animated Smoke is a realistic 3D smoke background effect created with WebGL shaders. The animation simulates flowing, volumetric smoke with smooth turbulence and depth, giving a dynamic atmospheric look. It reacts subtly to mouse movement, making it ideal for modern hero sections or immersive web backgrounds.",
+			"tags": [
+				"WebGL",
+				"Shader",
+				"Smoke",
+				"3D",
+				"Animation",
+				"Interactive",
+				"Visual Effects",
+				"Background"
+			],
+			"link": "features/animated-smoke"
 		}
 	]
 }

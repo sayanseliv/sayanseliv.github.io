@@ -1,1 +1,0 @@
-{"version":3,"file":"data.json.mjs","sources":["../../../../components/AnimatedBlock.vue"],"sourcesContent":null,"names":["$gsap","useNuxtApp","animatedBlock","ref","ref_key","class","wrapperClass","_attrs"],"mappings":"8XAMA,MAAMA,MAAEA,GAAUC,IAmBZC,EAAgBC,EAAwB,sCAxBpCC,QAAA,gBAAJD,IAAID,EAAgBG,MAAK,CAAC,iBAAyBC,EAAAA,eAAYC"}

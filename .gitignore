@@ -1,13 +1,26 @@
 # Dependency directories
 node_modules/
-# .output/
-.nuxt
-# Yarn
-yarn-error.log
-.yarn-integrity
-.yarn
+.nuxt/
+.output/
+dist/
+
+# Yarn (Berry/3+)
 .yarn/
+.yarn-integrity
+yarn-error.log*
+
+# Production builds
+.output/
+dist/
 
 # OS generated files
 .DS_Store
 Thumbs.db
+*.log
+
+# IDE
+.vscode/
+.idea/
+
+# Nuxt/TS
+*.tsbuildinfo

@@ -12,6 +12,7 @@ export default defineNuxtConfig({
 		],
 	},
 	nitro: {
+		preset: 'github_pages',
 		minify: true,
 		compressPublicAssets: true,
 		prerender: {
@@ -73,6 +74,7 @@ export default defineNuxtConfig({
 		options: { drop: ['console', 'debugger'] },
 	},
 	app: {
+		baseURL: '/',
 		head: {
 			htmlAttrs: { lang: 'en' },
 			title: 'Lang Eugen – Front-End Developer | Vue, Nuxt & React',
@@ -116,7 +118,7 @@ export default defineNuxtConfig({
 				{
 					key: 'og-url',
 					property: 'og:url',
-					content: '/',
+					content: BASE_URL,
 				},
 				{ key: 'og-type', property: 'og:type', content: 'website' },
 				{
@@ -151,7 +153,7 @@ export default defineNuxtConfig({
 					media: 'print',
 					onload: "this.media='all'",
 				},
-				{ rel: 'canonical', href: BASE_URL },
+				{ rel: 'canonical', href: `${BASE_URL}/` },
 				{
 					rel: 'icon',
 					type: 'image/x-icon',

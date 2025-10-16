@@ -4,6 +4,7 @@
 			<ParticleCanvas />
 		</ClientOnly>
 		<div class="container home__container">
+			Changes
 			<section class="home__hero">
 				<div class="hero__profile-section">
 					<div class="hero__avatar-wrapper">

@@ -5,7 +5,7 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-	name: 'ChaseGame',
+	name: 'BlueMellow',
 });
 </script>
 <style lang="scss" scoped>

@@ -16,8 +16,9 @@ jobs:
               with:
                   node-version: 20
                   cache: 'yarn'
+                  cache-dependency-path: '**/yarn.lock'
             - run: corepack enable
-            - run: yarn install --frozen-lockfile
+            - run: yarn install --immutable
             - run: yarn generate
             - uses: actions/upload-pages-artifact@v3
               with:

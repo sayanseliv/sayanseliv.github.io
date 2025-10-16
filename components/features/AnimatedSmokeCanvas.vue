@@ -486,9 +486,15 @@ function splat(x, y, dx, dy, color) {
 
 function resizeCanvas() {
 	const canvasEl = canvas.value;
-	if (canvasEl.width !== canvasEl.clientWidth || canvasEl.height !== canvasEl.clientHeight) {
-		canvasEl.width = canvasEl.clientWidth;
-		canvasEl.height = canvasEl.clientHeight;
+	const dpr = window.devicePixelRatio || 1;
+
+	const displayWidth = Math.floor(canvasEl.clientWidth * dpr);
+	const displayHeight = Math.floor(canvasEl.clientHeight * dpr);
+
+	if (canvasEl.width !== displayWidth || canvasEl.height !== displayHeight) {
+		canvasEl.width = displayWidth;
+		canvasEl.height = displayHeight;
+		gl.viewport(0, 0, displayWidth, displayHeight);
 		initFramebuffers();
 	}
 }

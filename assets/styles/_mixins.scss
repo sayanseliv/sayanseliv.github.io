@@ -23,3 +23,10 @@
 		$transform2: rotateX(-30deg) translateY(-5px)
 	);
 }
+
+@mixin hover-focus {
+	&:hover,
+	&:focus-within {
+		@content;
+	}
+}

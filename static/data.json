@@ -562,6 +562,22 @@
 				"Background"
 			],
 			"link": "features/animated-smoke"
+		},
+		{
+			"id": 11,
+			"title": "Image Optimization",
+			"description": "Image Optimization demonstrates modern techniques for responsive and efficient image loading using WebP, JPG fallback, srcset, picture tag, resolution switching, and creative visual effects. The demo shows how browsers select optimal formats and sizes while preserving quality.",
+			"tags": [
+				"Images",
+				"WebP",
+				"Srcset",
+				"Picture tag",
+				"Responsive",
+				"Optimization",
+				"Performance",
+				"Visual Effects"
+			],
+			"link": "/features/image-optimization"
 		}
 	]
 }

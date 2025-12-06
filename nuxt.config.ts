@@ -213,6 +213,9 @@ export default defineNuxtConfig({
 			siteUrl: BASE_URL,
 		},
 	},
+	tres: {
+		glsl: true,
+	},
 	typescript: { typeCheck: true, strict: true },
 	compatibilityDate: '2024-10-11',
 });

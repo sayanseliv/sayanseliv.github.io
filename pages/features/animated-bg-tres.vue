@@ -23,6 +23,11 @@
 						<div class="neon-line-base neon-color-blue" />
 						<BgWaveSurface />
 					</div>
+					<div class="backgrounds__card">
+						<h3 class="backgrounds__subtitle">Background Flow Field 3D</h3>
+						<div class="neon-line-base neon-color-blue" />
+						<FlowField3D />
+					</div>
 				</div>
 			</div>
 		</section>
@@ -117,13 +122,13 @@ defineOptions({
 	}
 }
 .backgrounds__card {
-	max-height: 500px;
+	height: 500px;
 	padding-top: 1rem;
 	border-radius: var(--border-radius);
 	border: 1px solid var(--gray-300);
 	overflow: hidden;
 	@include media(768px) {
-		max-height: 400px;
+		height: 400px;
 	}
 }
 .backgrounds__subtitle {

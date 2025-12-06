@@ -100,6 +100,7 @@ onLoop(({ delta }) => {
 
 <style lang="scss" scoped>
 .bg-wave-surface {
+	display: block;
 	height: 100%;
 	width: 100%;
 }

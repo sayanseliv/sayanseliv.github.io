@@ -46,7 +46,6 @@
 </template>
 <script setup lang="ts">
 import data from '@/static/data.json';
-const cards = data.projects;
 defineOptions({
 	name: 'PagePortfolio',
 });
@@ -101,6 +100,8 @@ useHead({
 		},
 	],
 });
+
+const cards = computed(() => [...data.projects].reverse());
 </script>
 
 <style lang="scss" scoped>

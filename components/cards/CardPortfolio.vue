@@ -1,7 +1,7 @@
 <template>
 	<div class="card-portfolio">
 		<div class="card-portfolio__content">
-			<figure class="card-portfolio__figure">
+			<figure class="card-portfolio__figure fix-blur-on-zoom">
 				<img :src="logo" :alt="`${title} project logo`" loading="lazy" decoding="async" />
 			</figure>
 

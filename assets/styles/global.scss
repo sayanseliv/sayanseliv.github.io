@@ -149,3 +149,8 @@ body.scroll-lock {
 		opacity: 1;
 	}
 }
+.fix-blur-on-zoom {
+	transform: translateZ(0);
+	will-change: transform;
+	backface-visibility: hidden;
+}

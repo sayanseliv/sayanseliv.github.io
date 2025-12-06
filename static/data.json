@@ -313,6 +313,14 @@
 		},
 		{
 			"id": 7,
+			"title": "Logistics Zelh Tech",
+			"link": "https://logistics.zelhtech.com/",
+			"description": "Logistics Zelh Tech supports freight brokerage companies with scalable growth tools, tech integrations, and process automation tailored to the industry.",
+			"logo": "/projects/logisticszelhtech.webp",
+			"technology": "Nuxt 3"
+		},
+		{
+			"id": 8,
 			"title": "Zelh",
 			"link": "https://zelh.com/",
 			"description": "Zelh helps businesses scale by building remote teams, optimizing operations, and handling administrative tasks so clients can focus on growth.",
@@ -320,7 +328,7 @@
 			"technology": "Wordpress, Contact Form 7, ACF"
 		},
 		{
-			"id": 8,
+			"id": 9,
 			"title": "Zelh Logistics",
 			"link": "https://zelhlogistics.com/",
 			"description": "Zelh Logistics provides tailored staffing and outsourcing services for logistics companies, helping streamline workflows and reduce operational costs.",
@@ -328,7 +336,7 @@
 			"technology": "Nuxt 3, Swiper"
 		},
 		{
-			"id": 9,
+			"id": 10,
 			"title": "Zelh Academy",
 			"link": "https://academy.zelh.com/",
 			"description": "Zelh Academy offers career guidance and professional training programs designed to help individuals grow and succeed in the logistics industry.",
@@ -336,7 +344,7 @@
 			"technology": "Wordpress, Polylang, Contact Form 7, ACF"
 		},
 		{
-			"id": 10,
+			"id": 11,
 			"title": "Zelh Tech",
 			"link": "https://zelh.tech/",
 			"description": "Zelh Tech blends strategy, technology, and design to deliver high-impact digital solutions — from MVP launch to full-scale product growth.",
@@ -344,12 +352,12 @@
 			"technology": "Nuxt 3, Swiper"
 		},
 		{
-			"id": 11,
-			"title": "Logistics Zelh Tech",
-			"link": "https://logistics.zelhtech.com/",
-			"description": "Logistics Zelh Tech supports freight brokerage companies with scalable growth tools, tech integrations, and process automation tailored to the industry.",
-			"logo": "/projects/logisticszelhtech.webp",
-			"technology": "Nuxt 3"
+			"id": 12,
+			"title": "Nexora-x",
+			"link": "https://nexora-x.tech/",
+			"description": "Nexora-X builds intelligent AI solutions and modern digital systems to boost performance and reduce operational costs.",
+			"logo": "/projects/nexora-x.webp",
+			"technology": "Nuxt 3, Swiper, Nuxt UI, i18n, Three.js"
 		}
 	],
 	"languages": [

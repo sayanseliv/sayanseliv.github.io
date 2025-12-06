@@ -5,6 +5,10 @@
 </template>
 
 <script setup lang="ts">
+defineOptions({
+	name: 'AnimationBlueMellow',
+});
+
 interface Particle {
 	x: number;
 	y: number;

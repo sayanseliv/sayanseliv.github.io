@@ -1,86 +1,106 @@
 <template>
-	<div class="absolute inset-0 w-full h-full -z-1">
-		<TresCanvas clear-color="#000" :shadow="false" :antialias="true">
+	<div class="bg-wave-surface">
+		<TresCanvas clear-color="#000" :shadow="false" :antialias="true" :pixel-ratio="pixelRatio">
 			<TresPerspectiveCamera :position="[0, 0, 800]" />
-			<OrbitControls />
-
-			<primitive ref="points" :object="new THREE.Points(geometry, material)" />
+			<TresPoints :geometry="geometry" :material="material" />
 		</TresCanvas>
 	</div>
 </template>
+
 <script setup lang="ts">
 import * as THREE from 'three';
+import { useRenderLoop } from '@tresjs/core';
 
-const points = shallowRef<THREE.Points>();
+defineOptions({
+	name: 'BgWaveSurface',
+});
 
-// grid
+// --- Retina / DPR ---
+const pixelRatio = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio, 2) : 1;
+
+// --- Config ---
 const cols = 120;
 const rows = 60;
 const spacing = 10;
-let time = 0;
+const speed = 1.0;
 
+// Base color #48abed
+const baseColor = new THREE.Color(0.282, 0.671, 0.929);
+
+// --- Geometry ---
 const positions = new Float32Array(cols * rows * 3);
-const colors = new Float32Array(cols * rows * 3);
-
-const geometry = new THREE.BufferGeometry();
-geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
-
-const material = new THREE.PointsMaterial({
-	size: 2,
-	vertexColors: true,
-	transparent: true,
-});
-
-// init points
 let index = 0;
 for (let i = 0; i < rows; i++) {
 	for (let j = 0; j < cols; j++) {
 		positions[index * 3] = j * spacing - (cols * spacing) / 2;
 		positions[index * 3 + 1] = i * spacing - (rows * spacing) / 2;
 		positions[index * 3 + 2] = 0;
-
-		colors[index * 3] = 1;
-		colors[index * 3 + 1] = 1;
-		colors[index * 3 + 2] = 1;
 		index++;
 	}
 }
 
-// animation update
+const geometry = new THREE.BufferGeometry();
+geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+// --- Shader Material ---
+const vertexShader = `
+  uniform float uTime;
+  uniform float uPixelRatio;
+  varying float vZ;
+
+  void main() {
+    vec3 pos = position;
+
+    float wave1 = sin(pos.x * 0.015 + uTime * 2.0) * 80.0;
+    float wave2 = cos(pos.y * 0.02 + uTime * 1.5) * 60.0;
+    float wave3 = sin((pos.x + pos.y) * 0.01 + uTime * 2.5) * 50.0;
+    float wave4 = cos(pos.x * 0.008 - pos.y * 0.012 + uTime) * 40.0;
+
+    pos.z = wave1 + wave2 + wave3 + wave4;
+    vZ = pos.z;
+
+    vec4 mvPosition = modelViewMatrix * vec4(pos, 1.0);
+    gl_Position = projectionMatrix * mvPosition;
+
+    // Scale point size by pixel ratio
+    gl_PointSize = 2.0 * uPixelRatio;
+  }
+`;
+
+const fragmentShader = `
+  uniform vec3 uBaseColor;
+  varying float vZ;
+
+  void main() {
+    float brightness = clamp((vZ + 150.0) / 250.0, 0.0, 1.0);
+    vec3 finalColor = mix(uBaseColor, vec3(1.0), brightness);
+    gl_FragColor = vec4(finalColor, 1.0);
+  }
+`;
+
+const uniforms = {
+	uTime: { value: 0 },
+	uBaseColor: { value: baseColor },
+	uPixelRatio: { value: pixelRatio },
+};
+
+const material = new THREE.ShaderMaterial({
+	uniforms,
+	vertexShader,
+	fragmentShader,
+	transparent: true,
+});
+
+// --- Animation ---
 const { onLoop } = useRenderLoop();
 onLoop(({ delta }) => {
-	if (!points.value) return;
-	time += delta * 2;
-
-	const pos = geometry.attributes.position.array as Float32Array;
-	const col = geometry.attributes.color.array as Float32Array;
-
-	let k = 0;
-	for (let i = 0; i < rows; i++) {
-		for (let j = 0; j < cols; j++) {
-			const x = j * spacing;
-			const y = i * spacing;
-
-			// волны
-			const wave1 = Math.sin(x * 0.015 + time * 2) * 80;
-			const wave2 = Math.cos(y * 0.02 + time * 1.5) * 60;
-			const wave3 = Math.sin((x + y) * 0.01 + time * 2.5) * 50;
-			const wave4 = Math.cos(x * 0.008 - y * 0.012 + time) * 40;
-			const z = wave1 + wave2 + wave3 + wave4;
-
-			pos[k * 3 + 2] = z;
-
-			// brightness → color (purple gradient)
-			const brightness = Math.max(0, Math.min(1, (z + 150) / 250));
-			col[k * 3] = 0.6 + brightness * 0.4; // R
-			col[k * 3 + 1] = 0.2 + brightness * 0.3; // G
-			col[k * 3 + 2] = 0.8 + brightness * 0.2; // B
-			k++;
-		}
-	}
-
-	geometry.attributes.position.needsUpdate = true;
-	geometry.attributes.color.needsUpdate = true;
+	uniforms.uTime.value += delta * speed;
 });
 </script>
+
+<style lang="scss" scoped>
+.bg-wave-surface {
+	height: 100%;
+	width: 100%;
+}
+</style>

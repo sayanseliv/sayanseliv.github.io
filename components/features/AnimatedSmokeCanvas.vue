@@ -3,6 +3,10 @@
 </template>
 
 <script setup>
+defineOptions({
+	name: 'AnimatedSmokeCanvas',
+});
+
 const canvas = ref(null);
 let gl = null;
 let ext = null;

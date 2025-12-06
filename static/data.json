@@ -578,6 +578,22 @@
 				"Visual Effects"
 			],
 			"link": "/features/image-optimization"
+		},
+		{
+			"id": 12,
+			"title": "Animated Backgrounds",
+			"description": "Animated Backgrounds demonstrates interactive, real-time visual effects powered by TresJS and Three.js. Explore particle fields, wave surfaces, 3D shapes, and shader-based animations that are optimized for performance and immersive experiences directly in the browser.",
+			"tags": [
+				"3D",
+				"TresJS",
+				"Three.js",
+				"Animation",
+				"Interactive",
+				"Shader",
+				"Performance",
+				"Visual Effects"
+			],
+			"link": "/features/animated-bg-tres"
 		}
 	]
 }

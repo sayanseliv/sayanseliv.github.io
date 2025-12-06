@@ -37,14 +37,14 @@
 		},
 		{
 			"id": 6,
-			"title": "Vue.js",
+			"title": "Vue",
 			"category": "Frontend Frameworks",
 			"description": "Vue is a progressive JavaScript framework for building user interfaces. It features a declarative and component-based programming model that is simple to integrate and scale.",
 			"link": "https://vuejs.org/"
 		},
 		{
 			"id": 7,
-			"title": "Nuxt.js",
+			"title": "Nuxt",
 			"category": "Frontend Frameworks",
 			"description": "Nuxt is a powerful framework built on Vue.js, used for creating modern and high-performance server-side rendered (SSR) and static websites with streamlined development workflows.",
 			"link": "https://nuxt.com"
@@ -86,7 +86,7 @@
 		},
 		{
 			"id": 13,
-			"title": "Tailwind CSS",
+			"title": "Tailwind",
 			"category": "CSS Frameworks",
 			"description": "Tailwind CSS is a utility-first CSS framework that provides low-level utility classes to build custom designs quickly without writing custom CSS.",
 			"link": "https://tailwindcss.com/"
@@ -100,55 +100,76 @@
 		},
 		{
 			"id": 15,
+			"title": "Nuxt UI",
+			"category": "UI Libraries",
+			"description": "A set of beautiful, accessible, and open-source UI components for Nuxt.js, focusing on developer experience and dark mode compatibility.",
+			"link": "https://ui.nuxt.com/"
+		},
+		{
+			"id": 16,
+			"title": "PrimeVue",
+			"category": "UI Libraries",
+			"description": "A comprehensive UI component library for Vue.js, offering a vast collection of rich UI components, themes, and templates for building modern web applications.",
+			"link": "https://primevue.org/"
+		},
+		{
+			"id": 17,
 			"title": "Node.js",
 			"category": "Backend/Runtime",
 			"description": "Node.js is a runtime environment that allows JavaScript to be run on the server side, enabling the development of scalable and high-performance web applications.",
 			"link": "https://nodejs.org/"
 		},
 		{
-			"id": 16,
+			"id": 18,
+			"title": "Express.js",
+			"category": "Backend/Runtime",
+			"description": "A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.",
+			"link": "https://expressjs.com/"
+		},
+		{
+			"id": 19,
 			"title": "PHP",
 			"category": "Backend/Runtime",
 			"description": "PHP is a server-side scripting language designed for web development, widely used for creating dynamic websites and web applications.",
 			"link": "https://www.php.net/"
 		},
 		{
-			"id": 17,
+			"id": 20,
 			"title": "WordPress",
 			"category": "CMS/Platforms",
 			"description": "WordPress serves as a versatile platform for creating dynamic websites and blogs, providing customizable themes, plugins, and content management tools for easy publishing and management.",
 			"link": "https://wordpress.org/"
 		},
 		{
-			"id": 18,
+			"id": 21,
 			"title": "AWS",
 			"category": "Cloud/Infrastructure",
 			"description": "Amazon Web Services (AWS) is a comprehensive cloud platform that provides a wide range of services including computing power, storage, databases, and machine learning.",
 			"link": "https://aws.amazon.com/"
 		},
 		{
-			"id": 19,
+			"id": 22,
 			"title": "Firebase",
 			"category": "Backend as a Service (BaaS)",
 			"description": "Firebase is a platform developed by Google that provides a suite of cloud-based tools and services, including real-time databases, authentication, hosting, cloud functions, and analytics, enabling rapid development of web and mobile applications without managing server infrastructure.",
 			"link": "https://firebase.google.com/"
 		},
 		{
-			"id": 20,
+			"id": 23,
 			"title": "Supabase",
 			"category": "Backend as a Service (BaaS)",
 			"description": "Supabase is an open-source alternative to Firebase that offers a complete backend solution, including a PostgreSQL database, authentication, storage, and real-time subscriptions, enabling developers to build scalable applications quickly without complex backend setup.",
 			"link": "https://supabase.com/"
 		},
 		{
-			"id": 21,
+			"id": 24,
 			"title": "Vitest",
 			"category": "Testing",
 			"description": "A fast unit testing framework optimized for Vite and Vue.js projects, providing a simple API and excellent TypeScript support.",
 			"link": "https://vitest.dev/"
 		},
 		{
-			"id": 22,
+			"id": 25,
 			"title": "Vite",
 			"category": "Build Tools",
 			"description": "A fast build tool and development server for modern web projects, optimized for Vue.js and providing a streamlined development experience.",
@@ -260,6 +281,41 @@
 			"usage": "SEO preview",
 			"link": "https://metatags.io/",
 			"category": "SEO"
+		},
+		{
+			"id": 16,
+			"title": "Gemini",
+			"usage": "AI assistant, coding",
+			"link": "https://gemini.google.com/",
+			"category": "AI Tools"
+		},
+		{
+			"id": 17,
+			"title": "NightCafe Creator",
+			"usage": "AI Image Generation",
+			"link": "https://nightcafe.studio/",
+			"category": "AI Tools"
+		},
+		{
+			"id": 18,
+			"title": "Meshy",
+			"usage": "AI 3D/Texturing",
+			"link": "https://www.meshy.ai/",
+			"category": "AI Tools"
+		},
+		{
+			"id": 19,
+			"title": "Google Analytics",
+			"usage": "Traffic, user behavior",
+			"link": "https://analytics.google.com/",
+			"category": "Analytics"
+		},
+		{
+			"id": 20,
+			"title": "Lighthouse",
+			"usage": "Performance, SEO, PWA, Accessibility",
+			"link": "https://developers.google.com/web/tools/lighthouse",
+			"category": "Performance"
 		}
 	],
 	"projects": [

@@ -33,6 +33,11 @@
 						<div class="neon-line-base neon-color-blue" />
 						<BgCircuitWebGL :lines="20" />
 					</div>
+					<div class="backgrounds__card">
+						<h3 class="backgrounds__subtitle">Background Wave Cube</h3>
+						<div class="neon-line-base neon-color-blue" />
+						<BgWaveCube />
+					</div>
 				</div>
 			</div>
 		</section>

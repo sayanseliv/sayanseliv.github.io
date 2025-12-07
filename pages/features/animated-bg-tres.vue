@@ -28,6 +28,11 @@
 						<div class="neon-line-base neon-color-blue" />
 						<FlowField3D />
 					</div>
+					<div class="backgrounds__card">
+						<h3 class="backgrounds__subtitle">Background Circuit WebGL</h3>
+						<div class="neon-line-base neon-color-blue" />
+						<BgCircuitWebGL :lines="20" />
+					</div>
 				</div>
 			</div>
 		</section>
@@ -35,7 +40,7 @@
 </template>
 <script lang="ts" setup>
 defineOptions({
-	name: 'WaveSurface',
+	name: 'PageAnimatedBgTres',
 });
 </script>
 <style lang="scss" scoped>

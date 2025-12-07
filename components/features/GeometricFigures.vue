@@ -349,7 +349,6 @@ const drawAnimatedShapes = (): void => {
 		time,
 		rotationSpeed: 0.02,
 		drawFunction: (ctx) => {
-			// eslint-disable-next-line functional/immutable-data
 			ctx.fillStyle = '#FF6B6B';
 			ctx.beginPath();
 			ctx.moveTo(0, -w * 0.08);
@@ -367,7 +366,6 @@ const drawAnimatedShapes = (): void => {
 		time,
 		rotationSpeed: -0.015,
 		drawFunction: (ctx) => {
-			// eslint-disable-next-line functional/immutable-data
 			ctx.fillStyle = '#4ECDC4';
 			ctx.fillRect(-w * 0.06, -w * 0.06, w * 0.12, w * 0.12);
 		},

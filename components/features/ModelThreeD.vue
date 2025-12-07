@@ -1,10 +1,15 @@
 <template>
-	<primitive :object="scene" />
+	<primitive v-if="model?.scene" :object="model.scene" />
 </template>
+
 <script setup lang="ts">
+import { useLoop } from '@tresjs/core';
+import { useGLTF } from '@tresjs/cientos';
+
 defineOptions({
 	name: 'ModelThreeD',
 });
+
 const props = withDefaults(
 	defineProps<{
 		readonly modelPath: string;
@@ -12,7 +17,11 @@ const props = withDefaults(
 	}>(),
 	{ draco: true }
 );
+
 const { modelPath, draco } = props;
+
+const isRotating = ref(true);
+const rotationSpeed = 0.01;
 
 const startRotation = () => {
 	isRotating.value = true;
@@ -20,17 +29,17 @@ const startRotation = () => {
 const stopRotation = () => {
 	isRotating.value = false;
 };
+
 defineExpose({ startRotation, stopRotation });
 
-const { scene } = await useGLTF(modelPath, { draco: draco });
+const { state } = await useGLTF(modelPath, { draco });
+const model = computed(() => state.value);
 
-const isRotating = ref(true);
-const rotationSpeed = 0.01;
+const { onBeforeRender } = useLoop();
 
-useRenderLoop().onLoop(() => {
-	if (scene && isRotating.value) {
-		// eslint-disable-next-line functional/immutable-data
-		scene.rotation.y += rotationSpeed;
+onBeforeRender(() => {
+	if (model.value?.scene && isRotating.value) {
+		model.value.scene.rotation.y += rotationSpeed;
 	}
 });
 </script>

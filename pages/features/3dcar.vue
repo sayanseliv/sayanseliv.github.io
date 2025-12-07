@@ -1,11 +1,11 @@
 <template>
 	<main class="main-page-3d-car">
-		<ThreeDCar />
+		<ClientOnly fallback-tag="div" fallback="Loading 3D Engine...">
+			<ThreeDCar />
+		</ClientOnly>
 	</main>
 </template>
 <script lang="ts" setup>
-const ThreeDCar = defineAsyncComponent(() => import('@/components/features/ThreeDCar.vue'));
-
 defineOptions({
 	name: 'Page3dCar',
 });

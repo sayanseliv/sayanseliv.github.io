@@ -54,6 +54,11 @@
 
 <script setup lang="ts">
 import { OrbitControls } from '@tresjs/cientos';
+
+defineOptions({
+	name: 'ThreeDCar',
+});
+
 const modelRef = ref();
 const isModelReady = ref<boolean>(false);
 const onModelReady = () => {

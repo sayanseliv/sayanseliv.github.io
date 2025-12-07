@@ -152,7 +152,6 @@ const menuItems = [
 ];
 const menuActions = {
 	togglePause: () => {
-		// eslint-disable-next-line functional/immutable-data
 		gameState.gameRunning = !gameState.gameRunning;
 		hideContextMenu();
 	},
@@ -197,11 +196,10 @@ const createCoins = () => {
 	coins.value = [];
 
 	for (let i = 0; i < GAME_CONFIG.COIN_COUNT; i++) {
-		// eslint-disable-next-line functional/no-let
 		let x: number, y: number;
-		// eslint-disable-next-line functional/no-let
+
 		let validPosition = false;
-		// eslint-disable-next-line functional/no-let
+
 		let attempts = 0;
 
 		while (!validPosition && attempts < 50) {
@@ -237,11 +235,11 @@ const setInitPlayer = () => {
 	const playerHeight = 40;
 
 	const x = 20;
-	// eslint-disable-next-line functional/no-let
+
 	let y = areaHeight / 2 - GAME_CONFIG.HEADER_HEIGHT;
-	// eslint-disable-next-line functional/no-let
+
 	let attempts = 0;
-	// eslint-disable-next-line functional/no-let
+
 	let validPosition = false;
 
 	while (!validPosition && attempts < 50) {
@@ -260,14 +258,12 @@ const setInitPlayer = () => {
 		attempts++;
 	}
 
-	// eslint-disable-next-line functional/immutable-data
 	positions.player.x = x;
-	// eslint-disable-next-line functional/immutable-data
+
 	positions.player.y = y;
 
-	// eslint-disable-next-line functional/immutable-data
 	positions.enemy.x = areaWidth - 60;
-	// eslint-disable-next-line functional/immutable-data
+
 	positions.enemy.y = areaHeight / 3 - GAME_CONFIG.HEADER_HEIGHT;
 };
 
@@ -286,9 +282,8 @@ const moveEnemy = () => {
 	const moveX = (dx / distance) * GAME_CONFIG.ENEMY_SPEED;
 	const moveY = (dy / distance) * GAME_CONFIG.ENEMY_SPEED;
 
-	// eslint-disable-next-line functional/no-let
 	let newX = enemyPos.x + moveX;
-	// eslint-disable-next-line functional/no-let
+
 	let newY = enemyPos.y + moveY;
 
 	const enemyWidth = 35;
@@ -310,9 +305,8 @@ const moveEnemy = () => {
 	);
 
 	if (canMove) {
-		// eslint-disable-next-line functional/immutable-data
 		positions.enemy.x = newX;
-		// eslint-disable-next-line functional/immutable-data
+
 		positions.enemy.y = newY;
 	} else {
 		// Простое обходное движение
@@ -327,9 +321,8 @@ const moveEnemy = () => {
 			newY = Math.max(0, Math.min(gameArea.value.clientHeight - enemyHeight, newY));
 		}
 
-		// eslint-disable-next-line functional/immutable-data
 		positions.enemy.x = newX;
-		// eslint-disable-next-line functional/immutable-data
+
 		positions.enemy.y = newY;
 	}
 };
@@ -359,9 +352,8 @@ const checkCollisions = () => {
 		);
 
 		if (coinDist < 25) {
-			// eslint-disable-next-line functional/immutable-data
 			coin.collected = true;
-			// eslint-disable-next-line functional/immutable-data
+
 			gameState.score++;
 			return false;
 		}
@@ -377,15 +369,14 @@ const takeDamage = () => {
 	const now = Date.now();
 	if (now - lastDamageTime.value < 2000) return;
 	lastDamageTime.value = now;
-	// eslint-disable-next-line functional/immutable-data
+
 	gameState.lives--;
-	// eslint-disable-next-line functional/immutable-data
+
 	gameState.invulnerable = true;
 
 	player.value.style.opacity = '0.5';
 
 	setTimeout(() => {
-		// eslint-disable-next-line functional/immutable-data
 		gameState.invulnerable = false;
 		if (player.value) {
 			player.value.style.opacity = '1';
@@ -407,9 +398,8 @@ const initGame = () => {
 const movePlayer = () => {
 	if (!gameState.gameRunning || !gameArea.value) return;
 
-	// eslint-disable-next-line functional/no-let
 	let newX = positions.player.x;
-	// eslint-disable-next-line functional/no-let
+
 	let newY = positions.player.y;
 
 	const playerHeight = player.value?.offsetHeight || 40;
@@ -438,9 +428,8 @@ const movePlayer = () => {
 	);
 
 	if (canMove) {
-		// eslint-disable-next-line functional/immutable-data
 		positions.player.x = newX;
-		// eslint-disable-next-line functional/immutable-data
+
 		positions.player.y = newY;
 	}
 };
@@ -454,7 +443,6 @@ const gameLoop = () => {
 };
 
 const winGame = () => {
-	// eslint-disable-next-line functional/immutable-data
 	gameState.gameRunning = false;
 	gameOverMessage.value = 'Victory!';
 	finalScoreMessage.value = `All coins collected! Lives remaining: ${gameState.lives}`;
@@ -462,7 +450,6 @@ const winGame = () => {
 };
 
 function gameOver() {
-	// eslint-disable-next-line functional/immutable-data
 	gameState.gameRunning = false;
 	gameOverMessage.value = 'Game over!';
 	finalScoreMessage.value = `Coins collected: ${gameState.score} from ${GAME_CONFIG.COIN_COUNT}`;
@@ -470,7 +457,6 @@ function gameOver() {
 }
 
 const restartGame = () => {
-	// eslint-disable-next-line functional/immutable-data
 	Object.assign(gameState, { lives: 3, score: 0, gameRunning: true, invulnerable: false });
 	setInitPlayer();
 
@@ -496,9 +482,8 @@ const showContextMenu = (event: MouseEvent) => {
 	)
 		return;
 
-	// eslint-disable-next-line functional/immutable-data
 	contextMenuPos.x = Math.min(event.clientX, window.innerWidth - 120);
-	// eslint-disable-next-line functional/immutable-data
+
 	contextMenuPos.y = Math.min(event.clientY, window.innerHeight - 120);
 
 	isShowContextMenu.value = true;
@@ -517,12 +502,11 @@ const teleportPlayer = () => {
 	const playerWidth = 40;
 	const playerHeight = 40;
 
-	// eslint-disable-next-line functional/no-let
 	let newX: number = 0,
 		newY: number = 0;
-	// eslint-disable-next-line functional/no-let
+
 	let validPosition = false;
-	// eslint-disable-next-line functional/no-let
+
 	let attempts = 0;
 
 	while (!validPosition && attempts < 50) {
@@ -550,9 +534,8 @@ const teleportPlayer = () => {
 	}
 
 	if (validPosition) {
-		// eslint-disable-next-line functional/immutable-data
 		positions.player.x = newX;
-		// eslint-disable-next-line functional/immutable-data
+
 		positions.player.y = newY;
 	}
 };

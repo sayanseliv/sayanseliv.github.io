@@ -25,16 +25,15 @@
 	"dependencies": {
 		"@nuxtjs/robots": "5.4.0",
 		"@nuxtjs/sitemap": "^7.4.3",
-		"@tresjs/cientos": "^4.3.1",
-		"@tresjs/nuxt": "^4.0.0",
+		"@tresjs/cientos": "^5.1.0",
+		"@tresjs/nuxt": "^5.1.0",
+		"@tresjs/post-processing": "^3.1.0",
 		"gsap": "^3.13.0",
 		"lucide-vue-next": "^0.539.0",
-		"nuxt": "3.16.0",
+		"nuxt": "3.20.1",
 		"nuxt-github-pages": "1.5.0",
-		"sass": "1.79.1",
-		"three": "^0.179.0",
-		"vue": "^3.5.12",
-		"vue-router": "^4.4.5"
+		"vue": "^3.5.22",
+		"vue-router": "^4.6.3"
 	},
 	"devDependencies": {
 		"@nuxt/eslint": "^1.5.2",
@@ -45,8 +44,10 @@
 		"eslint-plugin-vuejs-accessibility": "^2.4.1",
 		"happy-dom": "^18.0.1",
 		"playwright-core": "^1.54.2",
+		"sass": "^1.83.1",
 		"typescript": "^5.8.3",
 		"vitest": "^3.2.4",
 		"vue-tsc": "3.0.1"
-	}
+	},
+	"packageManager": "yarn@4.10.3+sha512.c38cafb5c7bb273f3926d04e55e1d8c9dfa7d9c3ea1f36a4868fa028b9e5f72298f0b7f401ad5eb921749eb012eb1c3bb74bf7503df3ee43fd600d14a018266f"
 }

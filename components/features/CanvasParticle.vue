@@ -41,11 +41,10 @@ class Particle {
 		this.color = `hsl(${hue.value}, 100%, 50%)`;
 	}
 	update() {
-		// eslint-disable-next-line functional/immutable-data
 		this.x += this.speedX;
-		// eslint-disable-next-line functional/immutable-data
+
 		this.y += this.speedY;
-		// eslint-disable-next-line functional/immutable-data
+
 		if (this.size > 0.2) this.size -= 0.1;
 	}
 	draw() {
@@ -61,7 +60,6 @@ const drawCircle = (
 	size: number,
 	color: string
 ) => {
-	// eslint-disable-next-line functional/immutable-data
 	ctx.fillStyle = color;
 	ctx.beginPath();
 	ctx.arc(x, y, size, 0, Math.PI * 2);
@@ -77,9 +75,9 @@ const drawLine = (
 	color: string
 ) => {
 	ctx.beginPath();
-	// eslint-disable-next-line functional/immutable-data
+
 	ctx.strokeStyle = color;
-	// eslint-disable-next-line functional/immutable-data
+
 	ctx.lineWidth = 0.2;
 	ctx.moveTo(x1, y1);
 	ctx.lineTo(x2, y2);
@@ -138,13 +136,13 @@ const handlePointerDown = (event: PointerEvent) => {
 
 const handleKeyDown = (event: KeyboardEvent) => {
 	if (!canvas.value) return;
-	const step = 10; // Шаг перемещения "курсора" с клавиатуры
+	const step = 10;
 	if (event.key === 'Enter' || event.key === ' ') {
-		event.preventDefault(); // Предотвращаем прокрутку при нажатии пробела
+		event.preventDefault();
 		addParticles(10);
 	} else if (event.key === 'ArrowUp') {
 		mouseY.value = Math.max(0, mouseY.value - step);
-		addParticles(5); // Добавляем частицы при движении
+		addParticles(5);
 	} else if (event.key === 'ArrowDown') {
 		mouseY.value = Math.min(canvas.value.height, mouseY.value + step);
 		addParticles(5);
@@ -212,11 +210,10 @@ const drawText = (
 	font = '20px Arial',
 	align: CanvasTextAlign = 'center'
 ) => {
-	// eslint-disable-next-line functional/immutable-data
 	ctx.fillStyle = color;
-	// eslint-disable-next-line functional/immutable-data
+
 	ctx.font = font;
-	// eslint-disable-next-line functional/immutable-data
+
 	ctx.textAlign = align;
 	ctx.fillText(text, x, y);
 };

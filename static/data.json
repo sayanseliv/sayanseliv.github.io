@@ -409,10 +409,10 @@
 		},
 		{
 			"id": 12,
-			"title": "Nexora-x",
-			"link": "https://nexora-x.tech/",
-			"description": "Nexora-X builds intelligent AI solutions and modern digital systems to boost performance and reduce operational costs.",
-			"logo": "/projects/nexora-x.webp",
+			"title": "Neoxora-solutions",
+			"link": "https://neoxora.solutions/",
+			"description": "Neoxora Solutions engineers adaptive digital ecosystems, interoperable platforms, and explainable AI-assistants that connect human potential with systemic needs in education, career, and migration.",
+			"logo": "/projects/neoxora-solutions.webp",
 			"technology": "Nuxt 3, Swiper, Nuxt UI, i18n, Three.js"
 		}
 	],

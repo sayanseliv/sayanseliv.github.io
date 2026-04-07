@@ -13,6 +13,8 @@ defineOptions({
 });
 </script>
 <style lang="scss">
+@use 'sass:math';
+
 .animated-circles {
 	position: fixed;
 	z-index: -1;
@@ -82,34 +84,34 @@ defineOptions({
 
 	@for $i from 1 through $particleNum {
 		&:nth-child(#{$i}) {
-			$circleSize: random($particleBaseSize);
+			$circleSize: math.random($particleBaseSize);
 			width: $circleSize + px;
 			height: $circleSize + px;
 
-			$startPositionY: random(10) + 100;
+			$startPositionY: math.random(10) + 100;
 			$framesName: 'move-frames-' + $i;
-			$moveDuration: 28000 + random(9000) + ms;
+			$moveDuration: 28000 + math.random(9000) + ms;
 
 			animation-name: #{$framesName};
 			animation-duration: $moveDuration;
-			animation-delay: random(37000) + ms;
+			animation-delay: math.random(37000) + ms;
 
 			@keyframes #{$framesName} {
 				from {
-					transform: translate3d(#{random(100) + vw}, #{$startPositionY + vh}, 0);
+					transform: translate3d(#{math.random(100) + vw}, #{$startPositionY + vh}, 0);
 				}
 
 				to {
 					transform: translate3d(
-						#{random(100) + vw},
-						#{- $startPositionY - random(30) + vh},
+						#{math.random(100) + vw},
+						#{- $startPositionY - math.random(30) + vh},
 						0
 					);
 				}
 			}
 
 			.animated-circles__circle {
-				animation-delay: random(4000) + ms;
+				animation-delay: math.random(4000) + ms;
 			}
 		}
 	}

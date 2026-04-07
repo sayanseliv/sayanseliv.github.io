@@ -85,8 +85,6 @@ export default defineNuxtConfig({
 				{ name: 'robots', content: 'index, follow' },
 				{ name: 'author', content: 'Lang Eugen' },
 				{ name: 'format-detection', content: 'telephone=no' },
-				{ name: 'msapplication-TileColor', content: '#da532c' },
-				{ name: 'msapplication-config', content: '/browserconfig.xml' },
 				{ name: 'theme-color', content: '#ffffff' },
 				{
 					key: 'description',
@@ -156,36 +154,24 @@ export default defineNuxtConfig({
 				{ rel: 'canonical', href: `${BASE_URL}/` },
 				{
 					rel: 'icon',
+					type: 'image/svg+xml',
+					href: '/favicon.svg',
+				},
+				{
+					rel: 'icon',
 					type: 'image/x-icon',
 					href: '/favicon.ico',
 				},
 				{
 					rel: 'apple-touch-icon',
 					sizes: '180x180',
-					type: 'image/x-icon',
 					href: '/apple-touch-icon.png',
-				},
-				{
-					rel: 'icon',
-					type: 'image/png',
-					sizes: '32x32',
-					href: '/favicon-32x32.png',
-				},
-				{
-					rel: 'icon',
-					type: 'image/png',
-					sizes: '16x16',
-					href: '/favicon-16x16.png',
 				},
 				{
 					rel: 'manifest',
 					href: '/site.webmanifest',
 				},
-				{
-					rel: 'mask-icon',
-					href: '/safari-pinned-tab.svg',
-					color: '#5bbad5',
-				},
+
 			],
 			script: [{ src: '/js/ParticleNetwork.js', defer: true }],
 		},

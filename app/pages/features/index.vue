@@ -30,7 +30,7 @@
 	</main>
 </template>
 <script lang="ts" setup>
-import data from '@/static/data.json';
+import data from '@@/content/data.json';
 defineOptions({
 	name: 'PageFeatures',
 });

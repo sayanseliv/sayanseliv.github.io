@@ -24,7 +24,7 @@
 	</div>
 </template>
 <script setup lang="ts">
-import type { CategoryData } from '@types';
+import type { CategoryData } from '~/types';
 import {
 	Zap as PerformanceIcon,
 	Search as SEOIcon,

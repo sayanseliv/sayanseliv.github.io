@@ -165,7 +165,7 @@ const generateCircuits = () => {
 			props.height
 		);
 
-		const randomColor = props.colors[Math.floor(Math.random() * props.colors.length)];
+		const randomColor = props.colors[Math.floor(Math.random() * props.colors.length)]!;
 		const speedVariation = 0.8 + Math.random() * 0.7;
 		const baseSpeed = totalLength / props.duration;
 

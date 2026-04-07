@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(npx nuxi:*)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); paths=d['compilerOptions']['paths']; print\\({k: v for k, v in paths.items\\(\\) if k in ['@', '@/*', '~', '~/*', '#imports']}\\)\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); opts=d.get\\('compilerOptions',{}\\); print\\('strict:', opts.get\\('strict'\\)\\); print\\('noUncheckedIndexedAccess:', opts.get\\('noUncheckedIndexedAccess'\\)\\); print\\('strictNullChecks:', opts.get\\('strictNullChecks'\\)\\)\")",
+      "Bash(python3 -c ':*)"
+    ]
+  }
+}

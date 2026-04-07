@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Content } from '@types';
+import type { Content } from '~/types';
 defineOptions({
 	name: 'CardTechnology',
 });
@@ -64,7 +64,8 @@ const handleMouseMove = (e: MouseEvent) => {
 		border: 2px solid transparent;
 		background: var(--gradient-main);
 		background-attachment: fixed;
-		mask: linear-gradient(#0000, #0000),
+		mask:
+			linear-gradient(#0000, #0000),
 			conic-gradient(
 				from calc((var(--start) - (20 * 1.1)) * 1deg),
 				#ffffff1f 0deg,
@@ -207,7 +208,8 @@ const handleMouseMove = (e: MouseEvent) => {
 	border: 5px solid transparent;
 	background: var(--gradient-main);
 	background-attachment: fixed;
-	mask: linear-gradient(#0000, #0000),
+	mask:
+		linear-gradient(#0000, #0000),
 		conic-gradient(
 			from calc((var(--start) - (20 * 1.1)) * 1deg),
 			#ffffff1f 0deg,

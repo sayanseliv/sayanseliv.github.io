@@ -57,12 +57,12 @@ const shapes = [
 	{ emoji: '⚡', color: 'var(--blue-500)' },
 ];
 
-const currentEmoji = computed(() => shapes[currentIndex.value].emoji);
+const currentEmoji = computed(() => shapes[currentIndex.value]!.emoji);
 
 const currentGradient = computed(() => {
 	const nextIndex = (currentIndex.value + 1) % shapes.length;
-	return `linear-gradient(45deg, ${shapes[currentIndex.value].color}, ${
-		shapes[nextIndex].color
+	return `linear-gradient(45deg, ${shapes[currentIndex.value]!.color}, ${
+		shapes[nextIndex]!.color
 	})`;
 });
 

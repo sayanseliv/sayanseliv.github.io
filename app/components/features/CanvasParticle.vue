@@ -163,16 +163,17 @@ const handleParticles = () => {
 		particle.update();
 		particle.draw();
 		for (let j = i; j < particlesArray.value.length; j++) {
-			const dx = particle.x - particlesArray.value[j].x;
-			const dy = particle.y - particlesArray.value[j].y;
+			const other = particlesArray.value[j]!;
+			const dx = particle.x - other.x;
+			const dy = particle.y - other.y;
 			const distance = Math.sqrt(dx * dx + dy * dy);
 			if (distance < 100 && ctx.value) {
 				drawLine(
 					ctx.value,
 					particle.x,
 					particle.y,
-					particlesArray.value[j].x,
-					particlesArray.value[j].y,
+					other.x,
+					other.y,
 					particle.color
 				);
 			}

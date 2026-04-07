@@ -98,11 +98,11 @@ const drawIntersectionPoints = () => {
 				const maxDistance = 150;
 
 				// Animation points
-				// eslint-disable-next-line functional/no-let
+
 				let offsetX = 0;
-				// eslint-disable-next-line functional/no-let
+
 				let offsetY = 0;
-				// eslint-disable-next-line functional/no-let
+
 				let animatedSize = 1;
 
 				if (animationEnabled.value) {
@@ -141,7 +141,7 @@ const drawMouseInteraction = () => {
 			0,
 			mouseX.value,
 			mouseY.value,
-			100
+			100,
 		);
 		gradient.addColorStop(0, 'rgba(102, 217, 255, 0.1)');
 		gradient.addColorStop(1, 'rgba(102, 217, 255, 0)');
@@ -170,9 +170,11 @@ const onMouseMove = (e: MouseEvent) => {
 
 const onTouchMove = (e: TouchEvent) => {
 	if (!canvas.value) return;
+	const touch = e.touches[0];
+	if (!touch) return;
 	const rect = canvas.value.getBoundingClientRect();
-	mouseX.value = e.touches[0].clientX - rect.left;
-	mouseY.value = e.touches[0].clientY - rect.top;
+	mouseX.value = touch.clientX - rect.left;
+	mouseY.value = touch.clientY - rect.top;
 };
 
 const setCanvasCursor = (cursor: string) => {

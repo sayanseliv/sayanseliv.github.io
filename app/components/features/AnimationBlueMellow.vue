@@ -61,8 +61,8 @@ class SimplexNoise {
 			128, 195, 78, 66, 215, 61, 156, 180,
 		];
 		for (let i = 0; i < 512; i++) {
-			this.perm[i] = p[i & 255];
-			this.gradP[i] = this.grad3[this.perm[i] % 12];
+			this.perm[i] = p[i & 255]!;
+			this.gradP[i] = this.grad3[this.perm[i]! % 12]!;
 		}
 	}
 
@@ -84,15 +84,15 @@ class SimplexNoise {
 		const y2 = y0 - 1 + 2 * G2;
 		const ii = i & 255;
 		const jj = j & 255;
-		const gi0 = this.gradP[ii + this.perm[jj]];
-		const gi1 = this.gradP[ii + i1 + this.perm[jj + j1]];
-		const gi2 = this.gradP[ii + 1 + this.perm[jj + 1]];
+		const gi0 = this.gradP[ii + this.perm[jj]!]!;
+		const gi1 = this.gradP[ii + i1 + this.perm[jj + j1]!]!;
+		const gi2 = this.gradP[ii + 1 + this.perm[jj + 1]!]!;
 		let t0 = 0.5 - x0 * x0 - y0 * y0;
-		n0 = t0 < 0 ? 0 : (t0 *= t0) * t0 * (gi0[0] * x0 + gi0[1] * y0);
+		n0 = t0 < 0 ? 0 : (t0 *= t0) * t0 * (gi0[0]! * x0 + gi0[1]! * y0);
 		let t1 = 0.5 - x1 * x1 - y1 * y1;
-		n1 = t1 < 0 ? 0 : (t1 *= t1) * t1 * (gi1[0] * x1 + gi1[1] * y1);
+		n1 = t1 < 0 ? 0 : (t1 *= t1) * t1 * (gi1[0]! * x1 + gi1[1]! * y1);
 		let t2 = 0.5 - x2 * x2 - y2 * y2;
-		n2 = t2 < 0 ? 0 : (t2 *= t2) * t2 * (gi2[0] * x2 + gi2[1] * y2);
+		n2 = t2 < 0 ? 0 : (t2 *= t2) * t2 * (gi2[0]! * x2 + gi2[1]! * y2);
 		return 70.0 * (n0 + n1 + n2);
 	}
 }

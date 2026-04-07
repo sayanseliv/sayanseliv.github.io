@@ -252,7 +252,7 @@
 </template>
 
 <script setup lang="ts">
-import cardsData from '@/static/data.json';
+import cardsData from '@@/content/data.json';
 import type { Tool, CategoryData } from '@/types';
 
 defineOptions({

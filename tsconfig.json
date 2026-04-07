@@ -1,13 +1,10 @@
 {
 	// https://nuxt.com/docs/guide/concepts/typescript
-	"extends": "./.nuxt/tsconfig.json",
-	"compilerOptions": {
-		"ignoreDeprecations": "6.0",
-		"baseUrl": ".",
-		"paths": { "@/*": ["./*"], "@types": ["types/index.ts"], "@types/*": ["types/*"] },
-		"resolveJsonModule": true,
-		"esModuleInterop": true,
-		"types": ["vitest/globals"]
-	},
-	"typeRoots": ["./types", "./node_modules/@types"]
+	"files": [],
+	"references": [
+		{ "path": "./.nuxt/tsconfig.app.json" },
+		{ "path": "./.nuxt/tsconfig.server.json" },
+		{ "path": "./.nuxt/tsconfig.shared.json" },
+		{ "path": "./.nuxt/tsconfig.node.json" }
+	]
 }

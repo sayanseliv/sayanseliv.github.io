@@ -85,7 +85,7 @@ export const useCanvasShapes = () => {
 
 		ctx.fillStyle = color;
 		ctx.beginPath();
-		ctx.moveTo(points[0][0], points[0][1]);
+		ctx.moveTo(points[0]![0], points[0]![1]);
 		points.slice(1).forEach(([x, y]) => ctx.lineTo(x, y));
 		ctx.closePath();
 		ctx.fill();

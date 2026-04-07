@@ -45,7 +45,7 @@
 	</main>
 </template>
 <script setup lang="ts">
-import data from '@/static/data.json';
+import data from '@@/content/data.json';
 defineOptions({
 	name: 'PagePortfolio',
 });

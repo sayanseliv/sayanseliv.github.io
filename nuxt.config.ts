@@ -69,6 +69,16 @@ export default defineNuxtConfig({
 		build: {
 			cssCodeSplit: true,
 		},
+		optimizeDeps: {
+			include: [
+				'three',
+				'@tresjs/cientos',
+				'@vue/devtools-core',
+				'@vue/devtools-kit',
+				'gsap',
+				'gsap/ScrollTrigger',
+			],
+		},
 	},
 	esbuild: {
 		options: { drop: ['console', 'debugger'] },
@@ -171,7 +181,6 @@ export default defineNuxtConfig({
 					rel: 'manifest',
 					href: '/site.webmanifest',
 				},
-
 			],
 			script: [{ src: '/js/ParticleNetwork.js', defer: true }],
 		},
@@ -202,6 +211,19 @@ export default defineNuxtConfig({
 	tres: {
 		glsl: true,
 	},
-	typescript: { typeCheck: true, strict: true },
+	typescript: {
+		typeCheck: true,
+		strict: true,
+		tsConfig: {
+			compilerOptions: {
+				types: ['vitest/globals'],
+				paths: {
+					'@types': ['../types/index.ts'],
+					'@types/*': ['../types/*'],
+				},
+			},
+			include: ['../types/**/*'],
+		},
+	},
 	compatibilityDate: '2024-10-11',
 });

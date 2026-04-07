@@ -1,4 +1,3 @@
-/* eslint-disable functional/immutable-data */
 import type {
 	DrawContext,
 	GridWithCircles,
@@ -14,7 +13,7 @@ export const useCanvasPatterns = () => {
 
 	const drawGridWithCircles = (
 		ctx: DrawContext,
-		{ gridSize, rectX, rectY, rectWidth, rectHeight }: GridWithCircles
+		{ gridSize, rectX, rectY, rectWidth, rectHeight }: GridWithCircles,
 	): void => {
 		// Grid background
 		ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
@@ -36,7 +35,7 @@ export const useCanvasPatterns = () => {
 
 	const drawZigzag = (
 		ctx: DrawContext,
-		{ width, height, amplitude = 20, frequency = 0.1, yPosition = 0.3 }: Zigzag
+		{ width, height, amplitude = 20, frequency = 0.1, yPosition = 0.3 }: Zigzag,
 	): void => {
 		ctx.strokeStyle = '#FF6B6B';
 		ctx.lineWidth = 3;
@@ -68,7 +67,7 @@ export const useCanvasPatterns = () => {
 			startY = 0.6,
 			endX = 0.6,
 			endY = 0.9,
-		}: CheckeredPattern
+		}: CheckeredPattern,
 	): void => {
 		for (let x = width * startX; x < width * endX; x += cellSize) {
 			for (let y = height * startY; y < height * endY; y += cellSize) {
@@ -82,7 +81,7 @@ export const useCanvasPatterns = () => {
 
 	const drawConcentricCircles = (
 		ctx: DrawContext,
-		{ centerX, centerY, colors, spacing = 8 }: ConcentricCircles
+		{ centerX, centerY, colors, spacing = 8 }: ConcentricCircles,
 	): void => {
 		colors.forEach((color, i) => {
 			const reverseIndex = colors.length - i;
@@ -105,7 +104,7 @@ export const useCanvasPatterns = () => {
 			yOffset = 0.5,
 			color = '#45B7D1',
 			lineWidth = 3,
-		}: SineWave
+		}: SineWave,
 	): void => {
 		ctx.strokeStyle = color;
 		ctx.lineWidth = lineWidth;

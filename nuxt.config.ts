@@ -77,6 +77,7 @@ export default defineNuxtConfig({
 				'@vue/devtools-kit',
 				'gsap',
 				'gsap/ScrollTrigger',
+				'lucide-vue-next',
 			],
 		},
 	},

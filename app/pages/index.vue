@@ -252,6 +252,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+	sitemap: { priority: 1.0, changefreq: 'weekly' },
+});
+
 import cardsData from '@@/content/data.json';
 import type { Tool, CategoryData } from '@/types';
 

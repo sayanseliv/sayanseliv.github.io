@@ -46,8 +46,7 @@ export default defineNuxtConfig({
 	},
 	robots: {
 		enabled: true,
-		groups: [{ userAgent: ['*'], allow: ['/'], disallow: [] }],
-		allow: ['/'],
+		groups: [{ userAgent: ['*'], allow: ['/'] }],
 		sitemap: ['https://sayanseliv.github.io/sitemap.xml'],
 		header: false,
 		metaTag: false,
@@ -199,6 +198,7 @@ export default defineNuxtConfig({
 		credits: false,
 		xsl: false,
 		discoverImages: true,
+		exclude: ['/features/**'],
 		defaults: {
 			changefreq: 'monthly',
 			priority: 0.8,

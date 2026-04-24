@@ -413,7 +413,23 @@
 			"link": "https://neoxora.solutions/",
 			"description": "Neoxora Solutions engineers adaptive digital ecosystems, interoperable platforms, and explainable AI-assistants that connect human potential with systemic needs in education, career, and migration.",
 			"logo": "/projects/neoxora-solutions.webp",
-			"technology": "Nuxt 3, Swiper, Nuxt UI, i18n, Three.js"
+			"technology": "Nuxt 4, Swiper, Nuxt UI, i18n, Three.js"
+		},
+		{
+			"id": 13,
+			"title": "Klass Tir EU",
+			"link": "https://klass-tir.eu/",
+			"description": "Multilingual B2B website for an international freight transport company based in Kraków, Poland. Covers services, company overview, cooperation process, and contact — available in Polish, English, and German.",
+			"logo": "/projects/klass-tir-eu.webp",
+			"technology": "Nuxt 4, Tailwind CSS v4, shadcn-nuxt, i18n, Leaflet"
+		},
+		{
+			"id": 14,
+			"title": "L'este Studio",
+			"link": "https://leste.top/",
+			"description": "Multilingual beauty salon website for a podology and nail care studio in Zakopane. Covers services, pricing, team, and online booking integration.",
+			"logo": "/projects/leste-studio.webp",
+			"technology": "Nuxt 4, Tailwind CSS v4, shadcn-nuxt, i18n"
 		}
 	],
 	"languages": [

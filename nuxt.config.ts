@@ -187,18 +187,12 @@ export default defineNuxtConfig({
 	},
 	css: ['assets/styles/reset.scss', 'assets/styles/global.scss'],
 	site: {
-		url: 'https://sayanseliv.github.io/',
+		url: 'https://sayanseliv.github.io',
 		name: 'Lang Eugen - Front-End Developer',
 	},
 	sitemap: {
-		enabled: true,
 		autoLastmod: true,
-		sortEntries: true,
-		debug: false,
-		credits: false,
-		xsl: false,
-		discoverImages: true,
-		exclude: ['/features/**'],
+		exclude: ['/features/*'],
 		defaults: {
 			changefreq: 'monthly',
 			priority: 0.8,

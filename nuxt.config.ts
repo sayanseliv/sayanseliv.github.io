@@ -16,7 +16,7 @@ export default defineNuxtConfig({
 		minify: true,
 		compressPublicAssets: true,
 		prerender: {
-			routes: ['/'],
+			routes: ['/', '/sitemap.xml'],
 			crawlLinks: true,
 		},
 	},

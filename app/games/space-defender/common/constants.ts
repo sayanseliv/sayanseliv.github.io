@@ -21,13 +21,10 @@ const appConstants = {
 	},
 	probability: {
 		enemyChangeDirection: 1,
-		bomb: 3,
 	},
 	events: {
-		infoUpdated: 'indoUpdated',
 		ufoDestroyed: 'ufoDestroyed',
 		manKilled: 'manKilled',
-		bombDestroyed: 'bombDestroyed',
 		youWin: 'youWin',
 		levelMessage: 'levelMessage',
 		gameOver: 'gameOver',

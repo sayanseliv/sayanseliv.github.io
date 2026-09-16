@@ -1,6 +1,6 @@
 import { Sprite, type Container } from 'pixi.js';
 import { getTexture } from '../common/assets';
-import { setPosition } from '../common/collisions';
+import { involvesSprite, involvesSpriteType, setPosition } from '../common/collisions';
 import appConstants from '../common/constants';
 import { allTextureKeys } from '../common/textures';
 import { getCoordX } from '../common/utils';
@@ -70,30 +70,21 @@ export class Bomb extends BaseSprite<GameSprite> {
 	}
 
 	override onCollision(event: CollisionEvent): void {
-		const { a, b } = event;
-		if (a.sprite === this.sprite || b.sprite === this.sprite) {
-			if (
-				a.sprite.spriteType === appConstants.spriteType.player ||
-				b.sprite.spriteType === appConstants.spriteType.player
-			) {
-				const player = getPlayer();
-				if (!player!.locked) {
-					player!.lockPlayer();
-					this.destroyMe();
-				}
-			} else if (
-				a.sprite.spriteType === appConstants.spriteType.man ||
-				b.sprite.spriteType === appConstants.spriteType.man
-			) {
-				// collision with man
-				this.destroyMe();
-			} else if (
-				a.sprite.spriteType === appConstants.spriteType.bullet ||
-				b.sprite.spriteType === appConstants.spriteType.bullet
-			) {
-				// collision with bullet
+		if (!involvesSprite(event, this.sprite!)) {
+			return;
+		}
+		if (involvesSpriteType(event, appConstants.spriteType.player)) {
+			const player = getPlayer();
+			if (!player!.locked) {
+				player!.lockPlayer();
 				this.destroyMe();
 			}
+		} else if (involvesSpriteType(event, appConstants.spriteType.man)) {
+			// collision with man
+			this.destroyMe();
+		} else if (involvesSpriteType(event, appConstants.spriteType.bullet)) {
+			// collision with bullet
+			this.destroyMe();
 		}
 	}
 

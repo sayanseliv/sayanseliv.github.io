@@ -7,7 +7,6 @@ import { resetPeople } from '../common/eventHub';
 import { Man } from '../classes/man';
 import type { GameApplication, GameContainer, GameSprite } from '../types';
 
-let app: GameApplication | undefined;
 let rootContainer: Container | undefined;
 let people: GameContainer | undefined;
 let aliveCoords: number[] = [];
@@ -27,7 +26,6 @@ export const initPeople = (currApp: GameApplication, root: Container): GameConta
 	}
 	people = new Container() as GameContainer;
 	people.customId = appConstants.containers.people;
-	app = currApp;
 	rootContainer = root;
 	return people;
 };

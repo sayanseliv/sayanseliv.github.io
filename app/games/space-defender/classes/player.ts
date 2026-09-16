@@ -1,6 +1,6 @@
 import { Sprite, type Container } from 'pixi.js';
 import { getTexture } from '../common/assets';
-import { setPosition } from '../common/collisions';
+import { involvesSprite, involvesSpriteType, setPosition } from '../common/collisions';
 import appConstants from '../common/constants';
 import { play } from '../common/sound';
 import { allTextureKeys } from '../common/textures';
@@ -77,14 +77,11 @@ export class Player extends BaseSprite<GameSprite> {
 	}
 
 	override onCollision(event: CollisionEvent): void {
-		const { a, b } = event;
-		if (a.sprite === this.sprite || b.sprite === this.sprite) {
-			if (
-				a.sprite.spriteType == appConstants.spriteType.bomb ||
-				b.sprite.spriteType == appConstants.spriteType.bomb
-			) {
-				//
-			}
+		if (!involvesSprite(event, this.sprite!)) {
+			return;
+		}
+		if (involvesSpriteType(event, appConstants.spriteType.bomb)) {
+			//
 		}
 	}
 	shoot(): void {

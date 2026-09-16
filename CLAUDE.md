@@ -127,6 +127,12 @@ gsap.to(el, { duration: REVEAL_DURATION_S, ease: 'power2.out' });
 - Output: `.output/public`.
 - Run `yarn generate` to produce the static build.
 
+## Engineering Principles
+
+- **KISS (Keep It Simple):** Prefer the straightforward implementation over a clever one. No premature abstractions, no speculative config layers, no generic solutions for a problem with one concrete instance.
+- **YAGNI (You Aren't Gonna Need It):** Build only what the current task requires. Do not add props, options, or extension points "for later" — see Output Expectations below.
+- **DRY (Don't Repeat Yourself):** Reuse existing composables, types, and mixins instead of duplicating logic — see `types/index.ts` for shared types and `_mixins.scss` for shared SCSS. Duplication across two call sites is fine; a third should be extracted.
+
 ## Output Expectations
 
 - **Minimal diffs:** Change only what is necessary. Do not reformat unrelated code or restructure files beyond scope.

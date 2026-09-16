@@ -8,7 +8,6 @@ import { allTextureKeys } from '../common/textures';
 import type { GameApplication, GameContainer, GameSprite, GameText } from '../types';
 
 let info: GameContainer | undefined;
-let app: GameApplication | undefined;
 
 let ufoText: GameText | undefined;
 let manText: GameText | undefined;
@@ -55,8 +54,6 @@ export const initInfo = (currApp: GameApplication, root: Container): GameContain
 
 	info = new Container() as GameContainer;
 	info.customId = appConstants.containers.infoPanel;
-
-	app = currApp;
 
 	const infoPanel = new Container();
 

@@ -4,7 +4,6 @@ import { play } from '../common/sound';
 import { randomIntFromInterval, destroySprite } from '../common/utils';
 import type { Coord, GameApplication, GameContainer } from '../types';
 
-let app: GameApplication | undefined;
 let explosions: GameContainer | undefined;
 
 const explosionTypes = [
@@ -19,7 +18,6 @@ const explosionTextures: Record<string, Texture[]> = {};
 export const initExplosions = (currApp: GameApplication, root: Container): GameContainer => {
 	explosions = new Container() as GameContainer;
 	explosions.customId = appConstants.containers.explosions;
-	app = currApp;
 	root.addChild(explosions);
 	return explosions;
 };

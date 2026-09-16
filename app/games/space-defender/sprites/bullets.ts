@@ -3,7 +3,6 @@ import { Bullet } from '../classes/bullet';
 import appConstants from '../common/constants';
 import type { Coord, GameApplication, GameContainer } from '../types';
 
-let app: GameApplication | undefined;
 let bullets: GameContainer | undefined;
 
 const bulletTypes = ['Bullet_Sequence1', 'Bullet_Sequence2'];
@@ -13,7 +12,6 @@ const allTextures: Record<string, Texture[]> = {};
 export const initBullets = (currApp: GameApplication, root: Container): GameContainer => {
 	bullets = new Container() as GameContainer;
 	bullets.customId = appConstants.containers.bullets;
-	app = currApp;
 	return bullets;
 };
 

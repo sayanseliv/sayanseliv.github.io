@@ -1,5 +1,5 @@
 import { AnimatedSprite, ColorMatrixFilter, type Container, type Texture } from 'pixi.js';
-import { setPosition } from '../common/collisions';
+import { involvesSprite, involvesSpriteType, setPosition } from '../common/collisions';
 import appConstants from '../common/constants';
 import { play } from '../common/sound';
 import { addExplosion } from '../sprites/explosions';
@@ -58,20 +58,14 @@ export class Bullet extends BaseSprite<GameAnimatedSprite> {
 	}
 
 	override onCollision(event: CollisionEvent): void {
-		const { a, b } = event;
-		if (a.sprite === this.sprite || b.sprite === this.sprite) {
-			if (
-				a.sprite.spriteType === appConstants.spriteType.bomb ||
-				b.sprite.spriteType === appConstants.spriteType.bomb
-			) {
-				this.dispose();
-			} else if (
-				a.sprite.spriteType === appConstants.spriteType.enemy ||
-				b.sprite.spriteType === appConstants.spriteType.enemy
-			) {
-				// people destroy
-				this.destroyMe();
-			}
+		if (!involvesSprite(event, this.sprite!)) {
+			return;
+		}
+		if (involvesSpriteType(event, appConstants.spriteType.bomb)) {
+			this.dispose();
+		} else if (involvesSpriteType(event, appConstants.spriteType.enemy)) {
+			// people destroy
+			this.destroyMe();
 		}
 	}
 

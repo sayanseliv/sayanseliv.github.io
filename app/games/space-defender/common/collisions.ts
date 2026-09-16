@@ -1,5 +1,5 @@
 import { System, Box, SATVector, type BodyOptions } from 'detect-collisions';
-import type { CollisionBox, Coord, GameSprite } from '../types';
+import type { CollisionBox, CollisionEvent, Coord, GameSprite } from '../types';
 
 const system = new System();
 
@@ -49,3 +49,9 @@ export const checkCollisions = (
 export const clearCollisions = (): void => {
 	system.clear();
 };
+
+export const involvesSprite = (event: CollisionEvent, sprite: GameSprite): boolean =>
+	event.a.sprite === sprite || event.b.sprite === sprite;
+
+export const involvesSpriteType = (event: CollisionEvent, spriteType?: string): boolean =>
+	event.a.sprite.spriteType === spriteType || event.b.sprite.spriteType === spriteType;

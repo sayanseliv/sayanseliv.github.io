@@ -1,5 +1,5 @@
 import { Sprite, type Container, type Texture } from 'pixi.js';
-import { setPosition } from '../common/collisions';
+import { involvesSprite, setPosition } from '../common/collisions';
 import appConstants from '../common/constants';
 import { manKilled } from '../common/eventHub';
 import { randomIntFromInterval } from '../common/utils';
@@ -62,8 +62,7 @@ export class Man extends BaseSprite<GameSprite> {
 	}
 
 	override onCollision(event: CollisionEvent): void {
-		const { a, b } = event;
-		if (a.sprite === this.sprite || b.sprite === this.sprite) {
+		if (involvesSprite(event, this.sprite!)) {
 			this.destroyMe();
 		}
 	}

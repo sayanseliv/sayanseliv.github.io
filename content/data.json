@@ -603,5 +603,14 @@
 			],
 			"link": "/features/animated-bg-tres"
 		}
+	],
+	"games": [
+		{
+			"id": 1,
+			"title": "Space Defender",
+			"description": "Space Defender is a PixiJS arcade shooter where you defend your people from waves of alien invaders. Survive increasingly harder levels as enemy speed, bomb frequency, and enemy count ramp up.",
+			"tags": ["Game", "PixiJS", "Arcade", "Shooter", "Canvas"],
+			"link": "/games/space-defender"
+		}
 	]
 }

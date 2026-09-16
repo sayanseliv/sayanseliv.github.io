@@ -26,6 +26,11 @@
 					</NuxtLink>
 				</li>
 				<li>
+					<NuxtLink to="/games" :class="{ active: route.path.startsWith('/games') }">
+						Games
+					</NuxtLink>
+				</li>
+				<li>
 					<address class="header__contact">
 						<span>Contact:</span>
 						<NuxtLink to="mailto:sayanseliv@gmail.com" aria-label="Email Lang Eugen">

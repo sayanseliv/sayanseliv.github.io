@@ -3,7 +3,8 @@ import functional from 'eslint-plugin-functional';
 import vueA11y from 'eslint-plugin-vuejs-accessibility';
 
 export default withNuxt(
-	{ ignores: ['eslint.config.mjs'] },
+	// app/game: ported PixiJS game engine, kept close to its original source — not held to project lint conventions
+	{ ignores: ['eslint.config.mjs', 'app/game/**'] },
 	{
 		plugins: {
 			functional,

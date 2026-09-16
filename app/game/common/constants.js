@@ -1,7 +1,9 @@
+const HEADER_HEIGHT_PX = 48;
+
 const appConstants = {
 	size: {
 		WIDTH: window.innerWidth ? window.innerWidth : 800,
-		HEIGHT: window.innerHeight ? window.innerHeight : 600,
+		HEIGHT: window.innerHeight ? window.innerHeight - HEADER_HEIGHT_PX : 600,
 	},
 	containers: {
 		player: 'player',

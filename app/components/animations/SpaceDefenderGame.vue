@@ -39,6 +39,7 @@ onUnmounted(() => {
 	justify-content: center;
 	width: 100%;
 	min-height: 100vh;
+	padding-top: 3rem;
 	background-color: #000;
 
 	&__loading {

@@ -82,9 +82,11 @@ const createScene = async (mountElement) => {
 	return app;
 };
 
-const startLevelIfActive = () => {
+const startLevelOrShoot = () => {
 	if (isLevelMessageActive()) {
 		EventHub.emit(appConstants.events.restartGame, appConstants.events.levelMessage);
+	} else {
+		getPlayer()?.shoot();
 	}
 };
 
@@ -95,17 +97,13 @@ const initInteraction = () => {
 		app.gameState.mousePosition = e.global.x;
 	});
 
-	app.stage.addEventListener('pointertap', startLevelIfActive);
+	app.stage.addEventListener('pointertap', startLevelOrShoot);
 
 	keydownHandler = (e) => {
 		if (e.code !== 'Space' && e.code !== 'Enter') {
 			return;
 		}
-		if (isLevelMessageActive()) {
-			EventHub.emit(appConstants.events.restartGame, appConstants.events.levelMessage);
-		} else {
-			getPlayer()?.shoot();
-		}
+		startLevelOrShoot();
 	};
 	document.addEventListener('keydown', keydownHandler);
 

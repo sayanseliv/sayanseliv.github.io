@@ -16,7 +16,7 @@ const hasStarted = ref(false);
 let destroyGame: (() => void) | undefined;
 
 onMounted(async () => {
-	const gameModule = await import('@/game/game');
+	const gameModule = await import('@/games/space-defender/game');
 	destroyGame = gameModule.destroyGame;
 
 	if (!mountPoint.value) {

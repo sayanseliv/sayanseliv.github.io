@@ -7,4 +7,5 @@ API reference for everything under `app/components/`. All components auto-import
 | Section file | Components |
 | --- | --- |
 | [`animations.md`](./animations.md) | `animations/` (Canvas 2D, WebGL, Three.js, GSAP demos) + `animations/bg-circuit/`, `animations/wave-cube/` |
+| [`games.md`](./games.md) | `games/` (full playable mini-games: SpaceDefenderGame, PlatformerChaseGame) |
 | [`ui-cards-layout.md`](./ui-cards-layout.md) | `cards/`, `layout/`, `ui/` (incl. `ui/buttons/`) |

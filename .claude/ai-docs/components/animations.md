@@ -95,14 +95,6 @@ No props/emits/slots.
 
 **Gotcha:** guards with `typeof window !== 'undefined'` for SSR safety but silently no-ops if `ParticleNetwork` isn't loaded on `window`; not wrapped in `<ClientOnly>` itself.
 
-### PlatformerChaseGame
-
-Self-contained DOM-based (not canvas) chase/collectible mini-game: player/enemy `<div>`s positioned via reactive `positions`, randomly generated walls/coins, right-click context menu (pause/restart/teleport), WASD/arrow movement, win/lose screens.
-
-No props/emits/slots.
-
-**Gotcha:** adds `keydown`/`keyup`/`contextmenu` listeners directly on `document`/`document.body` in `onMounted` with no corresponding removal `onUnmounted` — listener leak on remount.
-
 ### PureCssMorphing
 
 Purely decorative shape-morph + floating-particle animation done entirely in CSS `@keyframes`. No script logic besides `defineOptions`.

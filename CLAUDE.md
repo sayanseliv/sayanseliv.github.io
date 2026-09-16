@@ -15,15 +15,19 @@ app/
       bg-circuit/
       wave-cube/
     cards/       # CardFeature, CardPortfolio, CardTechnology, CardTools
+    games/       # Full playable mini-games: SpaceDefenderGame, PlatformerChaseGame
     layout/      # AppHeader, AppModal
     ui/          # Reusable UI primitives: ProgressBar, TagCloud, CircleProgress, AnimatedBlock
       buttons/   # AnimatedButton, AnimatedMatrix, AnimatedWaveButton, MaskButton, etc.
   composables/
     canvas/      # useCanvas, useCanvasAnimations, useCanvasShapes, useCanvasPatterns
     useWebSocket.ts
+  games/         # Non-component game engine code, one subfolder per game
+    space-defender/  # PixiJS engine backing SpaceDefenderGame.vue
   pages/
     index.vue
     features/    # Individual feature/demo pages (canvas, 3d, animations, etc.)
+    games/       # One page per mini-game
     portfolio/
   plugins/
     gsap.client.ts

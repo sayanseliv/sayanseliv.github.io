@@ -23,15 +23,19 @@ app/
       bg-circuit/           # BgCircuitWebGL, CircuitBloom, CircuitScene — TresJS circuit-board scene
       wave-cube/             # BgWaveCube, WaveScene — TresJS wave/cube scene
     cards/                  # CardFeature, CardPortfolio, CardTechnology, CardTools
+    games/                  # Full playable mini-games (score/lives/levels), one component per game — SpaceDefenderGame, PlatformerChaseGame
     layout/                 # AppHeader, AppModal
     ui/                     # Reusable UI primitives: ProgressBar, TagCloud, CircleProgress, AnimatedBlock
       buttons/               # AnimatedButton, AnimatedMatrix, AnimatedWaveButton, AnimatedWaveClipButton, MaskButton
   composables/
     canvas/                 # useCanvas, useCanvasAnimations, useCanvasShapes, useCanvasPatterns
     useWebSocket.ts          # standalone WebSocket wrapper for the /features/websocket demo
+  games/                    # Non-component game engine code, one subfolder per game
+    space-defender/          # PixiJS engine backing SpaceDefenderGame.vue — classes/, common/, sprites/, game.js (init/destroy)
   pages/
     index.vue                # landing page
     features/                 # one page per animation/canvas/3D demo, index.vue lists them
+    games/                    # one page per mini-game, index.vue lists them
     portfolio/                 # portfolio listing, reads content/data.json
   plugins/
     gsap.client.ts            # registers GSAP + ScrollTrigger, provides $gsap/$ScrollTrigger
@@ -48,6 +52,10 @@ assets/styles/
 public/
   js/ParticleNetwork.js       # loaded via app.head.script (defer) — not a Nuxt-managed asset
 ```
+
+## Games
+
+Each mini-game gets its own subfolder under `app/games/<game-name>/` for non-component engine code (classes, state, draw logic), paired with a component of the same concern under `app/components/games/` and a route under `app/pages/games/<game-name>.vue`. `SpaceDefenderGame.vue` mounts the PixiJS engine at `app/games/space-defender/` via a dynamic `import('@/games/space-defender/game')` in `onMounted`, calling `initGame`/`destroyGame`. `eslint.config.mjs` excludes `app/games/space-defender/**` from lint rules (ported engine code, kept close to its original source) — a new game's engine folder only needs the same exclusion if it's similarly ported rather than written fresh against this repo's conventions. Simpler games (e.g. `PlatformerChaseGame.vue`) can stay fully self-contained in the component instead of taking an `app/games/` subfolder, if they have no engine code worth separating.
 
 ## Component auto-import
 

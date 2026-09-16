@@ -1,5 +1,7 @@
 # CLAUDE.md — sayanseliv.github.io
 
+> **AI reference docs:** deeper context lives in [`.claude/ai-docs/`](./.claude/ai-docs/) — [`architecture.md`](./.claude/ai-docs/architecture.md) (stack, directory layout, composables, GSAP/TresJS conventions, SCSS mixins, SEO/build) and [`components/`](./.claude/ai-docs/components/) (per-component API reference — start at its `README.md` index). This file remains the source of truth for enforced conventions.
+
 ## Project Overview
 
 Personal portfolio/showcase site deployed to GitHub Pages. Stack: Nuxt 4 (SSR → static generation), Vue 3, TypeScript, TresJS (@tresjs/nuxt, @tresjs/cientos, @tresjs/post-processing), GSAP, lucide-vue-next, @nuxtjs/sitemap, @nuxtjs/robots, nuxt-github-pages. SCSS with sass.
@@ -71,11 +73,30 @@ Package manager is **yarn** (v4). Do not use `npm` commands.
 - Icons come from `lucide-vue-next`, not from a custom icon system.
 - Static content (technologies, tools) lives in `content/data.json` and is read at build time.
 
+### Naming
+
+**No shorthand identifiers.** Never name a variable, parameter, or callback arg with a single letter or truncated abbreviation (`c`, `r`, `idx`, `evt`) — spell out the full word (`color`, `radius`, `index`, `event`), including inline in `.find()`/`.map()`/`.filter()` callbacks. Exceptions: conventional loop indices (`i`, `j`) and animation-frame/time deltas already established elsewhere in the codebase (e.g. `t` for a canvas draw function's elapsed-time param, matching `app/types/canvas.ts`).
+
+**No basename collisions across directories.** Before creating or renaming a component, check whether another file elsewhere in `app/components/` already shares its base name — since components auto-import by base name only (`pathPrefix: false`), two same-named components in different folders are ambiguous, not just confusing.
+
+### No Magic Numbers
+
+Numeric literals whose meaning isn't self-evident from context — animation durations, easing/timing values, canvas dimensions, particle counts, pixel thresholds — must be extracted into a named `UPPER_SNAKE_CASE` constant, even a single use. Plain array/loop indices (`0`, `1`, `-1`) are exempt.
+
+```ts
+// Wrong:
+gsap.to(el, { duration: 0.6, ease: 'power2.out' });
+
+// Correct:
+const REVEAL_DURATION_S = 0.6;
+gsap.to(el, { duration: REVEAL_DURATION_S, ease: 'power2.out' });
+```
+
 ## SEO
 
 - Meta tags are set globally in `nuxt.config.ts` (`app.head`) — no i18n, single language (English).
 - Page-level overrides use `useHead()` or `useSeoMeta()`.
-- `@nuxtjs/sitemap` is configured with `autoLastmod`, `discoverImages`, `sortEntries`.
+- `@nuxtjs/sitemap` is configured with `autoLastmod`, excludes `/features/*` (demo pages), default `changefreq: monthly` / `priority: 0.8`.
 - `@nuxtjs/robots` is configured to allow all bots.
 - Canonical URL base: `https://sayanseliv.github.io`.
 - All `<img>` tags must have meaningful `alt` attributes (enforced by `vuejs-accessibility/alt-text` ESLint rule).
@@ -101,3 +122,9 @@ Package manager is **yarn** (v4). Do not use `npm` commands.
 - Nitro preset: `github_pages`.
 - Output: `.output/public`.
 - Run `yarn generate` to produce the static build.
+
+## Output Expectations
+
+- **Minimal diffs:** Change only what is necessary. Do not reformat unrelated code or restructure files beyond scope.
+- **No breaking changes by default:** Existing component props, emits, and composable APIs must remain intact unless explicitly asked.
+- **Real improvements only:** Do not refactor working code for theoretical cleanliness or expand scope beyond what was requested.

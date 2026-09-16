@@ -252,12 +252,12 @@
 </template>
 
 <script setup lang="ts">
+import cardsData from '@@/content/data.json';
+import type { Tool, CategoryData } from '@/types';
+
 definePageMeta({
 	sitemap: { priority: 1.0, changefreq: 'weekly' },
 });
-
-import cardsData from '@@/content/data.json';
-import type { Tool, CategoryData } from '@/types';
 
 defineOptions({
 	name: 'MainPage',

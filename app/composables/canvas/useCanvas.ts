@@ -1,4 +1,3 @@
-/* eslint-disable functional/immutable-data */
 import type { DrawContext } from '@/types/canvas';
 
 export const useCanvas = () => {

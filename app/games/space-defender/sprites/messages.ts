@@ -19,11 +19,10 @@ const style = new TextStyle({
 	fontStyle: 'normal',
 	fontWeight: 'bold',
 	fill: gradient,
-	stroke: { color: 0x4a1850, strokeThickness: 5 },
+	stroke: { color: 0x4a1850, width: 5, join: 'round' },
 	dropShadow: { color: 0x000000, blur: 4, distance: 6 },
 	wordWrap: true,
 	wordWrapWidth: 440,
-	lineJoin: 'round',
 });
 
 const gameOverMessage = new Container();
@@ -46,7 +45,7 @@ gameOverMessage.on('pointertap', () => {
 	restartGame(appConstants.events.gameOver);
 });
 
-export const getGameOver = () => {
+export const getGameOver = (): Container => {
 	gameOverMessage.position.x = appConstants.size.WIDTH / 2 - gameOverMessage.width / 2;
 	gameOverMessage.position.y = appConstants.size.HEIGHT / 2 - gameOverMessage.height / 2;
 	return gameOverMessage;
@@ -72,7 +71,7 @@ youWinMessage.on('pointertap', () => {
 	restartGame(appConstants.events.youWin);
 });
 
-export const getYouWin = () => {
+export const getYouWin = (): Container => {
 	youWinMessage.position.x = appConstants.size.WIDTH / 2 - youWinMessage.width / 2;
 	youWinMessage.position.y = appConstants.size.HEIGHT / 2 - youWinMessage.height / 2;
 	return youWinMessage;
@@ -98,16 +97,16 @@ text3.x = 250 / 2;
 text3.y = 100 / 2;
 levelMessage.addChild(text3);
 
-export const getLevelMessage = (level) => {
+export const getLevelMessage = (level?: number): Container => {
 	text3.text = 'Level ' + level;
 	levelMessage.position.x = appConstants.size.WIDTH / 2 - levelMessage.width / 2;
 	levelMessage.position.y = appConstants.size.HEIGHT / 2 - levelMessage.height / 2;
 	return levelMessage;
 };
 
-export const isLevelMessageActive = () => levelMessage.parent !== null;
+export const isLevelMessageActive = (): boolean => levelMessage.parent !== null;
 
-export const detachMessages = () => {
+export const detachMessages = (): void => {
 	[gameOverMessage, youWinMessage, levelMessage].forEach((message) => {
 		if (message.parent) {
 			message.parent.removeChild(message);

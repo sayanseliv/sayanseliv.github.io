@@ -44,13 +44,15 @@ const appConstants = {
 		youWin: 'youWin',
 		background: 'background',
 	},
+	// indexed dynamically with keys that don't always exist (e.g. 'enemy', 'shoot') —
+	// kept as a loose dictionary rather than a literal type to preserve that behavior
 	spriteType: {
 		player: 'player',
 		bullet: 'bullet',
 		man: 'man',
 		tombStone: 'tombStone',
 		bomb: 'bomb',
-	},
+	} as Record<string, string>,
 };
 
 export default appConstants;

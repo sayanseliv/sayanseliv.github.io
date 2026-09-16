@@ -6,7 +6,7 @@ Full playable mini-games under `app/components/games/`, one component per game. 
 
 ### SpaceDefenderGame
 
-Thin mount/unmount wrapper around the PixiJS engine at `app/games/space-defender/` (not a Nuxt-scanned directory — plain JS module tree: `classes/`, `common/`, `sprites/`, `game.js`). `onMounted` dynamically imports `@/games/space-defender/game` and calls `initGame(mountPoint)`; `onUnmounted` calls the returned `destroyGame`. Renders into a plain `<div ref="mountPoint">` — PixiJS owns the canvas inside it, not Vue.
+Thin mount/unmount wrapper around the PixiJS engine at `app/games/space-defender/` (not a Nuxt-scanned directory — plain TS module tree: `classes/`, `common/`, `sprites/`, `game.ts`, `types.ts`). `onMounted` dynamically imports `@/games/space-defender/game` and calls `initGame(mountPoint)`; `onUnmounted` calls the returned `destroyGame`. Renders into a plain `<div ref="mountPoint">` — PixiJS owns the canvas inside it, not Vue.
 
 No props/emits/slots.
 

@@ -1,4 +1,4 @@
-import { Sprite } from 'pixi.js';
+import { Sprite, type Container } from 'pixi.js';
 import { getTexture } from '../common/assets';
 import { setPosition } from '../common/collisions';
 import appConstants from '../common/constants';
@@ -6,11 +6,21 @@ import { allTextureKeys } from '../common/textures';
 import { getCoordX } from '../common/utils';
 import { addExplosion } from '../sprites/explosions';
 import { getPlayer } from '../sprites/player';
+import type { CollisionEvent, Coord, GameSprite } from '../types';
 import { BaseSprite } from './baseSprite';
 
-export class Bomb extends BaseSprite {
-	constructor({ container, x, y, target }) {
-		const bomb = new Sprite(getTexture(allTextureKeys.bomb));
+interface BombOptions {
+	container: Container;
+	x: number;
+	y: number;
+	target?: Coord;
+}
+
+export class Bomb extends BaseSprite<GameSprite> {
+	target: Coord | undefined;
+
+	constructor({ container, x, y, target }: BombOptions) {
+		const bomb = new Sprite(getTexture(allTextureKeys.bomb) ?? undefined) as GameSprite;
 		bomb.anchor.set(0.5);
 		bomb.alive = true;
 		bomb.position.x = x;
@@ -25,20 +35,20 @@ export class Bomb extends BaseSprite {
 		if (target) {
 			const angle = Math.atan((target.y - this.y) / (target.x - this.x));
 			if (angle < 0) {
-				this.sprite.rotation = angle + Math.PI / 2;
+				this.sprite!.rotation = angle + Math.PI / 2;
 			} else if (angle > 0) {
-				this.sprite.rotation = angle - Math.PI / 2;
+				this.sprite!.rotation = angle - Math.PI / 2;
 			}
 		}
 		this.target = target;
 	}
 
-	dispose() {
+	override dispose(): void {
 		super.dispose();
-		this.target = null;
+		this.target = undefined;
 	}
 
-	onTick() {
+	override onTick(): void {
 		const currX = this.x;
 		const currY = this.y;
 		this.y += this.curentLevel.bombSpeed;
@@ -49,26 +59,26 @@ export class Bomb extends BaseSprite {
 		}
 
 		this.x = newX;
-		setPosition(this.box, { x: this.x, y: this.y });
+		setPosition(this.box!, { x: this.x, y: this.y });
 		if (this.y > appConstants.size.HEIGHT || this.x < 0 || this.x > appConstants.size.WIDTH) {
 			this.dispose();
 		}
 	}
 
-	onRestartGame() {
+	override onRestartGame(): void {
 		this.dispose();
 	}
 
-	onCollision(e) {
-		const { a, b } = e;
+	override onCollision(event: CollisionEvent): void {
+		const { a, b } = event;
 		if (a.sprite === this.sprite || b.sprite === this.sprite) {
 			if (
 				a.sprite.spriteType === appConstants.spriteType.player ||
 				b.sprite.spriteType === appConstants.spriteType.player
 			) {
 				const player = getPlayer();
-				if (!player.locked) {
-					player.lockPlayer();
+				if (!player!.locked) {
+					player!.lockPlayer();
 					this.destroyMe();
 				}
 			} else if (
@@ -87,7 +97,7 @@ export class Bomb extends BaseSprite {
 		}
 	}
 
-	destroyMe() {
+	override destroyMe(): void {
 		addExplosion({ x: this.x, y: this.y + 20 });
 		this.dispose();
 	}

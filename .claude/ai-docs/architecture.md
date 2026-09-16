@@ -31,7 +31,7 @@ app/
     canvas/                 # useCanvas, useCanvasAnimations, useCanvasShapes, useCanvasPatterns
     useWebSocket.ts          # standalone WebSocket wrapper for the /features/websocket demo
   games/                    # Non-component game engine code, one subfolder per game
-    space-defender/          # PixiJS engine backing SpaceDefenderGame.vue — classes/, common/, sprites/, game.js (init/destroy)
+    space-defender/          # PixiJS engine backing SpaceDefenderGame.vue — classes/, common/, sprites/, types.ts, game.ts (init/destroy)
   pages/
     index.vue                # landing page
     features/                 # one page per animation/canvas/3D demo, index.vue lists them

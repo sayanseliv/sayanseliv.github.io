@@ -16,7 +16,7 @@
 		"lint": "yarn lint:eslint",
 		"lint:eslint": "eslint .",
 		"lintfix": "eslint . --fix",
-		"type-check": "vue-tsc --noEmit",
+		"type-check": "nuxt typecheck",
 		"test": "vitest",
 		"test:ui": "vitest --ui",
 		"test:run": "vitest run",

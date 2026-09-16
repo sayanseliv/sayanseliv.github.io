@@ -1,7 +1,7 @@
 import { Howl, Howler } from 'howler';
 import appConstants from './constants';
 
-const allSounds = {};
+const allSounds: Record<string, Howl> = {};
 
 let muteEffectsStatus = true;
 
@@ -40,48 +40,48 @@ allSounds[appConstants.sounds.background] = new Howl({
 	autoplay: false,
 });
 
-export const playBackground = () => {
-	allSounds[appConstants.sounds.background].play();
+export const playBackground = (): void => {
+	allSounds[appConstants.sounds.background]!.play();
 };
 
-export const play = (id) => {
+export const play = (id: string): void => {
 	if (muteEffectsStatus) {
 		if (effects.indexOf(id) === -1) {
-			allSounds[id].play();
+			allSounds[id]!.play();
 		}
 	} else {
-		allSounds[id].play();
+		allSounds[id]!.play();
 	}
 };
 
-export const pause = (id) => {
-	allSounds[id].pause();
+export const pause = (id: string): void => {
+	allSounds[id]!.pause();
 };
 
-export const resume = (id) => {
-	allSounds[id].resume();
+export const resume = (id: string): void => {
+	allSounds[id]!.play();
 };
 
-export const stop = (id) => {
-	allSounds[id].stop();
+export const stop = (id: string): void => {
+	allSounds[id]!.stop();
 };
 
-export const stopAll = () => {
+export const stopAll = (): void => {
 	Object.values(allSounds).forEach((sound) => sound.stop());
 };
 
-export const muteAll = () => {
-	Howler.mute();
+export const muteAll = (): void => {
+	Howler.mute(true);
 };
 
-export const unmuteAll = () => {
+export const unmuteAll = (): void => {
 	Howler.mute(false);
 };
 
-export const muteEffects = () => {
+export const muteEffects = (): void => {
 	muteEffectsStatus = true;
 };
 
-export const unMuteEffects = () => {
+export const unMuteEffects = (): void => {
 	muteEffectsStatus = false;
 };

@@ -1,26 +1,26 @@
 import { Texture, Container } from 'pixi.js';
 import { Bullet } from '../classes/bullet';
 import appConstants from '../common/constants';
+import type { Coord, GameApplication, GameContainer } from '../types';
 
-let app;
-let bullets;
-let timeout;
+let app: GameApplication | undefined;
+let bullets: GameContainer | undefined;
 
 const bulletTypes = ['Bullet_Sequence1', 'Bullet_Sequence2'];
 
-const allTextures = {};
+const allTextures: Record<string, Texture[]> = {};
 
-export const initBullets = (currApp, root) => {
-	bullets = new Container();
+export const initBullets = (currApp: GameApplication, root: Container): GameContainer => {
+	bullets = new Container() as GameContainer;
 	bullets.customId = appConstants.containers.bullets;
 	app = currApp;
 	return bullets;
 };
 
-export const addBullet = (coord, angle) => {
-	const bulletType = bulletTypes[Math.floor(Math.random() * bulletTypes.length)];
+export const addBullet = (coord: Coord): void => {
+	const bulletType = bulletTypes[Math.floor(Math.random() * bulletTypes.length)]!;
 
-	let textures = [];
+	let textures: Texture[] = [];
 	if (allTextures[bulletType]) {
 		textures = allTextures[bulletType];
 	} else {
@@ -31,11 +31,10 @@ export const addBullet = (coord, angle) => {
 		allTextures[bulletType] = textures;
 	}
 
-	const buller = new Bullet({
-		container: bullets,
+	new Bullet({
+		container: bullets!,
 		x: coord.x,
 		y: coord.y,
 		textures,
-		angle,
 	});
 };

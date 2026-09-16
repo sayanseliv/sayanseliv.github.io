@@ -1,15 +1,21 @@
-import { AnimatedSprite, ColorMatrixFilter } from 'pixi.js';
+import { AnimatedSprite, ColorMatrixFilter, type Container, type Texture } from 'pixi.js';
 import { setPosition } from '../common/collisions';
 import appConstants from '../common/constants';
 import { play } from '../common/sound';
 import { addExplosion } from '../sprites/explosions';
+import type { CollisionEvent, GameAnimatedSprite } from '../types';
 import { BaseSprite } from './baseSprite';
 
-const bulletSpeed = 3;
+interface BulletOptions {
+	container: Container;
+	x: number;
+	y: number;
+	textures: Texture[];
+}
 
-export class Bullet extends BaseSprite {
-	constructor({ container, x, y, textures }) {
-		const bullet = new AnimatedSprite(textures);
+export class Bullet extends BaseSprite<GameAnimatedSprite> {
+	constructor({ container, x, y, textures }: BulletOptions) {
+		const bullet = new AnimatedSprite(textures) as GameAnimatedSprite;
 		const filter = new ColorMatrixFilter();
 		bullet.loop = false;
 		const { matrix } = filter;
@@ -31,28 +37,28 @@ export class Bullet extends BaseSprite {
 			isCentered: true,
 		});
 
-		this.sprite.play();
+		this.sprite!.play();
 		play(appConstants.sounds.shot);
 	}
 
-	dispose() {
+	override dispose(): void {
 		super.dispose();
 	}
 
-	onTick() {
+	override onTick(): void {
 		this.y -= this.curentLevel.bulletSpeed;
-		setPosition(this.box, { x: this.x, y: this.y });
+		setPosition(this.box!, { x: this.x, y: this.y });
 		if (this.y < 0) {
 			this.dispose();
 		}
 	}
 
-	onRestartGame() {
+	override onRestartGame(): void {
 		this.dispose();
 	}
 
-	onCollision(e) {
-		const { a, b } = e;
+	override onCollision(event: CollisionEvent): void {
+		const { a, b } = event;
 		if (a.sprite === this.sprite || b.sprite === this.sprite) {
 			if (
 				a.sprite.spriteType === appConstants.spriteType.bomb ||
@@ -69,7 +75,7 @@ export class Bullet extends BaseSprite {
 		}
 	}
 
-	destroyMe() {
+	override destroyMe(): void {
 		addExplosion({ x: this.x, y: this.y - 20 });
 		this.dispose();
 	}

@@ -1,4 +1,6 @@
-const gameLevels = [
+import type { LevelConfig } from '../types';
+
+const gameLevels: LevelConfig[] = [
 	{
 		bombSpeed: 3,
 		enemySpeed: 2,
@@ -103,24 +105,24 @@ const gameLevels = [
 
 let curentLevel = 1;
 
-export const getLevel = () => {
-	return gameLevels[curentLevel];
+export const getLevel = (): LevelConfig => {
+	return gameLevels[curentLevel]!;
 };
 
-export const nextLevel = () => {
+export const nextLevel = (): LevelConfig => {
 	curentLevel++;
 	return getLevel();
 };
 
-export const getLevelNumber = () => {
+export const getLevelNumber = (): number => {
 	return curentLevel;
 };
 
-export const isLastLevel = () => {
+export const isLastLevel = (): boolean => {
 	return getLevelNumber() === gameLevels.length - 1;
 };
 
-export const resetLevel = () => {
+export const resetLevel = (): LevelConfig => {
 	curentLevel = 0;
 	return getLevel();
 };

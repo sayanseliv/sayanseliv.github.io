@@ -29,9 +29,9 @@ export const allTextureKeys = {
 	background8: 'background8',
 	background9: 'background9',
 	background10: 'background10',
-};
+} as const;
 
-const appTextures = {
+const appTextures: Record<string, string> = {
 	[allTextureKeys.shipBlue]: '/game/sprites/enemy/shipBlue.png',
 	[allTextureKeys.shipBlue2]: '/game/sprites/enemy/shipBlue2.png',
 	[allTextureKeys.bomb]: '/game/sprites/bomb.png',

@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js';
-import { getTexture, loadAssets } from './common/assets';
+import { loadAssets } from './common/assets';
 import appConstants from './common/constants';
 import { initBullets } from './sprites/bullets';
 import { addPlayer, getPlayer } from './sprites/player';
@@ -20,69 +20,49 @@ import {
 import { checkCollisions, clearCollisions } from './common/collisions';
 import { getLevelNumber, isLastLevel, nextLevel, resetLevel } from './common/levels';
 import { addBackground, setBackgroundForLevel } from './sprites/background';
+import type { GameApplication } from './types';
 
 const WIDTH = appConstants.size.WIDTH;
 const HEIGHT = appConstants.size.HEIGHT;
 
-let rootContainer;
+let rootContainer: PIXI.Container | undefined;
 let tickMode = true;
 
-let app;
+let app: GameApplication | undefined;
 
-let autoFire = false;
-
-let background;
-
-let keydownHandler;
+let keydownHandler: ((event: KeyboardEvent) => void) | undefined;
 
 let sessionToken = 0;
 
-const createScene = async (mountElement) => {
-	app = new PIXI.Application();
-	await app.init({
+const createScene = async (mountElement: HTMLElement): Promise<GameApplication> => {
+	const pixiApp = new PIXI.Application() as GameApplication;
+	await pixiApp.init({
 		width: WIDTH,
 		height: HEIGHT,
 		antialias: true,
 		transparent: false,
 		resolution: 1,
 		background: '#000000',
-	});
+	} as Partial<PIXI.ApplicationOptions>);
 
-	app.gameState = {
+	pixiApp.gameState = {
 		stopped: false,
 		moveLeftActive: false,
 		moveRightActive: false,
+		mousePosition: 0,
 	};
 
-	mountElement.appendChild(app.canvas);
-	rootContainer = app.stage;
+	mountElement.appendChild(pixiApp.canvas);
+	rootContainer = pixiApp.stage;
 	rootContainer.eventMode = 'static';
-	rootContainer.hitArea = app.screen;
+	rootContainer.hitArea = pixiApp.screen;
 
-	// initInfo(app, rootContainer);
+	app = pixiApp;
 
-	// const bullets = initBullets(app, rootContainer);
-	// rootContainer.addChild(bullets);
-
-	// //const player = addPlayer(app, rootContainer);
-
-	// const people = initPeople(app, rootContainer);
-	// //restorePeople();
-	// rootContainer.addChild(people);
-
-	// const enemies = initEnemies(app, rootContainer);
-	// //addEnemy();
-	// rootContainer.addChild(enemies);
-
-	// const bombs = initBombs(app, rootContainer);
-	// rootContainer.addChild(bombs);
-
-	// initExplosions(app, rootContainer);
-
-	return app;
+	return pixiApp;
 };
 
-const startLevelOrShoot = () => {
+const startLevelOrShoot = (): void => {
 	if (isLevelMessageActive()) {
 		EventHub.emit(appConstants.events.restartGame, appConstants.events.levelMessage);
 	} else {
@@ -90,24 +70,24 @@ const startLevelOrShoot = () => {
 	}
 };
 
-const initInteraction = () => {
-	app.gameState.mousePosition = appConstants.size.WIDTH / 2;
+const initInteraction = (): void => {
+	app!.gameState.mousePosition = appConstants.size.WIDTH / 2;
 
-	app.stage.addEventListener('pointermove', (e) => {
-		app.gameState.mousePosition = e.global.x;
+	app!.stage.addEventListener('pointermove', (event) => {
+		app!.gameState.mousePosition = event.global.x;
 	});
 
-	app.stage.addEventListener('pointertap', startLevelOrShoot);
+	app!.stage.addEventListener('pointertap', startLevelOrShoot);
 
-	keydownHandler = (e) => {
-		if (e.code !== 'Space' && e.code !== 'Enter') {
+	keydownHandler = (event) => {
+		if (event.code !== 'Space' && event.code !== 'Enter') {
 			return;
 		}
 		startLevelOrShoot();
 	};
 	document.addEventListener('keydown', keydownHandler);
 
-	app.ticker.add((delta) => {
+	app!.ticker.add((delta) => {
 		if (tickMode) {
 			EventHub.emit(appConstants.events.tick, delta);
 		} else {
@@ -122,10 +102,10 @@ const initInteraction = () => {
 	});
 };
 
-export const initGame = async (mountElement) => {
+export const initGame = async (mountElement: HTMLElement): Promise<void> => {
 	const token = ++sessionToken;
 
-	app = await createScene(mountElement);
+	const pixiApp = await createScene(mountElement);
 
 	loadAssets((progress) => {
 		if (progress === 'all') {
@@ -133,81 +113,76 @@ export const initGame = async (mountElement) => {
 				return;
 			}
 
-			addBackground(app, rootContainer);
-			initInfo(app, rootContainer);
+			addBackground(pixiApp, rootContainer!);
+			initInfo(pixiApp, rootContainer!);
 
-			const bullets = initBullets(app, rootContainer);
-			rootContainer.addChild(bullets);
+			const bullets = initBullets(pixiApp, rootContainer!);
+			rootContainer!.addChild(bullets);
 
-			//const player = addPlayer(app, rootContainer);
+			const people = initPeople(pixiApp, rootContainer!);
+			rootContainer!.addChild(people);
 
-			const people = initPeople(app, rootContainer);
-			//restorePeople();
-			rootContainer.addChild(people);
+			const enemies = initEnemies(pixiApp, rootContainer!);
+			rootContainer!.addChild(enemies);
 
-			const enemies = initEnemies(app, rootContainer);
-			//addEnemy();
-			rootContainer.addChild(enemies);
+			const bombs = initBombs(pixiApp, rootContainer!);
+			rootContainer!.addChild(bombs);
 
-			const bombs = initBombs(app, rootContainer);
-			rootContainer.addChild(bombs);
-
-			initExplosions(app, rootContainer);
+			initExplosions(pixiApp, rootContainer!);
 			initInteraction();
-			rootContainer.addChild(getLevelMessage(getLevelNumber() + 1));
+			rootContainer!.addChild(getLevelMessage(getLevelNumber() + 1));
 		}
 	});
-	return;
 };
 
-const restartGame = () => {
+const restartGame = (): void => {
 	setTimeout(() => {
 		if (!app) {
 			return;
 		}
 		setBackgroundForLevel();
-		addPlayer(app, rootContainer);
+		addPlayer(app, rootContainer!);
 		addEnemies();
 		restorePeople();
 	}, 0);
 };
 
 EventHub.on(appConstants.events.youWin, () => {
-	app.ticker.stop();
+	app!.ticker.stop();
 	if (isLastLevel()) {
-		rootContainer.addChild(getYouWin());
+		rootContainer!.addChild(getYouWin());
 		setTimeout(() => play(appConstants.sounds.youWin), 1000);
 	} else {
 		nextLevel();
-		rootContainer.addChild(getLevelMessage(getLevelNumber() + 1));
+		rootContainer!.addChild(getLevelMessage(getLevelNumber() + 1));
 	}
 });
 
 EventHub.on(appConstants.events.gameOver, () => {
-	app.ticker.stop();
-	rootContainer.addChild(getGameOver());
+	app!.ticker.stop();
+	rootContainer!.addChild(getGameOver());
 	setTimeout(() => play(appConstants.sounds.gameOver), 1000);
 });
 
-EventHub.on(appConstants.events.restartGame, (event) => {
+EventHub.on(appConstants.events.restartGame, (event: string) => {
 	if (event === appConstants.events.gameOver) {
-		rootContainer.removeChild(getGameOver());
+		rootContainer!.removeChild(getGameOver());
 		resetLevel();
-		rootContainer.addChild(getLevelMessage(getLevelNumber() + 1));
+		rootContainer!.addChild(getLevelMessage(getLevelNumber() + 1));
 	}
 	if (event === appConstants.events.youWin) {
-		rootContainer.removeChild(getYouWin());
+		rootContainer!.removeChild(getYouWin());
 		resetLevel();
 		restartGame();
 	}
 	if (event === appConstants.events.levelMessage) {
-		rootContainer.removeChild(getLevelMessage());
+		rootContainer!.removeChild(getLevelMessage());
 		restartGame();
 	}
-	app.ticker.start();
+	app!.ticker.start();
 });
 
-export const destroyGame = () => {
+export const destroyGame = (): void => {
 	if (!app) {
 		return;
 	}
@@ -228,7 +203,6 @@ export const destroyGame = () => {
 	app.destroy(true, { children: true });
 	app = undefined;
 	rootContainer = undefined;
-	background = undefined;
 
 	stopAll();
 	clearCollisions();

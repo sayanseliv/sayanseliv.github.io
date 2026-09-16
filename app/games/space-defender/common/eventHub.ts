@@ -3,28 +3,28 @@ import appConstants from './constants';
 
 export const EventHub = new EventEmitter();
 
-export const infoUpdated = (data) => {
+export const infoUpdated = (data?: unknown): void => {
 	EventHub.emit(appConstants.events.infoUpdated, data);
 };
 
-export const ufoDestroyed = (data) => {
+export const ufoDestroyed = (data?: unknown): void => {
 	EventHub.emit(appConstants.events.ufoDestroyed, data);
 };
-export const manKilled = (data) => {
+export const manKilled = (data?: unknown): void => {
 	EventHub.emit(appConstants.events.manKilled, data);
 };
-export const bombDestroyed = (data) => {
+export const bombDestroyed = (data?: unknown): void => {
 	EventHub.emit(appConstants.events.bombDestroyed, data);
 };
-export const youWin = (data) => {
+export const youWin = (data?: unknown): void => {
 	EventHub.emit(appConstants.events.youWin, data);
 };
-export const gameOver = (data) => {
+export const gameOver = (data?: unknown): void => {
 	EventHub.emit(appConstants.events.gameOver, data);
 };
-export const restartGame = (data) => {
+export const restartGame = (data?: unknown): void => {
 	EventHub.emit(appConstants.events.restartGame, data);
 };
-export const resetPeople = (data) => {
+export const resetPeople = (data?: unknown): void => {
 	EventHub.emit(appConstants.events.resetPeople, data);
 };

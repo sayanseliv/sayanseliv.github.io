@@ -476,13 +476,6 @@
 	],
 	"features": [
 		{
-			"id": 1,
-			"title": "Chase Game",
-			"description": "Chase Game is a desktop-only platformer where the player collects coins while avoiding enemies. Designed for keyboard controls, it provides a classic arcade-like experience optimized for desktop gameplay.",
-			"tags": ["Game", "Platformer", "Desktop-only", "Arcade", "Keyboard controls"],
-			"link": "/features/chase-game"
-		},
-		{
 			"id": 2,
 			"title": "WebSocket",
 			"description": "WebSocket enables a persistent connection between the client and server, allowing real-time, bidirectional communication with minimal overhead. It's ideal for chat apps, live updates, multiplayer games, and more.",
@@ -611,6 +604,13 @@
 			"description": "Space Defender is a PixiJS arcade shooter where you defend your people from waves of alien invaders. Survive increasingly harder levels as enemy speed, bomb frequency, and enemy count ramp up.",
 			"tags": ["Game", "PixiJS", "Arcade", "Shooter", "Canvas"],
 			"link": "/games/space-defender"
+		},
+		{
+			"id": 2,
+			"title": "Chase Game",
+			"description": "Chase Game is a desktop-only platformer where the player collects coins while avoiding enemies. Designed for keyboard controls, it provides a classic arcade-like experience optimized for desktop gameplay.",
+			"tags": ["Game", "Platformer", "Desktop-only", "Arcade", "Keyboard controls"],
+			"link": "/games/chase-game"
 		}
 	]
 }
